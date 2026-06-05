@@ -1,0 +1,801 @@
+{
+  "title": "28天词汇分类速记",
+  "totalDays": 28,
+  "days": [
+    {
+      "day": 1,
+      "categories": [
+        {
+          "name": "个人情况",
+          "words": [
+            {"word": "birth", "phonetic": "/bɜːrθ/", "meaning": "n. 出生"},
+            {"word": "birthday", "phonetic": "/ˈbɜːrθdeɪ/", "meaning": "n. 生日"},
+            {"word": "born", "phonetic": "/bɔːrn/", "meaning": "v. 出生（过去分词）"},
+            {"word": "age", "phonetic": "/eɪdʒ/", "meaning": "n. 年龄；时代"},
+            {"word": "name", "phonetic": "/neɪm/", "meaning": "n. 姓名"},
+            {"word": "nationality", "phonetic": "/ˌnæʃəˈnæləti/", "meaning": "n. 国籍"},
+            {"word": "address", "phonetic": "/əˈdres/", "meaning": "n. 地址"},
+            {"word": "telephone", "phonetic": "/ˈtelɪfəʊn/", "meaning": "n. 电话"},
+            {"word": "number", "phonetic": "/ˈnʌmbər/", "meaning": "n. 号码；数字"},
+            {"word": "email", "phonetic": "/ˈiːmeɪl/", "meaning": "n. 电子邮件"},
+            {"word": "dream", "phonetic": "/driːm/", "meaning": "n. 梦想 v. 做梦"},
+            {"word": "job", "phonetic": "/dʒɒb/", "meaning": "n. 工作，职业"},
+            {"word": "hobby", "phonetic": "/ˈhɒbi/", "meaning": "n. 业余爱好"},
+            {"word": "habit", "phonetic": "/ˈhæbɪt/", "meaning": "n. 习惯"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "categories": [
+        {
+          "name": "家人、朋友与周围的人",
+          "words": [
+            {"word": "family", "phonetic": "/ˈfæməli/", "meaning": "n. 家庭；家人"},
+            {"word": "parent", "phonetic": "/ˈperənt/", "meaning": "n. 父（母）亲"},
+            {"word": "father", "phonetic": "/ˈfɑːðər/", "meaning": "n. 父亲"},
+            {"word": "mother", "phonetic": "/ˈmʌðər/", "meaning": "n. 母亲"},
+            {"word": "brother", "phonetic": "/ˈbrʌðər/", "meaning": "n. 兄弟"},
+            {"word": "sister", "phonetic": "/ˈsɪstər/", "meaning": "n. 姐妹"},
+            {"word": "son", "phonetic": "/sʌn/", "meaning": "n. 儿子"},
+            {"word": "daughter", "phonetic": "/ˈdɔːtər/", "meaning": "n. 女儿"},
+            {"word": "husband", "phonetic": "/ˈhʌzbənd/", "meaning": "n. 丈夫"},
+            {"word": "wife", "phonetic": "/waɪf/", "meaning": "n. 妻子"},
+            {"word": "uncle", "phonetic": "/ˈʌŋkl/", "meaning": "n. 叔叔；舅舅"},
+            {"word": "aunt", "phonetic": "/ænt/", "meaning": "n. 阿姨；姑妈"},
+            {"word": "cousin", "phonetic": "/ˈkʌzn/", "meaning": "n. 堂（表）兄弟姐妹"},
+            {"word": "friend", "phonetic": "/frend/", "meaning": "n. 朋友"},
+            {"word": "classmate", "phonetic": "/ˈklæsmeɪt/", "meaning": "n. 同班同学"},
+            {"word": "colleague", "phonetic": "/ˈkɒliːɡ/", "meaning": "n. 同事"},
+            {"word": "neighbor", "phonetic": "/ˈneɪbər/", "meaning": "n. 邻居"},
+            {"word": "guest", "phonetic": "/ɡest/", "meaning": "n. 客人"},
+            {"word": "stranger", "phonetic": "/ˈstreɪndʒər/", "meaning": "n. 陌生人"},
+            {"word": "relative", "phonetic": "/ˈrelətɪv/", "meaning": "n. 亲戚 adj. 相对的"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "categories": [
+        {
+          "name": "人的身体",
+          "words": [
+            {"word": "body", "phonetic": "/ˈbɒdi/", "meaning": "n. 身体"},
+            {"word": "head", "phonetic": "/hed/", "meaning": "n. 头"},
+            {"word": "hair", "phonetic": "/her/", "meaning": "n. 头发"},
+            {"word": "face", "phonetic": "/feɪs/", "meaning": "n. 脸 v. 面对"},
+            {"word": "eye", "phonetic": "/aɪ/", "meaning": "n. 眼睛"},
+            {"word": "ear", "phonetic": "/ɪr/", "meaning": "n. 耳朵"},
+            {"word": "nose", "phonetic": "/nəʊz/", "meaning": "n. 鼻子"},
+            {"word": "mouth", "phonetic": "/maʊθ/", "meaning": "n. 嘴"},
+            {"word": "tooth", "phonetic": "/tuːθ/", "meaning": "n. 牙齿"},
+            {"word": "neck", "phonetic": "/nek/", "meaning": "n. 脖子"},
+            {"word": "arm", "phonetic": "/ɑːrm/", "meaning": "n. 手臂"},
+            {"word": "hand", "phonetic": "/hænd/", "meaning": "n. 手 v. 递，交给"},
+            {"word": "finger", "phonetic": "/ˈfɪŋɡər/", "meaning": "n. 手指"},
+            {"word": "leg", "phonetic": "/leɡ/", "meaning": "n. 腿"},
+            {"word": "foot", "phonetic": "/fʊt/", "meaning": "n. 脚；英尺"},
+            {"word": "heart", "phonetic": "/hɑːrt/", "meaning": "n. 心脏；中心"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "categories": [
+        {
+          "name": "人的外貌、情感与性格",
+          "words": [
+            {"word": "tall", "phonetic": "/tɔːl/", "meaning": "adj. 高的"},
+            {"word": "short", "phonetic": "/ʃɔːrt/", "meaning": "adj. 矮的；短的"},
+            {"word": "thin", "phonetic": "/θɪn/", "meaning": "adj. 瘦的；薄的"},
+            {"word": "fat", "phonetic": "/fæt/", "meaning": "adj. 胖的 n. 脂肪"},
+            {"word": "strong", "phonetic": "/strɒŋ/", "meaning": "adj. 强壮的"},
+            {"word": "weak", "phonetic": "/wiːk/", "meaning": "adj. 虚弱的"},
+            {"word": "young", "phonetic": "/jʌŋ/", "meaning": "adj. 年轻的"},
+            {"word": "old", "phonetic": "/əʊld/", "meaning": "adj. 老的；旧的"},
+            {"word": "beautiful", "phonetic": "/ˈbjuːtɪfl/", "meaning": "adj. 美丽的"},
+            {"word": "handsome", "phonetic": "/ˈhænsəm/", "meaning": "adj. 英俊的"},
+            {"word": "happy", "phonetic": "/ˈhæpi/", "meaning": "adj. 快乐的"},
+            {"word": "sad", "phonetic": "/sæd/", "meaning": "adj. 悲伤的"},
+            {"word": "angry", "phonetic": "/ˈæŋɡri/", "meaning": "adj. 生气的"},
+            {"word": "excited", "phonetic": "/ɪkˈsaɪtɪd/", "meaning": "adj. 兴奋的"},
+            {"word": "worried", "phonetic": "/ˈwʌrid/", "meaning": "adj. 担心的"},
+            {"word": "brave", "phonetic": "/breɪv/", "meaning": "adj. 勇敢的"},
+            {"word": "kind", "phonetic": "/kaɪnd/", "meaning": "adj. 善良的 n. 种类"},
+            {"word": "shy", "phonetic": "/ʃaɪ/", "meaning": "adj. 害羞的"},
+            {"word": "clever", "phonetic": "/ˈklevər/", "meaning": "adj. 聪明的"},
+            {"word": "honest", "phonetic": "/ˈɒnɪst/", "meaning": "adj. 诚实的"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "categories": [
+        {
+          "name": "居住环境",
+          "words": [
+            {"word": "home", "phonetic": "/həʊm/", "meaning": "n. 家"},
+            {"word": "house", "phonetic": "/haʊs/", "meaning": "n. 房子"},
+            {"word": "room", "phonetic": "/ruːm/", "meaning": "n. 房间；空间"},
+            {"word": "bedroom", "phonetic": "/ˈbedruːm/", "meaning": "n. 卧室"},
+            {"word": "kitchen", "phonetic": "/ˈkɪtʃɪn/", "meaning": "n. 厨房"},
+            {"word": "bathroom", "phonetic": "/ˈbæθruːm/", "meaning": "n. 浴室；卫生间"},
+            {"word": "door", "phonetic": "/dɔːr/", "meaning": "n. 门"},
+            {"word": "window", "phonetic": "/ˈwɪndəʊ/", "meaning": "n. 窗户"},
+            {"word": "wall", "phonetic": "/wɔːl/", "meaning": "n. 墙"},
+            {"word": "floor", "phonetic": "/flɔːr/", "meaning": "n. 地板；楼层"},
+            {"word": "bed", "phonetic": "/bed/", "meaning": "n. 床"},
+            {"word": "table", "phonetic": "/ˈteɪbl/", "meaning": "n. 桌子；表格"},
+            {"word": "chair", "phonetic": "/tʃer/", "meaning": "n. 椅子"},
+            {"word": "sofa", "phonetic": "/ˈsəʊfə/", "meaning": "n. 沙发"},
+            {"word": "light", "phonetic": "/laɪt/", "meaning": "n. 灯；光 adj. 轻的；浅的"},
+            {"word": "key", "phonetic": "/kiː/", "meaning": "n. 钥匙；关键"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "categories": [
+        {
+          "name": "日常用品",
+          "words": [
+            {"word": "cup", "phonetic": "/kʌp/", "meaning": "n. 杯子"},
+            {"word": "glass", "phonetic": "/ɡlæs/", "meaning": "n. 玻璃杯；玻璃"},
+            {"word": "bottle", "phonetic": "/ˈbɒtl/", "meaning": "n. 瓶子"},
+            {"word": "box", "phonetic": "/bɒks/", "meaning": "n. 盒子 v. 装箱"},
+            {"word": "bag", "phonetic": "/bæɡ/", "meaning": "n. 包，袋子"},
+            {"word": "clock", "phonetic": "/klɒk/", "meaning": "n. 时钟"},
+            {"word": "watch", "phonetic": "/wɒtʃ/", "meaning": "n. 手表 v. 观看"},
+            {"word": "phone", "phonetic": "/fəʊn/", "meaning": "n. 电话 v. 打电话"},
+            {"word": "camera", "phonetic": "/ˈkæmərə/", "meaning": "n. 照相机"},
+            {"word": "computer", "phonetic": "/kəmˈpjuːtər/", "meaning": "n. 电脑"},
+            {"word": "radio", "phonetic": "/ˈreɪdiəʊ/", "meaning": "n. 收音机"},
+            {"word": "TV", "phonetic": "/ˌtiː ˈviː/", "meaning": "n. 电视"},
+            {"word": "ticket", "phonetic": "/ˈtɪkɪt/", "meaning": "n. 票"},
+            {"word": "money", "phonetic": "/ˈmʌni/", "meaning": "n. 钱"},
+            {"word": "gift", "phonetic": "/ɡɪft/", "meaning": "n. 礼物"},
+            {"word": "toy", "phonetic": "/tɔɪ/", "meaning": "n. 玩具"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "categories": [
+        {
+          "name": "衣服与配饰",
+          "words": [
+            {"word": "clothes", "phonetic": "/kləʊðz/", "meaning": "n. 衣服"},
+            {"word": "coat", "phonetic": "/kəʊt/", "meaning": "n. 外套，大衣"},
+            {"word": "jacket", "phonetic": "/ˈdʒækɪt/", "meaning": "n. 夹克"},
+            {"word": "shirt", "phonetic": "/ʃɜːrt/", "meaning": "n. 衬衫"},
+            {"word": "T-shirt", "phonetic": "/ˈtiː ʃɜːrt/", "meaning": "n. T恤衫"},
+            {"word": "dress", "phonetic": "/dres/", "meaning": "n. 连衣裙 v. 穿衣"},
+            {"word": "skirt", "phonetic": "/skɜːrt/", "meaning": "n. 裙子"},
+            {"word": "trousers", "phonetic": "/ˈtraʊzərz/", "meaning": "n. 裤子"},
+            {"word": "shoe", "phonetic": "/ʃuː/", "meaning": "n. 鞋"},
+            {"word": "hat", "phonetic": "/hæt/", "meaning": "n. 帽子"},
+            {"word": "cap", "phonetic": "/kæp/", "meaning": "n. 帽子（有帽檐）"},
+            {"word": "sock", "phonetic": "/sɒk/", "meaning": "n. 袜子"},
+            {"word": "glove", "phonetic": "/ɡlʌv/", "meaning": "n. 手套"},
+            {"word": "scarf", "phonetic": "/skɑːrf/", "meaning": "n. 围巾"},
+            {"word": "ring", "phonetic": "/rɪŋ/", "meaning": "n. 戒指；环 v. 响铃"},
+            {"word": "pocket", "phonetic": "/ˈpɒkɪt/", "meaning": "n. 口袋"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "categories": [
+        {
+          "name": "饮食",
+          "words": [
+            {"word": "food", "phonetic": "/fuːd/", "meaning": "n. 食物"},
+            {"word": "meal", "phonetic": "/miːl/", "meaning": "n. 一餐，膳食"},
+            {"word": "breakfast", "phonetic": "/ˈbrekfəst/", "meaning": "n. 早餐"},
+            {"word": "lunch", "phonetic": "/lʌntʃ/", "meaning": "n. 午餐"},
+            {"word": "dinner", "phonetic": "/ˈdɪnər/", "meaning": "n. 晚餐；正餐"},
+            {"word": "bread", "phonetic": "/bred/", "meaning": "n. 面包"},
+            {"word": "cake", "phonetic": "/keɪk/", "meaning": "n. 蛋糕"},
+            {"word": "rice", "phonetic": "/raɪs/", "meaning": "n. 米饭；大米"},
+            {"word": "noodle", "phonetic": "/ˈnuːdl/", "meaning": "n. 面条"},
+            {"word": "egg", "phonetic": "/eɡ/", "meaning": "n. 鸡蛋；蛋"},
+            {"word": "meat", "phonetic": "/miːt/", "meaning": "n. 肉"},
+            {"word": "fish", "phonetic": "/fɪʃ/", "meaning": "n. 鱼；鱼肉 v. 钓鱼"},
+            {"word": "chicken", "phonetic": "/ˈtʃɪkɪn/", "meaning": "n. 鸡；鸡肉"},
+            {"word": "vegetable", "phonetic": "/ˈvedʒtəbl/", "meaning": "n. 蔬菜"},
+            {"word": "fruit", "phonetic": "/fruːt/", "meaning": "n. 水果"},
+            {"word": "salt", "phonetic": "/sɔːlt/", "meaning": "n. 盐"},
+            {"word": "sugar", "phonetic": "/ˈʃʊɡər/", "meaning": "n. 糖"},
+            {"word": "hungry", "phonetic": "/ˈhʌŋɡri/", "meaning": "adj. 饥饿的"},
+            {"word": "thirsty", "phonetic": "/ˈθɜːrsti/", "meaning": "adj. 口渴的"},
+            {"word": "delicious", "phonetic": "/dɪˈlɪʃəs/", "meaning": "adj. 美味的"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "categories": [
+        {
+          "name": "水果与饮品",
+          "words": [
+            {"word": "apple", "phonetic": "/ˈæpl/", "meaning": "n. 苹果"},
+            {"word": "banana", "phonetic": "/bəˈnænə/", "meaning": "n. 香蕉"},
+            {"word": "orange", "phonetic": "/ˈɒrɪndʒ/", "meaning": "n. 橙子；橙色"},
+            {"word": "grape", "phonetic": "/ɡreɪp/", "meaning": "n. 葡萄"},
+            {"word": "pear", "phonetic": "/per/", "meaning": "n. 梨"},
+            {"word": "watermelon", "phonetic": "/ˈwɔːtərmelən/", "meaning": "n. 西瓜"},
+            {"word": "strawberry", "phonetic": "/ˈstrɔːberi/", "meaning": "n. 草莓"},
+            {"word": "juice", "phonetic": "/dʒuːs/", "meaning": "n. 果汁；汁"},
+            {"word": "milk", "phonetic": "/mɪlk/", "meaning": "n. 牛奶"},
+            {"word": "tea", "phonetic": "/tiː/", "meaning": "n. 茶"},
+            {"word": "coffee", "phonetic": "/ˈkɒfi/", "meaning": "n. 咖啡"},
+            {"word": "water", "phonetic": "/ˈwɔːtər/", "meaning": "n. 水 v. 浇水"},
+            {"word": "drink", "phonetic": "/drɪŋk/", "meaning": "v. 喝 n. 饮料"},
+            {"word": "beer", "phonetic": "/bɪr/", "meaning": "n. 啤酒"},
+            {"word": "wine", "phonetic": "/waɪn/", "meaning": "n. 葡萄酒"},
+            {"word": "cola", "phonetic": "/ˈkəʊlə/", "meaning": "n. 可乐"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "categories": [
+        {
+          "name": "学校",
+          "words": [
+            {"word": "school", "phonetic": "/skuːl/", "meaning": "n. 学校"},
+            {"word": "class", "phonetic": "/klæs/", "meaning": "n. 班级；课"},
+            {"word": "student", "phonetic": "/ˈstjuːdnt/", "meaning": "n. 学生"},
+            {"word": "teacher", "phonetic": "/ˈtiːtʃər/", "meaning": "n. 老师"},
+            {"word": "book", "phonetic": "/bʊk/", "meaning": "n. 书 v. 预订"},
+            {"word": "pen", "phonetic": "/pen/", "meaning": "n. 钢笔"},
+            {"word": "pencil", "phonetic": "/ˈpensl/", "meaning": "n. 铅笔"},
+            {"word": "ruler", "phonetic": "/ˈruːlər/", "meaning": "n. 尺子"},
+            {"word": "eraser", "phonetic": "/ɪˈreɪsər/", "meaning": "n. 橡皮擦"},
+            {"word": "schoolbag", "phonetic": "/ˈskuːlbæɡ/", "meaning": "n. 书包"},
+            {"word": "notebook", "phonetic": "/ˈnəʊtbʊk/", "meaning": "n. 笔记本"},
+            {"word": "dictionary", "phonetic": "/ˈdɪkʃəneri/", "meaning": "n. 字典"},
+            {"word": "blackboard", "phonetic": "/ˈblækbɔːrd/", "meaning": "n. 黑板"},
+            {"word": "homework", "phonetic": "/ˈhəʊmwɜːrk/", "meaning": "n. 家庭作业"},
+            {"word": "exam", "phonetic": "/ɪɡˈzæm/", "meaning": "n. 考试"},
+            {"word": "score", "phonetic": "/skɔːr/", "meaning": "n. 分数；比分 v. 得分"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "categories": [
+        {
+          "name": "学习与语言",
+          "words": [
+            {"word": "learn", "phonetic": "/lɜːrn/", "meaning": "v. 学习"},
+            {"word": "study", "phonetic": "/ˈstʌdi/", "meaning": "v. 学习；研究 n. 书房"},
+            {"word": "read", "phonetic": "/riːd/", "meaning": "v. 阅读；读"},
+            {"word": "write", "phonetic": "/raɪt/", "meaning": "v. 写"},
+            {"word": "speak", "phonetic": "/spiːk/", "meaning": "v. 说，讲"},
+            {"word": "listen", "phonetic": "/ˈlɪsn/", "meaning": "v. 听"},
+            {"word": "understand", "phonetic": "/ˌʌndərˈstænd/", "meaning": "v. 理解"},
+            {"word": "remember", "phonetic": "/rɪˈmembər/", "meaning": "v. 记住"},
+            {"word": "forget", "phonetic": "/fərˈɡet/", "meaning": "v. 忘记"},
+            {"word": "explain", "phonetic": "/ɪkˈspleɪn/", "meaning": "v. 解释"},
+            {"word": "practice", "phonetic": "/ˈpræktɪs/", "meaning": "v./n. 练习"},
+            {"word": "answer", "phonetic": "/ˈænsər/", "meaning": "v./n. 回答"},
+            {"word": "question", "phonetic": "/ˈkwestʃən/", "meaning": "n. 问题 v. 提问"},
+            {"word": "language", "phonetic": "/ˈlæŋɡwɪdʒ/", "meaning": "n. 语言"},
+            {"word": "word", "phonetic": "/wɜːrd/", "meaning": "n. 单词；话"},
+            {"word": "sentence", "phonetic": "/ˈsentəns/", "meaning": "n. 句子"},
+            {"word": "meaning", "phonetic": "/ˈmiːnɪŋ/", "meaning": "n. 意思，含义"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "categories": [
+        {
+          "name": "学科与颜色",
+          "words": [
+            {"word": "Chinese", "phonetic": "/ˌtʃaɪˈniːz/", "meaning": "n. 语文；中文"},
+            {"word": "math", "phonetic": "/mæθ/", "meaning": "n. 数学"},
+            {"word": "English", "phonetic": "/ˈɪŋɡlɪʃ/", "meaning": "n. 英语 adj. 英国的"},
+            {"word": "history", "phonetic": "/ˈhɪstri/", "meaning": "n. 历史"},
+            {"word": "geography", "phonetic": "/dʒiˈɒɡrəfi/", "meaning": "n. 地理"},
+            {"word": "science", "phonetic": "/ˈsaɪəns/", "meaning": "n. 科学"},
+            {"word": "physics", "phonetic": "/ˈfɪzɪks/", "meaning": "n. 物理"},
+            {"word": "chemistry", "phonetic": "/ˈkemɪstri/", "meaning": "n. 化学"},
+            {"word": "biology", "phonetic": "/baɪˈɒlədʒi/", "meaning": "n. 生物"},
+            {"word": "music", "phonetic": "/ˈmjuːzɪk/", "meaning": "n. 音乐"},
+            {"word": "art", "phonetic": "/ɑːrt/", "meaning": "n. 美术；艺术"},
+            {"word": "PE", "phonetic": "/ˌpiː ˈiː/", "meaning": "n. 体育"},
+            {"word": "red", "phonetic": "/red/", "meaning": "n./adj. 红色"},
+            {"word": "yellow", "phonetic": "/ˈjeləʊ/", "meaning": "n./adj. 黄色"},
+            {"word": "blue", "phonetic": "/bluː/", "meaning": "n./adj. 蓝色"},
+            {"word": "white", "phonetic": "/waɪt/", "meaning": "n./adj. 白色"},
+            {"word": "black", "phonetic": "/blæk/", "meaning": "n./adj. 黑色"},
+            {"word": "green", "phonetic": "/ɡriːn/", "meaning": "n./adj. 绿色"},
+            {"word": "brown", "phonetic": "/braʊn/", "meaning": "n./adj. 棕色"},
+            {"word": "pink", "phonetic": "/pɪŋk/", "meaning": "n./adj. 粉色"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "categories": [
+        {
+          "name": "兴趣爱好",
+          "words": [
+            {"word": "hobby", "phonetic": "/ˈhɒbi/", "meaning": "n. 业余爱好"},
+            {"word": "interest", "phonetic": "/ˈɪntrəst/", "meaning": "n. 兴趣 v. 使感兴趣"},
+            {"word": "sport", "phonetic": "/spɔːrt/", "meaning": "n. 体育运动"},
+            {"word": "football", "phonetic": "/ˈfʊtbɔːl/", "meaning": "n. 足球"},
+            {"word": "basketball", "phonetic": "/ˈbæskɪtbɔːl/", "meaning": "n. 篮球"},
+            {"word": "tennis", "phonetic": "/ˈtenɪs/", "meaning": "n. 网球"},
+            {"word": "swim", "phonetic": "/swɪm/", "meaning": "v./n. 游泳"},
+            {"word": "run", "phonetic": "/rʌn/", "meaning": "v. 跑步；运行"},
+            {"word": "play", "phonetic": "/pleɪ/", "meaning": "v. 玩；演奏；播放"},
+            {"word": "sing", "phonetic": "/sɪŋ/", "meaning": "v. 唱歌"},
+            {"word": "dance", "phonetic": "/dæns/", "meaning": "v./n. 跳舞"},
+            {"word": "draw", "phonetic": "/drɔː/", "meaning": "v. 画画"},
+            {"word": "paint", "phonetic": "/peɪnt/", "meaning": "v. 绘画；刷漆 n. 颜料"},
+            {"word": "photo", "phonetic": "/ˈfəʊtəʊ/", "meaning": "n. 照片"},
+            {"word": "movie", "phonetic": "/ˈmuːvi/", "meaning": "n. 电影"},
+            {"word": "game", "phonetic": "/ɡeɪm/", "meaning": "n. 游戏；比赛"},
+            {"word": "party", "phonetic": "/ˈpɑːrti/", "meaning": "n. 聚会；派对"},
+            {"word": "trip", "phonetic": "/trɪp/", "meaning": "n. 旅行，出行"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "categories": [
+        {
+          "name": "时间、日期与数字",
+          "words": [
+            {"word": "time", "phonetic": "/taɪm/", "meaning": "n. 时间；次数"},
+            {"word": "hour", "phonetic": "/ˈaʊər/", "meaning": "n. 小时"},
+            {"word": "minute", "phonetic": "/ˈmɪnɪt/", "meaning": "n. 分钟"},
+            {"word": "second", "phonetic": "/ˈsekənd/", "meaning": "n. 秒；第二"},
+            {"word": "day", "phonetic": "/deɪ/", "meaning": "n. 天；白天"},
+            {"word": "week", "phonetic": "/wiːk/", "meaning": "n. 周，星期"},
+            {"word": "month", "phonetic": "/mʌnθ/", "meaning": "n. 月"},
+            {"word": "year", "phonetic": "/jɪr/", "meaning": "n. 年"},
+            {"word": "today", "phonetic": "/təˈdeɪ/", "meaning": "n./adv. 今天"},
+            {"word": "tomorrow", "phonetic": "/təˈmɒrəʊ/", "meaning": "n./adv. 明天"},
+            {"word": "yesterday", "phonetic": "/ˈjestərdeɪ/", "meaning": "n./adv. 昨天"},
+            {"word": "morning", "phonetic": "/ˈmɔːrnɪŋ/", "meaning": "n. 早晨；上午"},
+            {"word": "afternoon", "phonetic": "/ˌæftərˈnuːn/", "meaning": "n. 下午"},
+            {"word": "evening", "phonetic": "/ˈiːvnɪŋ/", "meaning": "n. 傍晚；晚上"},
+            {"word": "night", "phonetic": "/naɪt/", "meaning": "n. 夜晚"},
+            {"word": "Monday", "phonetic": "/ˈmʌndeɪ/", "meaning": "n. 星期一"},
+            {"word": "Tuesday", "phonetic": "/ˈtjuːzdeɪ/", "meaning": "n. 星期二"},
+            {"word": "Wednesday", "phonetic": "/ˈwenzdeɪ/", "meaning": "n. 星期三"},
+            {"word": "Thursday", "phonetic": "/ˈθɜːrzdeɪ/", "meaning": "n. 星期四"},
+            {"word": "Friday", "phonetic": "/ˈfraɪdeɪ/", "meaning": "n. 星期五"},
+            {"word": "Saturday", "phonetic": "/ˈsætərdeɪ/", "meaning": "n. 星期六"},
+            {"word": "Sunday", "phonetic": "/ˈsʌndeɪ/", "meaning": "n. 星期天"},
+            {"word": "date", "phonetic": "/deɪt/", "meaning": "n. 日期"},
+            {"word": "number", "phonetic": "/ˈnʌmbər/", "meaning": "n. 数字；号码"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "categories": [
+        {
+          "name": "天气与季节",
+          "words": [
+            {"word": "weather", "phonetic": "/ˈweðər/", "meaning": "n. 天气"},
+            {"word": "sun", "phonetic": "/sʌn/", "meaning": "n. 太阳"},
+            {"word": "rain", "phonetic": "/reɪn/", "meaning": "n./v. 雨；下雨"},
+            {"word": "cloud", "phonetic": "/klaʊd/", "meaning": "n. 云"},
+            {"word": "wind", "phonetic": "/wɪnd/", "meaning": "n. 风"},
+            {"word": "snow", "phonetic": "/snəʊ/", "meaning": "n./v. 雪；下雪"},
+            {"word": "ice", "phonetic": "/aɪs/", "meaning": "n. 冰"},
+            {"word": "sunny", "phonetic": "/ˈsʌni/", "meaning": "adj. 晴朗的"},
+            {"word": "rainy", "phonetic": "/ˈreɪni/", "meaning": "adj. 下雨的"},
+            {"word": "cloudy", "phonetic": "/ˈklaʊdi/", "meaning": "adj. 多云的"},
+            {"word": "windy", "phonetic": "/ˈwɪndi/", "meaning": "adj. 有风的"},
+            {"word": "snowy", "phonetic": "/ˈsnəʊi/", "meaning": "adj. 下雪的"},
+            {"word": "hot", "phonetic": "/hɒt/", "meaning": "adj. 炎热的"},
+            {"word": "cold", "phonetic": "/kəʊld/", "meaning": "adj. 寒冷的 n. 感冒"},
+            {"word": "warm", "phonetic": "/wɔːrm/", "meaning": "adj. 温暖的"},
+            {"word": "cool", "phonetic": "/kuːl/", "meaning": "adj. 凉爽的；酷的"},
+            {"word": "spring", "phonetic": "/sprɪŋ/", "meaning": "n. 春天；泉水"},
+            {"word": "summer", "phonetic": "/ˈsʌmər/", "meaning": "n. 夏天"},
+            {"word": "autumn", "phonetic": "/ˈɔːtəm/", "meaning": "n. 秋天"},
+            {"word": "winter", "phonetic": "/ˈwɪntər/", "meaning": "n. 冬天"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "categories": [
+        {
+          "name": "交通方式",
+          "words": [
+            {"word": "travel", "phonetic": "/ˈtrævl/", "meaning": "v./n. 旅行"},
+            {"word": "car", "phonetic": "/kɑːr/", "meaning": "n. 汽车"},
+            {"word": "bus", "phonetic": "/bʌs/", "meaning": "n. 公共汽车"},
+            {"word": "taxi", "phonetic": "/ˈtæksi/", "meaning": "n. 出租车"},
+            {"word": "bike", "phonetic": "/baɪk/", "meaning": "n. 自行车"},
+            {"word": "train", "phonetic": "/treɪn/", "meaning": "n. 火车 v. 训练"},
+            {"word": "plane", "phonetic": "/pleɪn/", "meaning": "n. 飞机"},
+            {"word": "ship", "phonetic": "/ʃɪp/", "meaning": "n. 船"},
+            {"word": "boat", "phonetic": "/bəʊt/", "meaning": "n. 小船"},
+            {"word": "subway", "phonetic": "/ˈsʌbweɪ/", "meaning": "n. 地铁"},
+            {"word": "road", "phonetic": "/rəʊd/", "meaning": "n. 路，道路"},
+            {"word": "street", "phonetic": "/striːt/", "meaning": "n. 街道"},
+            {"word": "bridge", "phonetic": "/brɪdʒ/", "meaning": "n. 桥"},
+            {"word": "driver", "phonetic": "/ˈdraɪvər/", "meaning": "n. 司机；驾驶员"},
+            {"word": "drive", "phonetic": "/draɪv/", "meaning": "v. 驾驶；开车"},
+            {"word": "ride", "phonetic": "/raɪd/", "meaning": "v. 骑；乘坐 n. 旅程"},
+            {"word": "walk", "phonetic": "/wɔːk/", "meaning": "v./n. 步行"},
+            {"word": "fly", "phonetic": "/flaɪ/", "meaning": "v. 飞 n. 苍蝇"},
+            {"word": "map", "phonetic": "/mæp/", "meaning": "n. 地图"},
+            {"word": "western", "phonetic": "/ˈwestərn/", "meaning": "adj. 西方的"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "categories": [
+        {
+          "name": "方位方向与地点场所",
+          "words": [
+            {"word": "north", "phonetic": "/nɔːrθ/", "meaning": "n./adj. 北方"},
+            {"word": "south", "phonetic": "/saʊθ/", "meaning": "n./adj. 南方"},
+            {"word": "east", "phonetic": "/iːst/", "meaning": "n./adj. 东方"},
+            {"word": "west", "phonetic": "/west/", "meaning": "n./adj. 西方"},
+            {"word": "left", "phonetic": "/left/", "meaning": "n./adj. 左边"},
+            {"word": "right", "phonetic": "/raɪt/", "meaning": "n./adj. 右边；正确的"},
+            {"word": "front", "phonetic": "/frʌnt/", "meaning": "n./adj. 前面"},
+            {"word": "back", "phonetic": "/bæk/", "meaning": "n./adj. 后面 adv. 回来"},
+            {"word": "middle", "phonetic": "/ˈmɪdl/", "meaning": "n./adj. 中间"},
+            {"word": "place", "phonetic": "/pleɪs/", "meaning": "n. 地方 v. 放置"},
+            {"word": "shop", "phonetic": "/ʃɒp/", "meaning": "n. 商店 v. 购物"},
+            {"word": "hospital", "phonetic": "/ˈhɒspɪtl/", "meaning": "n. 医院"},
+            {"word": "bank", "phonetic": "/bæŋk/", "meaning": "n. 银行；河岸"},
+            {"word": "hotel", "phonetic": "/həʊˈtel/", "meaning": "n. 酒店"},
+            {"word": "restaurant", "phonetic": "/ˈrestrɒnt/", "meaning": "n. 餐厅"},
+            {"word": "museum", "phonetic": "/mjuˈziːəm/", "meaning": "n. 博物馆"},
+            {"word": "library", "phonetic": "/ˈlaɪbreri/", "meaning": "n. 图书馆"},
+            {"word": "cinema", "phonetic": "/ˈsɪnəmə/", "meaning": "n. 电影院"},
+            {"word": "park", "phonetic": "/pɑːrk/", "meaning": "n. 公园 v. 停车"},
+            {"word": "airport", "phonetic": "/ˈerpɔːrt/", "meaning": "n. 机场"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "categories": [
+        {
+          "name": "自然界",
+          "words": [
+            {"word": "nature", "phonetic": "/ˈneɪtʃər/", "meaning": "n. 自然"},
+            {"word": "sky", "phonetic": "/skaɪ/", "meaning": "n. 天空"},
+            {"word": "moon", "phonetic": "/muːn/", "meaning": "n. 月亮"},
+            {"word": "star", "phonetic": "/stɑːr/", "meaning": "n. 星星；明星"},
+            {"word": "mountain", "phonetic": "/ˈmaʊntən/", "meaning": "n. 山"},
+            {"word": "river", "phonetic": "/ˈrɪvər/", "meaning": "n. 河流"},
+            {"word": "lake", "phonetic": "/leɪk/", "meaning": "n. 湖"},
+            {"word": "sea", "phonetic": "/siː/", "meaning": "n. 海"},
+            {"word": "tree", "phonetic": "/triː/", "meaning": "n. 树"},
+            {"word": "flower", "phonetic": "/ˈflaʊər/", "meaning": "n. 花"},
+            {"word": "grass", "phonetic": "/ɡræs/", "meaning": "n. 草"},
+            {"word": "plant", "phonetic": "/plænt/", "meaning": "n. 植物 v. 种植"},
+            {"word": "animal", "phonetic": "/ˈænɪml/", "meaning": "n. 动物"},
+            {"word": "bird", "phonetic": "/bɜːrd/", "meaning": "n. 鸟"},
+            {"word": "dog", "phonetic": "/dɒɡ/", "meaning": "n. 狗"},
+            {"word": "cat", "phonetic": "/kæt/", "meaning": "n. 猫"},
+            {"word": "horse", "phonetic": "/hɔːrs/", "meaning": "n. 马"},
+            {"word": "pig", "phonetic": "/pɪɡ/", "meaning": "n. 猪"},
+            {"word": "cow", "phonetic": "/kaʊ/", "meaning": "n. 奶牛"},
+            {"word": "sheep", "phonetic": "/ʃiːp/", "meaning": "n. 羊，绵羊"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "categories": [
+        {
+          "name": "度量衡与形状材质",
+          "words": [
+            {"word": "size", "phonetic": "/saɪz/", "meaning": "n. 尺寸，大小"},
+            {"word": "meter", "phonetic": "/ˈmiːtər/", "meaning": "n. 米"},
+            {"word": "kilometer", "phonetic": "/kɪˈlɒmɪtər/", "meaning": "n. 千米"},
+            {"word": "mile", "phonetic": "/maɪl/", "meaning": "n. 英里"},
+            {"word": "kilogram", "phonetic": "/ˈkɪləɡræm/", "meaning": "n. 千克"},
+            {"word": "pound", "phonetic": "/paʊnd/", "meaning": "n. 磅；英镑"},
+            {"word": "weight", "phonetic": "/weɪt/", "meaning": "n. 重量"},
+            {"word": "height", "phonetic": "/haɪt/", "meaning": "n. 高度"},
+            {"word": "piece", "phonetic": "/piːs/", "meaning": "n. 块；片；件"},
+            {"word": "pair", "phonetic": "/per/", "meaning": "n. 双，对"},
+            {"word": "circle", "phonetic": "/ˈsɜːrkl/", "meaning": "n. 圆；圈子 v. 环绕"},
+            {"word": "square", "phonetic": "/skwer/", "meaning": "n. 正方形；广场"},
+            {"word": "round", "phonetic": "/raʊnd/", "meaning": "adj. 圆形的 prep. 环绕"},
+            {"word": "deep", "phonetic": "/diːp/", "meaning": "adj. 深的"},
+            {"word": "wide", "phonetic": "/waɪd/", "meaning": "adj. 宽的"},
+            {"word": "wood", "phonetic": "/wʊd/", "meaning": "n. 木头；木材"},
+            {"word": "stone", "phonetic": "/stəʊn/", "meaning": "n. 石头"},
+            {"word": "gold", "phonetic": "/ɡəʊld/", "meaning": "n. 黄金；金子"},
+            {"word": "silver", "phonetic": "/ˈsɪlvər/", "meaning": "n. 银；银色"},
+            {"word": "paper", "phonetic": "/ˈpeɪpər/", "meaning": "n. 纸；论文"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "categories": [
+        {
+          "name": "身心健康与安全",
+          "words": [
+            {"word": "health", "phonetic": "/helθ/", "meaning": "n. 健康"},
+            {"word": "ill", "phonetic": "/ɪl/", "meaning": "adj. 生病的"},
+            {"word": "sick", "phonetic": "/sɪk/", "meaning": "adj. 生病的；恶心的"},
+            {"word": "fever", "phonetic": "/ˈfiːvər/", "meaning": "n. 发烧"},
+            {"word": "headache", "phonetic": "/ˈhedeɪk/", "meaning": "n. 头痛"},
+            {"word": "cough", "phonetic": "/kɒf/", "meaning": "v./n. 咳嗽"},
+            {"word": "medicine", "phonetic": "/ˈmedsn/", "meaning": "n. 药"},
+            {"word": "hospital", "phonetic": "/ˈhɒspɪtl/", "meaning": "n. 医院"},
+            {"word": "doctor", "phonetic": "/ˈdɒktər/", "meaning": "n. 医生；博士"},
+            {"word": "nurse", "phonetic": "/nɜːrs/", "meaning": "n. 护士"},
+            {"word": "patient", "phonetic": "/ˈpeɪʃnt/", "meaning": "n. 病人 adj. 耐心的"},
+            {"word": "rest", "phonetic": "/rest/", "meaning": "n./v. 休息"},
+            {"word": "sleep", "phonetic": "/sliːp/", "meaning": "v./n. 睡觉"},
+            {"word": "safe", "phonetic": "/seɪf/", "meaning": "adj. 安全的"},
+            {"word": "dangerous", "phonetic": "/ˈdeɪndʒərəs/", "meaning": "adj. 危险的"},
+            {"word": "accident", "phonetic": "/ˈæksɪdənt/", "meaning": "n. 事故；意外"},
+            {"word": "save", "phonetic": "/seɪv/", "meaning": "v. 救；节省；保存"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "categories": [
+        {
+          "name": "日常活动",
+          "words": [
+            {"word": "get up", "phonetic": "/ɡet ʌp/", "meaning": "起床"},
+            {"word": "wake up", "phonetic": "/weɪk ʌp/", "meaning": "醒来"},
+            {"word": "wash", "phonetic": "/wɒʃ/", "meaning": "v. 洗"},
+            {"word": "brush", "phonetic": "/brʌʃ/", "meaning": "v. 刷 n. 刷子"},
+            {"word": "clean", "phonetic": "/kliːn/", "meaning": "v. 打扫 adj. 干净的"},
+            {"word": "cook", "phonetic": "/kʊk/", "meaning": "v. 烹饪 n. 厨师"},
+            {"word": "eat", "phonetic": "/iːt/", "meaning": "v. 吃"},
+            {"word": "drink", "phonetic": "/drɪŋk/", "meaning": "v. 喝 n. 饮料"},
+            {"word": "put on", "phonetic": "/pʊt ɒn/", "meaning": "穿上"},
+            {"word": "take off", "phonetic": "/teɪk ɒf/", "meaning": "脱下；起飞"},
+            {"word": "go to bed", "phonetic": "/ɡəʊ tə bed/", "meaning": "上床睡觉"},
+            {"word": "sleep", "phonetic": "/sliːp/", "meaning": "v./n. 睡觉"},
+            {"word": "rest", "phonetic": "/rest/", "meaning": "n./v. 休息"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "categories": [
+        {
+          "name": "购物与消费",
+          "words": [
+            {"word": "buy", "phonetic": "/baɪ/", "meaning": "v. 买"},
+            {"word": "sell", "phonetic": "/sel/", "meaning": "v. 卖"},
+            {"word": "pay", "phonetic": "/peɪ/", "meaning": "v. 付款；支付"},
+            {"word": "cost", "phonetic": "/kɒst/", "meaning": "v. 花费 n. 费用"},
+            {"word": "spend", "phonetic": "/spend/", "meaning": "v. 花费（时间/金钱）"},
+            {"word": "save", "phonetic": "/seɪv/", "meaning": "v. 节省；救；保存"},
+            {"word": "free", "phonetic": "/friː/", "meaning": "adj. 免费的；自由的"},
+            {"word": "money", "phonetic": "/ˈmʌni/", "meaning": "n. 钱"},
+            {"word": "price", "phonetic": "/praɪs/", "meaning": "n. 价格"},
+            {"word": "market", "phonetic": "/ˈmɑːrkɪt/", "meaning": "n. 市场"},
+            {"word": "shop", "phonetic": "/ʃɒp/", "meaning": "n. 商店 v. 购物"},
+            {"word": "supermarket", "phonetic": "/ˈsuːpərmɑːrkɪt/", "meaning": "n. 超市"},
+            {"word": "store", "phonetic": "/stɔːr/", "meaning": "n. 商店 v. 储存"},
+            {"word": "choose", "phonetic": "/tʃuːz/", "meaning": "v. 选择"},
+            {"word": "change", "phonetic": "/tʃeɪndʒ/", "meaning": "n. 零钱 v. 改变"},
+            {"word": "check", "phonetic": "/tʃek/", "meaning": "v. 检查 n. 支票"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "categories": [
+        {
+          "name": "工作与职业",
+          "words": [
+            {"word": "work", "phonetic": "/wɜːrk/", "meaning": "v./n. 工作"},
+            {"word": "job", "phonetic": "/dʒɒb/", "meaning": "n. 工作；职业"},
+            {"word": "company", "phonetic": "/ˈkʌmpəni/", "meaning": "n. 公司"},
+            {"word": "office", "phonetic": "/ˈɒfɪs/", "meaning": "n. 办公室"},
+            {"word": "meeting", "phonetic": "/ˈmiːtɪŋ/", "meaning": "n. 会议"},
+            {"word": "team", "phonetic": "/tiːm/", "meaning": "n. 团队"},
+            {"word": "boss", "phonetic": "/bɒs/", "meaning": "n. 老板"},
+            {"word": "worker", "phonetic": "/ˈwɜːrkər/", "meaning": "n. 工人；工作者"},
+            {"word": "doctor", "phonetic": "/ˈdɒktər/", "meaning": "n. 医生；博士"},
+            {"word": "teacher", "phonetic": "/ˈtiːtʃər/", "meaning": "n. 老师"},
+            {"word": "driver", "phonetic": "/ˈdraɪvər/", "meaning": "n. 司机"},
+            {"word": "police", "phonetic": "/pəˈliːs/", "meaning": "n. 警察"},
+            {"word": "scientist", "phonetic": "/ˈsaɪəntɪst/", "meaning": "n. 科学家"},
+            {"word": "artist", "phonetic": "/ˈɑːrtɪst/", "meaning": "n. 艺术家"},
+            {"word": "engineer", "phonetic": "/ˌendʒɪˈnɪr/", "meaning": "n. 工程师"},
+            {"word": "writer", "phonetic": "/ˈraɪtər/", "meaning": "n. 作家"},
+            {"word": "reporter", "phonetic": "/rɪˈpɔːrtər/", "meaning": "n. 记者"},
+            {"word": "business", "phonetic": "/ˈbɪznəs/", "meaning": "n. 商业；生意"},
+            {"word": "success", "phonetic": "/səkˈses/", "meaning": "n. 成功"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "categories": [
+        {
+          "name": "科学技术与通讯",
+          "words": [
+            {"word": "science", "phonetic": "/ˈsaɪəns/", "meaning": "n. 科学"},
+            {"word": "technology", "phonetic": "/tekˈnɒlədʒi/", "meaning": "n. 技术"},
+            {"word": "computer", "phonetic": "/kəmˈpjuːtər/", "meaning": "n. 电脑"},
+            {"word": "Internet", "phonetic": "/ˈɪntərnet/", "meaning": "n. 互联网"},
+            {"word": "website", "phonetic": "/ˈwebsaɪt/", "meaning": "n. 网站"},
+            {"word": "email", "phonetic": "/ˈiːmeɪl/", "meaning": "n./v. 电子邮件"},
+            {"word": "message", "phonetic": "/ˈmesɪdʒ/", "meaning": "n. 消息"},
+            {"word": "phone", "phonetic": "/fəʊn/", "meaning": "n. 电话 v. 打电话"},
+            {"word": "call", "phonetic": "/kɔːl/", "meaning": "v. 打电话；称呼 n. 电话"},
+            {"word": "letter", "phonetic": "/ˈletər/", "meaning": "n. 信；字母"},
+            {"word": "news", "phonetic": "/njuːz/", "meaning": "n. 新闻"},
+            {"word": "information", "phonetic": "/ˌɪnfərˈmeɪʃn/", "meaning": "n. 信息"},
+            {"word": "robot", "phonetic": "/ˈrəʊbɒt/", "meaning": "n. 机器人"},
+            {"word": "invent", "phonetic": "/ɪnˈvent/", "meaning": "v. 发明"},
+            {"word": "discover", "phonetic": "/dɪˈskʌvər/", "meaning": "v. 发现"},
+            {"word": "search", "phonetic": "/sɜːrtʃ/", "meaning": "v./n. 搜索；搜寻"},
+            {"word": "share", "phonetic": "/ʃer/", "meaning": "v. 分享；共享"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "categories": [
+        {
+          "name": "社会与环境",
+          "words": [
+            {"word": "world", "phonetic": "/wɜːrld/", "meaning": "n. 世界"},
+            {"word": "country", "phonetic": "/ˈkʌntri/", "meaning": "n. 国家；乡村"},
+            {"word": "city", "phonetic": "/ˈsɪti/", "meaning": "n. 城市"},
+            {"word": "town", "phonetic": "/taʊn/", "meaning": "n. 城镇"},
+            {"word": "village", "phonetic": "/ˈvɪlɪdʒ/", "meaning": "n. 村庄"},
+            {"word": "people", "phonetic": "/ˈpiːpl/", "meaning": "n. 人；人们"},
+            {"word": "public", "phonetic": "/ˈpʌblɪk/", "meaning": "n./adj. 公共；公众"},
+            {"word": "rule", "phonetic": "/ruːl/", "meaning": "n. 规则 v. 统治"},
+            {"word": "law", "phonetic": "/lɔː/", "meaning": "n. 法律"},
+            {"word": "problem", "phonetic": "/ˈprɒbləm/", "meaning": "n. 问题；难题"},
+            {"word": "environment", "phonetic": "/ɪnˈvaɪrənmənt/", "meaning": "n. 环境"},
+            {"word": "pollution", "phonetic": "/pəˈluːʃn/", "meaning": "n. 污染"},
+            {"word": "waste", "phonetic": "/weɪst/", "meaning": "n./v. 浪费；废物"},
+            {"word": "energy", "phonetic": "/ˈenərdʒi/", "meaning": "n. 能源；精力"},
+            {"word": "protect", "phonetic": "/prəˈtekt/", "meaning": "v. 保护"},
+            {"word": "earth", "phonetic": "/ɜːrθ/", "meaning": "n. 地球；泥土"},
+            {"word": "peace", "phonetic": "/piːs/", "meaning": "n. 和平"},
+            {"word": "war", "phonetic": "/wɔːr/", "meaning": "n. 战争"},
+            {"word": "culture", "phonetic": "/ˈkʌltʃər/", "meaning": "n. 文化"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "categories": [
+        {
+          "name": "常用动词（一）",
+          "words": [
+            {"word": "be", "phonetic": "/biː/", "meaning": "v. 是；成为（am/is/are）"},
+            {"word": "have", "phonetic": "/hæv/", "meaning": "v. 有；吃（has/had）"},
+            {"word": "do", "phonetic": "/duː/", "meaning": "v. 做（does/did）"},
+            {"word": "go", "phonetic": "/ɡəʊ/", "meaning": "v. 去；走（went/gone）"},
+            {"word": "come", "phonetic": "/kʌm/", "meaning": "v. 来（came）"},
+            {"word": "get", "phonetic": "/ɡet/", "meaning": "v. 得到；变得"},
+            {"word": "make", "phonetic": "/meɪk/", "meaning": "v. 制作；使"},
+            {"word": "take", "phonetic": "/teɪk/", "meaning": "v. 拿；带；花费"},
+            {"word": "give", "phonetic": "/ɡɪv/", "meaning": "v. 给"},
+            {"word": "put", "phonetic": "/pʊt/", "meaning": "v. 放"},
+            {"word": "look", "phonetic": "/lʊk/", "meaning": "v. 看；看起来"},
+            {"word": "see", "phonetic": "/siː/", "meaning": "v. 看见；明白"},
+            {"word": "hear", "phonetic": "/hɪr/", "meaning": "v. 听见"},
+            {"word": "feel", "phonetic": "/fiːl/", "meaning": "v. 感觉；摸"},
+            {"word": "think", "phonetic": "/θɪŋk/", "meaning": "v. 想；认为"},
+            {"word": "know", "phonetic": "/nəʊ/", "meaning": "v. 知道"},
+            {"word": "find", "phonetic": "/faɪnd/", "meaning": "v. 找到；发现"},
+            {"word": "tell", "phonetic": "/tel/", "meaning": "v. 告诉；讲述"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "categories": [
+        {
+          "name": "常用动词（二）",
+          "words": [
+            {"word": "ask", "phonetic": "/æsk/", "meaning": "v. 问；请求"},
+            {"word": "help", "phonetic": "/help/", "meaning": "v./n. 帮助"},
+            {"word": "need", "phonetic": "/niːd/", "meaning": "v./n. 需要"},
+            {"word": "want", "phonetic": "/wɒnt/", "meaning": "v. 想要"},
+            {"word": "like", "phonetic": "/laɪk/", "meaning": "v. 喜欢 prep. 像"},
+            {"word": "love", "phonetic": "/lʌv/", "meaning": "v./n. 爱；热爱"},
+            {"word": "hate", "phonetic": "/heɪt/", "meaning": "v. 讨厌；恨"},
+            {"word": "hope", "phonetic": "/həʊp/", "meaning": "v./n. 希望"},
+            {"word": "wish", "phonetic": "/wɪʃ/", "meaning": "v./n. 希望；祝愿"},
+            {"word": "try", "phonetic": "/traɪ/", "meaning": "v./n. 尝试；努力"},
+            {"word": "use", "phonetic": "/juːz/", "meaning": "v. 使用"},
+            {"word": "keep", "phonetic": "/kiːp/", "meaning": "v. 保持；保留"},
+            {"word": "leave", "phonetic": "/liːv/", "meaning": "v. 离开；留下"},
+            {"word": "bring", "phonetic": "/brɪŋ/", "meaning": "v. 带来"},
+            {"word": "send", "phonetic": "/send/", "meaning": "v. 发送；寄"},
+            {"word": "show", "phonetic": "/ʃəʊ/", "meaning": "v. 展示；表明 n. 表演"},
+            {"word": "turn", "phonetic": "/tɜːrn/", "meaning": "v. 转动；变成 n. 轮流"},
+            {"word": "open", "phonetic": "/ˈəʊpən/", "meaning": "v. 打开 adj. 开着的"},
+            {"word": "close", "phonetic": "/kləʊz/", "meaning": "v. 关闭 adj. 近的"},
+            {"word": "start", "phonetic": "/stɑːrt/", "meaning": "v./n. 开始"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "categories": [
+        {
+          "name": "常用形容词与副词",
+          "words": [
+            {"word": "good", "phonetic": "/ɡʊd/", "meaning": "adj. 好的"},
+            {"word": "bad", "phonetic": "/bæd/", "meaning": "adj. 坏的"},
+            {"word": "new", "phonetic": "/njuː/", "meaning": "adj. 新的"},
+            {"word": "old", "phonetic": "/əʊld/", "meaning": "adj. 旧的；老的"},
+            {"word": "big", "phonetic": "/bɪɡ/", "meaning": "adj. 大的"},
+            {"word": "small", "phonetic": "/smɔːl/", "meaning": "adj. 小的"},
+            {"word": "long", "phonetic": "/lɒŋ/", "meaning": "adj. 长的"},
+            {"word": "short", "phonetic": "/ʃɔːrt/", "meaning": "adj. 短的；矮的"},
+            {"word": "easy", "phonetic": "/ˈiːzi/", "meaning": "adj. 容易的"},
+            {"word": "hard", "phonetic": "/hɑːrd/", "meaning": "adj. 难的；硬的 adv. 努力地"},
+            {"word": "important", "phonetic": "/ɪmˈpɔːrtnt/", "meaning": "adj. 重要的"},
+            {"word": "different", "phonetic": "/ˈdɪfrənt/", "meaning": "adj. 不同的"},
+            {"word": "same", "phonetic": "/seɪm/", "meaning": "adj. 相同的"},
+            {"word": "beautiful", "phonetic": "/ˈbjuːtɪfl/", "meaning": "adj. 美丽的"},
+            {"word": "terrible", "phonetic": "/ˈterəbl/", "meaning": "adj. 可怕的；糟糕的"},
+            {"word": "high", "phonetic": "/haɪ/", "meaning": "adj./adv. 高的"},
+            {"word": "low", "phonetic": "/ləʊ/", "meaning": "adj./adv. 低的"},
+            {"word": "fast", "phonetic": "/fæst/", "meaning": "adj./adv. 快的"},
+            {"word": "slow", "phonetic": "/sləʊ/", "meaning": "adj./adv. 慢的"},
+            {"word": "early", "phonetic": "/ˈɜːrli/", "meaning": "adj./adv. 早的"},
+            {"word": "late", "phonetic": "/leɪt/", "meaning": "adj./adv. 晚的；迟的"},
+            {"word": "always", "phonetic": "/ˈɔːlweɪz/", "meaning": "adv. 总是"},
+            {"word": "often", "phonetic": "/ˈɒfn/", "meaning": "adv. 经常"},
+            {"word": "sometimes", "phonetic": "/ˈsʌmtaɪmz/", "meaning": "adv. 有时"},
+            {"word": "never", "phonetic": "/ˈnevər/", "meaning": "adv. 从不"},
+            {"word": "really", "phonetic": "/ˈriːəli/", "meaning": "adv. 真正地；很"},
+            {"word": "well", "phonetic": "/wel/", "meaning": "adv. 好地 adj. 健康的"}
+          ]
+        }
+      ]
+    }
+  ]
+}
