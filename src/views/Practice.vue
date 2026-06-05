@@ -41,6 +41,14 @@
         <div :class="['feedback-msg', isLastCorrect ? 'correct' : 'wrong']">
           {{ isLastCorrect ? '✅ 正确！' : '❌ 正确答案：' + getAnswerText() }}
         </div>
+        <van-button
+          class="next-btn"
+          type="primary"
+          round
+          @click="nextQuestion"
+        >
+          {{ isLastQuestion ? '查看结果' : '下一题 ▶' }}
+        </van-button>
       </div>
     </div>
 
@@ -61,7 +69,7 @@
       <van-button
         v-if="!passed"
         style="margin-top:10px"
-        type="default"
+        type="warning"
         block
         round
         size="large"
@@ -168,17 +176,19 @@ function selectOption(idx) {
   }
 
   maxCombo.value = Math.max(maxCombo.value, combo.value)
-
-  setTimeout(() => {
-    if (currentIndex.value < questions.value.length - 1) {
-      currentIndex.value++
-      answered.value = false
-      selectedIndex.value = -1
-    } else {
-      finished.value = true
-    }
-  }, 1200)
 }
+
+function nextQuestion() {
+  if (currentIndex.value < questions.value.length - 1) {
+    currentIndex.value++
+    answered.value = false
+    selectedIndex.value = -1
+  } else {
+    finished.value = true
+  }
+}
+
+const isLastQuestion = computed(() => currentIndex.value === questions.value.length - 1)
 
 function getAnswerText() {
   if (!currentQuestion.value) return ''
@@ -323,6 +333,23 @@ function getAnswerText() {
   padding: 10px;
   border-radius: 10px;
   font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.next-btn {
+  width: 140px !important;
+  height: 42px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 20px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 8px auto 0 !important;
+  background: #10B981 !important;
+  color: #fff !important;
+  border: none !important;
 }
 
 .feedback-msg.correct {

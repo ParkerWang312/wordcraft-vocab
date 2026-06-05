@@ -4,7 +4,6 @@
     <div class="header">
       <div class="header-top">
         <h1 class="title">WordCraft 词匠</h1>
-        <van-button size="small" :icon="theme.isDark ? 'sun-o' : 'moon-o'" round @click="theme.toggle" />
       </div>
       <p class="subtitle">28天词汇记忆训练营</p>
     </div>

@@ -34,12 +34,14 @@
         <p>已标记 {{ knownCount }} / {{ words.length }} 个单词为认识</p>
       </div>
 
-      <van-button type="primary" block round size="large" @click="goPractice">
-        开始练习
-      </van-button>
-      <van-button style="margin-top:10px" type="default" block round size="large" @click="$router.push('/')">
-        返回首页
-      </van-button>
+      <div class="done-actions">
+        <van-button class="btn-practice" type="success" round @click="goPractice">
+          开始练习
+        </van-button>
+        <van-button class="btn-home" type="default" round @click="$router.push('/')">
+          返回首页
+        </van-button>
+      </div>
     </div>
   </div>
 </template>
@@ -76,7 +78,7 @@ function swipeWord(known) {
   const id = generateWordId(currentWord.value)
   store.markWord(id, known)
 
-  if (knownCount.value < words.value.length) {
+  if (known) {
     knownCount.value++
   }
 
@@ -99,7 +101,18 @@ function goPractice() {
   router.push(`/practice/${dayNum.value}`)
 }
 
-// 如果该天已经完成，直接跳到练习
+// 自动播放发音
+watch(currentWord, (word) => {
+  if (word && 'speechSynthesis' in window) {
+    setTimeout(() => {
+      const utterance = new SpeechSynthesisUtterance(word.word)
+      utterance.lang = 'en-US'
+      utterance.rate = 0.8
+      speechSynthesis.speak(utterance)
+    }, 300)
+  }
+})
+
 const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.value))
 </script>
 
@@ -139,5 +152,30 @@ const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.va
 .complete-msg p {
   font-size: 14px;
   color: var(--text-secondary);
+}
+
+.done-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-practice, .btn-home {
+  width: 120px !important;
+  height: 42px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 20px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #fff !important;
+  border: none !important;
+  background: #10B981 !important;
+}
+
+.btn-home {
+  background: #6B7280 !important;
 }
 </style>

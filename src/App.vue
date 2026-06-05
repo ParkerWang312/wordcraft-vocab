@@ -1,5 +1,9 @@
 <template>
   <div :class="['app-container', { dark: theme.isDark }]">
+    <!-- 主题切换浮钮 -->
+    <div class="theme-toggle" @click="theme.toggle">
+      <span class="theme-icon">{{ theme.isDark ? '☀️' : '🌙' }}</span>
+    </div>
     <router-view />
     <van-tabbar route v-if="showTabbar" :class="{ dark: theme.isDark }">
       <van-tabbar-item to="/" icon="home-o" replace>首页</van-tabbar-item>
@@ -66,6 +70,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.van-button {
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+}
+
+.van-button--large {
+  height: 46px !important;
+  font-size: 16px !important;
+}
+
 .app-container {
   min-height: 100vh;
   padding-bottom: 55px;
@@ -86,5 +100,32 @@ body {
   padding: 16px;
   max-width: 480px;
   margin: 0 auto;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.theme-toggle:active {
+  transform: scale(0.9);
+}
+
+.theme-icon {
+  font-size: 18px;
+  line-height: 1;
 }
 </style>

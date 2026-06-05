@@ -64,7 +64,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
 import ProgressBar from '../components/ProgressBar.vue'
@@ -99,6 +99,18 @@ function toggleStar() {
   if (!word) return
   store.toggleWordBook(generateWordId(word))
 }
+
+// 自动播放发音
+watch(currentReviewWord, (word) => {
+  if (word && 'speechSynthesis' in window) {
+    setTimeout(() => {
+      const utterance = new SpeechSynthesisUtterance(word.word)
+      utterance.lang = 'en-US'
+      utterance.rate = 0.8
+      speechSynthesis.speak(utterance)
+    }, 300)
+  }
+})
 </script>
 
 <style scoped>

@@ -18,11 +18,11 @@
         :type="isStarred ? 'warning' : 'default'"
         @click="onStar"
       />
-      <van-button v-if="showKnown" round size="small" type="danger" @click="$emit('unknown')">
-        👎 不认识
+      <van-button v-if="showKnown" class="btn-unknown" round size="large" type="warning" @click="$emit('unknown')">
+        😕 不认识
       </van-button>
-      <van-button v-if="showKnown" round size="small" type="primary" @click="$emit('known')">
-        👍 认识
+      <van-button v-if="showKnown" class="btn-known" round size="large" type="success" @click="$emit('known')">
+        😊 认识
       </van-button>
     </div>
   </div>
@@ -146,5 +146,40 @@ function onStar() {
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.btn-unknown, .btn-known {
+  width: 120px;
+  padding: 0 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  border-radius: 20px !important;
+  height: 42px !important;
+  line-height: 42px !important;
+  text-align: center !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.btn-unknown {
+  background: #F59E0B !important;
+}
+
+.btn-known {
+  background: #10B981 !important;
+}
+</style>
+
+<style>
+.btn-unknown {
+  background: #F59E0B !important;
+}
+
+.btn-known {
+  background: #10B981 !important;
 }
 </style>
