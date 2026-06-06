@@ -7,7 +7,10 @@
       @click-left="$router.back()"
     >
       <template #right>
-        <van-icon name="play-circle-o" size="24" @click="goPractice" />
+        <div class="nav-practice-btn" v-if="allDone || dayCompleted" @click="goPractice">
+          <van-icon name="play-circle-o" size="20" />
+          <span>练习</span>
+        </div>
       </template>
     </van-nav-bar>
 
@@ -17,7 +20,7 @@
 
     <!-- 单词卡片 -->
     <WordCard
-      v-if="currentWord"
+      v-if="currentWord && !allDone"
       :word="currentWord"
       :is-starred="isCurrentStarred"
       :show-known="true"
@@ -127,6 +130,21 @@ const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.va
 <style scoped>
 .learn-page {
   padding-bottom: 80px;
+}
+
+.nav-practice-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-practice-btn:active {
+  opacity: 0.7;
 }
 
 .day-title {

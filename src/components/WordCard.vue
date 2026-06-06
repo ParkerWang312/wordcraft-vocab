@@ -27,10 +27,10 @@
       >
         {{ isStarred ? '⭐' : '☆' }}
       </div>
-      <van-button v-if="showKnown" class="btn-unknown" round size="large" type="warning" @click="$emit('unknown')">
+      <van-button v-if="showKnown" class="btn-unknown" :class="{ disabled: !isFlipped }" round size="large" type="warning" @click="handleUnknown">
         😕 不认识
       </van-button>
-      <van-button v-if="showKnown" class="btn-known" round size="large" type="success" @click="$emit('known')">
+      <van-button v-if="showKnown" class="btn-known" :class="{ disabled: !isFlipped }" round size="large" type="success" @click="handleKnown">
         😊 认识
       </van-button>
     </div>
@@ -38,7 +38,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { showToast } from 'vant'
 
 const props = defineProps({
   word: { type: Object, required: true },
@@ -51,6 +52,11 @@ const props = defineProps({
 const emit = defineEmits(['known', 'unknown', 'star'])
 const isFlipped = ref(false)
 
+// 切换单词时重置翻转状态
+watch(() => props.word, () => {
+  isFlipped.value = false
+})
+
 function flip() {
   isFlipped.value = !isFlipped.value
 }
@@ -62,6 +68,22 @@ function speak() {
     utterance.rate = 0.8
     speechSynthesis.speak(utterance)
   }
+}
+
+function handleKnown() {
+  if (!isFlipped.value) {
+    showToast('请先翻转卡片查看释义')
+    return
+  }
+  emit('known')
+}
+
+function handleUnknown() {
+  if (!isFlipped.value) {
+    showToast('请先翻转卡片查看释义')
+    return
+  }
+  emit('unknown')
 }
 
 function onStar() {
@@ -249,6 +271,12 @@ function onStar() {
 
 .btn-known {
   background: #10B981 !important;
+}
+
+.btn-unknown.disabled,
+.btn-known.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 </style>
 
