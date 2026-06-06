@@ -3,7 +3,10 @@
     <van-nav-bar title="复习模式" :fixed="false" />
 
     <div class="review-header">
-      <p class="review-subtitle">今日待复习: {{ store.dueReviewCount }} 词</p>
+      <p class="review-subtitle">
+        待复习: {{ store.dueReviewCount }} 词
+        <span v-if="store.wrongCount > 0" class="wrong-badge">· 🚩 错题 {{ store.wrongCount }}</span>
+      </p>
       <ProgressBar
         :current="reviewedCount"
         :total="reviewWords.length"
@@ -16,7 +19,7 @@
       <span class="empty-emoji">🎉</span>
       <h3>暂无待复习单词</h3>
       <p>继续学习新单词吧！</p>
-      <van-button type="primary" round size="large" @click="$router.push('/')">
+      <van-button type="primary" round size="large" @click="goBack">
         去学习
       </van-button>
     </div>
@@ -25,6 +28,7 @@
     <div class="review-card-wrapper" v-if="currentReviewWord">
       <div class="word-info">
         <span class="day-badge">Day {{ currentReviewWord.day }}</span>
+        <span class="wrong-tag" v-if="currentReviewWord.isWrong">🚩 错题</span>
         <span class="review-count">第 {{ (currentReviewWord.state?.reviewCount || 0) + 1 }} 次复习</span>
       </div>
 
@@ -56,8 +60,8 @@
         <h3>复习完成！</h3>
         <p>今天复习了 {{ reviewedCount }} 个单词</p>
       </div>
-      <van-button type="primary" block round size="large" @click="$router.push('/')">
-        返回首页
+      <van-button type="primary" block round size="large" @click="goBack">
+        {{ redirectTo ? '开始学习' : '返回首页' }}
       </van-button>
     </div>
   </div>
@@ -65,13 +69,36 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 
+const router = useRouter()
+const route = useRoute()
 const store = useLearningStore()
 
-const reviewWords = computed(() => store.dueReviewWords)
+const redirectTo = computed(() => route.query.redirectTo || '')
+
+// 合并复习列表：错题优先，然后普通待复习
+const reviewWords = computed(() => {
+  const wrongWords = store.wrongWordsList
+    .filter(ww => {
+      // 排除已经在 dueReview 中的
+      const wid = generateWordId(ww)
+      const inDue = store.dueReviewWords.find(d => d.wordId === wid)
+      return !inDue
+    })
+    .map(ww => {
+      const wid = generateWordId(ww)
+      return { ...ww, wordId: wid, state: store.state.wordStates[wid] || {}, isWrong: true }
+    })
+
+  const due = store.dueReviewWords.map(w => ({ ...w, isWrong: false }))
+
+  return [...wrongWords, ...due]
+})
+
 const reviewedCount = ref(0)
 const currentWordIndex = ref(0)
 const finished = ref(false)
@@ -85,6 +112,10 @@ function rateQuality(quality) {
   const word = currentReviewWord.value
   if (!word) return
   store.reviewWord(generateWordId(word), quality)
+  // 答对时清除错题
+  if (quality >= 1 && word.isWrong) {
+    store.removeWrongWord(generateWordId(word))
+  }
   reviewedCount.value++
 
   if (currentWordIndex.value < reviewWords.value.length - 1) {
@@ -98,6 +129,14 @@ function toggleStar() {
   const word = currentReviewWord.value
   if (!word) return
   store.toggleWordBook(generateWordId(word))
+}
+
+function goBack() {
+  if (redirectTo.value) {
+    router.push(redirectTo.value)
+  } else {
+    router.push('/')
+  }
 }
 
 // 自动播放发音
@@ -116,6 +155,8 @@ watch(currentReviewWord, (word) => {
 <style scoped>
 .review-page {
   padding-bottom: 80px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .review-header {
@@ -127,6 +168,11 @@ watch(currentReviewWord, (word) => {
   color: var(--text-secondary);
   text-align: center;
   margin-bottom: 12px;
+}
+
+.wrong-badge {
+  color: var(--danger);
+  font-weight: 600;
 }
 
 .empty-state {
@@ -161,6 +207,7 @@ watch(currentReviewWord, (word) => {
   gap: 12px;
   margin-bottom: 10px;
   font-size: 13px;
+  align-items: center;
 }
 
 .day-badge {
@@ -169,6 +216,12 @@ watch(currentReviewWord, (word) => {
   padding: 2px 10px;
   border-radius: 10px;
   font-weight: 600;
+}
+
+.wrong-tag {
+  color: var(--danger);
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .review-count {

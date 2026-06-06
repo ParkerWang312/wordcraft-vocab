@@ -235,6 +235,14 @@ function selectOption(idx) {
     if (combo.value >= 3) score.value += 5
   } else {
     combo.value = 0
+    // 答错：记入错题本
+    const q = currentQuestion.value
+    if (q && q.audioWord) {
+      const wrongWord = store.allWords.find(w => w.word === q.audioWord && w.day === dayNum.value)
+      if (wrongWord) {
+        store.addWrongWord(generateWordId(wrongWord))
+      }
+    }
   }
 
   maxCombo.value = Math.max(maxCombo.value, combo.value)

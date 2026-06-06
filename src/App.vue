@@ -1,9 +1,27 @@
 <template>
   <div :class="['app-container', { dark: theme.isDark }]">
-    <!-- 主题切换浮钮 -->
-    <div class="theme-toggle" @click="theme.toggle">
-      <span class="theme-icon">{{ theme.isDark ? '☀️' : '🌙' }}</span>
+    <!-- 主题切换浮钮（仅首页显示） -->
+    <div class="top-buttons" v-if="showTopButtons">
+      <div class="theme-toggle" @click="theme.toggle">
+        <span class="theme-icon">{{ theme.isDark ? '☀️' : '🌙' }}</span>
+      </div>
+      <div class="theme-toggle" @click="showSettings = true">
+        <span class="theme-icon">⚙️</span>
+      </div>
     </div>
+
+    <!-- 设置弹窗 -->
+    <van-action-sheet v-model:show="showSettings" title="设置">
+      <div class="settings-content">
+        <van-cell-group title="通用">
+          <van-cell title="重置学习进度" center>
+            <template #right-icon>
+              <van-button type="danger" size="small" round @click.stop="confirmReset">重置</van-button>
+            </template>
+          </van-cell>
+        </van-cell-group>
+      </div>
+    </van-action-sheet>
     <router-view />
     <van-tabbar route v-if="showTabbar" :class="{ dark: theme.isDark }">
       <van-tabbar-item to="/" icon="home-o" replace>首页</van-tabbar-item>
@@ -14,18 +32,36 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useLearningStore } from './stores/learning.js'
 import { useThemeStore } from './stores/theme.js'
+import { showDialog } from 'vant'
 
 const store = useLearningStore()
 const theme = useThemeStore()
 const route = useRoute()
+const showSettings = ref(false)
 
 const showTabbar = computed(() => {
   return ['/', '/review', '/wordbook'].includes(route.path)
 })
+
+const showTopButtons = computed(() => route.path === '/')
+
+function confirmReset() {
+  showSettings.value = false
+  showDialog({
+    title: '⚠️ 重置进度',
+    message: '确认清除所有学习记录、复习进度和错题本？此操作不可撤销。',
+    confirmButtonText: '确认重置',
+    confirmButtonColor: '#EF4444',
+    cancelButtonText: '取消'
+  }).then(() => {
+    localStorage.removeItem('wordcraft_vocab')
+    window.location.reload()
+  })
+}
 </script>
 
 <style>
@@ -102,11 +138,16 @@ body {
   margin: 0 auto;
 }
 
-.theme-toggle {
+.top-buttons {
   position: fixed;
   top: 12px;
   right: 12px;
   z-index: 999;
+  display: flex;
+  gap: 8px;
+}
+
+.theme-toggle {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -127,5 +168,9 @@ body {
 .theme-icon {
   font-size: 18px;
   line-height: 1;
+}
+
+.settings-content {
+  padding: 8px 0 16px;
 }
 </style>

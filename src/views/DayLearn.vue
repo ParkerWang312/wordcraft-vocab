@@ -61,7 +61,10 @@ const store = useLearningStore()
 const dayNum = computed(() => Number(props.day))
 const dayTitle = computed(() => store.getDayTitle(dayNum.value))
 const words = computed(() => store.getDayWords(dayNum.value))
-const currentIndex = ref(0)
+
+// 从上次进度恢复
+const savedIndex = store.getDayProgress(dayNum.value)
+const currentIndex = ref(Math.min(savedIndex, Math.max(0, words.value.length - 1)))
 const allDone = ref(false)
 const knownCount = ref(0)
 
@@ -82,12 +85,17 @@ function swipeWord(known) {
     knownCount.value++
   }
 
+  // 保存进度到下一个单词
+  const nextIndex = currentIndex.value + 1
+  store.saveDayProgress(dayNum.value, nextIndex)
+
   if (currentIndex.value < words.value.length - 1) {
     currentIndex.value++
   } else {
-    // 全部学完
     allDone.value = true
     store.completeDay(dayNum.value)
+    // 完成后清除该天进度
+    store.saveDayProgress(dayNum.value, 0)
   }
 }
 

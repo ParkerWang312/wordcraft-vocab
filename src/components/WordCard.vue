@@ -13,20 +13,20 @@
       </div>
       <div class="card-back">
         <div class="card-inner">
+          <div class="back-word">{{ word.word }}</div>
           <div class="pos-tag" v-if="word.pos">{{ word.pos }}</div>
           <div class="meaning-text">{{ word.def || word.meaning }}</div>
         </div>
       </div>
     </div>
     <div class="card-actions" v-if="showActions">
-      <van-button
+      <div
         v-if="showStar"
-        :icon="isStarred ? 'star' : 'star-o'"
-        round
-        size="small"
-        :type="isStarred ? 'warning' : 'default'"
-        @click="onStar"
-      />
+        class="btn-star"
+        @click.stop="onStar"
+      >
+        {{ isStarred ? '⭐' : '☆' }}
+      </div>
       <van-button v-if="showKnown" class="btn-unknown" round size="large" type="warning" @click="$emit('unknown')">
         😕 不认识
       </van-button>
@@ -80,7 +80,7 @@ function onStar() {
 
 .word-card {
   width: 100%;
-  max-width: 340px;
+  max-width: 440px;
   height: 240px;
   position: relative;
   cursor: pointer;
@@ -183,6 +183,14 @@ function onStar() {
   margin-bottom: 14px;
 }
 
+.back-word {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
 .meaning-text {
   font-size: 22px;
   color: #fff;
@@ -196,7 +204,7 @@ function onStar() {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 340px;
+  max-width: 440px;
 }
 
 .btn-unknown, .btn-known {
@@ -211,6 +219,26 @@ function onStar() {
   text-align: center !important;
   color: #fff !important;
   border: none !important;
+}
+
+.btn-star {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: var(--bg-primary);
+  border: 2px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-star:active {
+  transform: scale(0.9);
 }
 
 .btn-unknown {

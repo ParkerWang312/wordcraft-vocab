@@ -4,6 +4,8 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import 'vant/lib/index.css'
 
+import { Button, NavBar, Tabbar, TabbarItem, Icon, ActionSheet, Cell, CellGroup, Overlay, Dialog, SwipeCell, Toast, Progress as VanProgress } from 'vant'
+
 import Home from './views/Home.vue'
 import DayLearn from './views/DayLearn.vue'
 import Practice from './views/Practice.vue'
@@ -24,6 +26,19 @@ const router = createRouter({
 })
 
 const app = createApp(App)
+app.use(Button)
+app.use(NavBar)
+app.use(Tabbar)
+app.use(TabbarItem)
+app.use(Icon)
+app.use(ActionSheet)
+app.use(Cell)
+app.use(CellGroup)
+app.use(Overlay)
+app.use(Dialog)
+app.use(SwipeCell)
+app.use(Toast)
+app.use(VanProgress)
 app.use(router)
 app.use(createPinia())
 app.mount('#app')

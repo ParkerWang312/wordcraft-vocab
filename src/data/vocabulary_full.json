@@ -1,0 +1,231 @@
+{
+  "title": "28天词汇分类速记",
+  "totalDays": 28,
+  "days": [
+    {
+      "day": 1,
+      "categories": [
+        {
+          "name": "个人情况 - 个人基本信息",
+          "words": [
+            {"word": "birth", "phonetic": "/bɜːrθ/", "meaning": "n. 出生"},
+            {"word": "born", "phonetic": "/bɔːrn/", "meaning": "v. 出生的"},
+            {"word": "birthday", "phonetic": "/ˈbɜːrθdeɪ/", "meaning": "n. 生日"},
+            {"word": "name", "phonetic": "/neɪm/", "meaning": "n. 名字"},
+            {"word": "age", "phonetic": "/eɪdʒ/", "meaning": "n. 年龄"},
+            {"word": "address", "phonetic": "/əˈdres/", "meaning": "n. 地址"},
+            {"word": "background", "phonetic": "/ˈbækɡraʊnd/", "meaning": "n. 背景"},
+            {"word": "position", "phonetic": "/pəˈzɪʃn/", "meaning": "n. 位置"},
+            {"word": "place", "phonetic": "/pleɪs/", "meaning": "n. 地点"}
+          ]
+        },
+        {
+          "name": "个人情况 - 体貌描述",
+          "words": [
+            {"word": "beautiful", "phonetic": "/ˈbjuːtɪfl/", "meaning": "adj. 美的；美丽的"},
+            {"word": "pretty", "phonetic": "/ˈprɪti/", "meaning": "adj. 漂亮的"},
+            {"word": "nice", "phonetic": "/naɪs/", "meaning": "adj. 好的；令人愉快的"},
+            {"word": "handsome", "phonetic": "/ˈhænsəm/", "meaning": "adj. 帅的"},
+            {"word": "high", "phonetic": "/haɪ/", "meaning": "adj. 高的"},
+            {"word": "tall", "phonetic": "/tɔːl/", "meaning": "adj. 高的"},
+            {"word": "young", "phonetic": "/jʌŋ/", "meaning": "adj. 年轻的；幼小的"},
+            {"word": "fat", "phonetic": "/fæt/", "meaning": "adj. 肥的；胖的"},
+            {"word": "height", "phonetic": "/haɪt/", "meaning": "n. 高度"},
+            {"word": "short", "phonetic": "/ʃɔːrt/", "meaning": "adj. 矮的；短的"},
+            {"word": "ugly", "phonetic": "/ˈʌɡli/", "meaning": "adj. 难看的；丑陋的"},
+            {"word": "weak", "phonetic": "/wiːk/", "meaning": "adj. 差的；弱的"},
+            {"word": "strong", "phonetic": "/strɔːŋ/", "meaning": "adj. 强烈的；强壮的；强大的"}
+          ]
+        },
+        {
+          "name": "个人情况 - 性格、处世",
+          "words": [
+            {"word": "lazy", "phonetic": "/ˈleɪzi/", "meaning": "adj. 懒惰的"},
+            {"word": "stupid", "phonetic": "/ˈstuːpɪd/", "meaning": "adj. 笨的；蠢的"},
+            {"word": "hard", "phonetic": "/hɑːrd/", "meaning": "adv. 努力地"},
+            {"word": "patient", "phonetic": "/ˈpeɪʃnt/", "meaning": "adj. 耐心的"},
+            {"word": "careless", "phonetic": "/ˈkerləs/", "meaning": "adj. 粗心的"},
+            {"word": "careful", "phonetic": "/ˈkerfl/", "meaning": "adj. 小心的；仔细的；谨慎的"},
+            {"word": "polite", "phonetic": "/pəˈlaɪt/", "meaning": "adj. 礼貌的"},
+            {"word": "serious", "phonetic": "/ˈsɪriəs/", "meaning": "adj. 严肃的；认真的"},
+            {"word": "strict", "phonetic": "/strɪkt/", "meaning": "adj. 严格的；严厉的"},
+            {"word": "humorous", "phonetic": "/ˈhjuːmərəs/", "meaning": "adj. 幽默的"},
+            {"word": "useful", "phonetic": "/ˈjuːsfl/", "meaning": "adj. 有用的；有益的"},
+            {"word": "friendly", "phonetic": "/ˈfrendli/", "meaning": "adj. 友好的"},
+            {"word": "sweet", "phonetic": "/swiːt/", "meaning": "adj. 可爱的；亲切的"},
+            {"word": "shy", "phonetic": "/ʃaɪ/", "meaning": "adj. 害羞的"},
+            {"word": "strong", "phonetic": "/strɔːŋ/", "meaning": "adj. 强壮的；坚固的；强烈的；坚强的"},
+            {"word": "active", "phonetic": "/ˈæktɪv/", "meaning": "adj. 积极的"},
+            {"word": "brave", "phonetic": "/breɪv/", "meaning": "adj. 勇敢的"},
+            {"word": "honest", "phonetic": "/ˈɑːnɪst/", "meaning": "adj. 诚实的"}
+          ]
+        },
+        {
+          "name": "个人情况 - 工作与职业",
+          "words": [
+            {"word": "job", "phonetic": "/dʒɒb/", "meaning": "n. 工作"},
+            {"word": "dream", "phonetic": "/driːm/", "meaning": "n. 梦想"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "categories": [
+        {
+          "name": "政府部门",
+          "words": [
+            {"word": "government", "phonetic": "/ˈɡʌvərnmənt/", "meaning": "n. 政府"},
+            {"word": "district", "phonetic": "/ˈdɪstrɪkt/", "meaning": "n. 区域；地方；行政区"},
+            {"word": "board", "phonetic": "/bɔːrd/", "meaning": "n. 委员会；（政府的）部"},
+            {"word": "province", "phonetic": "/ˈprɑːvɪns/", "meaning": "n. 省份"},
+            {"word": "notice", "phonetic": "/ˈnəʊtɪs/", "meaning": "n. 布告；通告"},
+            {"word": "officer", "phonetic": "/ˈɒfɪsər/", "meaning": "n. 公务员；官员"},
+            {"word": "ruler", "phonetic": "/ˈruːlər/", "meaning": "n. 统治者"},
+            {"word": "president", "phonetic": "/ˈprezɪdənt/", "meaning": "n. 总统；主席"},
+            {"word": "king", "phonetic": "/kɪŋ/", "meaning": "n. 国王"},
+            {"word": "queen", "phonetic": "/kwiːn/", "meaning": "n. 王后；女王"},
+            {"word": "secretary", "phonetic": "/ˈsekrəteri/", "meaning": "n. 秘书"},
+            {"word": "speaker", "phonetic": "/ˈspiːkər/", "meaning": "n. 演讲人；演说家"}
+          ]
+        },
+        {
+          "name": "教育、医疗",
+          "words": [
+            {"word": "education", "phonetic": "/ˌedʒuˈkeɪʃn/", "meaning": "n. 教育；培养"},
+            {"word": "medical", "phonetic": "/ˈmedɪkl/", "meaning": "adj. 医学的；医疗的"},
+            {"word": "operation", "phonetic": "/ˌɒpəˈreɪʃn/", "meaning": "n. 手术"},
+            {"word": "medicine", "phonetic": "/ˈmedsn/", "meaning": "n. 药"},
+            {"word": "doctor", "phonetic": "/ˈdɒktər/", "meaning": "n. 医生"},
+            {"word": "nurse", "phonetic": "/nɜːrs/", "meaning": "n. 护士"},
+            {"word": "dentist", "phonetic": "/ˈdentɪst/", "meaning": "n. 牙医"},
+            {"word": "patient", "phonetic": "/ˈpeɪʃnt/", "meaning": "n. 病人"}
+          ]
+        },
+        {
+          "name": "农、工、商",
+          "words": [
+            {"word": "countryside", "phonetic": "/ˈkʌntrisaɪd/", "meaning": "n. 农村地区；乡下"},
+            {"word": "local", "phonetic": "/ˈləʊkl/", "meaning": "adj. 地方的；当地的"},
+            {"word": "village", "phonetic": "/ˈvɪlɪdʒ/", "meaning": "n. 村庄；乡村"},
+            {"word": "farm", "phonetic": "/fɑːrm/", "meaning": "n. 农场；农庄"},
+            {"word": "farmer", "phonetic": "/ˈfɑːrmər/", "meaning": "n. 农民"},
+            {"word": "field", "phonetic": "/fiːld/", "meaning": "n. 农田；牧场；场地"},
+            {"word": "business", "phonetic": "/ˈbɪznəs/", "meaning": "n. 生意；交易；事业"},
+            {"word": "boss", "phonetic": "/bɒs/", "meaning": "n. 老板；雇主"},
+            {"word": "industry", "phonetic": "/ˈɪndəstri/", "meaning": "n. 工业"},
+            {"word": "company", "phonetic": "/ˈkʌmpəni/", "meaning": "n. 公司"},
+            {"word": "shop", "phonetic": "/ʃɒp/", "meaning": "n. 商店"},
+            {"word": "market", "phonetic": "/ˈmɑːrkɪt/", "meaning": "n. 市场；集市"},
+            {"word": "supermarket", "phonetic": "/ˈsuːpərmɑːrkɪt/", "meaning": "n. 超级市场"},
+            {"word": "factory", "phonetic": "/ˈfæktri/", "meaning": "n. 工厂"},
+            {"word": "set", "phonetic": "/set/", "meaning": "n. 装备；设备"},
+            {"word": "customer", "phonetic": "/ˈkʌstəmər/", "meaning": "n. 顾客"},
+            {"word": "manage", "phonetic": "/ˈmænɪdʒ/", "meaning": "v. 设法做到；管理"},
+            {"word": "produce", "phonetic": "/prəˈduːs/", "meaning": "vt. 生产；制造"},
+            {"word": "production", "phonetic": "/prəˈdʌkʃn/", "meaning": "n. 产物；产品"},
+            {"word": "instruction", "phonetic": "/ɪnˈstrʌkʃn/", "meaning": "n. 说明；须知"}
+          ]
+        },
+        {
+          "name": "军事、政法",
+          "words": [
+            {"word": "officer", "phonetic": "/ˈɒfɪsər/", "meaning": "n. 军官"},
+            {"word": "army", "phonetic": "/ˈɑːrmi/", "meaning": "n. 军队"},
+            {"word": "enemy", "phonetic": "/ˈenəmi/", "meaning": "n. 敌人"},
+            {"word": "gun", "phonetic": "/ɡʌn/", "meaning": "n. 枪"},
+            {"word": "police", "phonetic": "/pəˈliːs/", "meaning": "n. 警察；警务人员"},
+            {"word": "policeman", "phonetic": "/pəˈliːsmən/", "meaning": "n. 警察"},
+            {"word": "policewoman", "phonetic": "/pəˈliːswʊmən/", "meaning": "n. 女警察"},
+            {"word": "guard", "phonetic": "/ɡɑːrd/", "meaning": "n. 保卫；警戒"},
+            {"word": "postman", "phonetic": "/ˈpəʊstmən/", "meaning": "n. 邮递员"},
+            {"word": "law", "phonetic": "/lɔː/", "meaning": "n. 法律"},
+            {"word": "right", "phonetic": "/raɪt/", "meaning": "n. 权利"},
+            {"word": "fair", "phonetic": "/fer/", "meaning": "adj. 公平的"},
+            {"word": "kill", "phonetic": "/kɪl/", "meaning": "v. 杀死；弄死"},
+            {"word": "punish", "phonetic": "/ˈpʌnɪʃ/", "meaning": "vt. 惩罚；处罚"},
+            {"word": "warn", "phonetic": "/wɔːrn/", "meaning": "v. 警告；预先通知"},
+            {"word": "break", "phonetic": "/breɪk/", "meaning": "v. 打破；损坏；撕开"},
+            {"word": "fight", "phonetic": "/faɪt/", "meaning": "n. & v. 打架"},
+            {"word": "prison", "phonetic": "/ˈprɪzn/", "meaning": "n. 监狱"},
+            {"word": "prisoner", "phonetic": "/ˈprɪznər/", "meaning": "n. 囚犯"}
+          ]
+        },
+        {
+          "name": "文艺",
+          "words": [
+            {"word": "actor", "phonetic": "/ˈæktər/", "meaning": "n. （男）演员"},
+            {"word": "actress", "phonetic": "/ˈæktrəs/", "meaning": "n. 女演员"},
+            {"word": "player", "phonetic": "/ˈpleɪər/", "meaning": "n. 演奏者"},
+            {"word": "director", "phonetic": "/dəˈrektər/", "meaning": "n. 指导者；导演"}
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "categories": [
+        {
+          "name": "家庭、朋友与周围的人 - 家人与亲友",
+          "words": [
+            {"word": "family", "phonetic": "/ˈfæməli/", "meaning": "n. 家庭；子女"},
+            {"word": "relative", "phonetic": "/ˈrelətɪv/", "meaning": "n. 亲属；亲戚"},
+            {"word": "relationship", "phonetic": "/rɪˈleɪʃnʃɪp/", "meaning": "n. 关系"},
+            {"word": "couple", "phonetic": "/ˈkʌpl/", "meaning": "n. 夫妻"},
+            {"word": "parent", "phonetic": "/ˈperənt/", "meaning": "n. 父母"},
+            {"word": "grandparent", "phonetic": "/ˈɡrænperənt/", "meaning": "n. （外）祖父母"},
+            {"word": "grandpa", "phonetic": "/ˈɡrænpɑː/", "meaning": "n. （外）祖父"},
+            {"word": "grandma", "phonetic": "/ˈɡrænmɑː/", "meaning": "n. （外）祖母"},
+            {"word": "grandson", "phonetic": "/ˈɡrænsʌn/", "meaning": "n. 孙子"},
+            {"word": "granddaughter", "phonetic": "/ˈɡrændɔːtər/", "meaning": "n. （外）孙女"},
+            {"word": "father", "phonetic": "/ˈfɑːðər/", "meaning": "n. 父亲"},
+            {"word": "dad", "phonetic": "/dæd/", "meaning": "n. （口语）爸爸；爹爹"},
+            {"word": "mother", "phonetic": "/ˈmʌðər/", "meaning": "n. 母亲"},
+            {"word": "friendship", "phonetic": "/ˈfrendʃɪp/", "meaning": "n. 友谊"},
+            {"word": "uncle", "phonetic": "/ˈʌŋkl/", "meaning": "n. 叔；伯；舅；姑父；姨父"},
+            {"word": "aunt", "phonetic": "/ænt/", "meaning": "n. 伯母；婶母；姑；婶；姨"},
+            {"word": "brother", "phonetic": "/ˈbrʌðər/", "meaning": "n. 兄；弟"},
+            {"word": "sister", "phonetic": "/ˈsɪstər/", "meaning": "n. 姐；妹"},
+            {"word": "son", "phonetic": "/sʌn/", "meaning": "n. 儿子"},
+            {"word": "daughter", "phonetic": "/ˈdɔːtər/", "meaning": "n. 女儿"},
+            {"word": "cousin", "phonetic": "/ˈkʌzn/", "meaning": "n. 堂（表）兄弟；堂（表）姐妹"},
+            {"word": "wife", "phonetic": "/waɪf/", "meaning": "n. 妻子"},
+            {"word": "husband", "phonetic": "/ˈhʌzbənd/", "meaning": "n. 丈夫"},
+            {"word": "raise", "phonetic": "/reɪz/", "meaning": "vt. 养育"},
+            {"word": "marriage", "phonetic": "/ˈmærɪdʒ/", "meaning": "n. 婚姻"},
+            {"word": "marry", "phonetic": "/ˈmæri/", "meaning": "v. （使）成婚；结婚"},
+            {"word": "friend", "phonetic": "/frend/", "meaning": "n. 朋友"}
+          ]
+        },
+        {
+          "name": "家庭、朋友与周围的人 - 其他人",
+          "words": [
+            {"word": "human", "phonetic": "/ˈhjuːmən/", "meaning": "n. 人类"},
+            {"word": "people", "phonetic": "/ˈpiːpl/", "meaning": "n. 人们；人"},
+            {"word": "person", "phonetic": "/ˈpɜːrsn/", "meaning": "n. （单数）人"},
+            {"word": "gentleman", "phonetic": "/ˈdʒentlmən/", "meaning": "n. 绅士；男士"},
+            {"word": "stranger", "phonetic": "/ˈstreɪndʒər/", "meaning": "n. 陌生人"},
+            {"word": "hero", "phonetic": "/ˈhɪroʊ/", "meaning": "n. 英雄"},
+            {"word": "pioneer", "phonetic": "/ˌpaɪəˈnɪr/", "meaning": "n. 先锋；先驱"},
+            {"word": "classmate", "phonetic": "/ˈklæsmeɪt/", "meaning": "n. 同学"},
+            {"word": "neighbour", "phonetic": "/ˈneɪbər/", "meaning": "n. 邻居；邻人"},
+            {"word": "fisherman", "phonetic": "/ˈfɪʃərmən/", "meaning": "n. 渔民；渔夫"},
+            {"word": "child", "phonetic": "/tʃaɪld/", "meaning": "n. 孩子；儿童"},
+            {"word": "woman", "phonetic": "/ˈwʊmən/", "meaning": "n. 妇女"},
+            {"word": "man", "phonetic": "/mæn/", "meaning": "n. 成年男人；人；人类"},
+            {"word": "girl", "phonetic": "/ɡɜːrl/", "meaning": "n. 女孩"},
+            {"word": "boy", "phonetic": "/bɔɪ/", "meaning": "n. 男孩"},
+            {"word": "kid", "phonetic": "/kɪd/", "meaning": "n. 小孩"},
+            {"word": "baby", "phonetic": "/ˈbeɪbi/", "meaning": "n. 婴儿"},
+            {"word": "elder", "phonetic": "/ˈeldər/", "meaning": "n. 长辈；前辈"},
+            {"word": "lady", "phonetic": "/ˈleɪdi/", "meaning": "n. 女士"},
+            {"word": "Miss", "phonetic": "/mɪs/", "meaning": "n. 小姐；女士"},
+            {"word": "guest", "phonetic": "/ɡest/", "meaning": "n. 客人；宾客"},
+            {"word": "member", "phonetic": "/ˈmembər/", "meaning": "n. 成员；会员"},
+            {"word": "single", "phonetic": "/ˈsɪŋɡl/", "meaning": "adj. 单身的；单一的；单个的"}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,10 @@ import { loadState, saveState, getDefaultState } from '../utils/storage.js'
 import { getDefaultWordState, calculateNextReview, getTodayReviewCount } from '../utils/memoryCurve.js'
 import vocabularyData from '../data/vocabulary.json'
 
+export function getDefaultWrongState() {
+  return {}  // { wordId: { wrongCount, lastWrongAt } }
+}
+
 export const useLearningStore = defineStore('learning', () => {
   const state = ref(loadState() || getDefaultState())
 
@@ -11,7 +15,17 @@ export const useLearningStore = defineStore('learning', () => {
     saveState(state.value)
   }
 
-  // 获取所有单词（扁平化）
+  // 初始化错题本
+  if (!state.value.wrongWords) {
+    state.value.wrongWords = {}
+  }
+
+  // 初始化每日学习进度
+  if (!state.value.dayProgress) {
+    state.value.dayProgress = {}
+  }
+
+  // 所有单词（扁平化）
   const allWords = computed(() => {
     const result = []
     vocabularyData.days.forEach(day => {
@@ -50,7 +64,7 @@ export const useLearningStore = defineStore('learning', () => {
     return state.value.wordStates[wordId]
   }
 
-  // 记录学习（learn时标记认识/不认识）
+  // 记录学习
   function markWord(wordId, known) {
     const ws = initWordState(wordId)
     ws.learnedAt = new Date().toISOString()
@@ -58,14 +72,13 @@ export const useLearningStore = defineStore('learning', () => {
       ws.status = 'known'
       if (ws.reviewCount === 0) {
         const nextDate = new Date()
-        nextDate.setDate(nextDate.getDate() + 1) // 认识的1天后复习
+        nextDate.setDate(nextDate.getDate() + 1)
         nextDate.setHours(0, 0, 0, 0)
         ws.nextReviewAt = nextDate.toISOString()
         ws.interval = 1
       }
     } else {
       ws.status = 'learning'
-      // 不认识的当天就复习（10分钟后）
       const nextDate = new Date(Date.now() + 10 * 60 * 1000)
       ws.nextReviewAt = nextDate.toISOString()
       ws.interval = 0
@@ -77,13 +90,16 @@ export const useLearningStore = defineStore('learning', () => {
 
   // 复习反馈
   function reviewWord(wordId, quality) {
-    // quality: 0=忘记, 1=模糊, 2=记得
     const ws = state.value.wordStates[wordId] || initWordState(wordId)
     const updated = calculateNextReview(ws, quality)
     state.value.wordStates[wordId] = updated
     state.value.stats.totalReviewed++
     if (updated.status === 'mastered') {
       state.value.stats.totalMastered++
+    }
+    // 复习答对（quality>=1）时从错题本减少计数
+    if (quality >= 1 && state.value.wrongWords[wordId]) {
+      state.value.wrongWords[wordId].wrongCount = Math.max(0, state.value.wrongWords[wordId].wrongCount - 1)
     }
     persist()
     return updated
@@ -115,7 +131,37 @@ export const useLearningStore = defineStore('learning', () => {
     state.value.lastStudyDate = today
   }
 
-  // 获取今日待复习单词
+  // === 错题本 ===
+  function addWrongWord(wordId) {
+    if (!state.value.wrongWords[wordId]) {
+      state.value.wrongWords[wordId] = { wrongCount: 0, lastWrongAt: '' }
+    }
+    state.value.wrongWords[wordId].wrongCount++
+    state.value.wrongWords[wordId].lastWrongAt = new Date().toISOString()
+    persist()
+  }
+
+  function removeWrongWord(wordId) {
+    if (state.value.wrongWords[wordId]) {
+      state.value.wrongWords[wordId].wrongCount = 0
+      persist()
+    }
+  }
+
+  const wrongWordsList = computed(() => {
+    return Object.entries(state.value.wrongWords || {})
+      .filter(([id, ww]) => ww.wrongCount > 0)
+      .map(([id, ww]) => {
+        const word = allWords.value.find(w => generateWordId(w) === id)
+        return word ? { ...word, wordId: id, wrongCount: ww.wrongCount, lastWrongAt: ww.lastWrongAt } : null
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.wrongCount - a.wrongCount)
+  })
+
+  const wrongCount = computed(() => wrongWordsList.value.length)
+
+  // === 待复习 ===
   const dueReviewWords = computed(() => {
     const now = new Date()
     now.setHours(0, 0, 0, 0)
@@ -134,11 +180,9 @@ export const useLearningStore = defineStore('learning', () => {
 
   // 生词本
   function toggleWordBook(wordId) {
-    const ws = state.value.wordStates[wordId]
-    if (ws) {
-      ws.inWordBook = !ws.inWordBook
-      persist()
-    }
+    const ws = initWordState(wordId)
+    ws.inWordBook = !ws.inWordBook
+    persist()
   }
 
   const wordBookWords = computed(() => {
@@ -158,6 +202,16 @@ export const useLearningStore = defineStore('learning', () => {
     percentage: Math.round((state.value.completedDays.length / vocabularyData.totalDays) * 100)
   }))
 
+  // 每日学习进度（记录学到了第几个单词）
+  function getDayProgress(day) {
+    return state.value.dayProgress[day] || 0
+  }
+
+  function saveDayProgress(day, index) {
+    state.value.dayProgress[day] = index
+    persist()
+  }
+
   return {
     state,
     allWords,
@@ -166,6 +220,8 @@ export const useLearningStore = defineStore('learning', () => {
     dueReviewWords,
     dueReviewCount,
     wordBookWords,
+    wrongWordsList,
+    wrongCount,
     progress,
     getDayWords,
     getDayTitle,
@@ -174,6 +230,10 @@ export const useLearningStore = defineStore('learning', () => {
     completeDay,
     toggleWordBook,
     initWordState,
+    addWrongWord,
+    removeWrongWord,
+    getDayProgress,
+    saveDayProgress,
     persist
   }
 })

@@ -11,8 +11,8 @@
     <!-- 今日概览卡片 -->
     <div class="overview-card">
       <div class="stats-row">
-        <div class="stat">
-          <span class="stat-num">{{ store.dueReviewCount }}</span>
+        <div class="stat" @click="$router.push('/review')">
+          <span class="stat-num warn">{{ store.dueReviewCount }}</span>
           <span class="stat-label">待复习</span>
         </div>
         <div class="stat">
@@ -22,6 +22,11 @@
         <div class="stat">
           <span class="stat-num">{{ store.state.streakDays }}</span>
           <span class="stat-label">连续天 🔥</span>
+        </div>
+        <div class="stat" @click="$router.push('/review')">
+          <span class="stat-num danger" v-if="store.wrongCount > 0">{{ store.wrongCount }}</span>
+          <span class="stat-num" v-else>0</span>
+          <span class="stat-label">错题本 🚩</span>
         </div>
       </div>
     </div>
@@ -86,19 +91,35 @@ import { useRouter } from 'vue-router'
 import { useLearningStore } from '../stores/learning.js'
 import { useThemeStore } from '../stores/theme.js'
 import ProgressBar from '../components/ProgressBar.vue'
+import { showDialog } from 'vant'
 
 const router = useRouter()
 const store = useLearningStore()
 const theme = useThemeStore()
 
 function startLearn() {
-  if (store.state.currentDay <= 28) {
-    router.push(`/learn/${store.state.currentDay}`)
+  if (store.state.currentDay > 28) return
+
+  // 有待复习时强制先去复习
+  if (store.dueReviewCount > 0) {
+    showDialog({
+      title: '📖 有待复习',
+      message: `你有 ${store.dueReviewCount} 个单词需要复习，\n先完成复习再学习新内容吧！`,
+      confirmButtonText: '去复习',
+      confirmButtonColor: '#F59E0B',
+      allowHtml: true
+    }).then(() => {
+      router.push({ path: '/review', query: { redirectTo: `/learn/${store.state.currentDay}` } })
+    })
+    return
   }
+
+  router.push(`/learn/${store.state.currentDay}`)
 }
 
 function goToDay(day) {
-  if (day <= store.state.currentDay) {
+  // 允许进入已完成的任意天
+  if (store.state.completedDays.includes(day) || day <= store.state.currentDay) {
     router.push(`/learn/${day}`)
   }
 }
@@ -159,6 +180,14 @@ function goToDay(day) {
   font-size: 28px;
   font-weight: 700;
   color: var(--accent);
+}
+
+.stat-num.warn {
+  color: var(--warning);
+}
+
+.stat-num.danger {
+  color: var(--danger);
 }
 
 .stat-label {
