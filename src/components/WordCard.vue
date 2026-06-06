@@ -76,6 +76,7 @@ function onStar() {
   align-items: center;
   gap: 20px;
   padding: 16px 0;
+  width: 100%;
 }
 
 .word-card {
@@ -131,7 +132,8 @@ function onStar() {
   letter-spacing: 2px;
   color: var(--text-primary);
   margin-bottom: 14px;
-  word-break: break-all;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .phonetic-row {
