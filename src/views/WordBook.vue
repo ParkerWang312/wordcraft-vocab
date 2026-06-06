@@ -61,6 +61,16 @@
           🔊 发音
         </van-button>
         <van-button
+          v-if="detailWord"
+          style="margin-left:8px; margin-top:16px"
+          round
+          size="small"
+          type="danger"
+          @click="removeDetailWord"
+        >
+          移除
+        </van-button>
+        <van-button
           style="margin-left:8px; margin-top:16px"
           round
           size="small"
@@ -110,10 +120,15 @@ function removeWord(word) {
   showToast('已从生词本移除')
 }
 
+function removeDetailWord() {
+  if (detailWord.value) {
+    removeWord(detailWord.value)
+    showOverlay.value = false
+  }
+}
+
 function startAllReview() {
-  // 简单实现：跳转到首页去学习
-  router.push('/')
-  showToast('请从首页进入学习，生词会在复习中出现')
+  router.push('/review?source=wordbook')
 }
 </script>
 

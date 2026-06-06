@@ -118,7 +118,19 @@ function startLearn() {
 }
 
 function goToDay(day) {
-  // 允许进入已完成的任意天
+  // 有待复习时禁止进入任何学习页面
+  if (store.dueReviewCount > 0) {
+    showDialog({
+      title: '📖 有待复习',
+      message: `你有 ${store.dueReviewCount} 个单词需要复习，\n先完成复习再学习新内容吧！`,
+      confirmButtonText: '去复习',
+      confirmButtonColor: '#F59E0B'
+    }).then(() => {
+      router.push({ path: '/review', query: { redirectTo: `/learn/${day}` } })
+    })
+    return
+  }
+
   if (store.state.completedDays.includes(day) || day <= store.state.currentDay) {
     router.push(`/learn/${day}`)
   }

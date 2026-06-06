@@ -50,8 +50,8 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, computed, watch, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
 import ProgressBar from '../components/ProgressBar.vue'
@@ -59,7 +59,15 @@ import { showToast } from 'vant'
 
 const props = defineProps({ day: { type: [String, Number], required: true } })
 const router = useRouter()
+const route = useRoute()
 const store = useLearningStore()
+
+// 如果存在待复习任务，强制跳转到复习页
+onMounted(() => {
+  if (store.dueReviewCount > 0) {
+    router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
+  }
+})
 
 const dayNum = computed(() => Number(props.day))
 const dayTitle = computed(() => store.getDayTitle(dayNum.value))

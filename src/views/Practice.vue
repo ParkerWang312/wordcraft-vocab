@@ -84,13 +84,14 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import ProgressBar from '../components/ProgressBar.vue'
 
 const props = defineProps({ day: { type: [String, Number], required: true } })
 const router = useRouter()
 const store = useLearningStore()
+const route = useRoute()
 const dayNum = computed(() => Number(props.day))
 
 const letters = ['A', 'B', 'C', 'D']
@@ -190,6 +191,11 @@ function generateQuestions() {
 }
 
 onMounted(() => {
+  // 如果存在待复习任务，强制跳转到复习页
+  if (store.dueReviewCount > 0) {
+    router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
+    return
+  }
   questions.value = generateQuestions()
   // 首题如果是听音题，自动播放
   autoPlayIfAudio()
