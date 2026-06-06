@@ -17,8 +17,18 @@
 
     <!-- 题目 -->
     <div class="question-box" v-if="currentQuestion">
-      <div class="question-word">{{ currentQuestion.question }}</div>
-      <div class="question-prompt">{{ currentQuestion.prompt }}</div>
+      <!-- 听音题问题区域 -->
+      <template v-if="currentQuestion.type === 'audio'">
+        <div class="audio-question">
+          <span class="audio-icon" @click="playQuestionAudio">🔊</span>
+          <div class="question-prompt">{{ currentQuestion.prompt }}</div>
+        </div>
+      </template>
+      <!-- 文字题问题区域 -->
+      <template v-else>
+        <div class="question-word">{{ currentQuestion.question }}</div>
+        <div class="question-prompt">{{ currentQuestion.prompt }}</div>
+      </template>
 
       <div class="options">
         <div
@@ -39,14 +49,10 @@
 
       <div class="feedback" v-if="answered">
         <div :class="['feedback-msg', isLastCorrect ? 'correct' : 'wrong']">
-          {{ isLastCorrect ? '✅ 正确！' : '❌ 正确答案：' + getAnswerText() }}
+          <template v-if="isLastCorrect">✅ 正确！</template>
+          <template v-else>❌ 正确答案：{{ getAnswerText() }}</template>
         </div>
-        <van-button
-          class="next-btn"
-          type="primary"
-          round
-          @click="nextQuestion"
-        >
+        <van-button class="next-btn" round @click="nextQuestion">
           {{ isLastQuestion ? '查看结果' : '下一题 ▶' }}
         </van-button>
       </div>
@@ -60,29 +66,24 @@
         <p class="result-detail">正确率: {{ accuracy }}%</p>
         <p class="result-detail">得分: {{ score }}</p>
         <p class="result-detail">最大连击: {{ maxCombo }}</p>
+        <p class="result-detail" v-if="stats">📊 英选中 {{ stats.e2c }} 题 · 中选英 {{ stats.c2e }} 题 · 听音 {{ stats.audio }} 题</p>
         <p class="result-hint" v-if="!passed">正确率不足80%，建议重新学习本日单词</p>
       </div>
 
-      <van-button type="primary" block round size="large" @click="$router.push('/')">
-        返回首页
-      </van-button>
-      <van-button
-        v-if="!passed"
-        style="margin-top:10px"
-        type="warning"
-        block
-        round
-        size="large"
-        @click="$router.push(`/learn/${dayNum}`)"
-      >
-        重新学习
-      </van-button>
+      <div class="result-actions">
+        <van-button class="btn-home" round @click="$router.push('/')">
+          返回首页
+        </van-button>
+        <van-button v-if="!passed" class="btn-retry" round @click="$router.push(`/learn/${dayNum}`)">
+          重新学习
+        </van-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import ProgressBar from '../components/ProgressBar.vue'
@@ -101,8 +102,8 @@ const answered = ref(false)
 const selectedIndex = ref(-1)
 const isLastCorrect = ref(false)
 const finished = ref(false)
-
-let questions = ref([])
+const questions = ref([])
+const stats = ref(null)
 
 function shuffle(arr) {
   const a = [...arr]
@@ -113,43 +114,104 @@ function shuffle(arr) {
   return a
 }
 
+function speakWord(word) {
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(word)
+    utterance.lang = 'en-US'
+    utterance.rate = 0.8
+    speechSynthesis.speak(utterance)
+  }
+}
+
 function generateQuestions() {
   const dayWords = store.getDayWords(dayNum.value)
   const allWords = store.allWords
+  const total = dayWords.length
+  const e2cCount = Math.round(total * 0.4)
+  const c2eCount = Math.round(total * 0.4)
+  const audioCount = total - e2cCount - c2eCount
 
-  return dayWords.map(w => {
-    const isEnToCn = Math.random() > 0.5
-    // 选3个干扰项
+  const result = []
+  let e2c = 0, c2e = 0, audio = 0
+
+  shuffle(dayWords).forEach(w => {
     const others = allWords
       .filter(ow => ow.word !== w.word)
       .sort(() => Math.random() - 0.5)
       .slice(0, 3)
 
-    if (isEnToCn) {
+    let qType
+    if (e2c < e2cCount) {
+      qType = 'e2c'
+      e2c++
+    } else if (c2e < c2eCount) {
+      qType = 'c2e'
+      c2e++
+    } else {
+      qType = 'audio'
+      audio++
+    }
+
+    if (qType === 'e2c') {
       const options = shuffle([w.meaning, ...others.map(o => o.meaning)])
-      const answer = options.indexOf(w.meaning)
-      return {
+      result.push({
+        type: 'e2c',
         question: w.word,
         prompt: '请选择正确的中文释义',
         options,
-        answer
-      }
-    } else {
-      const options = shuffle([w.meaning, ...others.map(o => o.meaning)])
-      const answer = options.indexOf(w.meaning)
-      return {
+        answer: options.indexOf(w.meaning),
+        audioWord: w.word
+      })
+    } else if (qType === 'c2e') {
+      const wordOptions = shuffle([w.word, ...others.map(o => o.word)])
+      result.push({
+        type: 'c2e',
         question: w.meaning,
         prompt: '请选择对应的英文单词',
-        options: shuffle([w.word, ...others.map(o => o.word)]),
-        answer: shuffle([w.word, ...others.map(o => o.word)]).indexOf(w.word)
-      }
+        options: wordOptions,
+        answer: wordOptions.indexOf(w.word),
+        audioWord: w.word
+      })
+    } else {
+      const wordOptions = shuffle([w.word, ...others.map(o => o.word)])
+      result.push({
+        type: 'audio',
+        question: '',
+        prompt: '请根据发音选择正确的单词',
+        options: wordOptions,
+        answer: wordOptions.indexOf(w.word),
+        audioWord: w.word
+      })
     }
   })
+
+  stats.value = { e2c, c2e, audio }
+  return shuffle(result)
 }
 
 onMounted(() => {
   questions.value = generateQuestions()
+  // 首题如果是听音题，自动播放
+  autoPlayIfAudio()
 })
+
+// 自动播放听音题
+watch(currentIndex, () => {
+  autoPlayIfAudio()
+})
+
+function autoPlayIfAudio() {
+  const q = questions.value[currentIndex.value]
+  if (q && q.type === 'audio' && !answered.value) {
+    setTimeout(() => speakWord(q.audioWord), 400)
+  }
+}
+
+function playQuestionAudio() {
+  if (currentQuestion.value) {
+    speakWord(currentQuestion.value.audioWord)
+  }
+}
 
 const currentQuestion = computed(() => questions.value[currentIndex.value])
 
@@ -170,7 +232,7 @@ function selectOption(idx) {
   if (correct) {
     score.value += 10
     combo.value++
-    if (combo.value >= 3) score.value += 5 // 连击奖励
+    if (combo.value >= 3) score.value += 5
   } else {
     combo.value = 0
   }
@@ -250,6 +312,26 @@ function getAnswerText() {
   color: var(--text-secondary);
   text-align: center;
   margin-bottom: 20px;
+}
+
+.audio-question {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.audio-icon {
+  font-size: 48px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 16px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  transition: transform 0.2s;
+  user-select: none;
+}
+
+.audio-icon:active {
+  transform: scale(0.9);
 }
 
 .options {
@@ -336,6 +418,15 @@ function getAnswerText() {
   margin-bottom: 12px;
 }
 
+.feedback-msg.correct {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.feedback-msg.wrong {
+  color: var(--danger);
+}
+
 .next-btn {
   width: 140px !important;
   height: 42px !important;
@@ -350,15 +441,6 @@ function getAnswerText() {
   background: #10B981 !important;
   color: #fff !important;
   border: none !important;
-}
-
-.feedback-msg.correct {
-  background: var(--accent-light);
-  color: var(--accent);
-}
-
-.feedback-msg.wrong {
-  color: var(--danger);
 }
 
 .complete-box {
@@ -396,5 +478,34 @@ function getAnswerText() {
   margin-top: 12px;
   font-size: 13px;
   color: var(--warning);
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-home, .btn-retry {
+  width: 120px !important;
+  height: 42px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 20px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.btn-home {
+  background: #6B7280 !important;
+}
+
+.btn-retry {
+  background: #F59E0B !important;
 }
 </style>

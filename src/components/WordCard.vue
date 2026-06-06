@@ -2,11 +2,20 @@
   <div class="word-card-wrapper">
     <div class="word-card" :class="{ flipped: isFlipped }" @click="flip">
       <div class="card-front">
-        <div class="word-text">{{ word.word }}</div>
-        <div class="phonetic" @click.stop="speak">{{ word.phonetic }} 🔊</div>
+        <div class="card-inner">
+          <div class="word-text">{{ word.word }}</div>
+          <div class="phonetic-row" @click.stop="speak">
+            <span class="phonetic-text">{{ word.phonetic || '' }}</span>
+            <span class="speak-icon">🔊</span>
+          </div>
+          <div class="flip-hint">点击翻转查看释义</div>
+        </div>
       </div>
       <div class="card-back">
-        <div class="meaning-text">{{ word.meaning }}</div>
+        <div class="card-inner">
+          <div class="pos-tag" v-if="word.pos">{{ word.pos }}</div>
+          <div class="meaning-text">{{ word.def || word.meaning }}</div>
+        </div>
       </div>
     </div>
     <div class="card-actions" v-if="showActions">
@@ -57,10 +66,6 @@ function speak() {
 
 function onStar() {
   emit('star')
-  if (!props.isStarred) {
-    // 简短提示后自动翻转回来
-    setTimeout(() => { isFlipped.value = false }, 400)
-  }
 }
 </script>
 
@@ -75,8 +80,8 @@ function onStar() {
 
 .word-card {
   width: 100%;
-  max-width: 320px;
-  height: 200px;
+  max-width: 340px;
+  height: 240px;
   position: relative;
   cursor: pointer;
   perspective: 800px;
@@ -87,12 +92,10 @@ function onStar() {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 16px;
+  border-radius: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
   background: var(--bg-card);
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
@@ -106,7 +109,6 @@ function onStar() {
 .card-back {
   transform: rotateY(180deg);
   background: var(--accent);
-  color: white;
   border: none;
 }
 
@@ -118,28 +120,74 @@ function onStar() {
   transform: rotateY(0deg);
 }
 
+.card-inner {
+  text-align: center;
+  padding: 24px;
+}
+
 .word-text {
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  word-break: break-all;
 }
 
-.phonetic {
-  font-size: 15px;
-  color: var(--text-secondary);
+.phonetic-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 8px;
-  transition: background 0.2s;
-}
-
-.phonetic:hover {
+  padding: 5px 14px;
+  border-radius: 10px;
   background: var(--accent-light);
+  transition: background 0.2s;
+  margin-bottom: 16px;
+  user-select: none;
 }
 
-.card-back .meaning-text {
-  font-size: 22px;
+.phonetic-row:active {
+  background: var(--accent);
+}
+
+.phonetic-row:active .phonetic-text,
+.phonetic-row:active .speak-icon {
+  color: #fff;
+}
+
+.phonetic-text {
+  font-size: 16px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.speak-icon {
+  font-size: 16px;
+}
+
+.flip-hint {
+  font-size: 12px;
+  color: #9CA3AF;
+  margin-top: 8px;
+}
+
+.pos-tag {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 14px;
   font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.meaning-text {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 .card-actions {
@@ -148,7 +196,7 @@ function onStar() {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
 }
 
 .btn-unknown, .btn-known {
