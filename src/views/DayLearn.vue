@@ -130,7 +130,7 @@ watch(currentWord, (word) => {
       speechSynthesis.speak(utterance)
     }, 300)
   }
-})
+}, { immediate: true })
 
 const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.value))
 </script>
