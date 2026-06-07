@@ -46,9 +46,10 @@
         :show-star="true"
         :is-starred="currentReviewWord.state?.inWordBook"
         @star="toggleStar"
+        @flip="onCardFlip"
       />
 
-      <div class="review-actions">
+      <div class="review-actions" v-if="cardFlipped">
         <van-button round size="large" type="danger" @click="rateQuality(0)">
           😵 忘记
         </van-button>
@@ -120,11 +121,16 @@ const reviewWords = computed(() => {
 const reviewedCount = ref(0)
 const currentWordIndex = ref(0)
 const finished = ref(false)
+const cardFlipped = ref(false)
 
 const currentReviewWord = computed(() => {
   if (finished.value) return null
   return reviewWords.value[currentWordIndex.value] || null
 })
+
+function onCardFlip() {
+  cardFlipped.value = true
+}
 
 function rateQuality(quality) {
   const word = currentReviewWord.value
@@ -161,6 +167,7 @@ function goBack() {
 
 // 自动播放发音
 watch(currentReviewWord, (word) => {
+  cardFlipped.value = false
   if (word && 'speechSynthesis' in window) {
     setTimeout(() => {
       const utterance = new SpeechSynthesisUtterance(word.word)

@@ -2,35 +2,51 @@
   <div class="word-card-wrapper">
     <div class="word-card" :class="{ flipped: isFlipped }" @click="flip">
       <div class="card-front">
+        <div
+          v-if="showStar"
+          class="btn-star"
+          :class="{ active: isStarred }"
+          @click.stop="onStar"
+        >
+          {{ isStarred ? '⭐' : '☆' }}
+        </div>
         <div class="card-inner">
           <div class="word-text">{{ word.word }}</div>
           <div class="phonetic-row" @click.stop="speak">
             <span class="phonetic-text">{{ word.phonetic || '' }}</span>
             <span class="speak-icon">🔊</span>
           </div>
-          <div class="flip-hint">点击翻转查看释义</div>
+          <div class="flip-hint">
+            <span class="flip-icon">👆</span>
+            <span class="flip-text">点我翻转查看释义</span>
+          </div>
         </div>
       </div>
       <div class="card-back">
+        <div
+          v-if="showStar"
+          class="btn-star btn-star-back"
+          :class="{ active: isStarred }"
+          @click.stop="onStar"
+        >
+          {{ isStarred ? '⭐' : '☆' }}
+        </div>
         <div class="card-inner">
-          <div class="back-word">{{ word.word }}</div>
+          <div class="back-word" v-if="settings.data.showWordOnBack">{{ word.word }}</div>
           <div class="pos-tag" v-if="word.pos">{{ word.pos }}</div>
+          <div class="back-phonetic-row" v-if="settings.data.showPhoneticOnBack && word.phonetic" @click.stop="speak">
+            <span class="back-phonetic-text">{{ word.phonetic }}</span>
+            <span class="back-speak-icon">🔊</span>
+          </div>
           <div class="meaning-text">{{ word.def || word.meaning }}</div>
         </div>
       </div>
     </div>
-    <div class="card-actions" v-if="showActions">
-      <div
-        v-if="showStar"
-        class="btn-star"
-        @click.stop="onStar"
-      >
-        {{ isStarred ? '⭐' : '☆' }}
-      </div>
-      <van-button v-if="showKnown" class="btn-unknown" :class="{ disabled: !isFlipped }" round size="large" type="warning" @click="handleUnknown">
+    <div class="card-actions" v-if="showActions && (!showKnown || hasBeenFlipped)">
+      <van-button v-if="showKnown" class="btn-unknown" round size="large" type="warning" @click="$emit('unknown')">
         😕 不认识
       </van-button>
-      <van-button v-if="showKnown" class="btn-known" :class="{ disabled: !isFlipped }" round size="large" type="success" @click="handleKnown">
+      <van-button v-if="showKnown" class="btn-known" round size="large" type="success" @click="$emit('known')">
         😊 认识
       </van-button>
     </div>
@@ -39,7 +55,9 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { showToast } from 'vant'
+import { useSettingsStore } from '../stores/settings.js'
+
+const settings = useSettingsStore()
 
 const props = defineProps({
   word: { type: Object, required: true },
@@ -49,16 +67,22 @@ const props = defineProps({
   showStar: { type: Boolean, default: true }
 })
 
-const emit = defineEmits(['known', 'unknown', 'star'])
+const emit = defineEmits(['known', 'unknown', 'star', 'flip'])
 const isFlipped = ref(false)
+const hasBeenFlipped = ref(false)
 
 // 切换单词时重置翻转状态
 watch(() => props.word, () => {
   isFlipped.value = false
+  hasBeenFlipped.value = false
 })
 
 function flip() {
   isFlipped.value = !isFlipped.value
+  if (!hasBeenFlipped.value) {
+    hasBeenFlipped.value = true
+    emit('flip')
+  }
 }
 
 function speak() {
@@ -68,22 +92,6 @@ function speak() {
     utterance.rate = 0.8
     speechSynthesis.speak(utterance)
   }
-}
-
-function handleKnown() {
-  if (!isFlipped.value) {
-    showToast('请先翻转卡片查看释义')
-    return
-  }
-  emit('known')
-}
-
-function handleUnknown() {
-  if (!isFlipped.value) {
-    showToast('请先翻转卡片查看释义')
-    return
-  }
-  emit('unknown')
 }
 
 function onStar() {
@@ -191,9 +199,33 @@ function onStar() {
 }
 
 .flip-hint {
-  font-size: 12px;
-  color: #9CA3AF;
-  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.flip-icon {
+  font-size: 20px;
+  animation: tapFloat 1.2s ease-in-out infinite;
+}
+
+.flip-text {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+  animation: textPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes tapFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.15); }
+}
+
+@keyframes textPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
 }
 
 .pos-tag {
@@ -222,6 +254,33 @@ function onStar() {
   line-height: 1.6;
 }
 
+.back-phonetic-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 10px;
+  cursor: pointer;
+  padding: 5px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.2);
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.back-phonetic-row:active {
+  background: rgba(255,255,255,0.35);
+}
+
+.back-phonetic-text {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.back-speak-icon {
+  font-size: 15px;
+}
+
 .card-actions {
   display: flex;
   gap: 12px;
@@ -246,19 +305,37 @@ function onStar() {
 }
 
 .btn-star {
-  width: 44px;
-  height: 44px;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 18px;
   background: var(--bg-primary);
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   cursor: pointer;
   user-select: none;
-  transition: transform 0.15s;
-  flex-shrink: 0;
+  transition: transform 0.15s, background 0.2s;
+  z-index: 5;
+}
+
+.btn-star-back {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.btn-star.active {
+  background: #FFF3CD;
+  border-color: #F59E0B;
+}
+
+.btn-star-back.active {
+  background: rgba(255,220,50,0.25);
+  border-color: rgba(255,220,50,0.5);
 }
 
 .btn-star:active {
@@ -271,12 +348,6 @@ function onStar() {
 
 .btn-known {
   background: #10B981 !important;
-}
-
-.btn-unknown.disabled,
-.btn-known.disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
 }
 </style>
 

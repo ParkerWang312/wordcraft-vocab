@@ -7,16 +7,17 @@
       :fixed="false"
     />
 
-    <ProgressBar :current="currentIndex + 1" :total="questions.length" label="练习进度" />
+    <template v-if="!finished">
+      <ProgressBar :current="currentIndex + 1" :total="questions.length" label="练习进度" />
 
-    <!-- 分数 -->
-    <div class="score-bar">
-      <span class="score">得分: {{ score }}</span>
-      <span class="combo" v-if="combo > 1">{{ combo }}连击!</span>
-    </div>
+      <!-- 分数 -->
+      <div class="score-bar">
+        <span class="score">得分: {{ score }}</span>
+        <span class="combo" v-if="combo > 1">{{ combo }}连击!</span>
+      </div>
 
-    <!-- 题目 -->
-    <div class="question-box" v-if="currentQuestion">
+      <!-- 题目 -->
+      <div class="question-box" v-if="currentQuestion">
       <!-- 听音题问题区域 -->
       <template v-if="currentQuestion.type === 'audio'">
         <div class="audio-question">
@@ -44,10 +45,13 @@
           <span class="option-letter">{{ letters[idx] }}</span>
           <span class="option-text">{{ opt }}</span>
           <span class="option-icon" v-if="answered && idx === currentQuestion.answer">✓</span>
+          <span class="option-meaning" v-if="answered && idx === currentQuestion.answer && currentQuestion.answerMeaning">
+            {{ currentQuestion.answerMeaning }}
+          </span>
         </div>
       </div>
 
-      <div class="feedback" v-if="answered">
+      <div class="feedback" v-if="answered && !(isLastCorrect && settingsStore.data.autoAdvance)">
         <div :class="['feedback-msg', isLastCorrect ? 'correct' : 'wrong']">
           <template v-if="isLastCorrect">✅ 正确！</template>
           <template v-else>❌ 正确答案：{{ getAnswerText() }}</template>
@@ -57,6 +61,7 @@
         </van-button>
       </div>
     </div>
+    </template>
 
     <!-- 完成 -->
     <div class="complete-box" v-if="finished">
@@ -86,11 +91,13 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
+import { useSettingsStore } from '../stores/settings.js'
 import ProgressBar from '../components/ProgressBar.vue'
 
 const props = defineProps({ day: { type: [String, Number], required: true } })
 const router = useRouter()
 const store = useLearningStore()
+const settingsStore = useSettingsStore()
 const route = useRoute()
 const dayNum = computed(() => Number(props.day))
 
@@ -161,7 +168,8 @@ function generateQuestions() {
         prompt: '请选择正确的中文释义',
         options,
         answer: options.indexOf(w.meaning),
-        audioWord: w.word
+        audioWord: w.word,
+        answerMeaning: w.meaning
       })
     } else if (qType === 'c2e') {
       const wordOptions = shuffle([w.word, ...others.map(o => o.word)])
@@ -171,7 +179,8 @@ function generateQuestions() {
         prompt: '请选择对应的英文单词',
         options: wordOptions,
         answer: wordOptions.indexOf(w.word),
-        audioWord: w.word
+        audioWord: w.word,
+        answerMeaning: w.meaning
       })
     } else {
       const wordOptions = shuffle([w.word, ...others.map(o => o.word)])
@@ -181,7 +190,8 @@ function generateQuestions() {
         prompt: '请根据发音选择正确的单词',
         options: wordOptions,
         answer: wordOptions.indexOf(w.word),
-        audioWord: w.word
+        audioWord: w.word,
+        answerMeaning: w.meaning
       })
     }
   })
@@ -252,6 +262,11 @@ function selectOption(idx) {
   }
 
   maxCombo.value = Math.max(maxCombo.value, combo.value)
+
+  // 答对且开启自动跳转
+  if (correct && settingsStore.data.autoAdvance) {
+    setTimeout(() => nextQuestion(), 600)
+  }
 }
 
 function nextQuestion() {
@@ -334,10 +349,10 @@ function getAnswerText() {
 }
 
 .audio-icon {
-  font-size: 48px;
+  font-size: 24px;
   cursor: pointer;
   display: inline-block;
-  padding: 16px;
+  padding: 8px;
   border-radius: 50%;
   background: var(--accent-light);
   transition: transform 0.2s;
@@ -418,6 +433,12 @@ function getAnswerText() {
 .option-icon {
   color: var(--success);
   font-size: 18px;
+}
+
+.option-meaning {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-left: 2px;
 }
 
 .feedback {

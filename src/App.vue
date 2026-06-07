@@ -13,6 +13,25 @@
     <!-- 设置弹窗 -->
     <van-action-sheet v-model:show="showSettings" title="设置">
       <div class="settings-content">
+        <van-cell-group title="单词卡片">
+          <van-cell title="翻转卡片显示单词" center>
+            <template #right-icon>
+              <van-switch v-model="settingsStore.data.showWordOnBack" @change="settingsStore.persistDirect" size="22" />
+            </template>
+          </van-cell>
+          <van-cell title="翻转卡片显示音标和读音" center>
+            <template #right-icon>
+              <van-switch v-model="settingsStore.data.showPhoneticOnBack" @change="settingsStore.persistDirect" size="22" />
+            </template>
+          </van-cell>
+        </van-cell-group>
+        <van-cell-group title="练习模式">
+          <van-cell title="答对自动跳下一题" center>
+            <template #right-icon>
+              <van-switch v-model="settingsStore.data.autoAdvance" @change="settingsStore.persistDirect" size="22" />
+            </template>
+          </van-cell>
+        </van-cell-group>
         <van-cell-group title="通用">
           <van-cell title="重置学习进度" center>
             <template #right-icon>
@@ -36,10 +55,12 @@ import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useLearningStore } from './stores/learning.js'
 import { useThemeStore } from './stores/theme.js'
+import { useSettingsStore } from './stores/settings.js'
 import { showDialog } from 'vant'
 
 const store = useLearningStore()
 const theme = useThemeStore()
+const settingsStore = useSettingsStore()
 const route = useRoute()
 const showSettings = ref(false)
 

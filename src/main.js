@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import 'vant/lib/index.css'
 
-import { Button, NavBar, Tabbar, TabbarItem, Icon, ActionSheet, Cell, CellGroup, Overlay, Dialog, SwipeCell, Toast, Progress as VanProgress } from 'vant'
+import { Button, NavBar, Tabbar, TabbarItem, Icon, ActionSheet, Cell, CellGroup, Overlay, Dialog, SwipeCell, Toast, Switch, Progress as VanProgress } from 'vant'
 
 import Home from './views/Home.vue'
 import DayLearn from './views/DayLearn.vue'
@@ -38,6 +38,7 @@ app.use(Overlay)
 app.use(Dialog)
 app.use(SwipeCell)
 app.use(Toast)
+app.use(Switch)
 app.use(VanProgress)
 app.use(router)
 app.use(createPinia())
