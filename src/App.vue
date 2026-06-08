@@ -38,14 +38,26 @@
           </van-cell>
         </van-cell-group>
         <van-cell-group title="通用">
-          <van-cell title="提交反馈" center>
+          <van-cell title="导出学习数据" center>
             <template #right-icon>
-              <van-button type="warning" size="small" round @click.stop="openFeedback">反馈</van-button>
+              <van-button size="small" round @click.stop="exportData">导出</van-button>
+            </template>
+          </van-cell>
+          <van-cell title="导入学习数据" center>
+            <template #right-icon>
+              <van-button size="small" round @click.stop="triggerImport">导入</van-button>
             </template>
           </van-cell>
           <van-cell title="重置学习进度" center>
             <template #right-icon>
               <van-button type="danger" size="small" round @click.stop="confirmReset">重置</van-button>
+            </template>
+          </van-cell>
+        </van-cell-group>
+        <van-cell-group title="其它">
+          <van-cell title="提交反馈" center>
+            <template #right-icon>
+              <van-button type="warning" size="small" round @click.stop="openFeedback">反馈</van-button>
             </template>
           </van-cell>
         </van-cell-group>
@@ -91,6 +103,8 @@
         </div>
       </div>
     </van-overlay>
+
+    <input ref="importInput" type="file" accept=".json" style="display:none" @change="importData" />
     <router-view />
     <van-tabbar route v-if="showTabbar" :class="{ dark: theme.isDark }">
       <van-tabbar-item to="/" icon="home-o" replace>首页</van-tabbar-item>
@@ -125,6 +139,7 @@ function detectDevice() {
 
 const feedbackDevice = ref(detectDevice())
 const feedbackNick = ref('')
+const importInput = ref(null)
 const devices = [
   { label: '📱 手机', value: '手机' },
   { label: '📋 平板', value: '平板' },
@@ -136,6 +151,50 @@ const showTabbar = computed(() => {
 })
 
 const showTopButtons = computed(() => route.path === '/')
+
+function exportData() {
+  showSettings.value = false
+  const data = {
+    wordcraft_vocab: localStorage.getItem('wordcraft_vocab'),
+    wordcraft_settings: localStorage.getItem('wordcraft_settings'),
+    wordcraft_theme: localStorage.getItem('wordcraft_theme'),
+    exportedAt: new Date().toISOString()
+  }
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `wordcraft-backup-${new Date().toISOString().slice(0, 10)}.json`
+  a.click()
+  URL.revokeObjectURL(url)
+  showToast('导出成功')
+}
+
+function triggerImport() {
+  showSettings.value = false
+  importInput.value?.click()
+}
+
+async function importData(e) {
+  const file = e.target.files?.[0]
+  if (!file) return
+  try {
+    const text = await file.text()
+    const data = JSON.parse(text)
+    if (data.wordcraft_vocab) localStorage.setItem('wordcraft_vocab', data.wordcraft_vocab)
+    if (data.wordcraft_settings) localStorage.setItem('wordcraft_settings', data.wordcraft_settings)
+    if (data.wordcraft_theme) localStorage.setItem('wordcraft_theme', data.wordcraft_theme)
+    showDialog({
+      title: '✅ 导入成功',
+      message: '数据已加载，即将刷新页面。'
+    }).then(() => {
+      window.location.reload()
+    })
+  } catch {
+    showToast('文件格式不正确')
+  }
+  e.target.value = ''
+}
 
 function confirmReset() {
   showSettings.value = false
