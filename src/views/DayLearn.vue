@@ -14,9 +14,15 @@
       </template>
     </van-nav-bar>
 
-    <div class="day-title">{{ dayTitle }}</div>
-
-    <ProgressBar :current="currentIndex + 1" :total="words.length" label="学习进度" />
+    <div class="day-header">
+      <div class="category-badge" v-if="currentCategory">{{ currentCategory }}</div>
+      <div class="day-progress">
+        <div class="progress-track">
+          <div class="progress-fill" :style="{ width: progressPercent + '%' }"></div>
+        </div>
+        <span class="progress-text">{{ currentIndex + 1 }} / {{ words.length }}</span>
+      </div>
+    </div>
 
     <!-- 单词卡片 -->
     <WordCard
@@ -54,7 +60,6 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
-import ProgressBar from '../components/ProgressBar.vue'
 import { showToast } from 'vant'
 
 const props = defineProps({ day: { type: [String, Number], required: true } })
@@ -73,6 +78,15 @@ onMounted(() => {
 const dayNum = computed(() => Number(props.day))
 const dayTitle = computed(() => store.getDayTitle(dayNum.value))
 const words = computed(() => store.getDayWords(dayNum.value))
+
+const currentCategory = computed(() => {
+  return currentWord.value?.category || ''
+})
+
+const progressPercent = computed(() => {
+  if (words.value.length === 0) return 0
+  return Math.round(((currentIndex.value + 1) / words.value.length) * 100)
+})
 
 // 从上次进度恢复
 const savedIndex = store.getDayProgress(dayNum.value)
@@ -156,11 +170,51 @@ const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.va
   opacity: 0.7;
 }
 
-.day-title {
+.day-header {
   text-align: center;
-  font-size: 16px;
-  color: var(--text-secondary);
-  margin: 12px 0 16px;
+  padding: 12px 16px 8px;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 5px 18px;
+  border-radius: 20px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.day-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.progress-track {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), #EC4899);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 44px;
+  text-align: right;
 }
 
 .complete-msg {

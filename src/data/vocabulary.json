@@ -459,8 +459,8 @@
               "word": "board",
               "phonetic": "/bɔːrd/",
               "pos": "n.",
-              "def": "委员会；\\(政府的\\)部",
-              "meaning": "n. 委员会；\\(政府的\\)部"
+              "def": "委员会；(政府的)部",
+              "meaning": "n. 委员会；(政府的)部"
             },
             {
               "word": "province",
@@ -742,8 +742,8 @@
               "word": "work",
               "phonetic": "/wɜːrk/",
               "pos": "n.",
-              "def": "工作；\\(机器等\\)运转；活动",
-              "meaning": "n. 工作；\\(机器等\\)运转；活动"
+              "def": "工作；(机器等)运转；活动",
+              "meaning": "n. 工作；(机器等)运转；活动"
             },
             {
               "word": "worker",
@@ -807,14 +807,14 @@
               "meaning": "n. 警察；警备人员"
             },
             {
-              "word": "policeman\\(复policemen\\)",
+              "word": "policeman(复policemen)",
               "phonetic": "",
               "pos": "n.",
               "def": "警察",
               "meaning": "n. 警察"
             },
             {
-              "word": "policewoman\\(复policewomen\\)",
+              "word": "policewoman(复policewomen)",
               "phonetic": "",
               "pos": "n.",
               "def": "女警察",
@@ -913,8 +913,8 @@
               "word": "actor",
               "phonetic": "/ˈæktər/",
               "pos": "n.",
-              "def": "\\(男\\)演员",
-              "meaning": "n. \\(男\\)演员"
+              "def": "(男)演员",
+              "meaning": "n. (男)演员"
             },
             {
               "word": "actress",
@@ -994,22 +994,22 @@
               "word": "grandparent",
               "phonetic": "/ˈɡrænperənt/",
               "pos": "n.",
-              "def": "\\(外\\)祖父母",
-              "meaning": "n. \\(外\\)祖父母"
+              "def": "(外)祖父母",
+              "meaning": "n. (外)祖父母"
             },
             {
               "word": "grandpa=grandfather",
               "phonetic": "",
               "pos": "n.",
-              "def": "\\(外\\)祖父",
-              "meaning": "n. \\(外\\)祖父"
+              "def": "(外)祖父",
+              "meaning": "n. (外)祖父"
             },
             {
               "word": "grandma=grandmother",
               "phonetic": "",
               "pos": "n.",
-              "def": "\\(外\\)祖母",
-              "meaning": "n. \\(外\\)祖母"
+              "def": "(外)祖母",
+              "meaning": "n. (外)祖母"
             },
             {
               "word": "grandson",
@@ -1022,8 +1022,8 @@
               "word": "granddaughter",
               "phonetic": "/ˈɡrændɔːtər/",
               "pos": "n.",
-              "def": "\\(外\\)孙女",
-              "meaning": "n. \\(外\\)孙女"
+              "def": "(外)孙女",
+              "meaning": "n. (外)孙女"
             },
             {
               "word": "father",
@@ -1036,8 +1036,8 @@
               "word": "dad=daddy",
               "phonetic": "",
               "pos": "n.",
-              "def": "\\(口语\\)爸爸；爹爹",
-              "meaning": "n. \\(口语\\)爸爸；爹爹"
+              "def": "(口语)爸爸；爹爹",
+              "meaning": "n. (口语)爸爸；爹爹"
             },
             {
               "word": "mother",
@@ -1099,8 +1099,8 @@
               "word": "cousin",
               "phonetic": "/ˈkʌzn/",
               "pos": "n.",
-              "def": "堂\\(表\\)兄弟；堂\\(表\\)姐妹",
-              "meaning": "n. 堂\\(表\\)兄弟；堂\\(表\\)姐妹"
+              "def": "堂(表)兄弟；堂(表)姐妹",
+              "meaning": "n. 堂(表)兄弟；堂(表)姐妹"
             },
             {
               "word": "wife",
@@ -1134,8 +1134,8 @@
               "word": "marry",
               "phonetic": "/ˈmæri/",
               "pos": "v.",
-              "def": "\\(使\\)成婚；结婚",
-              "meaning": "v. \\(使\\)成婚；结婚"
+              "def": "(使)成婚；结婚",
+              "meaning": "v. (使)成婚；结婚"
             },
             {
               "word": "friend",
@@ -1167,8 +1167,8 @@
               "word": "person",
               "phonetic": "/ˈpɜːrsn/",
               "pos": "n.",
-              "def": "\\(单数\\)人",
-              "meaning": "n. \\(单数\\)人"
+              "def": "(单数)人",
+              "meaning": "n. (单数)人"
             },
             {
               "word": "gentleman",
@@ -1206,7 +1206,7 @@
               "meaning": "n. 同学"
             },
             {
-              "word": "neighbour\\(美neighbor\\)",
+              "word": "neighbour(美neighbor)",
               "phonetic": "",
               "pos": "n.",
               "def": "邻居；邻人",
@@ -1227,14 +1227,14 @@
               "meaning": "n. 孩子；儿童"
             },
             {
-              "word": "woman\\(复women\\)",
+              "word": "woman(复women)",
               "phonetic": "",
               "pos": "n.",
               "def": "妇女",
               "meaning": "n. 妇女"
             },
             {
-              "word": "man\\(复men\\)",
+              "word": "man(复men)",
               "phonetic": "",
               "pos": "n.",
               "def": "成年男人；人；人类",
@@ -1614,7 +1614,7 @@
               "meaning": "n. 电影院"
             },
             {
-              "word": "theatre\\(美theater\\)",
+              "word": "theatre(美theater)",
               "phonetic": "",
               "pos": "n.",
               "def": "剧场；戏院",
@@ -1624,8 +1624,8 @@
               "word": "row",
               "phonetic": "/roʊ/",
               "pos": "n.",
-              "def": "\\(剧院、电影院的\\)一排座位",
-              "meaning": "n. \\(剧院、电影院的\\)一排座位"
+              "def": "(剧院、电影院的)一排座位",
+              "meaning": "n. (剧院、电影院的)一排座位"
             },
             {
               "word": "club",
@@ -1699,8 +1699,8 @@
               "word": "meal",
               "phonetic": "/miːl/",
               "pos": "n.",
-              "def": "一餐\\(一顿饭\\)",
-              "meaning": "n. 一餐\\(一顿饭\\)"
+              "def": "一餐(一顿饭)",
+              "meaning": "n. 一餐(一顿饭)"
             },
             {
               "word": "eat",
@@ -2277,7 +2277,7 @@
               "meaning": "v. 大喊"
             },
             {
-              "word": "go\\(went",
+              "word": "go(went, gone)",
               "phonetic": "",
               "pos": "v.",
               "def": "去",
@@ -2382,7 +2382,7 @@
               "meaning": "v. 给"
             },
             {
-              "word": "leave\\(left",
+              "word": "leave(left, left)",
               "phonetic": "",
               "pos": "v.",
               "def": "离去",
@@ -2690,7 +2690,7 @@
               "meaning": "v. 发生"
             },
             {
-              "word": "sit\\(sat",
+              "word": "sit(sat, sat)",
               "phonetic": "",
               "pos": "v.",
               "def": "坐，使坐下",
@@ -2856,7 +2856,7 @@
               "meaning": "v. 到达"
             },
             {
-              "word": "realise\\(美realize\\)",
+              "word": "realise(美realize)",
               "phonetic": "",
               "pos": "v.",
               "def": "认识到；实现",
@@ -2905,8 +2905,8 @@
               "word": "wonder",
               "phonetic": "/ˈwʌndər/",
               "pos": "v.",
-              "def": "想知道\\(=want to know\\)",
-              "meaning": "v. 想知道\\(=want to know\\)"
+              "def": "想知道(=want to know)",
+              "meaning": "v. 想知道(=want to know)"
             },
             {
               "word": "support",
@@ -2940,22 +2940,22 @@
               "word": "may",
               "phonetic": "/meɪ/",
               "pos": "v.",
-              "def": "\\(modal\\)可以；也许；可能",
-              "meaning": "v. \\(modal\\)可以；也许；可能"
+              "def": "(modal)可以；也许；可能",
+              "meaning": "v. (modal)可以；也许；可能"
             },
             {
               "word": "might",
               "phonetic": "/maɪt/",
               "pos": "v.",
-              "def": "\\(may的过去式\\)可能；也许；或许",
-              "meaning": "v. \\(may的过去式\\)可能；也许；或许"
+              "def": "(may的过去式)可能；也许；或许",
+              "meaning": "v. (may的过去式)可能；也许；或许"
             },
             {
               "word": "must",
               "phonetic": "/mʌst/",
               "pos": "v.",
-              "def": "\\(modal\\)必定",
-              "meaning": "v. \\(modal\\)必定"
+              "def": "(modal)必定",
+              "meaning": "v. (modal)必定"
             },
             {
               "word": "possible",
@@ -2996,8 +2996,8 @@
               "word": "certainly",
               "phonetic": "/ˈsɜːrtnli/",
               "pos": "adv.",
-              "def": "\\(口语\\)当然，行",
-              "meaning": "adv. \\(口语\\)当然，行"
+              "def": "(口语)当然，行",
+              "meaning": "adv. (口语)当然，行"
             },
             {
               "word": "chance",
@@ -3007,11 +3007,11 @@
               "meaning": "n. 机会；可能性"
             },
             {
-              "word": "can\\(could\\)",
+              "word": "can(could)",
               "phonetic": "",
               "pos": "v.",
-              "def": "\\(modal\\)可能；能够；可以",
-              "meaning": "v. \\(modal\\)可能；能够；可以"
+              "def": "(modal)可能；能够；可以",
+              "meaning": "v. (modal)可能；能够；可以"
             },
             {
               "word": "able",
@@ -3021,7 +3021,7 @@
               "meaning": "adj. 能够；有能力的"
             },
             {
-              "word": "life\\(复lives\\)",
+              "word": "life(复lives)",
               "phonetic": "",
               "pos": "n.",
               "def": "生命",
@@ -3134,8 +3134,8 @@
               "word": "OK",
               "phonetic": "/oʊˈkeɪ/",
               "pos": "adj.",
-              "def": "\\(口语\\)好；对；不错",
-              "meaning": "adj. \\(口语\\)好；对；不错"
+              "def": "(口语)好；对；不错",
+              "meaning": "adj. (口语)好；对；不错"
             },
             {
               "word": "refuse",
@@ -3267,11 +3267,11 @@
               "word": "raise",
               "phonetic": "/reɪz/",
               "pos": "vt.",
-              "def": "\\(使\\)升高",
-              "meaning": "vt. \\(使\\)升高"
+              "def": "(使)升高",
+              "meaning": "vt. (使)升高"
             },
             {
-              "word": "rise\\(rose",
+              "word": "rise(rose, risen)",
               "phonetic": "",
               "pos": "vi.",
               "def": "上升；上涨",
@@ -3281,8 +3281,8 @@
               "word": "develop",
               "phonetic": "/dɪˈveləp/",
               "pos": "v.",
-              "def": "\\(使\\)发展；\\(使\\)发达；\\(使\\)发育",
-              "meaning": "v. \\(使\\)发展；\\(使\\)发达；\\(使\\)发育"
+              "def": "(使)发展；(使)发达；(使)发育",
+              "meaning": "v. (使)发展；(使)发达；(使)发育"
             },
             {
               "word": "development",
@@ -3299,11 +3299,11 @@
               "meaning": "v. 生长；发育；种植；变成"
             },
             {
-              "word": "fall\\(fell",
+              "word": "fall(fell, fallen)",
               "phonetic": "",
               "pos": "v.",
-              "def": "落\\(下\\)；降落；倒",
-              "meaning": "v. 落\\(下\\)；降落；倒"
+              "def": "落(下)；降落；倒",
+              "meaning": "v. 落(下)；降落；倒"
             },
             {
               "word": "drop",
@@ -3495,8 +3495,8 @@
               "word": "great",
               "phonetic": "/ɡreɪt/",
               "pos": "adj.",
-              "def": "伟大的；重要的；\\(口语\\)好极了；很好",
-              "meaning": "adj. 伟大的；重要的；\\(口语\\)好极了；很好"
+              "def": "伟大的；重要的；(口语)好极了；很好",
+              "meaning": "adj. 伟大的；重要的；(口语)好极了；很好"
             },
             {
               "word": "perfect",
@@ -3579,8 +3579,8 @@
               "word": "fantastic",
               "phonetic": "/fænˈtæstɪk/",
               "pos": "adj.",
-              "def": "奇特的；\\(口语\\)极好的；美妙的；很棒的",
-              "meaning": "adj. 奇特的；\\(口语\\)极好的；美妙的；很棒的"
+              "def": "奇特的；(口语)极好的；美妙的；很棒的",
+              "meaning": "adj. 奇特的；(口语)极好的；美妙的；很棒的"
             },
             {
               "word": "welcome",
@@ -3686,7 +3686,7 @@
           "name": "拥有",
           "words": [
             {
-              "word": "have\\(had",
+              "word": "have(had, had)",
               "phonetic": "",
               "pos": "vt.",
               "def": "有",
@@ -4169,8 +4169,8 @@
               "word": "passage",
               "phonetic": "/ˈpæsɪdʒ/",
               "pos": "n.",
-              "def": "\\(文章等的\\)一节；一段",
-              "meaning": "n. \\(文章等的\\)一节；一段"
+              "def": "(文章等的)一节；一段",
+              "meaning": "n. (文章等的)一节；一段"
             },
             {
               "word": "form",
@@ -4241,7 +4241,7 @@
               "meaning": "n. 中文"
             },
             {
-              "word": "maths\\(美math\\)",
+              "word": "maths(美math)",
               "phonetic": "",
               "pos": "n.",
               "def": "数学",
@@ -4351,11 +4351,11 @@
               "meaning": "v. 使……满意"
             },
             {
-              "word": "favourite\\(美favorite\\)",
+              "word": "favourite(美favorite)",
               "phonetic": "",
               "pos": "adj.",
-              "def": "喜爱的\\(=like...best\\) n. 特别喜爱的人或物",
-              "meaning": "adj. 喜爱的\\(=like...best\\) n. 特别喜爱的人或物"
+              "def": "喜爱的(=like...best) n. 特别喜爱的人或物",
+              "meaning": "adj. 喜爱的(=like...best) n. 特别喜爱的人或物"
             },
             {
               "word": "care",
@@ -4396,25 +4396,25 @@
               "word": "fan",
               "phonetic": "/fæn/",
               "pos": "n.",
-              "def": "\\(电影、运动等的\\)迷；热心爱好者",
-              "meaning": "n. \\(电影、运动等的\\)迷；热心爱好者"
+              "def": "(电影、运动等的)迷；热心爱好者",
+              "meaning": "n. (电影、运动等的)迷；热心爱好者"
             },
             {
-              "word": "good\\(better",
+              "word": "good(better, best)",
               "phonetic": "",
               "pos": "adj.",
               "def": "好的；良好的",
               "meaning": "adj. 好的；良好的"
             },
             {
-              "word": "well\\(better",
+              "word": "well(better, best)",
               "phonetic": "",
               "pos": "adv.",
               "def": "好地；令人满意地；完全地",
               "meaning": "adv. 好地；令人满意地；完全地"
             },
             {
-              "word": "bad\\(worse",
+              "word": "bad(worse, worst)",
               "phonetic": "",
               "pos": "adj.",
               "def": "坏的",
@@ -4443,8 +4443,8 @@
               "word": "camp",
               "phonetic": "/kæmp/",
               "pos": "n.",
-              "def": "\\(夏令\\)营 vi. 野营；宿营",
-              "meaning": "n. \\(夏令\\)营 vi. 野营；宿营"
+              "def": "(夏令)营 vi. 野营；宿营",
+              "meaning": "n. (夏令)营 vi. 野营；宿营"
             },
             {
               "word": "walk",
@@ -4535,7 +4535,7 @@
               "meaning": "vt. 预料；盼望；认为"
             },
             {
-              "word": "dream\\(dreamt, dreamt或dreamed, dreamed\\) n. 梦；梦想 vt.",
+              "word": "dream(dreamt, dreamt或dreamed, dreamed) n. 梦；梦想 vt.",
               "phonetic": "",
               "pos": "",
               "def": "做梦；梦想",
@@ -4578,8 +4578,8 @@
               "word": "sad",
               "phonetic": "/sæd/",
               "pos": "adj.",
-              "def": "\\(使人\\)悲伤的",
-              "meaning": "adj. \\(使人\\)悲伤的"
+              "def": "(使人)悲伤的",
+              "meaning": "adj. (使人)悲伤的"
             },
             {
               "word": "cry",
@@ -4846,8 +4846,8 @@
               "word": "communicate",
               "phonetic": "/kəˈmjuːnɪkeɪt/",
               "pos": "v.",
-              "def": "交际；传达\\(感情、信息等\\)",
-              "meaning": "v. 交际；传达\\(感情、信息等\\)"
+              "def": "交际；传达(感情、信息等)",
+              "meaning": "v. 交际；传达(感情、信息等)"
             },
             {
               "word": "communication",
@@ -4899,11 +4899,11 @@
               "meaning": "v. 对待"
             },
             {
-              "word": "hello\\(hi\\)",
+              "word": "hello(hi)",
               "phonetic": "",
               "pos": "interj.",
-              "def": "你好\\(表示打招呼、问候或唤起注意\\)",
-              "meaning": "interj. 你好\\(表示打招呼、问候或唤起注意\\)"
+              "def": "你好(表示打招呼、问候或唤起注意)",
+              "meaning": "interj. 你好(表示打招呼、问候或唤起注意)"
             },
             {
               "word": "introduce",
@@ -4944,8 +4944,8 @@
               "word": "thank",
               "phonetic": "/θæŋk/",
               "pos": "vt.",
-              "def": "感谢；致谢；道谢 n. \\(复\\)感谢；谢意",
-              "meaning": "vt. 感谢；致谢；道谢 n. \\(复\\)感谢；谢意"
+              "def": "感谢；致谢；道谢 n. (复)感谢；谢意",
+              "meaning": "vt. 感谢；致谢；道谢 n. (复)感谢；谢意"
             },
             {
               "word": "sorry",
@@ -4979,8 +4979,8 @@
               "word": "bye",
               "phonetic": "",
               "pos": "interj.",
-              "def": "\\(口语\\)再见",
-              "meaning": "interj. \\(口语\\)再见"
+              "def": "(口语)再见",
+              "meaning": "interj. (口语)再见"
             },
             {
               "word": "invite",
@@ -5147,7 +5147,7 @@
           "name": "语言表达",
           "words": [
             {
-              "word": "say\\(said",
+              "word": "say(said, said)",
               "phonetic": "",
               "pos": "vt.",
               "def": "说；讲",
@@ -5161,14 +5161,14 @@
               "meaning": "n. \\& v. 谈话；讲话；演讲；交谈"
             },
             {
-              "word": "speak\\(spoke",
+              "word": "speak(spoke, spoken)",
               "phonetic": "",
               "pos": "v.",
               "def": "说；讲；谈话；发言",
               "meaning": "v. 说；讲；谈话；发言"
             },
             {
-              "word": "tell\\(told",
+              "word": "tell(told, told)",
               "phonetic": "",
               "pos": "vt.",
               "def": "告诉；讲述；吩咐",
@@ -5246,7 +5246,7 @@
           "name": "寻找",
           "words": [
             {
-              "word": "find\\(found",
+              "word": "find(found, found)",
               "phonetic": "",
               "pos": "v.",
               "def": "找到；发现",
@@ -5282,18 +5282,18 @@
               "word": "borrow",
               "phonetic": "/ˈbɒroʊ/",
               "pos": "v.",
-              "def": "\\(向别人\\)借用；借",
-              "meaning": "v. \\(向别人\\)借用；借"
+              "def": "(向别人)借用；借",
+              "meaning": "v. (向别人)借用；借"
             },
             {
-              "word": "lend\\(lent",
+              "word": "lend(lent, lent)",
               "phonetic": "",
               "pos": "v.",
-              "def": "借\\(出\\)；把……借给",
-              "meaning": "v. 借\\(出\\)；把……借给"
+              "def": "借(出)；把……借给",
+              "meaning": "v. 借(出)；把……借给"
             },
             {
-              "word": "keep\\(kept",
+              "word": "keep(kept, kept)",
               "phonetic": "",
               "pos": "v.",
               "def": "保存",
@@ -5303,8 +5303,8 @@
               "word": "return",
               "phonetic": "/rɪˈtɜːrn/",
               "pos": "v.",
-              "def": "归还\\(=give back\\)",
-              "meaning": "v. 归还\\(=give back\\)"
+              "def": "归还(=give back)",
+              "meaning": "v. 归还(=give back)"
             }
           ]
         },
@@ -5312,14 +5312,14 @@
           "name": "带来带去",
           "words": [
             {
-              "word": "bring\\(brought",
+              "word": "bring(brought, brought)",
               "phonetic": "",
               "pos": "vt.",
               "def": "拿来；带来；取来",
               "meaning": "vt. 拿来；带来；取来"
             },
             {
-              "word": "take\\(took",
+              "word": "take(took, taken)",
               "phonetic": "",
               "pos": "vt.",
               "def": "带走",
@@ -5336,8 +5336,8 @@
               "word": "show",
               "phonetic": "/ʃoʊ/",
               "pos": "n.",
-              "def": "展示；展览\\(会\\) v. 给……看；出示；显示\\(showed, shown/showed\\)",
-              "meaning": "n. 展示；展览\\(会\\) v. 给……看；出示；显示\\(showed, shown/showed\\)"
+              "def": "展示；展览(会) v. 给……看；出示；显示(showed, shown/showed)",
+              "meaning": "n. 展示；展览(会) v. 给……看；出示；显示(showed, shown/showed)"
             },
             {
               "word": "exhibition",
@@ -5355,8 +5355,8 @@
               "word": "want",
               "phonetic": "/wɒnt/",
               "pos": "v.",
-              "def": "想要\\(=would like\\)",
-              "meaning": "v. 想要\\(=would like\\)"
+              "def": "想要(=would like)",
+              "meaning": "v. 想要(=would like)"
             },
             {
               "word": "plan",
@@ -5579,8 +5579,8 @@
               "word": "day",
               "phonetic": "/deɪ/",
               "pos": "n.",
-              "def": "\\(一\\)天；\\(一\\)日；白天",
-              "meaning": "n. \\(一\\)天；\\(一\\)日；白天"
+              "def": "(一)天；(一)日；白天",
+              "meaning": "n. (一)天；(一)日；白天"
             },
             {
               "word": "second",
@@ -5976,8 +5976,8 @@
               "word": "blouse",
               "phonetic": "",
               "pos": "n.",
-              "def": "\\(女\\)衬衫",
-              "meaning": "n. \\(女\\)衬衫"
+              "def": "(女)衬衫",
+              "meaning": "n. (女)衬衫"
             },
             {
               "word": "skirt",
@@ -5994,14 +5994,14 @@
               "meaning": "n. 厚运动衫；毛衣"
             },
             {
-              "word": "pants\\(pl.\\)",
+              "word": "pants(pl.)",
               "phonetic": "",
               "pos": "n.",
               "def": "长裤",
               "meaning": "n. 长裤"
             },
             {
-              "word": "trousers\\(pl.\\)",
+              "word": "trousers(pl.)",
               "phonetic": "",
               "pos": "n.",
               "def": "裤子；长裤",
@@ -6025,22 +6025,22 @@
               "word": "cap",
               "phonetic": "/kæp/",
               "pos": "n.",
-              "def": "\\(无檐的或仅在前面有檐的\\)帽子",
-              "meaning": "n. \\(无檐的或仅在前面有檐的\\)帽子"
+              "def": "(无檐的或仅在前面有檐的)帽子",
+              "meaning": "n. (无檐的或仅在前面有檐的)帽子"
             },
             {
               "word": "hat",
               "phonetic": "/hæt/",
               "pos": "n.",
-              "def": "\\(一般指有边的\\)帽子；礼帽",
-              "meaning": "n. \\(一般指有边的\\)帽子；礼帽"
+              "def": "(一般指有边的)帽子；礼帽",
+              "meaning": "n. (一般指有边的)帽子；礼帽"
             },
             {
               "word": "dress",
               "phonetic": "/dres/",
               "pos": "n.",
-              "def": "女服；连衣裙；\\(统指\\)服装；童装 v. 穿衣；穿着",
-              "meaning": "n. 女服；连衣裙；\\(统指\\)服装；童装 v. 穿衣；穿着"
+              "def": "女服；连衣裙；(统指)服装；童装 v. 穿衣；穿着",
+              "meaning": "n. 女服；连衣裙；(统指)服装；童装 v. 穿衣；穿着"
             },
             {
               "word": "glove",
@@ -6050,14 +6050,14 @@
               "meaning": "n. 手套"
             },
             {
-              "word": "jacket\\(pl.\\)",
+              "word": "jacket(pl.)",
               "phonetic": "",
               "pos": "n.",
               "def": "短上衣；夹克衫",
               "meaning": "n. 短上衣；夹克衫"
             },
             {
-              "word": "jeans\\(pl.\\)",
+              "word": "jeans(pl.)",
               "phonetic": "",
               "pos": "n.",
               "def": "牛仔裤",
@@ -6104,7 +6104,7 @@
           "name": "颜色",
           "words": [
             {
-              "word": "colour\\(美color\\)",
+              "word": "colour(美color)",
               "phonetic": "",
               "pos": "n.",
               "def": "颜色 v. 给……着色；涂色",
@@ -6139,7 +6139,7 @@
               "meaning": "n. 黑色 adj. 黑色的"
             },
             {
-              "word": "grey\\(美gray\\)",
+              "word": "grey(美gray)",
               "phonetic": "",
               "pos": "n.",
               "def": "灰色 adj. 灰色的",
@@ -6212,8 +6212,8 @@
               "word": "run",
               "phonetic": "/rʌn/",
               "pos": "vi.",
-              "def": "\\(颜色\\)褪色",
-              "meaning": "vi. \\(颜色\\)褪色"
+              "def": "(颜色)褪色",
+              "meaning": "vi. (颜色)褪色"
             },
             {
               "word": "pale",
@@ -6418,8 +6418,8 @@
               "word": "silk",
               "phonetic": "/sɪlk/",
               "pos": "n.",
-              "def": "\\(蚕\\)丝；丝织品",
-              "meaning": "n. \\(蚕\\)丝；丝织品"
+              "def": "(蚕)丝；丝织品",
+              "meaning": "n. (蚕)丝；丝织品"
             },
             {
               "word": "board",
@@ -6434,7 +6434,7 @@
           "name": "选择",
           "words": [
             {
-              "word": "choose\\(chose",
+              "word": "choose(chose, chosen)",
               "phonetic": "",
               "pos": "v.",
               "def": "选择",
@@ -6832,8 +6832,8 @@
               "word": "chopsticks",
               "phonetic": "",
               "pos": "n.",
-              "def": "\\(pl.\\)筷子",
-              "meaning": "n. \\(pl.\\)筷子"
+              "def": "(pl.)筷子",
+              "meaning": "n. (pl.)筷子"
             },
             {
               "word": "fork",
@@ -7168,7 +7168,7 @@
               "meaning": "n. 饮料"
             },
             {
-              "word": "ice\\-cream\\(美ice cream\\)",
+              "word": "ice\\-cream(美ice cream)",
               "phonetic": "",
               "pos": "n.",
               "def": "冰淇淋",
@@ -7331,7 +7331,7 @@
               "meaning": "n. 头发"
             },
             {
-              "word": "tooth\\(复teeth\\)",
+              "word": "tooth(复teeth)",
               "phonetic": "",
               "pos": "n.",
               "def": "牙齿",
@@ -7387,7 +7387,7 @@
               "meaning": "n. 手"
             },
             {
-              "word": "foot\\(复feet\\)",
+              "word": "foot(复feet)",
               "phonetic": "",
               "pos": "n.",
               "def": "脚",
@@ -7783,8 +7783,8 @@
               "word": "lift",
               "phonetic": "/lɪft/",
               "pos": "v.",
-              "def": "\\(云、烟等\\)消散",
-              "meaning": "v. \\(云、烟等\\)消散"
+              "def": "(云、烟等)消散",
+              "meaning": "v. (云、烟等)消散"
             },
             {
               "word": "shine",
@@ -7825,8 +7825,8 @@
               "word": "degree",
               "phonetic": "/dɪˈɡriː/",
               "pos": "n.",
-              "def": "度；度数\\(温度单位\\)",
-              "meaning": "n. 度；度数\\(温度单位\\)"
+              "def": "度；度数(温度单位)",
+              "meaning": "n. 度；度数(温度单位)"
             },
             {
               "word": "heat",
@@ -7872,8 +7872,8 @@
               "word": "actor",
               "phonetic": "/ˈæktər/",
               "pos": "n.",
-              "def": "\\(男\\)演员",
-              "meaning": "n. \\(男\\)演员"
+              "def": "(男)演员",
+              "meaning": "n. (男)演员"
             },
             {
               "word": "actress",
@@ -7958,7 +7958,7 @@
           "name": "广播电视",
           "words": [
             {
-              "word": "programme\\(美program\\)",
+              "word": "programme(美program)",
               "phonetic": "",
               "pos": "n.",
               "def": "节目",
@@ -8003,8 +8003,8 @@
               "word": "loud",
               "phonetic": "/laʊd/",
               "pos": "adj.",
-              "def": "\\(声音\\)响亮的",
-              "meaning": "adj. \\(声音\\)响亮的"
+              "def": "(声音)响亮的",
+              "meaning": "adj. (声音)响亮的"
             }
           ]
         },
@@ -8097,8 +8097,8 @@
               "word": "pop",
               "phonetic": "",
               "pos": "adj.",
-              "def": "\\(口语\\)大众的；通俗的",
-              "meaning": "adj. \\(口语\\)大众的；通俗的"
+              "def": "(口语)大众的；通俗的",
+              "meaning": "adj. (口语)大众的；通俗的"
             },
             {
               "word": "recorder",
@@ -8178,8 +8178,8 @@
               "word": "soccer",
               "phonetic": "",
               "pos": "n.",
-              "def": "\\(英式\\)足球",
-              "meaning": "n. \\(英式\\)足球"
+              "def": "(英式)足球",
+              "meaning": "n. (英式)足球"
             },
             {
               "word": "volleyball",
@@ -8248,8 +8248,8 @@
               "word": "play",
               "phonetic": "/pleɪ/",
               "pos": "v.",
-              "def": "玩；打\\(球\\)；播放",
-              "meaning": "v. 玩；打\\(球\\)；播放"
+              "def": "玩；打(球)；播放",
+              "meaning": "v. 玩；打(球)；播放"
             },
             {
               "word": "player",
@@ -8323,8 +8323,8 @@
               "word": "fantastic",
               "phonetic": "/fænˈtæstɪk/",
               "pos": "adj.",
-              "def": "\\(口语\\)极好的；美妙的",
-              "meaning": "adj. \\(口语\\)极好的；美妙的"
+              "def": "(口语)极好的；美妙的",
+              "meaning": "adj. (口语)极好的；美妙的"
             },
             {
               "word": "ticket",
@@ -8454,15 +8454,15 @@
               "word": "ride",
               "phonetic": "/raɪd/",
               "pos": "v.",
-              "def": "骑\\(马、自行车等\\)；乘车",
-              "meaning": "v. 骑\\(马、自行车等\\)；乘车"
+              "def": "骑(马、自行车等)；乘车",
+              "meaning": "v. 骑(马、自行车等)；乘车"
             },
             {
               "word": "fly",
               "phonetic": "/flaɪ/",
               "pos": "n.",
-              "def": "飞行 v. 飞；飞行；\\(旗子等\\)飘动；空运",
-              "meaning": "n. 飞行 v. 飞；飞行；\\(旗子等\\)飘动；空运"
+              "def": "飞行 v. 飞；飞行；(旗子等)飘动；空运",
+              "meaning": "n. 飞行 v. 飞；飞行；(旗子等)飘动；空运"
             },
             {
               "word": "ship",
@@ -8528,7 +8528,7 @@
               "meaning": "n. 出租车"
             },
             {
-              "word": "underground\\(英\\)=subway\\(美\\)",
+              "word": "underground(英)=subway(美)",
               "phonetic": "",
               "pos": "n.",
               "def": "地铁",
@@ -8538,8 +8538,8 @@
               "word": "jam",
               "phonetic": "",
               "pos": "n.",
-              "def": "\\(交通\\)拥挤",
-              "meaning": "n. \\(交通\\)拥挤"
+              "def": "(交通)拥挤",
+              "meaning": "n. (交通)拥挤"
             },
             {
               "word": "traffic",
@@ -8592,18 +8592,18 @@
       "title": "第十七天：方位",
       "categories": [
         {
-          "name": "词汇",
+          "name": "方位",
           "words": [
             {
               "word": "direction",
-              "phonetic": "/dəˈrekʃn/",
+              "phonetic": "/dɪˈrekʃn/",
               "pos": "n.",
               "def": "方向",
               "meaning": "n. 方向"
             },
             {
-              "word": "centre\\(美center\\)",
-              "phonetic": "",
+              "word": "centre(美center)",
+              "phonetic": "/ˈsentər/",
               "pos": "n.",
               "def": "中心",
               "meaning": "n. 中心"
@@ -8625,9 +8625,9 @@
             {
               "word": "middle",
               "phonetic": "/ˈmɪdl/",
-              "pos": "n.",
-              "def": "\\& adj. 中间\\(的\\)",
-              "meaning": "n. \\& adj. 中间\\(的\\)"
+              "pos": "n. & adj.",
+              "def": "中间(的)",
+              "meaning": "n. & adj. 中间(的)"
             },
             {
               "word": "bottom",
@@ -8653,34 +8653,34 @@
             {
               "word": "east",
               "phonetic": "/iːst/",
-              "pos": "n.",
-              "def": "\\& adj. 东方；东方的",
-              "meaning": "n. \\& adj. 东方；东方的"
+              "pos": "n. & adj.",
+              "def": "东方；东方的",
+              "meaning": "n. & adj. 东方；东方的"
             },
             {
               "word": "west",
               "phonetic": "/west/",
-              "pos": "n.",
-              "def": "\\& adj. 西部；西方的",
-              "meaning": "n. \\& adj. 西部；西方的"
+              "pos": "n. & adj.",
+              "def": "西部；西方的",
+              "meaning": "n. & adj. 西部；西方的"
             },
             {
               "word": "south",
               "phonetic": "/saʊθ/",
-              "pos": "n.",
-              "def": "\\& adj. 南方；南方的",
-              "meaning": "n. \\& adj. 南方；南方的"
+              "pos": "n. & adj.",
+              "def": "南方；南方的",
+              "meaning": "n. & adj. 南方；南方的"
             },
             {
               "word": "north",
               "phonetic": "/nɔːrθ/",
-              "pos": "n.",
-              "def": "\\& adj. 北方；北方的",
-              "meaning": "n. \\& adj. 北方；北方的"
+              "pos": "n. & adj.",
+              "def": "北方；北方的",
+              "meaning": "n. & adj. 北方；北方的"
             },
             {
-              "word": "toward\\(s\\)",
-              "phonetic": "",
+              "word": "toward(s)",
+              "phonetic": "/təˈwɔːrdz/",
               "pos": "prep.",
               "def": "向前；朝着",
               "meaning": "prep. 向前；朝着"
@@ -8708,14 +8708,14 @@
             },
             {
               "word": "over",
-              "phonetic": "/ˈoʊvər/",
+              "phonetic": "/ˈəʊvər/",
               "pos": "prep.",
               "def": "多于；在……上方；遍及；结束",
               "meaning": "prep. 多于；在……上方；遍及；结束"
             },
             {
               "word": "below",
-              "phonetic": "/bɪˈloʊ/",
+              "phonetic": "/bɪˈləʊ/",
               "pos": "prep.",
               "def": "在……下面",
               "meaning": "prep. 在……下面"
@@ -8743,10 +8743,10 @@
             },
             {
               "word": "inside",
-              "phonetic": "/ˌɪnˈsaɪd/",
+              "phonetic": "/ɪnˈsaɪd/",
               "pos": "prep.",
-              "def": "里面；在\\(或向\\)里面",
-              "meaning": "prep. 里面；在\\(或向\\)里面"
+              "def": "里面；在(或向)里面",
+              "meaning": "prep. 里面；在(或向)里面"
             },
             {
               "word": "around",
@@ -8792,7 +8792,7 @@
             },
             {
               "word": "eastern",
-              "phonetic": "",
+              "phonetic": "/ˈiːstərn/",
               "pos": "adj.",
               "def": "东部的",
               "meaning": "adj. 东部的"
@@ -8827,14 +8827,14 @@
             },
             {
               "word": "close",
-              "phonetic": "/kloʊz/",
-              "pos": "adj.",
-              "def": "\\& v. 近的；亲近的；关闭",
-              "meaning": "adj. \\& v. 近的；亲近的；关闭"
+              "phonetic": "/kləʊs/ /kləʊz/",
+              "pos": "adj. & v.",
+              "def": "近的；亲近的；关闭",
+              "meaning": "adj. & v. 近的；亲近的；关闭"
             },
             {
               "word": "near",
-              "phonetic": "/nɪr/",
+              "phonetic": "/nɪər/",
               "pos": "adj.",
               "def": "近的；接近",
               "meaning": "adj. 近的；接近"
@@ -8855,21 +8855,21 @@
             },
             {
               "word": "straight",
-              "phonetic": "",
+              "phonetic": "/streɪt/",
               "pos": "adj.",
               "def": "直的；笔直的",
               "meaning": "adj. 直的；笔直的"
             },
             {
               "word": "low",
-              "phonetic": "/loʊ/",
+              "phonetic": "/ləʊ/",
               "pos": "adj.",
               "def": "低的",
               "meaning": "adj. 低的"
             },
             {
               "word": "opposite",
-              "phonetic": "",
+              "phonetic": "/ˈɒpəzɪt/",
               "pos": "adj.",
               "def": "相反的；对立的",
               "meaning": "adj. 相反的；对立的"
@@ -8877,9 +8877,9 @@
             {
               "word": "right",
               "phonetic": "/raɪt/",
-              "pos": "adj.",
-              "def": "正确的；右边的 n. 右边",
-              "meaning": "adj. 正确的；右边的 n. 右边"
+              "pos": "adj. & n.",
+              "def": "正确的；右边的",
+              "meaning": "adj. & n. 正确的；右边的"
             }
           ]
         }
@@ -8910,8 +8910,8 @@
               "word": "message",
               "phonetic": "/ˈmesɪdʒ/",
               "pos": "n.",
-              "def": "\\(书面或口头的\\)信息；消息",
-              "meaning": "n. \\(书面或口头的\\)信息；消息"
+              "def": "(书面或口头的)信息；消息",
+              "meaning": "n. (书面或口头的)信息；消息"
             },
             {
               "word": "radio",
@@ -9193,7 +9193,7 @@
               "meaning": "n. 练习"
             },
             {
-              "word": "practise\\(美practice\\)",
+              "word": "practise(美practice)",
               "phonetic": "",
               "pos": "v.",
               "def": "练习；实践",
@@ -9224,8 +9224,8 @@
               "word": "solve",
               "phonetic": "/sɒlv/",
               "pos": "v.",
-              "def": "解决；解答\\(难题等\\)",
-              "meaning": "v. 解决；解答\\(难题等\\)"
+              "def": "解决；解答(难题等)",
+              "meaning": "v. 解决；解答(难题等)"
             },
             {
               "word": "mistake",
@@ -9529,7 +9529,7 @@
           "name": "动物",
           "words": [
             {
-              "word": "life\\(复lives\\)",
+              "word": "life(复lives)",
               "phonetic": "",
               "pos": "n.",
               "def": "生命",
@@ -9627,7 +9627,7 @@
               "meaning": "n. 蛇"
             },
             {
-              "word": "mouse\\(复mice\\)",
+              "word": "mouse(复mice)",
               "phonetic": "",
               "pos": "n.",
               "def": "老鼠",
@@ -9676,7 +9676,7 @@
               "meaning": "n. 猫"
             },
             {
-              "word": "sheep\\(复sheep\\)",
+              "word": "sheep(复sheep)",
               "phonetic": "",
               "pos": "n.",
               "def": "绵羊",
@@ -9835,7 +9835,7 @@
               "meaning": "n. 玫瑰"
             },
             {
-              "word": "leaf\\(复leaves\\)",
+              "word": "leaf(复leaves)",
               "phonetic": "",
               "pos": "n.",
               "def": "树叶",
@@ -10055,7 +10055,7 @@
               "meaning": "n. 沙子"
             },
             {
-              "word": "shelf\\(复shelves\\)",
+              "word": "shelf(复shelves)",
               "phonetic": "",
               "pos": "n.",
               "def": "大陆架；架子",
@@ -10293,7 +10293,7 @@
               "meaning": "adj. 美国的；美国人的"
             },
             {
-              "word": "the US\\(=the United States\\) abbr.",
+              "word": "the US(=the United States) abbr.",
               "phonetic": "",
               "pos": "",
               "def": "美国",
@@ -10387,8 +10387,8 @@
               "word": "French",
               "phonetic": "/frentʃ/",
               "pos": "n.",
-              "def": "法语 adj. 法国\\(人\\)的；法语的",
-              "meaning": "n. 法语 adj. 法国\\(人\\)的；法语的"
+              "def": "法语 adj. 法国(人)的；法语的",
+              "meaning": "n. 法语 adj. 法国(人)的；法语的"
             },
             {
               "word": "Russia",
@@ -10429,11 +10429,11 @@
               "word": "Indian",
               "phonetic": "/ˈɪndiən/",
               "pos": "adj.",
-              "def": "\\(美洲\\)印第安人的；印度人的",
-              "meaning": "adj. \\(美洲\\)印第安人的；印度人的"
+              "def": "(美洲)印第安人的；印度人的",
+              "meaning": "adj. (美洲)印第安人的；印度人的"
             },
             {
-              "word": "UK\\(=the United Kingdom\\) abbr.",
+              "word": "UK(=the United Kingdom) abbr.",
               "phonetic": "",
               "pos": "",
               "def": "英国",
@@ -10450,8 +10450,8 @@
               "word": "state",
               "phonetic": "/steɪt/",
               "pos": "n.",
-              "def": "国家；\\(美国的\\)州",
-              "meaning": "n. 国家；\\(美国的\\)州"
+              "def": "国家；(美国的)州",
+              "meaning": "n. 国家；(美国的)州"
             },
             {
               "word": "city",
@@ -10645,18 +10645,18 @@
               "meaning": "adj. 半的；一半"
             },
             {
-              "word": "No.\\(=number\\)",
+              "word": "No.(=number)",
               "phonetic": "",
               "pos": "abbr.",
               "def": "数字；号码",
               "meaning": "abbr. 数字；号码"
             },
             {
-              "word": "a\\(an\\)",
+              "word": "a(an)",
               "phonetic": "",
               "pos": "art.",
-              "def": "一\\(个、件\\)",
-              "meaning": "art. 一\\(个、件\\)"
+              "def": "一(个、件)",
+              "meaning": "art. 一(个、件)"
             },
             {
               "word": "zero",
@@ -11003,11 +11003,11 @@
               "word": "turn",
               "phonetic": "/tɜːrn/",
               "pos": "n.",
-              "def": "轮流；\\(轮流的\\)顺序",
-              "meaning": "n. 轮流；\\(轮流的\\)顺序"
+              "def": "轮流；(轮流的)顺序",
+              "meaning": "n. 轮流；(轮流的)顺序"
             },
             {
-              "word": "begin\\(began",
+              "word": "begin(began, begun)",
               "phonetic": "",
               "pos": "v.",
               "def": "开始；着手",
@@ -11078,8 +11078,8 @@
               "word": "copy",
               "phonetic": "/ˈkɒpi/",
               "pos": "n.",
-              "def": "一本\\(份、册……\\)",
-              "meaning": "n. 一本\\(份、册……\\)"
+              "def": "一本(份、册……)",
+              "meaning": "n. 一本(份、册……)"
             },
             {
               "word": "block",
@@ -11092,8 +11092,8 @@
               "word": "piece",
               "phonetic": "/piːs/",
               "pos": "n.",
-              "def": "块\\(片、张、件……\\)",
-              "meaning": "n. 块\\(片、张、件……\\)"
+              "def": "块(片、张、件……)",
+              "meaning": "n. 块(片、张、件……)"
             },
             {
               "word": "pair",
@@ -11160,8 +11160,8 @@
               "word": "any",
               "phonetic": "/ˈeni/",
               "pos": "pron.",
-              "def": "\\(无论\\)哪个；哪些 adj. 任何的；\\(用于疑问句、否定句\\)一些；任何",
-              "meaning": "pron. \\(无论\\)哪个；哪些 adj. 任何的；\\(用于疑问句、否定句\\)一些；任何"
+              "def": "(无论)哪个；哪些 adj. 任何的；(用于疑问句、否定句)一些；任何",
+              "meaning": "pron. (无论)哪个；哪些 adj. 任何的；(用于疑问句、否定句)一些；任何"
             },
             {
               "word": "several",
@@ -11178,7 +11178,7 @@
               "meaning": "n. 一点；一些；少量的"
             },
             {
-              "word": "little\\(less",
+              "word": "little(less, least)",
               "phonetic": "",
               "pos": "adj.",
               "def": "小的；少的",
@@ -11192,18 +11192,18 @@
               "meaning": "pron. 不多；少许；adj. 不多的；少数的"
             },
             {
-              "word": "many\\(more",
+              "word": "many(more, most)",
               "phonetic": "",
               "pos": "adj.",
               "def": "许多的",
               "meaning": "adj. 许多的"
             },
             {
-              "word": "much\\(more",
+              "word": "much(more, most)",
               "phonetic": "",
               "pos": "adj.",
-              "def": "\\& adv. 许多\\(的\\)；很，非常",
-              "meaning": "adj. \\& adv. 许多\\(的\\)；很，非常"
+              "def": "\\& adv. 许多(的)；很，非常",
+              "meaning": "adj. \\& adv. 许多(的)；很，非常"
             },
             {
               "word": "plenty",
@@ -11281,18 +11281,18 @@
           "name": "距离与速度",
           "words": [
             {
-              "word": "metre\\(美meter\\)",
+              "word": "metre(美meter)",
               "phonetic": "",
               "pos": "n.",
               "def": "米；公尺",
               "meaning": "n. 米；公尺"
             },
             {
-              "word": "kilometre\\(美kilometer\\)",
+              "word": "kilometre(美kilometer)",
               "phonetic": "",
               "pos": "n.",
-              "def": "千米\\(公里\\)",
-              "meaning": "n. 千米\\(公里\\)"
+              "def": "千米(公里)",
+              "meaning": "n. 千米(公里)"
             },
             {
               "word": "mile",
@@ -11302,11 +11302,11 @@
               "meaning": "n. 英里"
             },
             {
-              "word": "far\\(farther, farthest; further, furthest\\) adj. \\&",
+              "word": "far(farther, farthest; further, furthest) adj. \\&",
               "phonetic": "",
               "pos": "",
-              "def": "adv. 远的\\(地\\)",
-              "meaning": "adv. 远的\\(地\\)"
+              "def": "adv. 远的(地)",
+              "meaning": "adv. 远的(地)"
             },
             {
               "word": "near",
@@ -11333,8 +11333,8 @@
               "word": "reach",
               "phonetic": "/riːtʃ/",
               "pos": "v.",
-              "def": "到达；伸出\\(手、脚等\\)",
-              "meaning": "v. 到达；伸出\\(手、脚等\\)"
+              "def": "到达；伸出(手、脚等)",
+              "meaning": "v. 到达；伸出(手、脚等)"
             },
             {
               "word": "fast",
@@ -11368,8 +11368,8 @@
               "word": "fast",
               "phonetic": "/fæst/",
               "pos": "adj.",
-              "def": "\\& adv. 快的\\(地\\)；迅速的\\(地\\)",
-              "meaning": "adj. \\& adv. 快的\\(地\\)；迅速的\\(地\\)"
+              "def": "\\& adv. 快的(地)；迅速的(地)",
+              "meaning": "adj. \\& adv. 快的(地)；迅速的(地)"
             },
             {
               "word": "away",
@@ -11415,8 +11415,8 @@
               "word": "about",
               "phonetic": "/əˈbaʊt/",
               "pos": "adv.",
-              "def": "大约\\(=around\\)",
-              "meaning": "adv. 大约\\(=around\\)"
+              "def": "大约(=around)",
+              "meaning": "adv. 大约(=around)"
             },
             {
               "word": "also",
@@ -11436,8 +11436,8 @@
               "word": "either",
               "phonetic": "/ˈaɪðər/",
               "pos": "adv.",
-              "def": "\\(用于否定句后\\)也",
-              "meaning": "adv. \\(用于否定句后\\)也"
+              "def": "(用于否定句后)也",
+              "meaning": "adv. (用于否定句后)也"
             }
           ]
         },
@@ -11672,8 +11672,8 @@
               "word": "even",
               "phonetic": "/ˈiːvn/",
               "pos": "adv.",
-              "def": "甚至；连\\(……都\\)",
-              "meaning": "adv. 甚至；连\\(……都\\)"
+              "def": "甚至；连(……都)",
+              "meaning": "adv. 甚至；连(……都)"
             },
             {
               "word": "too",
@@ -11840,7 +11840,7 @@
               "meaning": "v. 通过"
             },
             {
-              "word": "realise\\(美realize\\)",
+              "word": "realise(美realize)",
               "phonetic": "",
               "pos": "v.",
               "def": "实现",
@@ -12077,8 +12077,8 @@
               "word": "think about",
               "phonetic": "",
               "pos": "",
-              "def": "考虑\\(是否去做\\)",
-              "meaning": "考虑\\(是否去做\\)"
+              "def": "考虑(是否去做)",
+              "meaning": "考虑(是否去做)"
             },
             {
               "word": "worry about",
@@ -12103,8 +12103,8 @@
               "word": "take after",
               "phonetic": "",
               "pos": "",
-              "def": "\\(外貌或行为\\)像",
-              "meaning": "\\(外貌或行为\\)像"
+              "def": "(外貌或行为)像",
+              "meaning": "(外貌或行为)像"
             }
           ]
         },
@@ -12124,7 +12124,7 @@
           "name": "at短语",
           "words": [
             {
-              "word": "arrive at\\(in\\)",
+              "word": "arrive at(in)",
               "phonetic": "",
               "pos": "",
               "def": "到达某地",
@@ -12218,11 +12218,11 @@
               "meaning": "恢复；使想起；归还"
             },
             {
-              "word": "call\\(sb\\) back",
+              "word": "call(sb) back",
               "phonetic": "",
               "pos": "",
-              "def": "\\(给某人\\)回电话",
-              "meaning": "\\(给某人\\)回电话"
+              "def": "(给某人)回电话",
+              "meaning": "(给某人)回电话"
             },
             {
               "word": "come back",
@@ -12249,8 +12249,8 @@
               "word": "pay back",
               "phonetic": "",
               "pos": "",
-              "def": "偿还\\(借款等\\)",
-              "meaning": "偿还\\(借款等\\)"
+              "def": "偿还(借款等)",
+              "meaning": "偿还(借款等)"
             },
             {
               "word": "ring back",
@@ -12301,8 +12301,8 @@
               "word": "break down",
               "phonetic": "",
               "pos": "",
-              "def": "损坏；\\(把化合物等\\)分解；\\(汽车\\)抛锚",
-              "meaning": "损坏；\\(把化合物等\\)分解；\\(汽车\\)抛锚"
+              "def": "损坏；(把化合物等)分解；(汽车)抛锚",
+              "meaning": "损坏；(把化合物等)分解；(汽车)抛锚"
             },
             {
               "word": "come down",
@@ -12390,15 +12390,15 @@
               "word": "ask...for...",
               "phonetic": "",
               "pos": "",
-              "def": "请求；恳求\\(给予\\)",
-              "meaning": "请求；恳求\\(给予\\)"
+              "def": "请求；恳求(给予)",
+              "meaning": "请求；恳求(给予)"
             },
             {
               "word": "care for",
               "phonetic": "",
               "pos": "",
-              "def": "喜欢；照顾\\(病人\\)",
-              "meaning": "喜欢；照顾\\(病人\\)"
+              "def": "喜欢；照顾(病人)",
+              "meaning": "喜欢；照顾(病人)"
             },
             {
               "word": "look for",
@@ -12425,8 +12425,8 @@
               "word": "send for",
               "phonetic": "",
               "pos": "",
-              "def": "派人去叫\\(请\\)",
-              "meaning": "派人去叫\\(请\\)"
+              "def": "派人去叫(请)",
+              "meaning": "派人去叫(请)"
             },
             {
               "word": "stand for",
@@ -12451,8 +12451,8 @@
               "word": "come from",
               "phonetic": "",
               "pos": "",
-              "def": "出生\\(于\\)；来自",
-              "meaning": "出生\\(于\\)；来自"
+              "def": "出生(于)；来自",
+              "meaning": "出生(于)；来自"
             },
             {
               "word": "hear from",
@@ -12561,8 +12561,8 @@
               "word": "take in",
               "phonetic": "",
               "pos": "",
-              "def": "吸入；吞入\\(体内\\)",
-              "meaning": "吸入；吞入\\(体内\\)"
+              "def": "吸入；吞入(体内)",
+              "meaning": "吸入；吞入(体内)"
             }
           ]
         },
@@ -12652,7 +12652,7 @@
               "meaning": "祝贺"
             },
             {
-              "word": "depend on\\(upon\\)",
+              "word": "depend on(upon)",
               "phonetic": "",
               "pos": "",
               "def": "依靠；相信；信赖",
@@ -12676,22 +12676,22 @@
               "word": "hang on",
               "phonetic": "",
               "pos": "",
-              "def": "\\(打电话时\\)不挂断；等待片刻",
-              "meaning": "\\(打电话时\\)不挂断；等待片刻"
+              "def": "(打电话时)不挂断；等待片刻",
+              "meaning": "(打电话时)不挂断；等待片刻"
             },
             {
               "word": "hold on",
               "phonetic": "",
               "pos": "",
-              "def": "等一等\\(别挂电话\\)",
-              "meaning": "等一等\\(别挂电话\\)"
+              "def": "等一等(别挂电话)",
+              "meaning": "等一等(别挂电话)"
             },
             {
               "word": "keep on",
               "phonetic": "",
               "pos": "",
-              "def": "继续\\(进行\\)",
-              "meaning": "继续\\(进行\\)"
+              "def": "继续(进行)",
+              "meaning": "继续(进行)"
             },
             {
               "word": "live on",
@@ -12725,8 +12725,8 @@
               "word": "turn on",
               "phonetic": "",
               "pos": "",
-              "def": "打开\\(水、电视、灯、煤气等\\)",
-              "meaning": "打开\\(水、电视、灯、煤气等\\)"
+              "def": "打开(水、电视、灯、煤气等)",
+              "meaning": "打开(水、电视、灯、煤气等)"
             }
           ]
         }
@@ -12783,15 +12783,15 @@
               "word": "get off",
               "phonetic": "",
               "pos": "",
-              "def": "脱下\\(衣服等\\)；下车",
-              "meaning": "脱下\\(衣服等\\)；下车"
+              "def": "脱下(衣服等)；下车",
+              "meaning": "脱下(衣服等)；下车"
             },
             {
               "word": "go off",
               "phonetic": "",
               "pos": "",
-              "def": "走开\\(2011年山西25题考查\\)",
-              "meaning": "走开\\(2011年山西25题考查\\)"
+              "def": "走开(2011年山西25题考查)",
+              "meaning": "走开(2011年山西25题考查)"
             },
             {
               "word": "keep off",
@@ -12804,8 +12804,8 @@
               "word": "put off",
               "phonetic": "",
               "pos": "",
-              "def": "推迟\\(2012年山西24题考查\\)",
-              "meaning": "推迟\\(2012年山西24题考查\\)"
+              "def": "推迟(2012年山西24题考查)",
+              "meaning": "推迟(2012年山西24题考查)"
             },
             {
               "word": "see...off",
@@ -12846,8 +12846,8 @@
               "word": "turn off",
               "phonetic": "",
               "pos": "",
-              "def": "关掉\\(水、电、电视等\\)",
-              "meaning": "关掉\\(水、电、电视等\\)"
+              "def": "关掉(水、电、电视等)",
+              "meaning": "关掉(水、电、电视等)"
             }
           ]
         },
@@ -12865,8 +12865,8 @@
               "word": "break out",
               "phonetic": "",
               "pos": "",
-              "def": "\\(战争、火灾等\\)突然发生；爆发",
-              "meaning": "\\(战争、火灾等\\)突然发生；爆发"
+              "def": "(战争、火灾等)突然发生；爆发",
+              "meaning": "(战争、火灾等)突然发生；爆发"
             },
             {
               "word": "bring out",
@@ -12900,8 +12900,8 @@
               "word": "come out",
               "phonetic": "",
               "pos": "",
-              "def": "出来；\\(书等\\)出版；发行",
-              "meaning": "出来；\\(书等\\)出版；发行"
+              "def": "出来；(书等)出版；发行",
+              "meaning": "出来；(书等)出版；发行"
             },
             {
               "word": "cut out",
@@ -13012,8 +13012,8 @@
               "word": "put out",
               "phonetic": "",
               "pos": "",
-              "def": "扑灭；熄火\\(2010年山西23题考查\\)",
-              "meaning": "扑灭；熄火\\(2010年山西23题考查\\)"
+              "def": "扑灭；熄火(2010年山西23题考查)",
+              "meaning": "扑灭；熄火(2010年山西23题考查)"
             },
             {
               "word": "sell out",
@@ -13080,8 +13080,8 @@
               "word": "turn over",
               "phonetic": "",
               "pos": "",
-              "def": "翻动；犁翻\\(土地\\)",
-              "meaning": "翻动；犁翻\\(土地\\)"
+              "def": "翻动；犁翻(土地)",
+              "meaning": "翻动；犁翻(土地)"
             }
           ]
         },
@@ -13195,8 +13195,8 @@
               "word": "get through",
               "phonetic": "",
               "pos": "",
-              "def": "通过；拨通\\(电话\\)",
-              "meaning": "通过；拨通\\(电话\\)"
+              "def": "通过；拨通(电话)",
+              "meaning": "通过；拨通(电话)"
             },
             {
               "word": "go through",
@@ -13242,22 +13242,22 @@
               "word": "cheer up",
               "phonetic": "",
               "pos": "",
-              "def": "\\(使\\)变得更高兴；振奋起来",
-              "meaning": "\\(使\\)变得更高兴；振奋起来"
+              "def": "(使)变得更高兴；振奋起来",
+              "meaning": "(使)变得更高兴；振奋起来"
             },
             {
               "word": "clean up",
               "phonetic": "",
               "pos": "",
-              "def": "打扫\\(或清除\\)干净",
-              "meaning": "打扫\\(或清除\\)干净"
+              "def": "打扫(或清除)干净",
+              "meaning": "打扫(或清除)干净"
             },
             {
               "word": "clear up",
               "phonetic": "",
               "pos": "",
-              "def": "整理；收拾；\\(天气\\)放晴",
-              "meaning": "整理；收拾；\\(天气\\)放晴"
+              "def": "整理；收拾；(天气)放晴",
+              "meaning": "整理；收拾；(天气)放晴"
             },
             {
               "word": "come up",
@@ -13305,8 +13305,8 @@
               "word": "give up",
               "phonetic": "",
               "pos": "",
-              "def": "放弃\\(2008年山西31题考查；2014年山西26题考查\\)",
-              "meaning": "放弃\\(2008年山西31题考查；2014年山西26题考查\\)"
+              "def": "放弃(2008年山西31题考查；2014年山西26题考查)",
+              "meaning": "放弃(2008年山西31题考查；2014年山西26题考查)"
             },
             {
               "word": "grow up",
@@ -13354,8 +13354,8 @@
               "word": "put up",
               "phonetic": "",
               "pos": "",
-              "def": "挂起；举起；贴\\(广告等\\)",
-              "meaning": "挂起；举起；贴\\(广告等\\)"
+              "def": "挂起；举起；贴(广告等)",
+              "meaning": "挂起；举起；贴(广告等)"
             },
             {
               "word": "ring up",
@@ -13396,15 +13396,15 @@
               "word": "take up",
               "phonetic": "",
               "pos": "",
-              "def": "占去；占据\\(时间、地位等\\)",
-              "meaning": "占去；占据\\(时间、地位等\\)"
+              "def": "占去；占据(时间、地位等)",
+              "meaning": "占去；占据(时间、地位等)"
             },
             {
               "word": "turn up",
               "phonetic": "",
               "pos": "",
-              "def": "到达；来到；开大\\(声音\\)",
-              "meaning": "到达；来到；开大\\(声音\\)"
+              "def": "到达；来到；开大(声音)",
+              "meaning": "到达；来到；开大(声音)"
             },
             {
               "word": "wake up",
@@ -13479,7 +13479,7 @@
               "meaning": "掌管；管理"
             },
             {
-              "word": "\\(be\\)made of",
+              "word": "(be)made of",
               "phonetic": "",
               "pos": "",
               "def": "由……制成的",
@@ -13489,15 +13489,15 @@
               "word": "catch up with",
               "phonetic": "",
               "pos": "",
-              "def": "赶上\\(或超过\\)",
-              "meaning": "赶上\\(或超过\\)"
+              "def": "赶上(或超过)",
+              "meaning": "赶上(或超过)"
             },
             {
               "word": "come across",
               "phonetic": "",
               "pos": "",
-              "def": "\\(偶然\\)遇见\\(或发现\\)",
-              "meaning": "\\(偶然\\)遇见\\(或发现\\)"
+              "def": "(偶然)遇见(或发现)",
+              "meaning": "(偶然)遇见(或发现)"
             },
             {
               "word": "come true",
@@ -13510,11 +13510,11 @@
               "word": "come up with",
               "phonetic": "",
               "pos": "",
-              "def": "追上；赶上；想出\\(主意\\)；找出\\(答案\\)",
-              "meaning": "追上；赶上；想出\\(主意\\)；找出\\(答案\\)"
+              "def": "追上；赶上；想出(主意)；找出(答案)",
+              "meaning": "追上；赶上；想出(主意)；找出(答案)"
             },
             {
-              "word": "do \\(one's\\) homework",
+              "word": "do (one's) homework",
               "phonetic": "",
               "pos": "",
               "def": "做作业",
@@ -13535,11 +13535,11 @@
               "meaning": "尽最大的努力"
             },
             {
-              "word": "do some cleaning\\(shopping\\)",
+              "word": "do some cleaning(shopping)",
               "phonetic": "",
               "pos": "",
-              "def": "打扫\\(买东西\\)",
-              "meaning": "打扫\\(买东西\\)"
+              "def": "打扫(买东西)",
+              "meaning": "打扫(买东西)"
             },
             {
               "word": "do the dishes",
@@ -13605,7 +13605,7 @@
               "meaning": "与……相处"
             },
             {
-              "word": "get close\\(to\\)",
+              "word": "get close(to)",
               "phonetic": "",
               "pos": "",
               "def": "接近",
@@ -13615,8 +13615,8 @@
               "word": "get on with sb.",
               "phonetic": "",
               "pos": "",
-              "def": "与……相处\\(2013年山西26题考查\\)",
-              "meaning": "与……相处\\(2013年山西26题考查\\)"
+              "def": "与……相处(2013年山西26题考查)",
+              "meaning": "与……相处(2013年山西26题考查)"
             },
             {
               "word": "get out of",
@@ -13640,11 +13640,11 @@
               "meaning": "走在前面；领先；干吧"
             },
             {
-              "word": "go fishing \\(shopping, skating\\)",
+              "word": "go fishing (shopping, skating)",
               "phonetic": "",
               "pos": "",
-              "def": "\\(去\\)钓鱼\\(买东西；滑冰\\)",
-              "meaning": "\\(去\\)钓鱼\\(买东西；滑冰\\)"
+              "def": "(去)钓鱼(买东西；滑冰)",
+              "meaning": "(去)钓鱼(买东西；滑冰)"
             },
             {
               "word": "go for a walk",
@@ -13668,7 +13668,7 @@
               "meaning": "继续"
             },
             {
-              "word": "had better\\(do\\)",
+              "word": "had better(do)",
               "phonetic": "",
               "pos": "",
               "def": "最好做",
@@ -13808,7 +13808,7 @@
               "meaning": "自己做决定"
             },
             {
-              "word": "make \\(one's\\) bed",
+              "word": "make (one's) bed",
               "phonetic": "",
               "pos": "",
               "def": "铺床",
@@ -13948,7 +13948,7 @@
               "meaning": "散步；走一走"
             },
             {
-              "word": "take breaks\\(take a break\\)",
+              "word": "take breaks(take a break)",
               "phonetic": "",
               "pos": "",
               "def": "休息",
@@ -14060,8 +14060,8 @@
               "word": "be proud of",
               "phonetic": "",
               "pos": "",
-              "def": "骄傲；自豪\\(2014年山西25题考查\\)",
-              "meaning": "骄傲；自豪\\(2014年山西25题考查\\)"
+              "def": "骄傲；自豪(2014年山西25题考查)",
+              "meaning": "骄傲；自豪(2014年山西25题考查)"
             },
             {
               "word": "be ready to",
@@ -14123,8 +14123,8 @@
               "word": "be full of",
               "phonetic": "",
               "pos": "",
-              "def": "满是……的；\\(有\\)大量的；\\(有\\)丰富的",
-              "meaning": "满是……的；\\(有\\)大量的；\\(有\\)丰富的"
+              "def": "满是……的；(有)大量的；(有)丰富的",
+              "meaning": "满是……的；(有)大量的；(有)丰富的"
             }
           ]
         },
@@ -14172,11 +14172,11 @@
               "meaning": "偶然"
             },
             {
-              "word": "by air\\(bus, train, ship\\)",
+              "word": "by air(bus, train, ship)",
               "phonetic": "",
               "pos": "",
-              "def": "乘飞机\\(公共汽车；火车；轮船\\)",
-              "meaning": "乘飞机\\(公共汽车；火车；轮船\\)"
+              "def": "乘飞机(公共汽车；火车；轮船)",
+              "meaning": "乘飞机(公共汽车；火车；轮船)"
             },
             {
               "word": "by bike",
@@ -14262,8 +14262,8 @@
               "word": "in common",
               "phonetic": "",
               "pos": "",
-              "def": "共同；共有\\(2014年山西24题考查\\)",
-              "meaning": "共同；共有\\(2014年山西24题考查\\)"
+              "def": "共同；共有(2014年山西24题考查)",
+              "meaning": "共同；共有(2014年山西24题考查)"
             },
             {
               "word": "in danger",
@@ -14346,8 +14346,8 @@
               "word": "in public",
               "phonetic": "",
               "pos": "",
-              "def": "当众；公开\\(2009年山西32题考查\\)",
-              "meaning": "当众；公开\\(2009年山西32题考查\\)"
+              "def": "当众；公开(2009年山西32题考查)",
+              "meaning": "当众；公开(2009年山西32题考查)"
             },
             {
               "word": "in surprise",
@@ -14407,15 +14407,15 @@
               "word": "on show",
               "phonetic": "",
               "pos": "",
-              "def": "展出；在上演\\(放映\\)\\(2014年山西24题考查\\)",
-              "meaning": "展出；在上演\\(放映\\)\\(2014年山西24题考查\\)"
+              "def": "展出；在上演(放映)(2014年山西24题考查)",
+              "meaning": "展出；在上演(放映)(2014年山西24题考查)"
             },
             {
               "word": "on the weekend",
               "phonetic": "",
               "pos": "",
-              "def": "\\(在\\)周末",
-              "meaning": "\\(在\\)周末"
+              "def": "(在)周末",
+              "meaning": "(在)周末"
             },
             {
               "word": "on time",
@@ -14428,11 +14428,11 @@
               "word": "on weekends",
               "phonetic": "",
               "pos": "",
-              "def": "\\(在\\)周末",
-              "meaning": "\\(在\\)周末"
+              "def": "(在)周末",
+              "meaning": "(在)周末"
             },
             {
-              "word": "on\\(a\\) vacation",
+              "word": "on(a) vacation",
               "phonetic": "",
               "pos": "",
               "def": "度假",
@@ -14482,8 +14482,8 @@
               "word": "after all",
               "phonetic": "",
               "pos": "",
-              "def": "毕竟；终究\\(2014年山西27题考查\\)",
-              "meaning": "毕竟；终究\\(2014年山西27题考查\\)"
+              "def": "毕竟；终究(2014年山西27题考查)",
+              "meaning": "毕竟；终究(2014年山西27题考查)"
             },
             {
               "word": "after class",
@@ -14503,8 +14503,8 @@
               "word": "as a result",
               "phonetic": "",
               "pos": "",
-              "def": "\\(作为\\)结果",
-              "meaning": "\\(作为\\)结果"
+              "def": "(作为)结果",
+              "meaning": "(作为)结果"
             },
             {
               "word": "as...as",
@@ -14778,8 +14778,8 @@
               "word": "too...to",
               "phonetic": "",
               "pos": "",
-              "def": "太……以至于不……\\(2009年山西29题考查\\)",
-              "meaning": "太……以至于不……\\(2009年山西29题考查\\)"
+              "def": "太……以至于不……(2009年山西29题考查)",
+              "meaning": "太……以至于不……(2009年山西29题考查)"
             }
           ]
         },
@@ -14811,8 +14811,8 @@
               "word": "as far as",
               "phonetic": "",
               "pos": "",
-              "def": "\\(表示程度；范围\\)就……；尽……",
-              "meaning": "\\(表示程度；范围\\)就……；尽……"
+              "def": "(表示程度；范围)就……；尽……",
+              "meaning": "(表示程度；范围)就……；尽……"
             },
             {
               "word": "as usual",
@@ -14825,8 +14825,8 @@
               "word": "as well as",
               "phonetic": "",
               "pos": "",
-              "def": "除……之外\\(也\\)",
-              "meaning": "除……之外\\(也\\)"
+              "def": "除……之外(也)",
+              "meaning": "除……之外(也)"
             },
             {
               "word": "as well",
@@ -14965,8 +14965,8 @@
               "word": "so far as",
               "phonetic": "",
               "pos": "",
-              "def": "\\(表示程度；范围\\)就……；尽……",
-              "meaning": "\\(表示程度；范围\\)就……；尽……"
+              "def": "(表示程度；范围)就……；尽……",
+              "meaning": "(表示程度；范围)就……；尽……"
             },
             {
               "word": "so far",
@@ -15016,7 +15016,7 @@
           "name": "其他短语",
           "words": [
             {
-              "word": "a bit\\(of\\)",
+              "word": "a bit(of)",
               "phonetic": "",
               "pos": "",
               "def": "有一点；一会儿",
@@ -15082,8 +15082,8 @@
               "word": "all right",
               "phonetic": "",
               "pos": "",
-              "def": "行了；好吧；\\(病\\)好了",
-              "meaning": "行了；好吧；\\(病\\)好了"
+              "def": "行了；好吧；(病)好了",
+              "meaning": "行了；好吧；(病)好了"
             },
             {
               "word": "all the time",
@@ -15103,8 +15103,8 @@
               "word": "feel free",
               "phonetic": "",
               "pos": "",
-              "def": "\\(可以\\)随便\\(做某事\\)",
-              "meaning": "\\(可以\\)随便\\(做某事\\)"
+              "def": "(可以)随便(做某事)",
+              "meaning": "(可以)随便(做某事)"
             },
             {
               "word": "lots of",
@@ -15178,189 +15178,189 @@
       "title": "第二十八天：特殊句型",
       "categories": [
         {
-          "name": "词汇",
+          "name": "特殊句型",
           "words": [
             {
-              "word": "I was so tired that I",
+              "word": "I was so tired that I went to sleep early.",
               "phonetic": "",
               "pos": "",
-              "def": "went to sleep early. 我太累了所以很早就睡了。\\(七下P\\)",
-              "meaning": "went to sleep early. 我太累了所以很早就睡了。\\(七下P\\)"
+              "meaning": "我太累了所以很早就睡了。",
+              "def": "我太累了所以很早就睡了。"
             },
             {
-              "word": "There is something for everyone at",
+              "word": "There is something for everyone at Greenwood Park.",
               "phonetic": "",
               "pos": "",
-              "def": "Greenwood Park. 在绿木公园每个人都可以找到适合自己的东西。\\(八上P\\)",
-              "meaning": "Greenwood Park. 在绿木公园每个人都可以找到适合自己的东西。\\(八上P\\)"
+              "meaning": "在绿木公园每个人都可以找到适合自己的东西。",
+              "def": "在绿木公园每个人都可以找到适合自己的东西。"
             },
             {
-              "word": "The kid is too young to",
+              "word": "The kid is too young to play this game.",
               "phonetic": "",
               "pos": "",
-              "def": "play this game. 这个孩子太小，不能玩这个游戏。\\(八上P₄₂\\)",
-              "meaning": "play this game. 这个孩子太小，不能玩这个游戏。\\(八上P₄₂\\)"
+              "meaning": "这个孩子太小，不能玩这个游戏。",
+              "def": "这个孩子太小，不能玩这个游戏。"
             },
             {
-              "word": "Mario would like to be an",
+              "word": "Mario would like to be an animal doctor!",
               "phonetic": "",
               "pos": "",
-              "def": "animal doctor\\! 马里奥想要成为一名兽医\\!\\(八下P\\)",
-              "meaning": "animal doctor\\! 马里奥想要成为一名兽医\\!\\(八下P\\)"
+              "meaning": "马里奥想要成为一名兽医!",
+              "def": "马里奥想要成为一名兽医!"
             },
             {
-              "word": "I'd like to thank you for",
+              "word": "I'd like to thank you for giving money to Animal Helpers.",
               "phonetic": "",
               "pos": "",
-              "def": "giving money to Animal Helpers. 非常感谢你为动物救助中心捐助资金。\\(八下P₁₄\\)",
-              "meaning": "giving money to Animal Helpers. 非常感谢你为动物救助中心捐助资金。\\(八下P₁₄\\)"
+              "meaning": "非常感谢你为动物救助中心捐助资金。",
+              "def": "非常感谢你为动物救助中心捐助资金。"
             },
             {
               "word": "Could you please clean your room?",
               "phonetic": "",
               "pos": "",
-              "def": "请你打扫一下你的房间好吗?\\(八下P₁₂\\)",
-              "meaning": "请你打扫一下你的房间好吗?\\(八下P₁₂\\)"
+              "meaning": "请你打扫一下你的房间好吗?",
+              "def": "请你打扫一下你的房间好吗?"
             },
             {
-              "word": "I think it is important for",
+              "word": "I think it is important for children to learn how to do chores and help their parents with housework.",
               "phonetic": "",
               "pos": "",
-              "def": "children to learn how to do chores and help their parents with housework. 我认为对于孩子们来说学会如何做杂务，以及帮助他们的父母做家务是非常重要的。\\(八下P₂₂\\)",
-              "meaning": "children to learn how to do chores and help their parents with housework. 我认为对于孩子们来说学会如何做杂务，以及帮助他们的父母做家务是非常重要的。\\(八下P₂₂\\)"
+              "meaning": "我认为对于孩子们来说学会如何做杂务，以及帮助他们的父母做家务是非常重要的。",
+              "def": "我认为对于孩子们来说学会如何做杂务，以及帮助他们的父母做家务是非常重要的。"
             },
             {
-              "word": "It is not enough to just",
+              "word": "It is not enough to just get good grades at school.",
               "phonetic": "",
               "pos": "",
-              "def": "get good grades at school. 在学校仅有好的成绩是远远不够的。\\(八下P₂₂\\)",
-              "meaning": "get good grades at school. 在学校仅有好的成绩是远远不够的。\\(八下P₂₂\\)"
+              "meaning": "在学校仅有好的成绩是远远不够的。",
+              "def": "在学校仅有好的成绩是远远不够的。"
             },
             {
-              "word": "The earlier kids learn to be",
+              "word": "The earlier kids learn to be independent, the better it is for their future.",
               "phonetic": "",
               "pos": "",
-              "def": "independent, the better it is for their future. 孩子们越早学会独立，对他们的未来就越好。\\(八下P₂₃\\)",
-              "meaning": "independent, the better it is for their future. 孩子们越早学会独立，对他们的未来就越好。\\(八下P₂₃\\)"
+              "meaning": "孩子们越早学会独立，对他们的未来就越好。",
+              "def": "孩子们越早学会独立，对他们的未来就越好。"
             },
             {
-              "word": "Why don't you talk to your",
+              "word": "Why don't you talk to your parents?",
               "phonetic": "",
               "pos": "",
-              "def": "parents? 为什么不和你的父母谈谈?\\(八下P₃\\)",
-              "meaning": "parents? 为什么不和你的父母谈谈?\\(八下P₃\\)"
+              "meaning": "为什么不和你的父母谈谈?",
+              "def": "为什么不和你的父母谈谈?"
             },
             {
-              "word": "What do you think of after\\-school",
+              "word": "What do you think of after-school activities?",
               "phonetic": "",
               "pos": "",
-              "def": "activities? 你认为课后活动怎么样?\\(八下P₃₁\\)",
-              "meaning": "activities? 你认为课后活动怎么样?\\(八下P₃₁\\)"
+              "meaning": "你认为课后活动怎么样?",
+              "def": "你认为课后活动怎么样?"
             },
             {
-              "word": "One of the world's most dangerous",
+              "word": "One of the world's most dangerous sports is mountain climbing.",
               "phonetic": "",
               "pos": "",
-              "def": "sports is mountain climbing. 世界上最危险的运动之一是爬山。\\(八下P\\)",
-              "meaning": "sports is mountain climbing. 世界上最危险的运动之一是爬山。\\(八下P\\)"
+              "meaning": "世界上最危险的运动之一是爬山。",
+              "def": "世界上最危险的运动之一是爬山。"
             },
             {
               "word": "Would you like something to drink?",
               "phonetic": "",
               "pos": "",
-              "def": "你想要喝点什么吗?\\(八下P\\)",
-              "meaning": "你想要喝点什么吗?\\(八下P\\)"
+              "meaning": "你想要喝点什么吗?",
+              "def": "你想要喝点什么吗?"
             },
             {
-              "word": "What about reading aloud to practice",
+              "word": "What about reading aloud to practice pronunciation?",
               "phonetic": "",
               "pos": "",
-              "def": "pronunciation? 大声朗读来练习发音怎么样?\\(九全P₂\\)",
-              "meaning": "pronunciation? 大声朗读来练习发音怎么样?\\(九全P₂\\)"
+              "meaning": "大声朗读来练习发音怎么样?",
+              "def": "大声朗读来练习发音怎么样?"
             },
             {
-              "word": "Could you please tell me how",
+              "word": "Could you please tell me how to get to the bookstore?",
               "phonetic": "",
               "pos": "",
-              "def": "to get to the bookstore? 你能告诉我去书店的路怎么走吗?\\(九全P₁\\)",
-              "meaning": "to get to the bookstore? 你能告诉我去书店的路怎么走吗?\\(九全P₁\\)"
+              "meaning": "你能告诉我去书店的路怎么走吗?",
+              "def": "你能告诉我去书店的路怎么走吗?"
             },
             {
-              "word": "Do you know where I can",
+              "word": "Do you know where I can get some postcards?",
               "phonetic": "",
               "pos": "",
-              "def": "get some postcards? 你知道我在哪能买到明信片吗?\\(九全P₁₁\\)",
-              "meaning": "get some postcards? 你知道我在哪能买到明信片吗?\\(九全P₁₁\\)"
+              "meaning": "你知道我在哪能买到明信片吗?",
+              "def": "你知道我在哪能买到明信片吗?"
             },
             {
-              "word": "I wonder when the park closes",
+              "word": "I wonder when the park closes today.",
               "phonetic": "",
               "pos": "",
-              "def": "today. 我想知道公园今天几点关门。\\(九全P₁₈\\)",
-              "meaning": "today. 我想知道公园今天几点关门。\\(九全P₁₈\\)"
+              "meaning": "我想知道公园今天几点关门。",
+              "def": "我想知道公园今天几点关门。"
             },
             {
-              "word": "It seems that many people all",
+              "word": "It seems that many people all over the world drink Chinese tea.",
               "phonetic": "",
               "pos": "",
-              "def": "over the world drink Chinese tea. 好像全世界很多人都喝中国茶。\\(九全P\\)",
-              "meaning": "over the world drink Chinese tea. 好像全世界很多人都喝中国茶。\\(九全P\\)"
+              "meaning": "好像全世界很多人都喝中国茶。",
+              "def": "好像全世界很多人都喝中国茶。"
             },
             {
-              "word": "It's said that a Chinese ruler",
+              "word": "It's said that a Chinese ruler called Shen Nong was the first to discover tea as a drink.",
               "phonetic": "",
               "pos": "",
-              "def": "called Shen Nong was the first to discover tea as a drink. 据说是中国一个叫神农的统治者第一个发现了茶叶可以作为一种饮品。\\(九全P₄₃\\)",
-              "meaning": "called Shen Nong was the first to discover tea as a drink. 据说是中国一个叫神农的统治者第一个发现了茶叶可以作为一种饮品。\\(九全P₄₃\\)"
+              "meaning": "据说是中国一个叫神农的统治者第一个发现了茶叶可以作为一种饮品。",
+              "def": "据说是中国一个叫神农的统治者第一个发现了茶叶可以作为一种饮品。"
             },
             {
               "word": "He used to be very quiet.",
               "phonetic": "",
               "pos": "",
-              "def": "他过去非常安静。\\(九全P₅₉\\)",
-              "meaning": "他过去非常安静。\\(九全P₅₉\\)"
+              "meaning": "他过去非常安静。",
+              "def": "他过去非常安静。"
             },
             {
-              "word": "I suppose I'll just listen to",
+              "word": "I suppose I'll just listen to this new CD I bought.",
               "phonetic": "",
               "pos": "",
-              "def": "this new CD I bought. 我想我还是听一下我新买的CD。\\(九全P\\)",
-              "meaning": "this new CD I bought. 我想我还是听一下我新买的CD。\\(九全P\\)"
+              "meaning": "我想我还是听一下我新买的CD。",
+              "def": "我想我还是听一下我新买的CD。"
             },
             {
-              "word": "I prefer movies that give me",
+              "word": "I prefer movies that give me something to think about.",
               "phonetic": "",
               "pos": "",
-              "def": "something to think about. 我喜欢看能带给我许多思考的电影。\\(九全P\\)",
-              "meaning": "something to think about. 我喜欢看能带给我许多思考的电影。\\(九全P\\)"
+              "meaning": "我喜欢看能带给我许多思考的电影。",
+              "def": "我喜欢看能带给我许多思考的电影。"
             },
             {
-              "word": "What are you supposed to do",
+              "word": "What are you supposed to do when you meet someone for the first time?",
               "phonetic": "",
               "pos": "",
-              "def": "when you meet someone for the first time? 当你第一次见到别人时你应该做些什么?\\(九全P₇₃\\)",
-              "meaning": "when you meet someone for the first time? 当你第一次见到别人时你应该做些什么?\\(九全P₇₃\\)"
+              "meaning": "当你第一次见到别人时你应该做些什么?",
+              "def": "当你第一次见到别人时你应该做些什么?"
             },
             {
-              "word": "You're expected to be there at",
+              "word": "You're expected to be there at noon.",
               "phonetic": "",
               "pos": "",
-              "def": "noon. 很期待你中午到那儿。\\(九全P\\)",
-              "meaning": "noon. 很期待你中午到那儿。\\(九全P\\)"
+              "meaning": "很期待你中午到那儿。",
+              "def": "很期待你中午到那儿。"
             },
             {
-              "word": "This method is not only cruel,",
+              "word": "This method is not only cruel, but also harmful to the environment.",
               "phonetic": "",
               "pos": "",
-              "def": "but also harmful to the environment. 这种方法不仅残酷而且对环境非常有害。\\(九全P₉₉\\)",
-              "meaning": "but also harmful to the environment. 这种方法不仅残酷而且对环境非常有害。\\(九全P₉₉\\)"
+              "meaning": "这种方法不仅残酷而且对环境非常有害。",
+              "def": "这种方法不仅残酷而且对环境非常有害。"
             },
             {
-              "word": "It's time to say goodbye, but",
+              "word": "It's time to say goodbye, but none of us wants to leave.",
               "phonetic": "",
               "pos": "",
-              "def": "none of us wants to leave. 是时候说再见了，但是我们都不想离开。\\(九全P\\)",
-              "meaning": "none of us wants to leave. 是时候说再见了，但是我们都不想离开。\\(九全P\\)"
+              "meaning": "是时候说再见了，但是我们都不想离开。",
+              "def": "是时候说再见了，但是我们都不想离开。"
             }
           ]
         }

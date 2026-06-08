@@ -2,6 +2,7 @@
   <div class="word-card-wrapper">
     <div class="word-card" :class="{ flipped: isFlipped }" @click="flip">
       <div class="card-front">
+        <div v-if="isWrong" class="wrong-badge">🚩</div>
         <div
           v-if="showStar"
           class="btn-star"
@@ -11,7 +12,7 @@
           {{ isStarred ? '⭐' : '☆' }}
         </div>
         <div class="card-inner">
-          <div class="word-text">{{ word.word }}</div>
+          <div class="word-text" :class="{ 'is-sentence': isSentence }" :style="wordFontSize">{{ word.word }}</div>
           <div class="phonetic-row" @click.stop="speak">
             <span class="phonetic-text">{{ word.phonetic || '' }}</span>
             <span class="speak-icon">🔊</span>
@@ -23,6 +24,7 @@
         </div>
       </div>
       <div class="card-back">
+        <div v-if="isWrong" class="wrong-badge wrong-badge-back">🚩</div>
         <div
           v-if="showStar"
           class="btn-star btn-star-back"
@@ -54,7 +56,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { useSettingsStore } from '../stores/settings.js'
 
 const settings = useSettingsStore()
@@ -62,6 +64,7 @@ const settings = useSettingsStore()
 const props = defineProps({
   word: { type: Object, required: true },
   isStarred: { type: Boolean, default: false },
+  isWrong: { type: Boolean, default: false },
   showActions: { type: Boolean, default: true },
   showKnown: { type: Boolean, default: true },
   showStar: { type: Boolean, default: true }
@@ -70,6 +73,19 @@ const props = defineProps({
 const emit = defineEmits(['known', 'unknown', 'star', 'flip'])
 const isFlipped = ref(false)
 const hasBeenFlipped = ref(false)
+
+const isSentence = computed(() => (props.word.word.match(/ /g) || []).length >= 5)
+
+// 长单词/短语动态缩小字号，避免溢出卡片
+const wordFontSize = computed(() => {
+  if (isSentence.value) return {} // 句子走 is-sentence 的 22px
+  const len = props.word.word.length
+  if (len > 24) return { fontSize: '18px', letterSpacing: '1px' }
+  if (len > 18) return { fontSize: '21px', letterSpacing: '1px' }
+  if (len > 14) return { fontSize: '26px' }
+  if (len > 11) return { fontSize: '32px' }
+  return {}
+})
 
 // 切换单词时重置翻转状态
 watch(() => props.word, () => {
@@ -157,6 +173,10 @@ function onStar() {
 .card-inner {
   text-align: center;
   padding: 24px;
+  overflow: hidden;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .word-text {
@@ -165,8 +185,17 @@ function onStar() {
   letter-spacing: 2px;
   color: var(--text-primary);
   margin-bottom: 14px;
-  word-break: normal;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  line-height: 1.2;
+  max-width: 100%;
+}
+
+.word-text.is-sentence {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
 }
 
 .phonetic-row {
@@ -343,6 +372,19 @@ function onStar() {
 
 .btn-star:active {
   transform: scale(0.9);
+}
+
+.wrong-badge {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  z-index: 5;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.wrong-badge-back {
+  color: #fff;
 }
 
 .btn-unknown {

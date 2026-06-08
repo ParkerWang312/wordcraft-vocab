@@ -23,7 +23,7 @@
           <span class="stat-num">{{ store.state.streakDays }}</span>
           <span class="stat-label">连续天 🔥</span>
         </div>
-        <div class="stat" @click="$router.push('/review')">
+        <div class="stat" @click="$router.push('/review?source=wrongwords')">
           <span class="stat-num danger" v-if="store.wrongCount > 0">{{ store.wrongCount }}</span>
           <span class="stat-num" v-else>0</span>
           <span class="stat-label">错题本 🚩</span>
@@ -73,7 +73,7 @@
           :class="['day-item', {
             completed: store.state.completedDays.includes(day),
             current: store.state.currentDay === day,
-            locked: day > store.state.currentDay
+            locked: day > store.state.currentDay && !unlockAll
           }]"
           @click="goToDay(day)"
         >
@@ -87,6 +87,7 @@
 </template>
 
 <script setup>
+import { inject, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLearningStore } from '../stores/learning.js'
 import { useThemeStore } from '../stores/theme.js'
@@ -96,6 +97,7 @@ import { showDialog } from 'vant'
 const router = useRouter()
 const store = useLearningStore()
 const theme = useThemeStore()
+const unlockAll = inject('unlockAll', ref(false))
 
 function startLearn() {
   if (store.state.currentDay > 28) return
@@ -131,7 +133,7 @@ function goToDay(day) {
     return
   }
 
-  if (store.state.completedDays.includes(day) || day <= store.state.currentDay) {
+  if (unlockAll.value || store.state.completedDays.includes(day) || day <= store.state.currentDay) {
     router.push(`/learn/${day}`)
   }
 }

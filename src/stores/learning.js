@@ -45,7 +45,7 @@ export const useLearningStore = defineStore('learning', () => {
     const d = vocabularyData.days.find(d => d.day === Number(day))
     if (!d) return []
     return d.categories.flatMap(cat =>
-      cat.words.map(w => ({ ...w, day: d.day }))
+      cat.words.map(w => ({ ...w, day: d.day, category: cat.name }))
     )
   }
 

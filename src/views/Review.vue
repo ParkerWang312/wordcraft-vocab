@@ -1,26 +1,44 @@
 <template>
   <div class="page review-page">
-    <van-nav-bar :title="isWordbookReview ? '生词本复习' : '复习模式'" :fixed="false" />
+    <van-nav-bar :title="isWrongReview ? '错题复习' : isWordbookReview ? '生词本复习' : '复习模式'" left-arrow @click-left="goHome" :fixed="false" />
 
     <div class="review-header">
-      <p class="review-subtitle">
-        <template v-if="isWordbookReview">
-          生词本复习: {{ reviewWords.length }} 词
-        </template>
-        <template v-else>
-          待复习: {{ store.dueReviewCount }} 词
-          <span v-if="store.wrongCount > 0" class="wrong-badge">· 🚩 错题 {{ store.wrongCount }}</span>
-        </template>
-      </p>
-      <ProgressBar
-        :current="reviewedCount"
-        :total="reviewWords.length"
-        label="复习进度"
-      />
+      <div class="review-stats" v-if="isWrongReview">
+        <div class="stat-card danger">
+          <span class="stat-card-num">{{ reviewList.length - wrongCleared }}</span>
+          <span class="stat-card-label">🚩 错题</span>
+        </div>
+      </div>
+      <div class="review-stats" v-else-if="!isWordbookReview">
+        <div class="stat-card">
+          <span class="stat-card-num">{{ store.dueReviewCount }}</span>
+          <span class="stat-card-label">待复习</span>
+        </div>
+        <div class="stat-card danger" v-if="store.wrongCount > 0">
+          <span class="stat-card-num">{{ store.wrongCount }}</span>
+          <span class="stat-card-label">🚩 错题</span>
+        </div>
+      </div>
+      <div class="review-stats" v-else>
+        <div class="stat-card">
+          <span class="stat-card-num">{{ reviewList.length }}</span>
+          <span class="stat-card-label">生词本复习</span>
+        </div>
+        <div class="stat-card danger" v-if="wordbookWrongCount > 0">
+          <span class="stat-card-num">{{ wordbookWrongCount - bookWrongCleared }}</span>
+          <span class="stat-card-label">🚩 错题</span>
+        </div>
+      </div>
+      <div class="day-progress">
+        <div class="progress-track">
+          <div class="progress-fill" :style="{ width: reviewPercent + '%' }"></div>
+        </div>
+        <span class="progress-text">{{ reviewedCount }} / {{ reviewList.length }}</span>
+      </div>
     </div>
 
     <!-- 无待复习 -->
-    <div class="empty-state" v-if="reviewWords.length === 0">
+    <div class="empty-state" v-if="reviewList.length === 0">
       <span class="empty-emoji">🎉</span>
       <h3 v-if="isWordbookReview">生词本还是空的</h3>
       <h3 v-else>暂无待复习单词</h3>
@@ -45,6 +63,7 @@
         :show-known="false"
         :show-star="true"
         :is-starred="currentReviewWord.state?.inWordBook"
+        :is-wrong="currentReviewWord.isWrong"
         @star="toggleStar"
         @flip="onCardFlip"
       />
@@ -81,7 +100,6 @@ import { ref, computed, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
-import ProgressBar from '../components/ProgressBar.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -89,16 +107,29 @@ const store = useLearningStore()
 
 const redirectTo = computed(() => route.query.redirectTo || '')
 const isWordbookReview = computed(() => route.query.source === 'wordbook')
+const isWrongReview = computed(() => route.query.source === 'wrongwords')
+
+const wordbookWrongCount = computed(() => {
+  return reviewList.value.filter(w => w.isWrong).length
+})
 
 // 合并复习列表：错题优先，然后普通待复习
 const reviewWords = computed(() => {
+  // 错题本复习
+  if (isWrongReview.value) {
+    return store.wrongWordsList.map(w => {
+      const wid = generateWordId(w)
+      return { ...w, wordId: wid, state: store.state.wordStates[wid] || {}, isWrong: true }
+    })
+  }
+
   // 生词本一键复习：遍历所有生词
   if (isWordbookReview.value) {
     return store.wordBookWords.map(w => {
       const wid = generateWordId(w)
-      // 确保词有初始化状态（让 SM-2 能正常工作）
       store.initWordState(wid)
-      return { ...w, wordId: wid, state: store.state.wordStates[wid] || {}, isWrong: false, isWordbook: true }
+      const isWrong = store.wrongWordsList.some(ww => generateWordId(ww) === wid)
+      return { ...w, wordId: wid, state: store.state.wordStates[wid] || {}, isWrong, isWordbook: true }
     })
   }
 
@@ -113,19 +144,71 @@ const reviewWords = computed(() => {
       return { ...ww, wordId: wid, state: store.state.wordStates[wid] || {}, isWrong: true }
     })
 
-  const due = store.dueReviewWords.map(w => ({ ...w, isWrong: false }))
+  const due = store.dueReviewWords.map(w => {
+    const wid = generateWordId(w)
+    const isWrong = store.wrongWordsList.some(ww => generateWordId(ww) === wid)
+    return { ...w, isWrong }
+  })
 
   return [...wrongWords, ...due]
 })
 
 const reviewedCount = ref(0)
 const currentWordIndex = ref(0)
+const reviewList = ref([])
+const wrongCleared = ref(0)
+const bookWrongCleared = ref(0)
+
+// 取一次快照，避免复习过程中列表因响应式缩小
+// 优先从进度恢复，否则从当前 reviewWords 取快照
+watch(reviewWords, (words) => {
+  if (reviewList.value.length === 0 && words.length > 0) {
+    if (!loadReviewProgress()) {
+      reviewList.value = [...words]
+    }
+  }
+}, { immediate: true })
 const finished = ref(false)
 const cardFlipped = ref(false)
 
+const reviewPercent = computed(() => {
+  if (reviewList.value.length === 0) return 0
+  return Math.round((reviewedCount.value / reviewList.value.length) * 100)
+})
+
+const REVIEW_PROGRESS_KEY = 'wordcraft_review_progress'
+
+function saveReviewProgress() {
+  // 只有主线复习保存进度，错题和生词本每次都重新开始
+  if (isWrongReview.value || isWordbookReview.value) return
+  localStorage.setItem(REVIEW_PROGRESS_KEY, JSON.stringify({
+    index: currentWordIndex.value,
+    reviewed: reviewedCount.value,
+    reviewList: reviewList.value
+  }))
+}
+
+function loadReviewProgress() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(REVIEW_PROGRESS_KEY))
+    if (!saved) return false
+    if (!saved.reviewList || saved.reviewList.length === 0) return false
+    reviewList.value = saved.reviewList
+    currentWordIndex.value = Math.min(saved.index, reviewList.value.length - 1)
+    reviewedCount.value = saved.reviewed
+    return true
+  } catch {}
+  return false
+}
+
+function clearReviewProgress() {
+  if (isWrongReview.value || isWordbookReview.value) return
+  localStorage.removeItem(REVIEW_PROGRESS_KEY)
+}
+
 const currentReviewWord = computed(() => {
   if (finished.value) return null
-  return reviewWords.value[currentWordIndex.value] || null
+  return reviewList.value[currentWordIndex.value] || null
 })
 
 function onCardFlip() {
@@ -135,17 +218,24 @@ function onCardFlip() {
 function rateQuality(quality) {
   const word = currentReviewWord.value
   if (!word) return
-  store.reviewWord(generateWordId(word), quality)
+  // 只有主线到期词才更新SM-2，错词仅清除不影响曲线
+  if (!isWordbookReview.value && !isWrongReview.value && !word.isWrong) {
+    store.reviewWord(generateWordId(word), quality)
+  }
   // 答对时清除错题
   if (quality >= 1 && word.isWrong) {
     store.removeWrongWord(generateWordId(word))
+    if (isWrongReview.value) wrongCleared.value++
+    if (isWordbookReview.value) bookWrongCleared.value++
   }
   reviewedCount.value++
 
-  if (currentWordIndex.value < reviewWords.value.length - 1) {
+  if (currentWordIndex.value < reviewList.value.length - 1) {
     currentWordIndex.value++
+    saveReviewProgress()
   } else {
     finished.value = true
+    clearReviewProgress()
   }
 }
 
@@ -155,8 +245,18 @@ function toggleStar() {
   store.toggleWordBook(generateWordId(word))
 }
 
-function goBack() {
+function goHome() {
   if (isWordbookReview.value) {
+    router.push('/wordbook')
+  } else {
+    router.push('/')
+  }
+}
+
+function goBack() {
+  if (isWrongReview.value) {
+    router.push('/')
+  } else if (isWordbookReview.value) {
     router.push('/wordbook')
   } else if (redirectTo.value) {
     router.push(redirectTo.value)
@@ -186,20 +286,97 @@ watch(currentReviewWord, (word) => {
   padding-right: 8px;
 }
 
+.nav-home-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-home-btn:active {
+  opacity: 0.7;
+}
+
 .review-header {
+  padding: 12px 8px 0;
   margin-bottom: 20px;
 }
 
-.review-subtitle {
-  font-size: 14px;
-  color: var(--text-secondary);
-  text-align: center;
-  margin-bottom: 12px;
+.review-stats {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
-.wrong-badge {
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 24px;
+  border-radius: 14px;
+  background: var(--accent-light);
+  min-width: 80px;
+}
+
+.stat-card.danger {
+  background: #FEF2F2;
+}
+
+[data-theme="dark"] .stat-card.danger {
+  background: #3B1212;
+}
+
+.stat-card-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.stat-card.danger .stat-card-num {
   color: var(--danger);
-  font-weight: 600;
+}
+
+.stat-card-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.day-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.progress-track {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), #EC4899);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 44px;
+  text-align: right;
 }
 
 .empty-state {
