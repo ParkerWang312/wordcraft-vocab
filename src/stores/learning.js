@@ -70,6 +70,7 @@ export const useLearningStore = defineStore('learning', () => {
     ws.learnedAt = new Date().toISOString()
     if (known) {
       ws.status = 'known'
+      // 新学习时设置首次复习时间
       if (ws.reviewCount === 0) {
         const nextDate = new Date()
         nextDate.setDate(nextDate.getDate() + 1)
@@ -77,9 +78,21 @@ export const useLearningStore = defineStore('learning', () => {
         ws.nextReviewAt = nextDate.toISOString()
         ws.interval = 1
       }
+      // 已复习过的单词重新学习：重置复习计划
+      else {
+        ws.reviewCount = 0
+        ws.easeFactor = 2.5
+        ws.interval = 1
+        const nextDate = new Date()
+        nextDate.setDate(nextDate.getDate() + 1)
+        nextDate.setHours(0, 0, 0, 0)
+        ws.nextReviewAt = nextDate.toISOString()
+      }
     } else {
       ws.status = 'learning'
-      const nextDate = new Date(Date.now() + 10 * 60 * 1000)
+      const nextDate = new Date()
+      nextDate.setDate(nextDate.getDate() + 1)
+      nextDate.setHours(0, 0, 0, 0)
       ws.nextReviewAt = nextDate.toISOString()
       ws.interval = 0
     }
@@ -96,10 +109,6 @@ export const useLearningStore = defineStore('learning', () => {
     state.value.stats.totalReviewed++
     if (updated.status === 'mastered') {
       state.value.stats.totalMastered++
-    }
-    // 复习答对（quality>=1）时从错题本减少计数
-    if (quality >= 1 && state.value.wrongWords[wordId]) {
-      state.value.wrongWords[wordId].wrongCount = Math.max(0, state.value.wrongWords[wordId].wrongCount - 1)
     }
     persist()
     return updated

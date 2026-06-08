@@ -25,8 +25,8 @@ export function calculateNextReview(wordState, quality) {
     state.status = 'unknown'
     state.easeFactor = Math.max(1.3, state.easeFactor - 0.2)
   } else {
-    // 调整简易度系数
-    const delta = 0.1 - (2 - quality) * (0.08 + (2 - quality) * 0.02)
+    // 调整简易度系数（模糊也会轻度提升）
+    const delta = quality === 2 ? 0.1 : 0.05
     state.easeFactor = Math.max(1.3, state.easeFactor + delta)
 
     // 计算下次复习间隔

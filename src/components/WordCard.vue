@@ -83,6 +83,9 @@ function flip() {
     hasBeenFlipped.value = true
     emit('flip')
   }
+  if (isFlipped.value && settings.data.speakOnFlip) {
+    speak()
+  }
 }
 
 function speak() {

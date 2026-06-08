@@ -66,6 +66,7 @@ const store = useLearningStore()
 onMounted(() => {
   if (store.dueReviewCount > 0) {
     router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
+    return
   }
 })
 

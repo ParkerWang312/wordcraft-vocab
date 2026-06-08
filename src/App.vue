@@ -24,6 +24,11 @@
               <van-switch v-model="settingsStore.data.showPhoneticOnBack" @change="settingsStore.persistDirect" size="22" />
             </template>
           </van-cell>
+          <van-cell title="翻转卡片自动发音" center>
+            <template #right-icon>
+              <van-switch v-model="settingsStore.data.speakOnFlip" @change="settingsStore.persistDirect" size="22" />
+            </template>
+          </van-cell>
         </van-cell-group>
         <van-cell-group title="练习模式">
           <van-cell title="答对自动跳下一题" center>
@@ -75,11 +80,13 @@ function confirmReset() {
   showDialog({
     title: '⚠️ 重置进度',
     message: '确认清除所有学习记录、复习进度和错题本？此操作不可撤销。',
-    confirmButtonText: '确认重置',
-    confirmButtonColor: '#EF4444',
-    cancelButtonText: '取消'
-  }).then(() => {
+    confirmButtonText: '取消',
+    cancelButtonText: '确认重置',
+    cancelButtonColor: '#EF4444',
+    showCancelButton: true
+  }).catch(() => {
     localStorage.removeItem('wordcraft_vocab')
+    localStorage.removeItem('wordcraft_settings')
     window.location.reload()
   })
 }
@@ -149,8 +156,40 @@ body {
   border-top: 1px solid var(--border) !important;
 }
 
+.van-tabbar-item {
+  color: var(--text-secondary) !important;
+}
+
+.van-tabbar-item--active {
+  color: var(--accent) !important;
+}
+
 .van-tabbar.dark {
   --van-tabbar-background: var(--bg-card);
+}
+
+.van-nav-bar {
+  margin: 12px 12px 0;
+  border-radius: 14px !important;
+  background: var(--bg-card) !important;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.van-nav-bar::after {
+  border-color: transparent !important;
+}
+
+.van-nav-bar__title {
+  color: var(--text-primary) !important;
+}
+
+.van-nav-bar .van-icon {
+  color: var(--accent) !important;
+}
+
+[data-theme="dark"] .van-nav-bar {
+  background: var(--bg-card) !important;
 }
 
 .page {

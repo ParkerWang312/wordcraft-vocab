@@ -6,7 +6,8 @@ const SETTINGS_KEY = 'wordcraft_settings'
 const defaults = {
   showWordOnBack: true,
   showPhoneticOnBack: false,
-  autoAdvance: false
+  autoAdvance: false,
+  speakOnFlip: true
 }
 
 function load() {
