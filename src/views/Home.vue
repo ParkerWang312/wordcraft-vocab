@@ -3,7 +3,13 @@
     <!-- 顶部 -->
     <div class="header">
       <div class="header-top">
+        <div class="theme-toggle" @click="theme.toggle">
+          <span class="theme-icon">{{ theme.isDark ? '☀️' : '🌙' }}</span>
+        </div>
         <h1 class="title">WordCraft 词匠</h1>
+        <div class="theme-toggle" @click="openSettings">
+          <span class="theme-icon">⚙️</span>
+        </div>
       </div>
       <p class="subtitle">28天词汇记忆训练营</p>
     </div>
@@ -34,7 +40,12 @@
     <!-- 28天进度 -->
     <div class="section">
       <h3 class="section-title">📅 学习进度</h3>
-      <ProgressBar :current="store.progress.completed" :total="28" :label="'Day ' + store.state.currentDay + ' / 28'" />
+      <div class="home-progress">
+        <div class="progress-track">
+          <div class="progress-fill" :style="{ width: homePercent + '%' }"></div>
+        </div>
+        <span class="progress-text">{{ store.progress.completed }} / 28</span>
+      </div>
     </div>
 
     <!-- 快捷操作 -->
@@ -87,17 +98,19 @@
 </template>
 
 <script setup>
-import { inject, ref } from 'vue'
+import { inject, ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLearningStore } from '../stores/learning.js'
 import { useThemeStore } from '../stores/theme.js'
-import ProgressBar from '../components/ProgressBar.vue'
 import { showDialog } from 'vant'
 
 const router = useRouter()
 const store = useLearningStore()
 const theme = useThemeStore()
 const unlockAll = inject('unlockAll', ref(false))
+const openSettings = inject('openSettings', () => {})
+
+const homePercent = computed(() => Math.round((store.progress.completed / 28) * 100))
 
 function startLearn() {
   if (store.state.currentDay > 28) return
@@ -120,8 +133,9 @@ function startLearn() {
 }
 
 function goToDay(day) {
-  // 有待复习时禁止进入任何学习页面
-  if (store.dueReviewCount > 0) {
+  // 学习未完成的新天时，强制先去复习
+  const isCompleted = store.state.completedDays.includes(day)
+  if (!isCompleted && store.dueReviewCount > 0) {
     showDialog({
       title: '📖 有待复习',
       message: `你有 ${store.dueReviewCount} 个单词需要复习，\n先完成复习再学习新内容吧！`,
@@ -144,6 +158,35 @@ function goToDay(day) {
   padding: 20px 16px;
 }
 
+.home-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.progress-track {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), #EC4899);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 44px;
+}
+
 .header {
   text-align: center;
   margin-bottom: 20px;
@@ -154,6 +197,39 @@ function goToDay(day) {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  position: relative;
+}
+
+.header-top .theme-toggle {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.header-top .theme-toggle:first-child {
+  left: 0;
+}
+
+.header-top .theme-toggle:last-child {
+  right: 0;
+}
+
+.header-top .theme-toggle:active {
+  transform: scale(0.9);
+}
+
+.header-top .theme-icon {
+  font-size: 16px;
+  line-height: 1;
 }
 
 .title {

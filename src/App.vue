@@ -1,15 +1,5 @@
 <template>
   <div :class="['app-container', { dark: theme.isDark }]">
-    <!-- 主题切换浮钮 -->
-    <div class="top-buttons" v-if="showTopButtons">
-      <div class="theme-toggle" @click="theme.toggle">
-        <span class="theme-icon">{{ theme.isDark ? '☀️' : '🌙' }}</span>
-      </div>
-      <div class="theme-toggle" @click="showSettings = true">
-        <span class="theme-icon">⚙️</span>
-      </div>
-    </div>
-
     <SettingsPanel v-model:show="showSettings" />
     <router-view />
 
@@ -36,9 +26,9 @@ const showSettings = ref(false)
 const isDev = new URLSearchParams(window.location.search).has('dev')
 const unlockAll = ref(false)
 provide('unlockAll', unlockAll)
+provide('openSettings', () => { showSettings.value = true })
 
 const showTabbar = computed(() => ['/', '/review', '/wordbook'].includes(route.path))
-const showTopButtons = computed(() => route.path === '/')
 </script>
 
 <style>

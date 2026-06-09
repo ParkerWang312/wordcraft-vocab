@@ -78,15 +78,10 @@ export const useLearningStore = defineStore('learning', () => {
         ws.nextReviewAt = nextDate.toISOString()
         ws.interval = 1
       }
-      // 已复习过的单词重新学习：重置复习计划
+      // 已复习过的单词重新学习：不影响艾宾浩斯曲线，仅标记最后复习时间
       else {
-        ws.reviewCount = 0
-        ws.easeFactor = 2.5
-        ws.interval = 1
-        const nextDate = new Date()
-        nextDate.setDate(nextDate.getDate() + 1)
-        nextDate.setHours(0, 0, 0, 0)
-        ws.nextReviewAt = nextDate.toISOString()
+        ws.lastRelearnedAt = new Date().toISOString()
+        // 不重置 reviewCount / easeFactor / interval / nextReviewAt
       }
     } else {
       ws.status = 'learning'

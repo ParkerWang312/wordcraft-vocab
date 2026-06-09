@@ -5,15 +5,38 @@
       left-arrow
       @click-left="$router.back()"
       :fixed="false"
-    />
+    >
+      <template #right>
+        <span class="nav-timer">{{ displayTime }}</span>
+      </template>
+    </van-nav-bar>
 
     <template v-if="!finished">
-      <ProgressBar :current="currentIndex + 1" :total="questions.length" label="练习进度" />
+      <!-- 统计卡片 -->
+      <div class="review-stats">
+        <div class="stat-card">
+          <span class="stat-card-num">{{ score }}</span>
+          <span class="stat-card-label">得分</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-num" style="color: #10B981">{{ correctCount }}</span>
+          <span class="stat-card-label">正确</span>
+        </div>
+        <div class="stat-card danger">
+          <span class="stat-card-num">{{ wrongCount }}</span>
+          <span class="stat-card-label">错误</span>
+        </div>
+        <div class="stat-card" :class="comboCardClass">
+          <span class="stat-card-num" :class="{ 'combo-pop': comboAnimating }" :style="comboStyle">{{ combo }}</span>
+          <span class="stat-card-label">连击</span>
+        </div>
+      </div>
 
-      <!-- 分数 -->
-      <div class="score-bar">
-        <span class="score">得分: {{ score }}</span>
-        <span class="combo" v-if="combo > 1">{{ combo }}连击!</span>
+      <div class="day-progress">
+        <div class="progress-track">
+          <div class="progress-fill" :style="{ width: practicePercent + '%' }"></div>
+        </div>
+        <span class="progress-text">{{ currentIndex + 1 }} / {{ questions.length }}</span>
       </div>
 
       <!-- 题目 -->
@@ -27,7 +50,10 @@
       </template>
       <!-- 文字题问题区域 -->
       <template v-else>
-        <div class="question-word">{{ currentQuestion.question }}</div>
+        <div class="question-word-row">
+          <div class="question-word">{{ currentQuestion.question }}</div>
+          <span v-if="currentQuestion.type === 'e2c'" class="speak-btn" @click="playQuestionAudio">🔊</span>
+        </div>
         <div class="question-prompt">{{ currentQuestion.prompt }}</div>
       </template>
 
@@ -45,7 +71,7 @@
           <span class="option-letter">{{ letters[idx] }}</span>
           <span class="option-text">{{ opt }}</span>
           <span class="option-icon" v-if="answered && idx === currentQuestion.answer">✓</span>
-          <span class="option-meaning" v-if="answered && idx === currentQuestion.answer && currentQuestion.answerMeaning">
+          <span class="option-meaning" v-if="answered && idx === currentQuestion.answer && currentQuestion.type !== 'e2c' && currentQuestion.answerMeaning">
             {{ currentQuestion.answerMeaning }}
           </span>
         </div>
@@ -92,7 +118,8 @@ import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import { useSettingsStore } from '../stores/settings.js'
-import ProgressBar from '../components/ProgressBar.vue'
+
+import { useTimer, formatTime } from '../composables/useTimer.js'
 
 const props = defineProps({ day: { type: [String, Number], required: true } })
 const router = useRouter()
@@ -101,10 +128,42 @@ const settingsStore = useSettingsStore()
 const route = useRoute()
 const dayNum = computed(() => Number(props.day))
 
+const { elapsed } = useTimer()
+const displayTime = computed(() => formatTime(elapsed.value))
+
+const practicePercent = computed(() => {
+  if (questions.value.length === 0) return 0
+  return Math.round(((currentIndex.value + 1) / questions.value.length) * 100)
+})
+
 const letters = ['A', 'B', 'C', 'D']
 const currentIndex = ref(0)
 const score = ref(0)
+const correctCount = ref(0)
+const wrongCount = ref(0)
 const combo = ref(0)
+const comboAnimating = ref(false)
+
+// 连击动画：combo 变化时触发弹跳效果
+watch(combo, (val) => {
+  if (val > 1) {
+    comboAnimating.value = true
+    setTimeout(() => { comboAnimating.value = false }, 400)
+  }
+})
+
+const comboCardClass = computed(() => {
+  if (combo.value >= 10) return 'combo-fire'
+  if (combo.value >= 5) return 'combo-hot'
+  if (combo.value >= 3) return 'combo-warm'
+  return ''
+})
+
+const comboStyle = computed(() => {
+  if (combo.value >= 10) return { color: '#fff', textShadow: '0 0 10px #F59E0B, 0 0 20px #EF4444' }
+  if (combo.value >= 5) return { color: '#F59E0B' }
+  return {}
+})
 const maxCombo = ref(0)
 const answered = ref(false)
 const selectedIndex = ref(-1)
@@ -218,7 +277,7 @@ watch(currentIndex, () => {
 
 function autoPlayIfAudio() {
   const q = questions.value[currentIndex.value]
-  if (q && q.type === 'audio' && !answered.value) {
+  if (q && (q.type === 'audio' || q.type === 'e2c') && !answered.value) {
     setTimeout(() => speakWord(q.audioWord), 400)
   }
 }
@@ -233,7 +292,7 @@ const currentQuestion = computed(() => questions.value[currentIndex.value])
 
 const accuracy = computed(() => {
   if (questions.value.length === 0) return 0
-  return Math.round((score.value / (questions.value.length * 10)) * 100)
+  return Math.round((correctCount.value / questions.value.length) * 100)
 })
 
 const passed = computed(() => accuracy.value >= 80)
@@ -247,9 +306,11 @@ function selectOption(idx) {
 
   if (correct) {
     score.value += 10
+    correctCount.value++
     combo.value++
     if (combo.value >= 3) score.value += 5
   } else {
+    wrongCount.value++
     combo.value = 0
     // 答错：记入错题本
     const q = currentQuestion.value
@@ -289,36 +350,143 @@ function getAnswerText() {
 
 <style scoped>
 .practice-page {
-  padding-bottom: 80px;
+  padding: 14px 16px 80px;
 }
 
-.score-bar {
+/* NavBar 与下方内容间距 */
+.practice-page :deep(.van-nav-bar) {
+  margin-bottom: 8px;
+}
+
+.nav-timer {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.day-progress {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-  padding: 8px 12px;
-  background: var(--bg-card);
-  border-radius: 10px;
-  border: 1px solid var(--border);
+  gap: 10px;
+  max-width: 360px;
+  margin: 16px auto 14px;
 }
 
-.score {
+.progress-track {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), #EC4899);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 13px;
   font-weight: 700;
-  font-size: 16px;
+  color: var(--text-primary);
+  min-width: 44px;
+}
+
+.review-stats {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin: 20px 0 16px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 2px;
+  border-radius: 12px;
+  background: var(--accent-light);
+  width: 72px;
+  flex-shrink: 0;
+}
+
+.stat-card.danger {
+  background: #FEF2F2;
+}
+
+[data-theme="dark"] .stat-card.danger {
+  background: #3B1212;
+}
+
+.stat-card-num {
+  font-size: 24px;
+  font-weight: 800;
   color: var(--accent);
+  line-height: 1.1;
 }
 
-.combo {
-  color: var(--warning);
-  font-weight: 600;
-  font-size: 14px;
-  animation: pulse 0.4s ease;
+.stat-card.danger .stat-card-num {
+  color: var(--danger);
 }
 
-@keyframes pulse {
+.stat-card-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* 连击动画 */
+.combo-pop {
+  animation: comboBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes comboBounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.4); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.stat-card.combo-warm {
+  background: #FFF7ED;
+  border: 1px solid #FDBA74;
+}
+
+[data-theme="dark"] .stat-card.combo-warm {
+  background: #3B1F0A;
+  border-color: #F59E0B;
+}
+
+.stat-card.combo-hot {
+  background: #FFFBEB;
+  border: 2px solid #F59E0B;
+  animation: comboPulse 1.5s ease-in-out infinite;
+}
+
+[data-theme="dark"] .stat-card.combo-hot {
+  background: #3B2E00;
+  border-color: #F59E0B;
+}
+
+.stat-card.combo-fire {
+  background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+  border: 2px solid #F59E0B;
+  animation: comboPulse 0.8s ease-in-out infinite;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+}
+
+[data-theme="dark"] .stat-card.combo-fire {
+  background: linear-gradient(135deg, #4A2E00, #78350F);
+  border-color: #F59E0B;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
+}
+
+@keyframes comboPulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  50% { transform: scale(1.05); }
 }
 
 .question-box {
@@ -327,13 +495,37 @@ function getAnswerText() {
   padding: 24px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.question-word-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .question-word {
   font-size: 28px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 8px;
+}
+
+.speak-btn {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  transition: transform 0.15s;
+  user-select: none;
+  line-height: 1;
+}
+
+.speak-btn:active {
+  transform: scale(0.85);
 }
 
 .question-prompt {
@@ -444,6 +636,9 @@ function getAnswerText() {
 .feedback {
   margin-top: 16px;
   text-align: center;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feedback-msg {
@@ -480,6 +675,9 @@ function getAnswerText() {
 
 .complete-box {
   margin-top: 20px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .result-card {

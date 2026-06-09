@@ -7,6 +7,7 @@
       @click-left="$router.back()"
     >
       <template #right>
+        <span class="nav-timer">{{ displayTime }}</span>
         <div class="nav-practice-btn" v-if="allDone || dayCompleted" @click="goPractice">
           <van-icon name="play-circle-o" size="20" />
           <span>练习</span>
@@ -61,15 +62,20 @@ import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
 import { showToast } from 'vant'
+import { useTimer, formatTime } from '../composables/useTimer.js'
 
 const props = defineProps({ day: { type: [String, Number], required: true } })
 const router = useRouter()
 const route = useRoute()
 const store = useLearningStore()
 
-// 如果存在待复习任务，强制跳转到复习页
+const { elapsed } = useTimer()
+const displayTime = computed(() => formatTime(elapsed.value))
+
+// 如果未完成的新天有待复习任务，强制跳转到复习页
 onMounted(() => {
-  if (store.dueReviewCount > 0) {
+  const isCompleted = store.state.completedDays.includes(dayNum.value)
+  if (!isCompleted && store.dueReviewCount > 0) {
     router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
     return
   }
@@ -153,6 +159,14 @@ const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.va
 <style scoped>
 .learn-page {
   padding-bottom: 80px;
+}
+
+.nav-timer {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-right: 8px;
+  font-variant-numeric: tabular-nums;
 }
 
 .nav-practice-btn {

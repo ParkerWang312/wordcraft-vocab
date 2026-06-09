@@ -1,6 +1,10 @@
 <template>
   <div class="page review-page">
-    <van-nav-bar :title="isWrongReview ? '错题复习' : isWordbookReview ? '生词本复习' : '复习模式'" left-arrow @click-left="goHome" :fixed="false" />
+    <van-nav-bar :title="isWrongReview ? '错题复习' : isWordbookReview ? '生词本复习' : '复习模式'" left-arrow @click-left="goHome" :fixed="false">
+      <template #right>
+        <span class="nav-timer">{{ displayTime }}</span>
+      </template>
+    </van-nav-bar>
 
     <div class="review-header">
       <div class="review-stats" v-if="isWrongReview">
@@ -100,10 +104,14 @@ import { ref, computed, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
+import { useTimer, formatTime } from '../composables/useTimer.js'
 
 const router = useRouter()
 const route = useRoute()
 const store = useLearningStore()
+
+const { elapsed } = useTimer()
+const displayTime = computed(() => formatTime(elapsed.value))
 
 const redirectTo = computed(() => route.query.redirectTo || '')
 const isWordbookReview = computed(() => route.query.source === 'wordbook')
@@ -276,7 +284,7 @@ watch(currentReviewWord, (word) => {
       speechSynthesis.speak(utterance)
     }, 300)
   }
-})
+}, { immediate: true })
 </script>
 
 <style scoped>
@@ -284,6 +292,13 @@ watch(currentReviewWord, (word) => {
   padding-bottom: 80px;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.nav-timer {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
 }
 
 .nav-home-btn {
@@ -302,25 +317,26 @@ watch(currentReviewWord, (word) => {
 }
 
 .review-header {
-  padding: 12px 8px 0;
-  margin-bottom: 20px;
+  padding: 8px 8px 0;
+  margin-bottom: 12px;
 }
 
 .review-stats {
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .stat-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 24px;
-  border-radius: 14px;
+  padding: 6px 2px;
+  border-radius: 12px;
   background: var(--accent-light);
-  min-width: 80px;
+  width: 72px;
+  flex-shrink: 0;
 }
 
 .stat-card.danger {
@@ -332,7 +348,7 @@ watch(currentReviewWord, (word) => {
 }
 
 .stat-card-num {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 800;
   color: var(--accent);
   line-height: 1.1;
@@ -406,10 +422,16 @@ watch(currentReviewWord, (word) => {
   align-items: center;
 }
 
+/* 复习模式下缩小单词卡片间距 */
+.review-card-wrapper :deep(.word-card-wrapper) {
+  padding: 8px 0;
+  gap: 12px;
+}
+
 .word-info {
   display: flex;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   font-size: 13px;
   align-items: center;
 }
@@ -441,7 +463,7 @@ watch(currentReviewWord, (word) => {
 .review-actions {
   display: flex;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 12px;
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
@@ -450,6 +472,7 @@ watch(currentReviewWord, (word) => {
 .review-actions .van-button {
   min-width: 80px;
   font-size: 14px;
+  height: 42px !important;
 }
 
 .complete-box {
