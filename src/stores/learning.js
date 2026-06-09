@@ -68,28 +68,34 @@ export const useLearningStore = defineStore('learning', () => {
   function markWord(wordId, known) {
     const ws = initWordState(wordId)
     ws.learnedAt = new Date().toISOString()
+
+    // 词已在SM-2复习管线中（有nextReviewAt），重学时不影响曲线
+    const inSchedule = !!ws.nextReviewAt
+
     if (known) {
       ws.status = 'known'
-      // 新学习时设置首次复习时间
-      if (ws.reviewCount === 0) {
+      if (!inSchedule) {
+        // 首次学习：设置SM-2首日计划
         const nextDate = new Date()
         nextDate.setDate(nextDate.getDate() + 1)
         nextDate.setHours(0, 0, 0, 0)
         ws.nextReviewAt = nextDate.toISOString()
         ws.interval = 1
-      }
-      // 已复习过的单词重新学习：不影响艾宾浩斯曲线，仅标记最后复习时间
-      else {
+      } else {
+        // 旧词重学：仅标记时间，不动SM-2
         ws.lastRelearnedAt = new Date().toISOString()
-        // 不重置 reviewCount / easeFactor / interval / nextReviewAt
       }
     } else {
       ws.status = 'learning'
-      const nextDate = new Date()
-      nextDate.setDate(nextDate.getDate() + 1)
-      nextDate.setHours(0, 0, 0, 0)
-      ws.nextReviewAt = nextDate.toISOString()
-      ws.interval = 0
+      if (!inSchedule) {
+        // 首次学习不认识：明天再来
+        const nextDate = new Date()
+        nextDate.setDate(nextDate.getDate() + 1)
+        nextDate.setHours(0, 0, 0, 0)
+        ws.nextReviewAt = nextDate.toISOString()
+        ws.interval = 0
+      }
+      // 旧词重学不认识：只改状态，不动SM-2
     }
     state.value.stats.totalLearned++
     updateStreak()

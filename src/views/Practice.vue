@@ -260,8 +260,9 @@ function generateQuestions() {
 }
 
 onMounted(() => {
-  // 如果存在待复习任务，强制跳转到复习页
-  if (store.dueReviewCount > 0) {
+  // 未完成的新天有待复习时，强制跳转到复习页
+  const isCompleted = store.state.completedDays.includes(dayNum.value)
+  if (!isCompleted && store.dueReviewCount > 0) {
     router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
     return
   }

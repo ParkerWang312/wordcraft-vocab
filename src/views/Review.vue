@@ -173,6 +173,9 @@ watch(reviewWords, (words) => {
   if (reviewList.value.length === 0 && words.length > 0) {
     if (!loadReviewProgress()) {
       reviewList.value = [...words]
+      // 非主线复习：确保进度从零开始
+      currentWordIndex.value = 0
+      reviewedCount.value = 0
     }
   }
 }, { immediate: true })
@@ -197,6 +200,10 @@ function saveReviewProgress() {
 }
 
 function loadReviewProgress() {
+  // 直接读取路由参数，确保获取最新值
+  const source = route.query.source
+  // 错题/生词本每次都重新开始，不恢复进度
+  if (source === 'wrongwords' || source === 'wordbook') return false
   try {
     const saved = JSON.parse(localStorage.getItem(REVIEW_PROGRESS_KEY))
     if (!saved) return false
