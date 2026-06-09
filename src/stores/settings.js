@@ -7,7 +7,8 @@ const defaults = {
   showWordOnBack: true,
   showPhoneticOnBack: false,
   autoAdvance: false,
-  speakOnFlip: true
+  speakOnFlip: true,
+  forcePractice: true
 }
 
 function load() {

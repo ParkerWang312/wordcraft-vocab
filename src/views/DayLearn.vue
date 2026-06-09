@@ -57,9 +57,10 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
+import { useSettingsStore } from '../stores/settings.js'
 import WordCard from '../components/WordCard.vue'
 import { showToast } from 'vant'
 import { useTimer, formatTime } from '../composables/useTimer.js'
@@ -68,20 +69,27 @@ const props = defineProps({ day: { type: [String, Number], required: true } })
 const router = useRouter()
 const route = useRoute()
 const store = useLearningStore()
+const settings = useSettingsStore()
 
 const { elapsed } = useTimer()
 const displayTime = computed(() => formatTime(elapsed.value))
 
+const dayNum = computed(() => Number(props.day))
+const isCompleted = computed(() => store.state.completedDays.includes(dayNum.value))
+
 // 如果未完成的新天有待复习任务，强制跳转到复习页
 onMounted(() => {
-  const isCompleted = store.state.completedDays.includes(dayNum.value)
-  if (!isCompleted && store.dueReviewCount > 0) {
+  if (!isCompleted.value && store.dueReviewCount > 0) {
     router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
+    return
+  }
+  // 强制练习模式：已学完但未练习，直接跳到练习
+  if (settings.data.forcePractice && store.getDayNeedsPractice(dayNum.value)) {
+    router.replace(`/practice/${dayNum.value}?via=force`)
     return
   }
 })
 
-const dayNum = computed(() => Number(props.day))
 const dayTitle = computed(() => store.getDayTitle(dayNum.value))
 const words = computed(() => store.getDayWords(dayNum.value))
 
@@ -125,9 +133,18 @@ function swipeWord(known) {
     currentIndex.value++
   } else {
     allDone.value = true
-    store.completeDay(dayNum.value)
-    // 完成后清除该天进度
-    store.saveDayProgress(dayNum.value, 0)
+    // 强制练习模式：不标记完成，直接跳转到练习
+    if (settings.data.forcePractice) {
+      store.setDayNeedsPractice(dayNum.value, true)
+      router.replace(`/practice/${dayNum.value}?via=force`)
+    } else {
+      store.completeDay(dayNum.value)
+      // 非强制练习模式：当天完成，清零进度
+      // 强制练习模式：保留进度对象，避免清空练习进度
+      if (!settings.data.forcePractice) {
+        store.saveDayProgress(dayNum.value, 0)
+      }
+    }
   }
 }
 
@@ -138,13 +155,16 @@ function toggleStar() {
 }
 
 function goPractice() {
-  router.push(`/practice/${dayNum.value}`)
+  const query = settings.data.forcePractice ? '?via=force' : ''
+  router.push(`/practice/${dayNum.value}${query}`)
 }
 
 // 自动播放发音
+let speakTimer = null
 watch(currentWord, (word) => {
+  clearTimeout(speakTimer)
   if (word && 'speechSynthesis' in window) {
-    setTimeout(() => {
+    speakTimer = setTimeout(() => {
       const utterance = new SpeechSynthesisUtterance(word.word)
       utterance.lang = 'en-US'
       utterance.rate = 0.8
@@ -152,6 +172,11 @@ watch(currentWord, (word) => {
     }, 300)
   }
 }, { immediate: true })
+
+onBeforeUnmount(() => {
+  clearTimeout(speakTimer)
+  if ('speechSynthesis' in window) speechSynthesis.cancel()
+})
 
 const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.value))
 </script>

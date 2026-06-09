@@ -214,12 +214,34 @@ export const useLearningStore = defineStore('learning', () => {
 
   // 每日学习进度（记录学到了第几个单词）
   function getDayProgress(day) {
-    return state.value.dayProgress[day] || 0
+    const v = state.value.dayProgress[day]
+    if (typeof v === 'number') return v
+    if (v && typeof v === 'object') return v.wordIndex || 0
+    return 0
   }
 
   function saveDayProgress(day, index) {
-    state.value.dayProgress[day] = index
+    const existing = state.value.dayProgress[day]
+    if (typeof existing === 'object' && existing !== null) {
+      existing.wordIndex = index
+    } else {
+      state.value.dayProgress[day] = index
+    }
     persist()
+  }
+
+  // 设置天是否需要练习（强制练习模式用）
+  function setDayNeedsPractice(day, needs) {
+    const existing = state.value.dayProgress[day]
+    const wordIndex = typeof existing === 'number' ? existing : (existing?.wordIndex || 0)
+    state.value.dayProgress[day] = { wordIndex, needsPractice: needs }
+    persist()
+  }
+
+  function getDayNeedsPractice(day) {
+    const v = state.value.dayProgress[day]
+    if (v && typeof v === 'object') return !!v.needsPractice
+    return false
   }
 
   return {
@@ -244,6 +266,8 @@ export const useLearningStore = defineStore('learning', () => {
     removeWrongWord,
     getDayProgress,
     saveDayProgress,
+    setDayNeedsPractice,
+    getDayNeedsPractice,
     persist
   }
 })

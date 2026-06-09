@@ -93,7 +93,8 @@
     <div class="complete-box" v-if="finished">
       <div class="result-card">
         <span class="emoji">{{ passed ? '🎉' : '😅' }}</span>
-        <h3>{{ passed ? '恭喜通过！' : '还需努力' }}</h3>
+        <h3 v-if="isForcePractice">Day {{ dayNum }} 学习完成！</h3>
+        <h3 v-else>{{ passed ? '恭喜通过！' : '还需努力' }}</h3>
         <p class="result-detail">正确率: {{ accuracy }}%</p>
         <p class="result-detail">得分: {{ score }}</p>
         <p class="result-detail">最大连击: {{ maxCombo }}</p>
@@ -127,6 +128,7 @@ const store = useLearningStore()
 const settingsStore = useSettingsStore()
 const route = useRoute()
 const dayNum = computed(() => Number(props.day))
+const isForcePractice = computed(() => route.query.via === 'force')
 
 const { elapsed } = useTimer()
 const displayTime = computed(() => formatTime(elapsed.value))
@@ -183,6 +185,7 @@ function shuffle(arr) {
 
 function speakWord(word) {
   if ('speechSynthesis' in window) {
+    speechSynthesis.cancel()
     const utterance = new SpeechSynthesisUtterance(word)
     utterance.lang = 'en-US'
     utterance.rate = 0.8
@@ -259,6 +262,41 @@ function generateQuestions() {
   return shuffle(result)
 }
 
+// 从最小种子数据重建题目（用于恢复练习进度，大幅减小导出文件）
+function restoreQuestions(seeds) {
+  const dayWords = store.getDayWords(dayNum.value)
+  const allWords = store.allWords
+  const result = []
+  let e2c = 0, c2e = 0, audio = 0
+
+  seeds.forEach(seed => {
+    const w = dayWords.find(dw => dw.word === seed.audioWord)
+    if (!w) return
+    const qType = seed.type
+    if (qType === 'e2c') e2c++
+    else if (qType === 'c2e') c2e++
+    else audio++
+
+    const others = allWords
+      .filter(ow => ow.word !== w.word)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3)
+
+    if (qType === 'e2c') {
+      const options = shuffle([w.meaning, ...others.map(o => o.meaning)])
+      result.push({ type: 'e2c', question: w.word, prompt: '请选择正确的中文释义', options, answer: options.indexOf(w.meaning), audioWord: w.word, answerMeaning: w.meaning })
+    } else if (qType === 'c2e') {
+      const wordOptions = shuffle([w.word, ...others.map(o => o.word)])
+      result.push({ type: 'c2e', question: w.meaning, prompt: '请选择对应的英文单词', options: wordOptions, answer: wordOptions.indexOf(w.word), audioWord: w.word, answerMeaning: w.meaning })
+    } else {
+      const wordOptions = shuffle([w.word, ...others.map(o => o.word)])
+      result.push({ type: 'audio', question: '', prompt: '请根据发音选择正确的单词', options: wordOptions, answer: wordOptions.indexOf(w.word), audioWord: w.word, answerMeaning: w.meaning })
+    }
+  })
+  stats.value = { e2c, c2e, audio }
+  return result
+}
+
 onMounted(() => {
   // 未完成的新天有待复习时，强制跳转到复习页
   const isCompleted = store.state.completedDays.includes(dayNum.value)
@@ -266,12 +304,29 @@ onMounted(() => {
     router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
     return
   }
-  questions.value = generateQuestions()
-  // 首题如果是听音题，自动播放
+  // 优先恢复保存的题目（所有模式都支持进度恢复），否则首次生成
+  const saved = store.state.dayProgress[dayNum.value]
+  if (saved && saved.savedSeeds && saved.savedSeeds.length > 0) {
+    questions.value = restoreQuestions(saved.savedSeeds)
+    const practiceIdx = saved.practiceIndex || 0
+    currentIndex.value = Math.min(practiceIdx, questions.value.length - 1)
+    if (saved.practiceStats) {
+      score.value = saved.practiceStats.score || 0
+      correctCount.value = saved.practiceStats.correct || 0
+      wrongCount.value = saved.practiceStats.wrong || 0
+      combo.value = saved.practiceStats.combo || 0
+      maxCombo.value = saved.practiceStats.maxCombo || 0
+    }
+  } else {
+    questions.value = generateQuestions()
+  }
+  // 清除上一页残留的语音
+  if ('speechSynthesis' in window) speechSynthesis.cancel()
+  // 生成题目后触发首题发音
   autoPlayIfAudio()
 })
 
-// 自动播放听音题
+// 切换题目时自动播放
 watch(currentIndex, () => {
   autoPlayIfAudio()
 })
@@ -325,6 +380,9 @@ function selectOption(idx) {
 
   maxCombo.value = Math.max(maxCombo.value, combo.value)
 
+  // 选择答案后保存练习进度（所有模式都保存）
+  savePracticeProgress()
+
   // 答对且开启自动跳转
   if (correct && settingsStore.data.autoAdvance) {
     setTimeout(() => nextQuestion(), 600)
@@ -338,7 +396,36 @@ function nextQuestion() {
     selectedIndex.value = -1
   } else {
     finished.value = true
+    // 强制练习模式：完成练习 = 当天完成
+    if (isForcePractice.value) {
+      store.completeDay(dayNum.value)
+      store.setDayNeedsPractice(dayNum.value, false)
+    }
+    // 所有模式：练习完成后清零练习进度，保留 wordIndex（学习进度）
+    const existing = store.state.dayProgress[dayNum.value]
+    const wordIndex = typeof existing === 'object' ? (existing.wordIndex || 0) : (existing || 0)
+    store.state.dayProgress[dayNum.value] = { wordIndex, practiceIndex: 0, savedSeeds: null, practiceStats: null }
+    store.persist()
   }
+}
+
+function savePracticeProgress() {
+  const existing = store.state.dayProgress[dayNum.value]
+  // 只保存题目种子（audioWord + type），大幅减小数据量
+  const seeds = questions.value.map(q => ({ audioWord: q.audioWord, type: q.type }))
+  store.state.dayProgress[dayNum.value] = {
+    ...(typeof existing === 'object' ? existing : { wordIndex: existing || 0 }),
+    practiceIndex: currentIndex.value + 1,
+    savedSeeds: seeds,
+    practiceStats: {
+      score: score.value,
+      correct: correctCount.value,
+      wrong: wrongCount.value,
+      combo: combo.value,
+      maxCombo: maxCombo.value
+    }
+  }
+  store.persist()
 }
 
 const isLastQuestion = computed(() => currentIndex.value === questions.value.length - 1)

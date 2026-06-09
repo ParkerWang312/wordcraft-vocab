@@ -7,7 +7,7 @@
             <van-switch v-model="settingsStore.data.showWordOnBack" @change="settingsStore.persistDirect" size="22" />
           </template>
         </van-cell>
-        <van-cell title="翻转卡片显示音标和读音" center>
+        <van-cell title="翻转卡片显示音标" center>
           <template #right-icon>
             <van-switch v-model="settingsStore.data.showPhoneticOnBack" @change="settingsStore.persistDirect" size="22" />
           </template>
@@ -22,6 +22,11 @@
         <van-cell title="答对自动跳下一题" center>
           <template #right-icon>
             <van-switch v-model="settingsStore.data.autoAdvance" @change="settingsStore.persistDirect" size="22" />
+          </template>
+        </van-cell>
+        <van-cell title="学习完后强制练习" center>
+          <template #right-icon>
+            <van-switch v-model="settingsStore.data.forcePractice" @change="settingsStore.persistDirect" size="22" />
           </template>
         </van-cell>
       </van-cell-group>
@@ -56,6 +61,11 @@
         <van-cell title="创建测试数据A(3天)" center v-if="isDev">
           <template #right-icon>
             <van-button size="small" round @click.stop="createTestDataA">创建</van-button>
+          </template>
+        </van-cell>
+        <van-cell title="创建测试数据B(强制练习)" center v-if="isDev">
+          <template #right-icon>
+            <van-button size="small" round @click.stop="createTestDataB">创建</van-button>
           </template>
         </van-cell>
         <van-cell title="提交反馈" center>
@@ -270,6 +280,59 @@ function createTestDataA() {
     wordStates, wrongWords, dayProgress:{}, stats:{ totalLearned:116, totalReviewed:58, totalMastered:0 }
   }))
   window.location.reload()
+}
+
+function createTestDataB() {
+  const day1Words = store.getDayWords(1)
+  const wordStates = {}, idCount = {}
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const yesterday = new Date(today)
+  yesterday.setDate(yesterday.getDate() - 1)
+
+  // 前55个已认识，后3个未学习，无错题，无复习排期
+  const knownCount = 55
+
+  day1Words.forEach((w, i) => {
+    let id = generateWordId(w)
+    idCount[id] = (idCount[id] || 0) + 1
+    if (idCount[id] > 1) id = id + '_' + idCount[id]
+    const isLearned = i < knownCount
+    wordStates[id] = {
+      wordId: id,
+      status: isLearned ? 'known' : 'unknown',
+      learnedAt: isLearned ? yesterday.toISOString() : null,
+      reviewCount: 0,
+      easeFactor: 2.5,
+      interval: 0,
+      inWordBook: false
+    }
+  })
+
+  localStorage.setItem('wordcraft_vocab', JSON.stringify({
+    currentDay: 1,
+    completedDays: [],
+    streakDays: 0,
+    lastStudyDate: yesterday.toDateString(),
+    wordStates,
+    wrongWords: {},
+    dayProgress: { 1: { wordIndex: knownCount, needsPractice: false } },
+    stats: { totalLearned: knownCount, totalReviewed: 0, totalMastered: 0 }
+  }))
+  // 延迟重载，避免 Pinia persist 钩子覆盖数据
+  setTimeout(() => {
+    localStorage.setItem('wordcraft_vocab', JSON.stringify({
+      currentDay: 1,
+      completedDays: [],
+      streakDays: 0,
+      lastStudyDate: yesterday.toDateString(),
+      wordStates,
+      wrongWords: {},
+      dayProgress: { 1: { wordIndex: knownCount, needsPractice: false } },
+      stats: { totalLearned: knownCount, totalReviewed: 0, totalMastered: 0 }
+    }))
+    window.location.reload()
+  }, 100)
 }
 
 function openFeedback() {
