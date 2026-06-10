@@ -12,16 +12,28 @@
 </template>
 
 <script setup>
-import { ref, computed, provide } from 'vue'
+import { ref, computed, provide, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useLearningStore } from './stores/learning.js'
 import { useThemeStore } from './stores/theme.js'
 import SettingsPanel from './components/SettingsPanel.vue'
+import { warmUpSpeech } from './utils/speech.js'
 
 const store = useLearningStore()
 const theme = useThemeStore()
 const route = useRoute()
 const showSettings = ref(false)
+
+// Android 语音预热：首次触摸屏幕时激活 speechSynthesis
+onMounted(() => {
+  const handler = () => {
+    warmUpSpeech()
+    document.removeEventListener('touchstart', handler)
+    document.removeEventListener('click', handler)
+  }
+  document.addEventListener('touchstart', handler, { once: false })
+  document.addEventListener('click', handler)
+})
 
 const isDev = new URLSearchParams(window.location.search).has('dev')
 const unlockAll = ref(false)

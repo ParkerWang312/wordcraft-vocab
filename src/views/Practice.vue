@@ -121,6 +121,7 @@ import { useLearningStore, generateWordId } from '../stores/learning.js'
 import { useSettingsStore } from '../stores/settings.js'
 
 import { useTimer, formatTime } from '../composables/useTimer.js'
+import { speak } from '../utils/speech.js'
 
 const props = defineProps({ day: { type: [String, Number], required: true } })
 const router = useRouter()
@@ -184,13 +185,7 @@ function shuffle(arr) {
 }
 
 function speakWord(word) {
-  if ('speechSynthesis' in window) {
-    speechSynthesis.cancel()
-    const utterance = new SpeechSynthesisUtterance(word)
-    utterance.lang = 'en-US'
-    utterance.rate = 0.8
-    speechSynthesis.speak(utterance)
-  }
+  speak(word)
 }
 
 function generateQuestions() {

@@ -88,6 +88,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import { showToast } from 'vant'
+import { speak } from '../utils/speech.js'
 
 const store = useLearningStore()
 const router = useRouter()
@@ -107,12 +108,7 @@ function showDetail(word) {
 }
 
 function speakDetail() {
-  if (detailWord.value && 'speechSynthesis' in window) {
-    const utterance = new SpeechSynthesisUtterance(detailWord.value.word)
-    utterance.lang = 'en-US'
-    utterance.rate = 0.8
-    speechSynthesis.speak(utterance)
-  }
+  if (detailWord.value) speak(detailWord.value.word)
 }
 
 function removeWord(word) {

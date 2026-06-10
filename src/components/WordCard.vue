@@ -58,6 +58,7 @@
 <script setup>
 import { ref, watch, computed } from 'vue'
 import { useSettingsStore } from '../stores/settings.js'
+import { speak as speakWord } from '../utils/speech.js'
 
 const settings = useSettingsStore()
 
@@ -105,12 +106,7 @@ function flip() {
 }
 
 function speak() {
-  if ('speechSynthesis' in window) {
-    const utterance = new SpeechSynthesisUtterance(props.word.word)
-    utterance.lang = 'en-US'
-    utterance.rate = 0.8
-    speechSynthesis.speak(utterance)
-  }
+  speakWord(props.word.word)
 }
 
 function onStar() {

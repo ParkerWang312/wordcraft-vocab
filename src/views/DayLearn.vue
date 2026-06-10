@@ -64,6 +64,7 @@ import { useSettingsStore } from '../stores/settings.js'
 import WordCard from '../components/WordCard.vue'
 import { showToast } from 'vant'
 import { useTimer, formatTime } from '../composables/useTimer.js'
+import { speak } from '../utils/speech.js'
 
 const props = defineProps({ day: { type: [String, Number], required: true } })
 const router = useRouter()
@@ -163,19 +164,15 @@ function goPractice() {
 let speakTimer = null
 watch(currentWord, (word) => {
   clearTimeout(speakTimer)
-  if (word && 'speechSynthesis' in window) {
+  if (word) {
     speakTimer = setTimeout(() => {
-      const utterance = new SpeechSynthesisUtterance(word.word)
-      utterance.lang = 'en-US'
-      utterance.rate = 0.8
-      speechSynthesis.speak(utterance)
+      speak(word.word)
     }, 300)
   }
 }, { immediate: true })
 
 onBeforeUnmount(() => {
   clearTimeout(speakTimer)
-  if ('speechSynthesis' in window) speechSynthesis.cancel()
 })
 
 const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.value))

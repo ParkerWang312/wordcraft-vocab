@@ -105,6 +105,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
 import { useTimer, formatTime } from '../composables/useTimer.js'
+import { speak } from '../utils/speech.js'
 
 const router = useRouter()
 const route = useRoute()
@@ -287,12 +288,9 @@ function goBack() {
 // 自动播放发音
 watch(currentReviewWord, (word) => {
   cardFlipped.value = false
-  if (word && 'speechSynthesis' in window) {
+  if (word) {
     setTimeout(() => {
-      const utterance = new SpeechSynthesisUtterance(word.word)
-      utterance.lang = 'en-US'
-      utterance.rate = 0.8
-      speechSynthesis.speak(utterance)
+      speak(word.word)
     }, 300)
   }
 }, { immediate: true })
