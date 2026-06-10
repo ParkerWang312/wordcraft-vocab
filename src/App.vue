@@ -97,6 +97,8 @@ body {
 .van-nav-bar__title { color: var(--text-primary) !important; }
 .van-nav-bar .van-icon { color: var(--accent) !important; }
 [data-theme="dark"] .van-nav-bar { background: var(--bg-card) !important; }
+[data-theme="dark"] .van-popup { background: var(--bg-card) !important; color: var(--text-primary) !important; }
+[data-theme="dark"] .van-popup--bottom { background: var(--bg-card) !important; }
 .page { padding: 16px; max-width: 480px; margin: 0 auto; }
 
 .top-buttons { position: fixed; top: 12px; right: 12px; z-index: 999; display: flex; gap: 8px; }

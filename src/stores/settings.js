@@ -9,6 +9,7 @@ const defaults = {
   autoAdvance: false,
   speakOnFlip: true,
   forcePractice: true,
+  autoSpeakOnCard: false,
   nickname: ''
 }
 

@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import { useSettingsStore } from '../stores/settings.js'
@@ -111,6 +111,14 @@ const knownCount = ref(0)
 
 const currentWord = computed(() => words.value[currentIndex.value] || null)
 
+// 进入页面后第一个单词自动发音（需设置开启）
+let firstWordSpoken = false
+watch(currentWord, (w) => {
+  if (firstWordSpoken || !w || !settings.data.autoSpeakOnCard) return
+  firstWordSpoken = true
+  nextTick(() => speak(w.word))
+}, { immediate: true })
+
 const isCurrentStarred = computed(() => {
   if (!currentWord.value) return false
   const id = generateWordId(currentWord.value)
@@ -132,8 +140,8 @@ function swipeWord(known) {
 
   if (currentIndex.value < words.value.length - 1) {
     currentIndex.value++
-    // 下一个单词发音（同步调用，Android 需求）
-    if (currentWord.value) speak(currentWord.value.word)
+    // 首次显示自动发音（需用户开启设置）
+    if (currentWord.value && settings.data.autoSpeakOnCard) speak(currentWord.value.word)
   } else {
     allDone.value = true
     // 强制练习模式：不标记完成，直接跳转到练习

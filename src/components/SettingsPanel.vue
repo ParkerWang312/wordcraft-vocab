@@ -2,6 +2,11 @@
   <van-action-sheet v-model:show="show" title="设置">
     <div class="settings-content">
       <van-cell-group title="单词卡片">
+        <van-cell title="首次显示自动发音" center>
+          <template #right-icon>
+            <van-switch v-model="settingsStore.data.autoSpeakOnCard" @change="settingsStore.persistDirect" size="22" />
+          </template>
+        </van-cell>
         <van-cell title="翻转卡片显示单词" center>
           <template #right-icon>
             <van-switch v-model="settingsStore.data.showWordOnBack" @change="settingsStore.persistDirect" size="22" />

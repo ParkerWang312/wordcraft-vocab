@@ -100,16 +100,18 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import WordCard from '../components/WordCard.vue'
 import { useTimer, formatTime } from '../composables/useTimer.js'
+import { useSettingsStore } from '../stores/settings.js'
 import { speak } from '../utils/speech.js'
 
 const router = useRouter()
 const route = useRoute()
 const store = useLearningStore()
+const settings = useSettingsStore()
 
 const { elapsed } = useTimer()
 const displayTime = computed(() => formatTime(elapsed.value))
@@ -180,6 +182,7 @@ watch(reviewWords, (words) => {
     }
   }
 }, { immediate: true })
+
 const finished = ref(false)
 const cardFlipped = ref(false)
 
@@ -227,6 +230,14 @@ const currentReviewWord = computed(() => {
   return reviewList.value[currentWordIndex.value] || null
 })
 
+// 第一个单词自动发音（需开启设置）
+let firstWordSpoken = false
+watch(currentReviewWord, (word) => {
+  if (firstWordSpoken || !word || !settings.data.autoSpeakOnCard) return
+  firstWordSpoken = true
+  speak(word.word)
+}, { immediate: true })
+
 function onCardFlip() {
   cardFlipped.value = true
 }
@@ -253,8 +264,8 @@ function rateQuality(quality) {
   if (currentWordIndex.value < reviewList.value.length - 1) {
     currentWordIndex.value++
     saveReviewProgress()
-    // 下一个单词发音（同步调用，Android 需求）
-    if (currentReviewWord.value) speak(currentReviewWord.value.word)
+    // 首次显示自动发音（需用户开启设置）
+    if (currentReviewWord.value && settings.data.autoSpeakOnCard) speak(currentReviewWord.value.word)
   } else {
     finished.value = true
     clearReviewProgress()

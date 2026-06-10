@@ -243,3 +243,12 @@ async function shareDailyReport() {
 .daily-btn {
 }
 </style>
+
+<style>
+[data-theme="dark"] .summary-bar {
+  background: linear-gradient(135deg, rgba(129,140,248,0.15), rgba(167,139,250,0.15));
+}
+[data-theme="dark"] .van-popup__close-icon {
+  color: var(--text-secondary) !important;
+}
+</style>
