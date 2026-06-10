@@ -1,119 +1,117 @@
 /**
- * 统一语音播报工具，处理 Android Chrome 兼容性问题
+ * 统一语音播报工具
  *
- * Android Chrome 的 speechSynthesis 有以下坑：
- * 1. 首次 speak() 必须在用户手势内触发，否则被静默丢弃
- * 2. 需要先 cancel() 再 speak()，否则队列堆积不读
- * 3. 某些设备默认不含英文语音引擎，需安装 Google TTS
- * 4. voices 异步加载，getVoices() 首次返回空
+ * 优先使用 speechSynthesis（iOS/桌面），不支持时降级为 Google TTS Audio 流
  */
 
-/** 已经加载的语音列表 */
+/** 语音引擎类型 */
+const ENGINE = (() => {
+  if (typeof speechSynthesis !== 'undefined') return 'native'
+  if (typeof Audio !== 'undefined') return 'google-tts'
+  return 'none'
+})()
+
+/** 诊断信息 */
+let _diagMsg = ENGINE === 'native'
+  ? '✅ speechSynthesis（原生）'
+  : ENGINE === 'google-tts'
+    ? '🔊 Google TTS（降级）'
+    : '❌ 无可用语音引擎'
+
+// ===== 原生 speechSynthesis =====
 let cachedVoices = null
 
-/** 确保 voices 已加载 */
 function getVoices() {
   if (cachedVoices?.length) return cachedVoices
-  cachedVoices = speechSynthesis.getVoices()
+  cachedVoices = speechSynthesis?.getVoices?.() || []
   return cachedVoices
 }
 
-// 监听 voices 变化（首次加载后会触发）
-if (typeof speechSynthesis !== 'undefined') {
+if (ENGINE === 'native') {
   speechSynthesis.addEventListener('voiceschanged', () => {
     cachedVoices = speechSynthesis.getVoices()
+    _diagMsg = diagnose()
   })
+  // 首次加载延迟获取 voices
+  setTimeout(() => { if (!cachedVoices?.length) cachedVoices = speechSynthesis.getVoices() }, 500)
 }
 
-/**
- * 查找最佳英文语音
- * 优先精确匹配 en-US，其次 en，最后取第一个可用语音
- */
 function findEnglishVoice() {
   const voices = getVoices()
   if (!voices.length) return null
-  let v = voices.find(v => v.lang === 'en-US')
-  if (!v) v = voices.find(v => v.lang.startsWith('en'))
-  return v || null
+  return voices.find(v => v.lang === 'en-US')
+    || voices.find(v => v.lang.startsWith('en'))
+    || null
 }
 
-/**
- * 朗读单词
- */
-export function speak(text, lang = 'en-US', rate = 0.8) {
-  if (typeof speechSynthesis === 'undefined') {
-    console.warn('[speech] speechSynthesis 不可用')
-    return
-  }
-
+function nativeSpeak(text, rate) {
   const voice = findEnglishVoice()
-  console.log(`[speech] 朗读: "${text}"`, { voice: voice?.name, lang: voice?.lang }, 'platform:', navigator.platform)
-
   speechSynthesis.cancel()
+  const u = new SpeechSynthesisUtterance(text)
+  u.rate = rate
+  if (voice) { u.voice = voice; u.lang = voice.lang }
+  else u.lang = 'en-US'
+  speechSynthesis.speak(u)
+  if (speechSynthesis.paused) speechSynthesis.resume()
+}
 
-  const utterance = new SpeechSynthesisUtterance(text)
-  utterance.rate = rate
-  utterance.onstart = () => console.log('[speech] ✓ 开始播放')
-  utterance.onend = () => console.log('[speech] ✓ 播放完成')
-  utterance.onerror = (e) => console.warn('[speech] ✗ 错误:', e.error)
+// ===== Google TTS 降级方案 =====
+let _audio = null
+const _audioQueue = []
 
-  if (voice) {
-    utterance.voice = voice
-    utterance.lang = voice.lang
-  } else {
-    utterance.lang = lang
-  }
+function getAudio() {
+  if (!_audio) _audio = new Audio()
+  return _audio
+}
 
-  // 直接 speak（在用户手势内调用）
-  speechSynthesis.speak(utterance)
+function googleTtsSpeak(text) {
+  // 防止高频调用导致请求堆积
+  _audioQueue.length = 0
+  const audio = getAudio()
+  audio.pause()
+  audio.currentTime = 0
+  const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=en&client=tw-ob`
+  audio.src = url
+  audio.play().catch(() => {
+    // 某些浏览器需用户手势，标记为"需交互后重试"
+  })
+}
 
-  // Android 可能进入暂停状态
-  if (speechSynthesis.paused) {
-    speechSynthesis.resume()
+// ===== 公开 API =====
+export function speak(text, lang = 'en-US', rate = 0.8) {
+  if (ENGINE === 'native') {
+    nativeSpeak(text, rate)
+  } else if (ENGINE === 'google-tts') {
+    googleTtsSpeak(text)
   }
 }
 
-/**
- * 诊断：返回 speechSynthesis 状态字符串
- */
 export function diagnose() {
-  if (typeof speechSynthesis === 'undefined') {
-    return '❌ speechSynthesis 不可用'
+  if (ENGINE === 'native') {
+    const voices = getVoices()
+    const enVoices = voices.filter(v => v.lang.startsWith('en'))
+    const parts = [
+      `📢 voices: ${voices.length}`,
+      enVoices.length ? `英文: ${enVoices.map(v => v.name).join(', ')}` : '⚠ 无英文！',
+      `speaking: ${speechSynthesis.speaking}`
+    ]
+    return parts.join(' | ')
   }
-  const voices = speechSynthesis.getVoices()
-  const enVoices = voices.filter(v => v.lang.startsWith('en'))
-  const parts = [
-    `📢 voices: ${voices.length} 个`,
-    enVoices.length > 0 ? `英文: ${enVoices.map(v => v.name).join(', ')}` : '⚠ 无英文语音！',
-    `speaking: ${speechSynthesis.speaking}`,
-    `paused: ${speechSynthesis.paused}`,
-    `pending: ${speechSynthesis.pending}`,
-    navigator.userAgent.includes('Android') ? '📱 Android' : ''
-  ]
-  return parts.join(' | ')
+  return _diagMsg
 }
 
-/**
- * 测试按钮：直接朗读 test word，用于调试
- */
 export function testSpeak() {
-  console.log(diagnose())
   speak('hello world')
   return diagnose()
 }
 
-/**
- * 预热：必须在用户手势（touchstart/click）中调用一次
- * Android 首次 speak 需要用户激活
- */
 export function warmUpSpeech() {
-  if (typeof speechSynthesis === 'undefined') return
-  // 确保 voices 已加载
-  getVoices()
-  // 发送一个静默音激活 speechSynthesis
-  speechSynthesis.cancel()
-  const tmp = new SpeechSynthesisUtterance('hello')
-  tmp.volume = 0
-  tmp.rate = 2
-  speechSynthesis.speak(tmp)
+  if (ENGINE === 'native') {
+    getVoices()
+    speechSynthesis?.cancel()
+    const tmp = new SpeechSynthesisUtterance('hello')
+    tmp.volume = 0
+    speechSynthesis?.speak(tmp)
+  }
+  // Google TTS 不需要预热
 }
