@@ -60,7 +60,7 @@
             <van-switch v-model="unlockAll" size="22" />
           </template>
         </van-cell>
-        <van-cell :title="speechDebugLabel" center @click="speechDebugLabel = diagnose()">
+        <van-cell :title="speechDebugLabel" center v-if="isDev" @click="speechDebugLabel = diagnose()">
           <template #right-icon>
             <van-button size="small" round @click.stop="testSpeak">🔊 测试</van-button>
           </template>
