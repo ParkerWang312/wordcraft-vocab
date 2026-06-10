@@ -237,11 +237,15 @@ function rateQuality(quality) {
   if (!isWordbookReview.value && !isWrongReview.value && !word.isWrong) {
     store.reviewWord(generateWordId(word), quality)
   }
-  // 答对时清除错题
-  if (quality >= 1 && word.isWrong) {
-    store.removeWrongWord(generateWordId(word))
-    if (isWrongReview.value) wrongCleared.value++
-    if (isWordbookReview.value) bookWrongCleared.value++
+  // 错题本操作：记得扣1 / 忘记加1 / 模糊不变
+  if (word.isWrong) {
+    if (quality === 2) {
+      store.acknowledgeWrongWord(generateWordId(word))
+      if (isWrongReview.value) wrongCleared.value++
+      if (isWordbookReview.value) bookWrongCleared.value++
+    } else if (quality === 0) {
+      store.addWrongWord(generateWordId(word))
+    }
   }
   reviewedCount.value++
 

@@ -25,6 +25,21 @@ export const useLearningStore = defineStore('learning', () => {
     state.value.dayProgress = {}
   }
 
+  // 初始化每日活动统计（向后兼容老用户）
+  if (!state.value.dailyActivity) {
+    state.value.dailyActivity = {}
+  }
+
+  // 记录今日学习活动
+  function recordActivity(field, delta = 1) {
+    const d = new Date()
+    const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+    if (!state.value.dailyActivity[today]) {
+      state.value.dailyActivity[today] = { learned: 0, reviewed: 0, minutes: 0 }
+    }
+    state.value.dailyActivity[today][field] = (state.value.dailyActivity[today][field] || 0) + delta
+  }
+
   // 所有单词（扁平化）
   const allWords = computed(() => {
     const result = []
@@ -53,7 +68,9 @@ export const useLearningStore = defineStore('learning', () => {
   function getDayTitle(day) {
     const d = vocabularyData.days.find(d => d.day === Number(day))
     if (!d) return ''
-    return d.categories.map(c => c.name).join(' / ')
+    const title = d.title || d.categories.map(c => c.name).join(' / ')
+    const idx = title.indexOf('：')
+    return idx > -1 ? title.slice(idx + 1) : title
   }
 
   // 初始化单词状态
@@ -98,6 +115,7 @@ export const useLearningStore = defineStore('learning', () => {
       // 旧词重学不认识：只改状态，不动SM-2
     }
     state.value.stats.totalLearned++
+    recordActivity('learned', 1)
     updateStreak()
     persist()
   }
@@ -108,6 +126,7 @@ export const useLearningStore = defineStore('learning', () => {
     const updated = calculateNextReview(ws, quality)
     state.value.wordStates[wordId] = updated
     state.value.stats.totalReviewed++
+    recordActivity('reviewed', 1)
     if (updated.status === 'mastered') {
       state.value.stats.totalMastered++
     }
@@ -151,9 +170,13 @@ export const useLearningStore = defineStore('learning', () => {
     persist()
   }
 
-  function removeWrongWord(wordId) {
+  // 只在"记得"时调用：从错题本中扣 1（>=1 才彻底移除）
+  function acknowledgeWrongWord(wordId) {
     if (state.value.wrongWords[wordId]) {
-      state.value.wrongWords[wordId].wrongCount = 0
+      state.value.wrongWords[wordId].wrongCount = Math.max(0, state.value.wrongWords[wordId].wrongCount - 1)
+      if (state.value.wrongWords[wordId].wrongCount === 0) {
+        delete state.value.wrongWords[wordId]
+      }
       persist()
     }
   }
@@ -263,11 +286,12 @@ export const useLearningStore = defineStore('learning', () => {
     toggleWordBook,
     initWordState,
     addWrongWord,
-    removeWrongWord,
+    acknowledgeWrongWord,
     getDayProgress,
     saveDayProgress,
     setDayNeedsPractice,
     getDayNeedsPractice,
+    recordActivity,
     persist
   }
 })

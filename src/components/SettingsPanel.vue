@@ -31,6 +31,13 @@
         </van-cell>
       </van-cell-group>
       <van-cell-group title="通用">
+        <van-field
+          v-model="settingsStore.data.nickname"
+          label="昵称"
+          placeholder="给自己取个名字吧"
+          maxlength="12"
+          @blur="settingsStore.persistDirect"
+        />
         <van-cell title="导出学习数据" center>
           <template #right-icon>
             <van-button size="small" round @click.stop="exportData">导出</van-button>
@@ -194,10 +201,17 @@ function confirmReset() {
     cancelButtonColor: '#EF4444', showCancelButton: true
   }).catch(() => {
     localStorage.removeItem('wordcraft_vocab')
+    localStorage.removeItem('wordcraft_vocab_backup')
     localStorage.removeItem('wordcraft_settings')
+    localStorage.removeItem('wordcraft_theme')
     localStorage.removeItem('wordcraft_review_progress')
     window.location.reload()
   })
+}
+
+/** 本地日期字符串 'YYYY-MM-DD'，避免 toISOString UTC 偏移导致跨天 */
+function fmtDate(d) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 }
 
 function createTestData() {
@@ -210,9 +224,10 @@ function createTestData() {
   const shuffled = [...indices].sort(() => Math.random() - 0.5)
   const wrongSet = new Set(shuffled.slice(0, 10))
   const bookSet = new Set(shuffled.slice(5, 13))
-  const today = new Date()
-  const yesterday = new Date(today)
+  const now = new Date()
+  const yesterday = new Date(now)
   yesterday.setDate(yesterday.getDate() - 1); yesterday.setHours(0, 0, 0, 0)
+  const yKey = `${yesterday.getFullYear()}-${String(yesterday.getMonth()+1).padStart(2,'0')}-${String(yesterday.getDate()).padStart(2,'0')}`
   day1Words.forEach((w, i) => {
     let id = generateWordId(w)
     idCount[id] = (idCount[id] || 0) + 1
@@ -229,9 +244,11 @@ function createTestData() {
   const testState = {
     currentDay: 2, completedDays: [1], streakDays: 1, lastStudyDate: yesterday.toDateString(),
     wordStates, wrongWords, dayProgress: {},
+    dailyActivity: { [yKey]: { learned: 58, reviewed: 0, minutes: 0 } },
     stats: { totalLearned: 58, totalReviewed: 0, totalMastered: 0 }
   }
   localStorage.setItem('wordcraft_vocab', JSON.stringify(testState))
+  localStorage.removeItem('wordcraft_review_progress')
   window.location.reload()
 }
 
@@ -239,56 +256,138 @@ function createTestDataA() {
   show.value = false
   const day1Words = store.getDayWords(1)
   const day2Words = store.getDayWords(2)
-  const day3Words = store.getDayWords(3)
   const wordStates = {}, wrongWords = {}, idCount = {}
-  const today = new Date()
-  const d1 = new Date(today); d1.setDate(d1.getDate()-3); d1.setHours(0,0,0,0)
-  const d2 = new Date(today); d2.setDate(d2.getDate()-2); d2.setHours(0,0,0,0)
+  const today = new Date(); today.setHours(0,0,0,0)
+  const d1 = new Date(today); d1.setDate(d1.getDate()-2); d1.setHours(0,0,0,0)
+  const d2 = new Date(today); d2.setDate(d2.getDate()-1); d2.setHours(0,0,0,0)
   const dY = new Date(today); dY.setDate(dY.getDate()-1); dY.setHours(0,0,0,0)
-  const dT = new Date(today); dT.setHours(0,0,0,0)
-  // Day1: 15 错题（与到期词重叠），8 生词本
+  const d1k = fmtDate(d1), d2k = fmtDate(d2)
+
+  // === Day 1：学习 58 个词，认识/不认识随机，15 错题，10 生词本 ===
   const sh1 = day1Words.map((_,i)=>i).sort(()=>Math.random()-0.5)
-  const wrongSet = new Set(sh1.slice(0,15)); const bookSet = new Set(sh1.slice(5,13))
+  const wrongSet1 = new Set(sh1.slice(0,15))
+  const bookSet1 = new Set(sh1.slice(10,20))
   day1Words.forEach((w,i) => {
     let id = generateWordId(w)
     idCount[id] = (idCount[id]||0)+1
     if (idCount[id]>1) id = id+'_'+idCount[id]
-    const isW = wrongSet.has(i)
+    const isKnown = i < 40 ? true : Math.random() > 0.5
     wordStates[id] = {
-      wordId: id, learnedAt: d1.toISOString(), reviewCount: 1, easeFactor: 2.5, inWordBook: bookSet.has(i),
-      ...(isW ? { status:'learning', interval:0, nextReviewAt:d1.toISOString() }
-        : i<30 ? { status:'known', interval:3, nextReviewAt:dT.toISOString() }
-        : { status:'known', interval:1, nextReviewAt:dY.toISOString() })
+      wordId: id,
+      status: isKnown ? 'known' : 'learning',
+      learnedAt: d1.toISOString(),
+      reviewCount: 0,
+      easeFactor: 2.5,
+      interval: 1,
+      nextReviewAt: d2.toISOString(),         // 第二天到期待复习
+      inWordBook: bookSet1.has(i)
     }
-    if (isW) wrongWords[id] = { wrongCount:1, lastWrongAt:d1.toISOString() }
+    if (wrongSet1.has(i)) {
+      wrongWords[id] = { wrongCount:1, lastWrongAt:d1.toISOString() }
+      wordStates[id].status = 'learning'
+    }
   })
-  // Day2: 全部到期
-  const idCount2 = {}
+
+  // === Day 2：复习 Day1 的 58 词（随机记得/模糊/忘记）+ 学习 69 个 Day2 ===
+  const day1Ids = day1Words.map((w,i) => {
+    let id = generateWordId(w)
+    return idCount[id] ? (idCount[id]>1 ? id+'_'+idCount[id] : id) : id
+  })
+  const reviewThisDay = 58
+  let reviewedCnt = 0
+  day1Ids.forEach(wid => {
+    const ws = wordStates[wid]
+    const quality = [0,0,1,1,2,2,2,2][Math.floor(Math.random()*8)] // 25%忘 25%模糊 50%记得
+    reviewedCnt++
+
+    if (quality === 0) {
+      // 忘记：重置，明天再复习
+      ws.interval = 1
+      ws.easeFactor = Math.max(1.3, ws.easeFactor - 0.2)
+      ws.nextReviewAt = dY.toISOString()
+      ws.status = 'learning'
+      ws.reviewCount = (ws.reviewCount || 0) + 1
+      // 错题本 +1
+      if (wrongWords[wid]) {
+        wrongWords[wid].wrongCount++
+      } else {
+        wrongWords[wid] = { wrongCount:1, lastWrongAt:d2.toISOString() }
+      }
+    } else if (quality === 1) {
+      // 模糊：明天再复习，不改 easeFactor
+      ws.interval = 1
+      ws.nextReviewAt = dY.toISOString()
+      ws.reviewCount = (ws.reviewCount || 0) + 1
+    } else {
+      // 记得：间隔递增
+      ws.reviewCount = (ws.reviewCount || 0) + 1
+      if (ws.reviewCount === 1) {
+        ws.interval = 3
+      } else {
+        ws.interval = Math.round(ws.interval * ws.easeFactor)
+        ws.easeFactor = Math.min(2.5, ws.easeFactor + 0.1)
+      }
+      const next = new Date(d2)
+      next.setDate(next.getDate() + ws.interval)
+      next.setHours(0,0,0,0)
+      ws.nextReviewAt = next.toISOString()
+      ws.status = ws.reviewCount >= 4 ? 'mastered' : 'known'
+      // 错题本 -1（归零则删）
+      if (wrongWords[wid]) {
+        wrongWords[wid].wrongCount--
+        if (wrongWords[wid].wrongCount <= 0) delete wrongWords[wid]
+      }
+    }
+  })
+
+  // Day 2 学习：69 词，随机认识/不认识，15 错题，15 生词本
+  const sh2 = day2Words.map((_,i)=>i).sort(()=>Math.random()-0.5)
+  const wrongSet2 = new Set(sh2.slice(0,15))
+  const bookSet2 = new Set(sh2.slice(8,23))
   day2Words.forEach((w,i) => {
     let id = generateWordId(w)
-    idCount2[id] = (idCount2[id]||0)+1
-    if (idCount2[id]>1) id = id+'_'+idCount2[id]
-    wordStates[id] = { wordId:id, status:'known', learnedAt:d2.toISOString(), reviewCount:0, easeFactor:2.5, interval:1, nextReviewAt:dY.toISOString(), inWordBook: i<8 }
+    let count = idCount[id] || 0
+    count++
+    idCount[id] = count
+    if (count > 1) id = id + '_' + count
+    const isKnown = Math.random() > 0.3
+    wordStates[id] = {
+      wordId: id,
+      status: isKnown ? 'known' : 'learning',
+      learnedAt: d2.toISOString(),
+      reviewCount: 0,
+      easeFactor: 2.5,
+      interval: 1,
+      nextReviewAt: dY.toISOString(),         // 昨天已到期（可今天复习）
+      inWordBook: bookSet2.has(i)
+    }
+    if (wrongSet2.has(i)) {
+      wrongWords[id] = { wrongCount:1, lastWrongAt:d2.toISOString() }
+      wordStates[id].status = 'learning'
+    }
   })
-  // Day3: 15 错题（未学习，无 SM-2 状态 → 不在到期词列表 → 主线复习中排最前面）
-  day3Words.slice(0, 15).forEach(w => {
-    const id = generateWordId(w)
-    wrongWords[id] = { wrongCount:1, lastWrongAt:dY.toISOString() }
-  })
+
   localStorage.setItem('wordcraft_vocab', JSON.stringify({
-    currentDay:3, completedDays:[1,2], streakDays:3, lastStudyDate:today.toDateString(),
-    wordStates, wrongWords, dayProgress:{}, stats:{ totalLearned:116, totalReviewed:58, totalMastered:0 }
+    currentDay:3, completedDays:[1,2], streakDays:2,
+    lastStudyDate: d2.toDateString(),
+    wordStates, wrongWords, dayProgress:{},
+    dailyActivity: {
+      [d1k]: { learned: 58, reviewed: 0, minutes: 0 },
+      [d2k]: { learned: 69, reviewed: reviewedCnt, minutes: 0 }
+    },
+    stats:{ totalLearned:58+69, totalReviewed:reviewedCnt, totalMastered:0 }
   }))
+  localStorage.removeItem('wordcraft_review_progress')
   window.location.reload()
 }
 
 function createTestDataB() {
+  show.value = false
   const day1Words = store.getDayWords(1)
   const wordStates = {}, idCount = {}
   const today = new Date()
   today.setHours(0, 0, 0, 0)
-  const yesterday = new Date(today)
-  yesterday.setDate(yesterday.getDate() - 1)
+  const todayKey = fmtDate(today)
 
   // 前55个已认识，后3个未学习，无错题，无复习排期
   const knownCount = 55
@@ -301,7 +400,7 @@ function createTestDataB() {
     wordStates[id] = {
       wordId: id,
       status: isLearned ? 'known' : 'unknown',
-      learnedAt: isLearned ? yesterday.toISOString() : null,
+      learnedAt: isLearned ? today.toISOString() : null,
       reviewCount: 0,
       easeFactor: 2.5,
       interval: 0,
@@ -313,10 +412,11 @@ function createTestDataB() {
     currentDay: 1,
     completedDays: [],
     streakDays: 0,
-    lastStudyDate: yesterday.toDateString(),
+    lastStudyDate: today.toDateString(),
     wordStates,
     wrongWords: {},
     dayProgress: { 1: { wordIndex: knownCount, needsPractice: false } },
+    dailyActivity: { [fmtDate(today)]: { learned: knownCount, reviewed: 0, minutes: 0 } },
     stats: { totalLearned: knownCount, totalReviewed: 0, totalMastered: 0 }
   }))
   // 延迟重载，避免 Pinia persist 钩子覆盖数据
@@ -325,18 +425,23 @@ function createTestDataB() {
       currentDay: 1,
       completedDays: [],
       streakDays: 0,
-      lastStudyDate: yesterday.toDateString(),
+      lastStudyDate: today.toDateString(),
       wordStates,
       wrongWords: {},
       dayProgress: { 1: { wordIndex: knownCount, needsPractice: false } },
+      dailyActivity: { [fmtDate(today)]: { learned: knownCount, reviewed: 0, minutes: 0 } },
       stats: { totalLearned: knownCount, totalReviewed: 0, totalMastered: 0 }
     }))
+    localStorage.removeItem('wordcraft_review_progress')
     window.location.reload()
   }, 100)
 }
 
 function openFeedback() {
   show.value = false
+  if (settingsStore.data.nickname && !feedbackNick.value) {
+    feedbackNick.value = settingsStore.data.nickname
+  }
   setTimeout(() => { showFeedback.value = true }, 200)
 }
 

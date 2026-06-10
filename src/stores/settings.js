@@ -8,7 +8,8 @@ const defaults = {
   showPhoneticOnBack: false,
   autoAdvance: false,
   speakOnFlip: true,
-  forcePractice: true
+  forcePractice: true,
+  nickname: ''
 }
 
 function load() {

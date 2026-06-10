@@ -46,7 +46,14 @@
         </div>
         <span class="progress-text">{{ store.progress.completed }} / 28</span>
       </div>
+      <div class="report-link" @click="showDashboard = true">
+        <span>📊 查看学习报告</span>
+        <span class="arrow">›</span>
+      </div>
     </div>
+
+    <!-- 学习报告弹层 -->
+    <LearningDashboard v-model:show="showDashboard" />
 
     <!-- 快捷操作 -->
     <div class="section">
@@ -103,10 +110,12 @@ import { useRouter } from 'vue-router'
 import { useLearningStore } from '../stores/learning.js'
 import { useThemeStore } from '../stores/theme.js'
 import { showDialog } from 'vant'
+import LearningDashboard from '../components/LearningDashboard.vue'
 
 const router = useRouter()
 const store = useLearningStore()
 const theme = useThemeStore()
+const showDashboard = ref(false)
 const unlockAll = inject('unlockAll', ref(false))
 const openSettings = inject('openSettings', () => {})
 
@@ -185,6 +194,28 @@ function goToDay(day) {
   font-weight: 700;
   color: var(--text-primary);
   min-width: 44px;
+}
+
+.report-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(236,72,153,0.08));
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.report-link:active {
+  transform: scale(0.98);
+}
+.report-link .arrow {
+  font-size: 18px;
+  color: var(--text-secondary);
 }
 
 .header {
