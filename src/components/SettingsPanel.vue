@@ -501,6 +501,10 @@ async function submitFeedback() {
   background: var(--bg-primary); color: var(--text-primary); font-size: 14px; font-family: inherit; outline: none;
 }
 .feedback-input:focus { border-color: var(--accent); }
+.feedback-textarea::placeholder,
+.feedback-input::placeholder { color: var(--text-secondary); opacity: 0.6; }
+[data-theme="dark"] .feedback-dialog { box-shadow: 0 8px 40px rgba(0,0,0,0.6); }
+[data-theme="dark"] .feedback-later-btn { color: #9CA3AF !important; border-color: #374151 !important; }
 .device-select { display: flex; gap: 8px; }
 .device-option {
   flex: 1; text-align: center; padding: 8px 4px; border-radius: 10px; border: 1px solid var(--border);

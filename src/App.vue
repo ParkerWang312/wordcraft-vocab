@@ -99,6 +99,20 @@ body {
 [data-theme="dark"] .van-nav-bar { background: var(--bg-card) !important; }
 [data-theme="dark"] .van-popup { background: var(--bg-card) !important; color: var(--text-primary) !important; }
 [data-theme="dark"] .van-popup--bottom { background: var(--bg-card) !important; }
+[data-theme="dark"] .van-action-sheet { background: var(--bg-card) !important; }
+[data-theme="dark"] .van-action-sheet__header,
+[data-theme="dark"] .van-action-sheet__content { background: var(--bg-card) !important; color: var(--text-primary) !important; }
+[data-theme="dark"] .van-cell-group__title { color: var(--text-secondary) !important; }
+[data-theme="dark"] .van-cell { background: var(--bg-card) !important; color: var(--text-primary) !important; }
+[data-theme="dark"] .van-cell__title { color: var(--text-primary) !important; }
+[data-theme="dark"] .van-cell__value { color: var(--text-secondary) !important; }
+[data-theme="dark"] .van-field__label { color: var(--text-primary) !important; }
+[data-theme="dark"] .van-field__control { color: var(--text-primary) !important; background: var(--bg-primary) !important; }
+[data-theme="dark"] .van-dialog { background: var(--bg-card) !important; }
+[data-theme="dark"] .van-dialog__header,
+[data-theme="dark"] .van-dialog__message { color: var(--text-primary) !important; }
+[data-theme="dark"] .van-button--plain.van-button--primary { color: var(--accent) !important; border-color: var(--accent) !important; background: transparent !important; }
+[data-theme="dark"] .van-button--default.van-button--plain { color: var(--text-secondary) !important; border-color: var(--border) !important; }
 .page { padding: 16px; max-width: 480px; margin: 0 auto; }
 
 .top-buttons { position: fixed; top: 12px; right: 12px; z-index: 999; display: flex; gap: 8px; }
