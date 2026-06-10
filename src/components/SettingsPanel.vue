@@ -60,6 +60,11 @@
             <van-switch v-model="unlockAll" size="22" />
           </template>
         </van-cell>
+        <van-cell :title="speechDebugLabel" center @click="speechDebugLabel = diagnose()">
+          <template #right-icon>
+            <van-button size="small" round @click.stop="testSpeak">🔊 测试</van-button>
+          </template>
+        </van-cell>
         <van-cell title="创建测试数据" center v-if="isDev">
           <template #right-icon>
             <van-button size="small" round @click.stop="createTestData">创建</van-button>
@@ -118,6 +123,7 @@ import { ref, inject, computed } from 'vue'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import { useSettingsStore } from '../stores/settings.js'
 import { showDialog, showToast } from 'vant'
+import { diagnose, testSpeak } from '../utils/speech.js'
 
 const props = defineProps({ show: Boolean })
 const emit = defineEmits(['update:show'])
@@ -126,6 +132,7 @@ const store = useLearningStore()
 const settingsStore = useSettingsStore()
 const unlockAll = inject('unlockAll')
 const isDev = new URLSearchParams(window.location.search).has('dev')
+const speechDebugLabel = ref('🔊 语音引擎诊断')
 
 const showFeedback = ref(false)
 const feedbackBody = ref('')

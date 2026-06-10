@@ -132,10 +132,8 @@ function swipeWord(known) {
 
   if (currentIndex.value < words.value.length - 1) {
     currentIndex.value++
-    // 下一个单词自动发音
-    if (currentWord.value) {
-      setTimeout(() => speak(currentWord.value.word), 200)
-    }
+    // 下一个单词发音（同步调用，Android 需求）
+    if (currentWord.value) speak(currentWord.value.word)
   } else {
     allDone.value = true
     // 强制练习模式：不标记完成，直接跳转到练习

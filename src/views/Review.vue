@@ -253,10 +253,8 @@ function rateQuality(quality) {
   if (currentWordIndex.value < reviewList.value.length - 1) {
     currentWordIndex.value++
     saveReviewProgress()
-    // 下一个单词自动发音
-    if (currentReviewWord.value) {
-      setTimeout(() => speak(currentReviewWord.value.word), 200)
-    }
+    // 下一个单词发音（同步调用，Android 需求）
+    if (currentReviewWord.value) speak(currentReviewWord.value.word)
   } else {
     finished.value = true
     clearReviewProgress()

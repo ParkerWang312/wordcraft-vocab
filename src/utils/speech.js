@@ -41,37 +41,65 @@ function findEnglishVoice() {
  * 朗读单词
  */
 export function speak(text, lang = 'en-US', rate = 0.8) {
-  if (typeof speechSynthesis === 'undefined') return
+  if (typeof speechSynthesis === 'undefined') {
+    console.warn('[speech] speechSynthesis 不可用')
+    return
+  }
 
-  // 必须每次先 cancel，Android 上不 cancel 后续 speak 会失效
+  const voice = findEnglishVoice()
+  console.log(`[speech] 朗读: "${text}"`, { voice: voice?.name, lang: voice?.lang }, 'platform:', navigator.platform)
+
   speechSynthesis.cancel()
 
   const utterance = new SpeechSynthesisUtterance(text)
-  utterance.lang = lang
   utterance.rate = rate
+  utterance.onstart = () => console.log('[speech] ✓ 开始播放')
+  utterance.onend = () => console.log('[speech] ✓ 播放完成')
+  utterance.onerror = (e) => console.warn('[speech] ✗ 错误:', e.error)
 
-  // 指定英文语音（Android 默认引擎可能不支持 en-US）
-  const voice = findEnglishVoice()
   if (voice) {
     utterance.voice = voice
     utterance.lang = voice.lang
+  } else {
+    utterance.lang = lang
   }
 
-  // Android 防卡死：延迟一小段时间确保 cancel 完全生效
-  setTimeout(() => {
-    speechSynthesis.speak(utterance)
+  // 直接 speak（在用户手势内调用）
+  speechSynthesis.speak(utterance)
 
-    // Android 某些版本 speak 后立即进入 paused 状态，需要 resume
-    setTimeout(() => {
-      if (speechSynthesis.paused) {
-        speechSynthesis.resume()
-      }
-      // 如果还没开始播放，可能是被静默丢弃，再试一次
-      if (!speechSynthesis.speaking) {
-        speechSynthesis.speak(utterance)
-      }
-    }, 50)
-  }, 20)
+  // Android 可能进入暂停状态
+  if (speechSynthesis.paused) {
+    speechSynthesis.resume()
+  }
+}
+
+/**
+ * 诊断：返回 speechSynthesis 状态字符串
+ */
+export function diagnose() {
+  if (typeof speechSynthesis === 'undefined') {
+    return '❌ speechSynthesis 不可用'
+  }
+  const voices = speechSynthesis.getVoices()
+  const enVoices = voices.filter(v => v.lang.startsWith('en'))
+  const parts = [
+    `📢 voices: ${voices.length} 个`,
+    enVoices.length > 0 ? `英文: ${enVoices.map(v => v.name).join(', ')}` : '⚠ 无英文语音！',
+    `speaking: ${speechSynthesis.speaking}`,
+    `paused: ${speechSynthesis.paused}`,
+    `pending: ${speechSynthesis.pending}`,
+    navigator.userAgent.includes('Android') ? '📱 Android' : ''
+  ]
+  return parts.join(' | ')
+}
+
+/**
+ * 测试按钮：直接朗读 test word，用于调试
+ */
+export function testSpeak() {
+  console.log(diagnose())
+  speak('hello world')
+  return diagnose()
 }
 
 /**

@@ -17,7 +17,10 @@ import { useRoute } from 'vue-router'
 import { useLearningStore } from './stores/learning.js'
 import { useThemeStore } from './stores/theme.js'
 import SettingsPanel from './components/SettingsPanel.vue'
-import { warmUpSpeech } from './utils/speech.js'
+import { warmUpSpeech, diagnose, testSpeak } from './utils/speech.js'
+
+// 暴露到全局方便 Android 远程调试
+window.__speechDebug = { diagnose, testSpeak, warmUp: warmUpSpeech }
 
 const store = useLearningStore()
 const theme = useThemeStore()
