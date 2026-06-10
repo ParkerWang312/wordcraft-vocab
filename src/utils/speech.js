@@ -7,15 +7,14 @@
 /** 语音引擎类型 */
 const ENGINE = (() => {
   if (typeof speechSynthesis !== 'undefined') return 'native'
-  if (typeof Audio !== 'undefined') return 'google-tts'
+  if (typeof Audio !== 'undefined') return 'youdao-tts'
   return 'none'
 })()
 
-/** 诊断信息 */
-let _diagMsg = ENGINE === 'native'
+const _diagMsg = ENGINE === 'native'
   ? '✅ speechSynthesis（原生）'
-  : ENGINE === 'google-tts'
-    ? '🔊 Google TTS（降级）'
+  : ENGINE === 'youdao-tts'
+    ? '🔊 有道 TTS（降级）'
     : '❌ 无可用语音引擎'
 
 // ===== 原生 speechSynthesis =====
@@ -55,34 +54,43 @@ function nativeSpeak(text, rate) {
   if (speechSynthesis.paused) speechSynthesis.resume()
 }
 
-// ===== Google TTS 降级方案 =====
+// ===== 有道 TTS 降级方案（国内可访问） =====
 let _audio = null
-const _audioQueue = []
+let _audioPlayable = false
 
 function getAudio() {
-  if (!_audio) _audio = new Audio()
+  if (!_audio) {
+    _audio = new Audio()
+    _audio.preload = 'auto'
+  }
   return _audio
 }
 
-function googleTtsSpeak(text) {
-  // 防止高频调用导致请求堆积
-  _audioQueue.length = 0
+function youdaoTtsSpeak(text) {
   const audio = getAudio()
   audio.pause()
   audio.currentTime = 0
-  const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=en&client=tw-ob`
+  // 有道词典 TTS：level=2 美音，level=1 英音
+  const url = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=0`
   audio.src = url
-  audio.play().catch(() => {
-    // 某些浏览器需用户手势，标记为"需交互后重试"
-  })
+  const playPromise = audio.play()
+  if (playPromise) {
+    playPromise.catch((e) => {
+      console.warn('[speech] 有道播放失败:', e.message)
+      // 可能需要用户手势，标记重试
+      if (e.name === 'NotAllowedError' && !_audioPlayable) {
+        // 失败一次后，下次用户手势内应该能播放了
+      }
+    })
+  }
 }
 
 // ===== 公开 API =====
 export function speak(text, lang = 'en-US', rate = 0.8) {
   if (ENGINE === 'native') {
     nativeSpeak(text, rate)
-  } else if (ENGINE === 'google-tts') {
-    googleTtsSpeak(text)
+  } else if (ENGINE === 'youdao-tts') {
+    youdaoTtsSpeak(text)
   }
 }
 
@@ -113,5 +121,13 @@ export function warmUpSpeech() {
     tmp.volume = 0
     speechSynthesis?.speak(tmp)
   }
-  // Google TTS 不需要预热
+  // 有道 TTS: 预热 Audio（首次播放需要用户手势）
+  if (ENGINE === 'youdao-tts') {
+    const audio = getAudio()
+    audio.play().then(() => {
+      _audioPlayable = true
+      audio.pause()
+      audio.currentTime = 0
+    }).catch(() => {})
+  }
 }
