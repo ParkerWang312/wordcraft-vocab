@@ -132,6 +132,10 @@ function swipeWord(known) {
 
   if (currentIndex.value < words.value.length - 1) {
     currentIndex.value++
+    // 下一个单词自动发音
+    if (currentWord.value) {
+      setTimeout(() => speak(currentWord.value.word), 200)
+    }
   } else {
     allDone.value = true
     // 强制练习模式：不标记完成，直接跳转到练习
@@ -159,21 +163,6 @@ function goPractice() {
   const query = settings.data.forcePractice ? '?via=force' : ''
   router.push(`/practice/${dayNum.value}${query}`)
 }
-
-// 自动播放发音
-let speakTimer = null
-watch(currentWord, (word) => {
-  clearTimeout(speakTimer)
-  if (word) {
-    speakTimer = setTimeout(() => {
-      speak(word.word)
-    }, 300)
-  }
-}, { immediate: true })
-
-onBeforeUnmount(() => {
-  clearTimeout(speakTimer)
-})
 
 const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.value))
 </script>

@@ -253,6 +253,10 @@ function rateQuality(quality) {
   if (currentWordIndex.value < reviewList.value.length - 1) {
     currentWordIndex.value++
     saveReviewProgress()
+    // 下一个单词自动发音
+    if (currentReviewWord.value) {
+      setTimeout(() => speak(currentReviewWord.value.word), 200)
+    }
   } else {
     finished.value = true
     clearReviewProgress()
@@ -285,15 +289,6 @@ function goBack() {
   }
 }
 
-// 自动播放发音
-watch(currentReviewWord, (word) => {
-  cardFlipped.value = false
-  if (word) {
-    setTimeout(() => {
-      speak(word.word)
-    }, 300)
-  }
-}, { immediate: true })
 </script>
 
 <style scoped>
