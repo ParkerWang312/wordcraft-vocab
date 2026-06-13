@@ -11,7 +11,7 @@ const ENGINE = (() => {
   return 'none'
 })()
 
-const _diagMsg = ENGINE === 'native'
+let _diagMsg = ENGINE === 'native'
   ? '✅ speechSynthesis（原生）'
   : ENGINE === 'youdao-tts'
     ? '🔊 有道 TTS（降级）'
