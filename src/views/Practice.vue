@@ -93,7 +93,7 @@
     <div class="complete-box" v-if="finished">
       <div class="result-card">
         <span class="emoji">{{ passed ? '🎉' : '😅' }}</span>
-        <h3 v-if="isForcePractice">Day {{ dayNum }} 学习完成！</h3>
+        <h3 v-if="isForcePractice">Day {{ unitNum }} 学习完成！</h3>
         <h3 v-else>{{ passed ? '恭喜通过！' : '还需努力' }}</h3>
         <p class="result-detail">正确率: {{ accuracy }}%</p>
         <p class="result-detail">得分: {{ score }}</p>
@@ -106,7 +106,7 @@
         <van-button class="btn-home" round @click="$router.push('/')">
           返回首页
         </van-button>
-        <van-button v-if="!passed" class="btn-retry" round @click="$router.push(`/learn/${dayNum}`)">
+        <van-button v-if="!passed" class="btn-retry" round @click="$router.push(`/learn/${unitNum}`)">
           重新学习
         </van-button>
       </div>
@@ -123,12 +123,12 @@ import { useSettingsStore } from '../stores/settings.js'
 import { useTimer, formatTime } from '../composables/useTimer.js'
 import { speak } from '../utils/speech.js'
 
-const props = defineProps({ day: { type: [String, Number], required: true } })
+const props = defineProps({ unit: { type: [String, Number], required: true } })
 const router = useRouter()
 const store = useLearningStore()
 const settingsStore = useSettingsStore()
 const route = useRoute()
-const dayNum = computed(() => Number(props.day))
+const unitNum = computed(() => Number(props.unit))
 const isForcePractice = computed(() => route.query.via === 'force')
 
 const { elapsed } = useTimer()
@@ -189,7 +189,7 @@ function speakWord(word) {
 }
 
 function generateQuestions() {
-  const dayWords = store.getDayWords(dayNum.value)
+  const dayWords = store.getUnitWords(unitNum.value)
   const allWords = store.allWords
   const total = dayWords.length
   const e2cCount = Math.round(total * 0.4)
@@ -259,7 +259,7 @@ function generateQuestions() {
 
 // 从最小种子数据重建题目（用于恢复练习进度，大幅减小导出文件）
 function restoreQuestions(seeds) {
-  const dayWords = store.getDayWords(dayNum.value)
+  const dayWords = store.getUnitWords(unitNum.value)
   const allWords = store.allWords
   const result = []
   let e2c = 0, c2e = 0, audio = 0
@@ -294,13 +294,13 @@ function restoreQuestions(seeds) {
 
 onMounted(() => {
   // 未完成的新天有待复习时，强制跳转到复习页
-  const isCompleted = store.state.completedDays.includes(dayNum.value)
+  const isCompleted = store.state.completedDays.includes(unitNum.value)
   if (!isCompleted && store.dueReviewCount > 0) {
     router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
     return
   }
   // 优先恢复保存的题目（所有模式都支持进度恢复），否则首次生成
-  const saved = store.state.dayProgress[dayNum.value]
+  const saved = store.state.dayProgress[unitNum.value]
   if (saved && saved.savedSeeds && saved.savedSeeds.length > 0) {
     questions.value = restoreQuestions(saved.savedSeeds)
     const practiceIdx = saved.practiceIndex || 0
@@ -366,7 +366,7 @@ function selectOption(idx) {
     // 答错：记入错题本
     const q = currentQuestion.value
     if (q && q.audioWord) {
-      const wrongWord = store.allWords.find(w => w.word === q.audioWord && w.day === dayNum.value)
+      const wrongWord = store.allWords.find(w => w.word === q.audioWord && w.day === unitNum.value)
       if (wrongWord) {
         store.addWrongWord(generateWordId(wrongWord))
       }
@@ -393,22 +393,22 @@ function nextQuestion() {
     finished.value = true
     // 强制练习模式：完成练习 = 当天完成
     if (isForcePractice.value) {
-      store.completeDay(dayNum.value)
-      store.setDayNeedsPractice(dayNum.value, false)
+      store.completeUnit(unitNum.value)
+      store.setDayNeedsPractice(unitNum.value, false)
     }
     // 所有模式：练习完成后清零练习进度，保留 wordIndex（学习进度）
-    const existing = store.state.dayProgress[dayNum.value]
+    const existing = store.state.dayProgress[unitNum.value]
     const wordIndex = typeof existing === 'object' ? (existing.wordIndex || 0) : (existing || 0)
-    store.state.dayProgress[dayNum.value] = { wordIndex, practiceIndex: 0, savedSeeds: null, practiceStats: null }
+    store.state.dayProgress[unitNum.value] = { wordIndex, practiceIndex: 0, savedSeeds: null, practiceStats: null }
     store.persist()
   }
 }
 
 function savePracticeProgress() {
-  const existing = store.state.dayProgress[dayNum.value]
+  const existing = store.state.dayProgress[unitNum.value]
   // 只保存题目种子（audioWord + type），大幅减小数据量
   const seeds = questions.value.map(q => ({ audioWord: q.audioWord, type: q.type }))
-  store.state.dayProgress[dayNum.value] = {
+  store.state.dayProgress[unitNum.value] = {
     ...(typeof existing === 'object' ? existing : { wordIndex: existing || 0 }),
     practiceIndex: currentIndex.value + 1,
     savedSeeds: seeds,

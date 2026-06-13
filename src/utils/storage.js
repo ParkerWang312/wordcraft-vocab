@@ -82,6 +82,8 @@ export function getDefaultState() {
   return {
     currentDay: 1,
     completedDays: [],
+    completedUnits: [],
+    currentPlanUnit: 1,
     streakDays: 0,
     lastStudyDate: null,
     wordStates: {},

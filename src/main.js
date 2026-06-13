@@ -14,8 +14,8 @@ import WordBook from './views/WordBook.vue'
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/learn/:day', component: DayLearn, props: true },
-  { path: '/practice/:day', component: Practice, props: true },
+  { path: '/learn/:unit', component: DayLearn, props: true },
+  { path: '/practice/:unit', component: Practice, props: true },
   { path: '/review', component: Review },
   { path: '/wordbook', component: WordBook }
 ]

@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import { loadState, saveState, getDefaultState } from '../utils/storage.js'
 import { getDefaultWordState, calculateNextReview, getTodayReviewCount } from '../utils/memoryCurve.js'
 import vocabularyData from '../data/vocabulary.json'
+import { useSettingsStore } from './settings.js'
 
 export function getDefaultWrongState() {
   return {}  // { wordId: { wrongCount, lastWrongAt } }
@@ -71,6 +72,151 @@ export const useLearningStore = defineStore('learning', () => {
     const title = d.title || d.categories.map(c => c.name).join(' / ')
     const idx = title.indexOf('：')
     return idx > -1 ? title.slice(idx + 1) : title
+  }
+
+  // ===== 新模式学习单位 =====
+
+  /** 获取指定学习单位的单词列表 */
+  function getUnitWords(unitIndex) {
+    const settings = useSettingsStore()
+    const mode = settings.data.planMode || 'categories'
+    const idx = Math.max(1, Number(unitIndex))
+
+    if (mode === 'categories') {
+      const cat = allCategories.value[idx - 1]
+      if (!cat) return []
+      return cat.words.map(w => ({ ...w, day: cat.day, category: cat.name, unit: idx }))
+    }
+
+    if (mode === 'custom') {
+      const wpd = settings.data.wordsPerDay || 30
+      const start = (idx - 1) * wpd
+      return allWords.value.slice(start, start + wpd).map(w => ({ ...w, unit: idx }))
+    }
+
+    // 28days 模式
+    return getDayWords(idx).map(w => ({ ...w, unit: idx }))
+  }
+
+  /** 获取指定学习单位的标题 */
+  function getUnitTitle(unitIndex) {
+    const settings = useSettingsStore()
+    const mode = settings.data.planMode || 'categories'
+    const idx = Math.max(1, Number(unitIndex))
+
+    if (mode === 'categories') {
+      const cat = allCategories.value[idx - 1]
+      return cat ? cat.name : ''
+    }
+
+    if (mode === 'custom') {
+      return `Day ${idx}`
+    }
+
+    return getDayTitle(idx)
+  }
+
+  /** 计划模式下的总单位数 */
+  const totalPlanUnits = computed(() => {
+    const settings = useSettingsStore()
+    const mode = settings.data.planMode || 'categories'
+    if (mode === 'categories') return totalCategories.value
+    if (mode === 'custom') return Math.ceil(totalWords.value / (settings.data.wordsPerDay || 30))
+    return 28
+  })
+
+  /** 完成一个学习单位 */
+  function completeUnit(unitIndex) {
+    const d = Number(unitIndex)
+    if (!state.value.completedUnits.includes(d)) {
+      state.value.completedUnits.push(d)
+    }
+
+    // 28days 模式同时更新旧的 completedDays（向后兼容）
+    if (d <= 28) {
+      if (!state.value.completedDays.includes(d)) {
+        state.value.completedDays.push(d)
+      }
+    }
+
+    // 更新当前单位
+    let nextUnit = d + 1
+    for (let i = 1; i < nextUnit; i++) {
+      if (!state.value.completedUnits.includes(i)) {
+        nextUnit = i
+        break
+      }
+    }
+    if (state.value.currentPlanUnit <= d) {
+      state.value.currentPlanUnit = Math.min(nextUnit, totalPlanUnits.value + 1)
+    }
+
+    // 28days 模式同步 currentDay
+    const settings = useSettingsStore()
+    if ((settings.data.planMode || 'categories') === '28days' && nextUnit <= 29) {
+      state.value.currentDay = nextUnit
+    }
+
+    updateStreak()
+    persist()
+  }
+
+  /** 当前应学习的单位 */
+  const currentUnit = computed(() => {
+    if (state.value.completedUnits.length > 0) {
+      const next = Math.max(...state.value.completedUnits) + 1
+      return Math.min(next, totalPlanUnits.value)
+    }
+    return 1
+  })
+
+  /** 切换计划模式时重新计算已完成单位 */
+  function recalcCompletedUnits(mode, wordsPerDay) {
+    const newCompleted = []
+    // 判断单词是否已学过（learnedAt 不为空），而非是否完全掌握
+    function isLearned(w, day) {
+      const id = 'd' + day + '_' + w.word.replace(/[^a-zA-Z]/g, '_')
+      const ws = state.value.wordStates[id]
+      return ws && (ws.status === 'known' || ws.status === 'learning' || ws.status === 'mastered')
+    }
+
+    if (mode === 'categories') {
+      allCategories.value.forEach((cat, i) => {
+        const allDone = cat.words.every(w => isLearned(w, cat.day))
+        if (allDone) newCompleted.push(i + 1)
+      })
+    } else if (mode === 'custom') {
+      const wpd = wordsPerDay || 30
+      let idx = 0
+      const words = allWords.value
+      while (idx < words.length) {
+        const chunk = words.slice(idx, idx + wpd)
+        const allDone = chunk.every(w => isLearned(w, w.day))
+        if (allDone) newCompleted.push(Math.floor(idx / wpd) + 1)
+        idx += wpd
+      }
+    } else {
+      // 28days
+      vocabularyData.days.forEach(d => {
+        const dayWords = d.categories.flatMap(c => c.words)
+        const allDone = dayWords.every(w => isLearned(w, d.day))
+        if (allDone) newCompleted.push(d.day)
+      })
+    }
+
+    state.value.completedUnits = newCompleted
+    state.value.completedDays = mode === '28days' ? [...newCompleted] : []
+
+    const nextUnit = newCompleted.length > 0
+      ? Math.max(...newCompleted) + 1
+      : 1
+    state.value.currentPlanUnit = nextUnit
+
+    if (mode === '28days') {
+      state.value.currentDay = Math.min(nextUnit, 29)
+    }
+
+    persist()
   }
 
   // 初始化单词状态
@@ -235,6 +381,63 @@ export const useLearningStore = defineStore('learning', () => {
     percentage: Math.round((state.value.completedDays.length / vocabularyData.totalDays) * 100)
   }))
 
+  // 分类统计
+  const allCategories = computed(() => {
+    const list = []
+    vocabularyData.days.forEach(day => {
+      day.categories.forEach(cat => {
+        list.push({ name: cat.name, words: cat.words, day: day.day })
+      })
+    })
+    return list
+  })
+  const totalCategories = computed(() => allCategories.value.length)
+
+  // 已完成的分类（所有单词标记为 known）
+  const completedCategories = computed(() => {
+    return allCategories.value.filter(cat =>
+      cat.words.every(w => {
+        const id = generateWordId({ ...w, day: cat.day })
+        return state.value.wordStates[id]?.status === 'known'
+      })
+    ).length
+  })
+
+  // 计划进度（根据 planMode 动态计算）
+  const planProgress = computed(() => {
+    const settings = useSettingsStore()
+    const mode = settings.data.planMode || 'categories'
+
+    if (mode === 'categories') {
+      return {
+        completed: completedCategories.value,
+        total: totalCategories.value,
+        percentage: totalCategories.value
+          ? Math.round((completedCategories.value / totalCategories.value) * 100)
+          : 0
+      }
+    }
+
+    if (mode === 'custom') {
+      const wpd = settings.data.wordsPerDay || 30
+      const totalPlanDays = Math.ceil(totalWords.value / wpd)
+      const learned = state.value.stats?.totalLearned || 0
+      const completedPlanDays = Math.min(totalPlanDays, Math.ceil(learned / wpd))
+      return {
+        completed: completedPlanDays,
+        total: totalPlanDays,
+        percentage: Math.round((completedPlanDays / totalPlanDays) * 100)
+      }
+    }
+
+    // 默认：28天计划（使用 completedUnits 统一追踪）
+    return {
+      completed: state.value.completedUnits.length,
+      total: vocabularyData.totalDays,
+      percentage: Math.round((state.value.completedUnits.length / vocabularyData.totalDays) * 100)
+    }
+  })
+
   // 每日学习进度（记录学到了第几个单词）
   function getDayProgress(day) {
     const v = state.value.dayProgress[day]
@@ -278,8 +481,17 @@ export const useLearningStore = defineStore('learning', () => {
     wrongWordsList,
     wrongCount,
     progress,
+    planProgress,
+    totalCategories,
+    allCategories,
     getDayWords,
     getDayTitle,
+    getUnitWords,
+    getUnitTitle,
+    completeUnit,
+    currentUnit,
+    totalPlanUnits,
+    recalcCompletedUnits,
     markWord,
     reviewWord,
     completeDay,

@@ -2,13 +2,13 @@
   <div class="page learn-page">
     <!-- 顶部导航 -->
     <van-nav-bar
-      :title="'Day ' + dayNum + ' / 28'"
+      :title="'Day ' + unitNum + ' / ' + store.totalPlanUnits"
       left-arrow
       @click-left="$router.back()"
     >
       <template #right>
         <span class="nav-timer">{{ displayTime }}</span>
-        <div class="nav-practice-btn" v-if="allDone || dayCompleted" @click="goPractice">
+        <div class="nav-practice-btn" v-if="allDone || isCompleted" @click="goPractice">
           <van-icon name="play-circle-o" size="20" />
           <span>练习</span>
         </div>
@@ -40,7 +40,7 @@
     <div class="next-hint" v-if="allDone">
       <div class="complete-msg">
         <span class="emoji">🎉</span>
-        <h3>Day {{ dayNum }} 学习完成！</h3>
+        <h3>Day {{ unitNum }} 学习完成！</h3>
         <p>已标记 {{ knownCount }} / {{ words.length }} 个单词为认识</p>
       </div>
 
@@ -66,7 +66,7 @@ import { showToast } from 'vant'
 import { useTimer, formatTime } from '../composables/useTimer.js'
 import { speak } from '../utils/speech.js'
 
-const props = defineProps({ day: { type: [String, Number], required: true } })
+const props = defineProps({ unit: { type: [String, Number], required: true } })
 const router = useRouter()
 const route = useRoute()
 const store = useLearningStore()
@@ -75,24 +75,24 @@ const settings = useSettingsStore()
 const { elapsed } = useTimer()
 const displayTime = computed(() => formatTime(elapsed.value))
 
-const dayNum = computed(() => Number(props.day))
-const isCompleted = computed(() => store.state.completedDays.includes(dayNum.value))
+const unitNum = computed(() => Number(props.unit))
+const isCompleted = computed(() => store.state.completedUnits.includes(unitNum.value))
 
-// 如果未完成的新天有待复习任务，强制跳转到复习页
+// 如果未完成的新单元有待复习任务，强制跳转到复习页
 onMounted(() => {
   if (!isCompleted.value && store.dueReviewCount > 0) {
     router.replace({ path: '/review', query: { redirectTo: route.fullPath } })
     return
   }
   // 强制练习模式：已学完但未练习，直接跳到练习
-  if (settings.data.forcePractice && store.getDayNeedsPractice(dayNum.value)) {
-    router.replace(`/practice/${dayNum.value}?via=force`)
+  if (settings.data.forcePractice && store.getDayNeedsPractice(unitNum.value)) {
+    router.replace(`/practice/${unitNum.value}?via=force`)
     return
   }
 })
 
-const dayTitle = computed(() => store.getDayTitle(dayNum.value))
-const words = computed(() => store.getDayWords(dayNum.value))
+const unitTitle = computed(() => store.getUnitTitle(unitNum.value))
+const words = computed(() => store.getUnitWords(unitNum.value))
 
 const currentCategory = computed(() => {
   return currentWord.value?.category || ''
@@ -104,7 +104,7 @@ const progressPercent = computed(() => {
 })
 
 // 从上次进度恢复
-const savedIndex = store.getDayProgress(dayNum.value)
+const savedIndex = store.getDayProgress(unitNum.value)
 const currentIndex = ref(Math.min(savedIndex, Math.max(0, words.value.length - 1)))
 const allDone = ref(false)
 const knownCount = ref(0)
@@ -136,7 +136,7 @@ function swipeWord(known) {
 
   // 保存进度到下一个单词
   const nextIndex = currentIndex.value + 1
-  store.saveDayProgress(dayNum.value, nextIndex)
+  store.saveDayProgress(unitNum.value, nextIndex)
 
   if (currentIndex.value < words.value.length - 1) {
     currentIndex.value++
@@ -146,14 +146,14 @@ function swipeWord(known) {
     allDone.value = true
     // 强制练习模式：不标记完成，直接跳转到练习
     if (settings.data.forcePractice) {
-      store.setDayNeedsPractice(dayNum.value, true)
-      router.replace(`/practice/${dayNum.value}?via=force`)
+      store.setDayNeedsPractice(unitNum.value, true)
+      router.replace(`/practice/${unitNum.value}?via=force`)
     } else {
-      store.completeDay(dayNum.value)
+      store.completeUnit(unitNum.value)
       // 非强制练习模式：当天完成，清零进度
       // 强制练习模式：保留进度对象，避免清空练习进度
       if (!settings.data.forcePractice) {
-        store.saveDayProgress(dayNum.value, 0)
+        store.saveDayProgress(unitNum.value, 0)
       }
     }
   }
@@ -167,11 +167,8 @@ function toggleStar() {
 
 function goPractice() {
   const query = settings.data.forcePractice ? '?via=force' : ''
-  router.push(`/practice/${dayNum.value}${query}`)
-}
-
-const dayCompleted = computed(() => store.state.completedDays.includes(dayNum.value))
-</script>
+  router.push(`/practice/${unitNum.value}${query}`)
+}</script>
 
 <style scoped>
 .learn-page {

@@ -39,12 +39,15 @@
 
     <!-- 28天进度 -->
     <div class="section">
-      <h3 class="section-title">📅 学习进度</h3>
+      <div class="section-title-row">
+        <h3 class="section-title">📅 学习进度</h3>
+        <span class="plan-adjust-btn" @click="openPlanDialog">📝 修改</span>
+      </div>
       <div class="home-progress">
         <div class="progress-track">
           <div class="progress-fill" :style="{ width: homePercent + '%' }"></div>
         </div>
-        <span class="progress-text">{{ store.progress.completed }} / 28</span>
+        <span class="progress-text">{{ store.planProgress.completed }} / {{ store.planProgress.total }}</span>
       </div>
       <div class="report-link" @click="showDashboard = true">
         <span>📊 查看学习报告</span>
@@ -64,9 +67,9 @@
           round
           size="large"
           @click="startLearn"
-          :disabled="store.state.currentDay > 28"
+          :disabled="store.currentUnit > store.totalPlanUnits"
         >
-          开始学习 - Day {{ store.state.currentDay }}
+          开始学习 - Day {{ store.currentUnit }}
         </van-button>
       </div>
       <div class="action-row" v-if="store.dueReviewCount > 0">
@@ -81,27 +84,34 @@
       </div>
     </div>
 
-    <!-- 快速导航 - 28天网格 -->
+    <!-- 快速导航 -->
     <div class="section">
       <h3 class="section-title">📚 快速导航</h3>
+      <div class="nav-header">
+        <span class="nav-page-btn" :class="{ dim: navPage <= 0 }" @click="navPage = Math.max(0, navPage - 1)">‹ 上一页</span>
+        <span class="nav-page-label">{{ navRangeLabel }}</span>
+        <span class="nav-page-btn" :class="{ dim: (navPage + 1) * navPageSize >= planUnits.length }" @click="navPage = Math.min(Math.floor((planUnits.length - 1) / navPageSize), navPage + 1)">下一页 ›</span>
+      </div>
       <div class="day-grid">
         <div
-          v-for="day in 28"
-          :key="day"
+          v-for="unit in visibleUnits"
+          :key="unit.id"
           :class="['day-item', {
-            completed: store.state.completedDays.includes(day),
-            current: store.state.currentDay === day,
-            locked: day > store.state.currentDay && !unlockAll
+            completed: unit.completed,
+            current: unit.current,
+            locked: unit.locked && !unlockAll
           }]"
-          @click="goToDay(day)"
+          @click="goToUnit(unit)"
         >
-          <span class="day-num">{{ day }}</span>
-          <span class="day-status" v-if="store.state.completedDays.includes(day)">✓</span>
-          <span class="day-status" v-else-if="day === store.state.currentDay">▶</span>
+          <span class="day-num">{{ unit.label }}</span>
+          <span class="day-status" v-if="unit.completed">✓</span>
+          <span class="day-status" v-else-if="unit.current">▶</span>
         </div>
       </div>
     </div>
   </div>
+
+  <StudyPlanAdjust v-model:show="planDialogShow" @saved="onPlanSaved" />
 </template>
 
 <script setup>
@@ -109,22 +119,88 @@ import { inject, ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLearningStore } from '../stores/learning.js'
 import { useThemeStore } from '../stores/theme.js'
+import { useSettingsStore } from '../stores/settings.js'
 import { showDialog } from 'vant'
 import LearningDashboard from '../components/LearningDashboard.vue'
+import StudyPlanAdjust from '../components/StudyPlanAdjust.vue'
 
 const router = useRouter()
 const store = useLearningStore()
 const theme = useThemeStore()
+const settingsStore = useSettingsStore()
 const showDashboard = ref(false)
+const planDialogShow = ref(false)
+const navPage = ref(0)
+const navPageSize = 14
 const unlockAll = inject('unlockAll', ref(false))
 const openSettings = inject('openSettings', () => {})
 
-const homePercent = computed(() => Math.round((store.progress.completed / 28) * 100))
+const homePercent = computed(() => store.planProgress.percentage)
+
+// 计划单位列表
+const planUnits = computed(() => {
+  const mode = settingsStore.data.planMode || 'categories'
+
+  if (mode === 'categories') {
+    const cats = store.allCategories
+    const cur = store.currentUnit
+    return cats.map((cat, i) => {
+      const idx = i + 1
+      const isCompleted = store.state.completedUnits.includes(idx)
+      return {
+        id: `cat_${i}`,
+        label: String(idx),
+        completed: isCompleted,
+        current: cur === idx && !isCompleted,
+        locked: !unlockAll.value && idx > cur
+      }
+    })
+  }
+
+  const total = mode === 'custom'
+    ? Math.ceil(store.totalWords / (settingsStore.data.wordsPerDay || 30))
+    : 28
+
+  const list = []
+  for (let i = 1; i <= total; i++) {
+    const isCompleted = store.state.completedUnits.includes(i)
+    const currentUnit = store.currentUnit
+    list.push({
+      id: `day_${i}`,
+      label: String(i),
+      completed: isCompleted,
+      current: currentUnit === i && !isCompleted,
+      locked: !unlockAll.value && i > currentUnit
+    })
+  }
+  return list
+})
+
+const visibleUnits = computed(() => {
+  const start = navPage.value * navPageSize
+  return planUnits.value.slice(start, start + navPageSize)
+})
+
+const navRangeLabel = computed(() => {
+  const total = planUnits.value.length
+  if (total === 0) return '0 / 0'
+  const start = navPage.value * navPageSize + 1
+  const end = Math.min(start + navPageSize - 1, total)
+  return `${start}-${end} / ${total}`
+})
+
+function onPlanSaved() {
+  navPage.value = 0
+}
+
+function openPlanDialog() {
+  planDialogShow.value = true
+}
 
 function startLearn() {
-  if (store.state.currentDay > 28) return
+  const unit = store.currentUnit
+  if (unit > store.totalPlanUnits) return
 
-  // 有待复习时强制先去复习
   if (store.dueReviewCount > 0) {
     showDialog({
       title: '📖 有待复习',
@@ -133,16 +209,36 @@ function startLearn() {
       confirmButtonColor: '#F59E0B',
       allowHtml: true
     }).then(() => {
-      router.push({ path: '/review', query: { redirectTo: `/learn/${store.state.currentDay}` } })
+      router.push({ path: '/review', query: { redirectTo: `/learn/${unit}` } })
     })
     return
   }
 
-  router.push(`/learn/${store.state.currentDay}`)
+  router.push(`/learn/${unit}`)
+}
+
+function goToUnit(unit) {
+  const idx = parseInt(unit.label)
+  if (!isNaN(idx) && (unlockAll.value || !unit.locked)) {
+    // 有待复习时强制先去复习
+    const isCompleted = unit.completed
+    if (!isCompleted && store.dueReviewCount > 0) {
+      showDialog({
+        title: '📖 有待复习',
+        message: `你有 ${store.dueReviewCount} 个单词需要复习，\n先完成复习再学习新内容吧！`,
+        confirmButtonText: '去复习',
+        confirmButtonColor: '#F59E0B'
+      }).then(() => {
+        router.push({ path: '/review', query: { redirectTo: `/learn/${idx}` } })
+      })
+      return
+    }
+    router.push(`/learn/${idx}`)
+  }
 }
 
 function goToDay(day) {
-  // 学习未完成的新天时，强制先去复习
+  // 学习未完成的新天时，强制先去复习（28天模式兼容）
   const isCompleted = store.state.completedDays.includes(day)
   if (!isCompleted && store.dueReviewCount > 0) {
     showDialog({
@@ -324,8 +420,44 @@ function goToDay(day) {
 .section-title {
   font-size: 15px;
   font-weight: 600;
+  margin-top: 12px;
+}
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 12px;
 }
+.section-title-row .section-title { margin-top: 0; margin-bottom: 0; }
+.plan-adjust-btn {
+  display: flex; align-items: center; gap: 4px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 12px; font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.plan-adjust-btn:active { transform: scale(0.95); }
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.nav-page-btn {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: opacity 0.15s;
+}
+.nav-page-btn.dim { opacity: 0.3; pointer-events: none; }
+.nav-page-label { font-size: 12px; color: var(--text-secondary); }
 
 .action-row {
   margin-bottom: 10px;

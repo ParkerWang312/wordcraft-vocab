@@ -10,6 +10,9 @@ const defaults = {
   speakOnFlip: true,
   forcePractice: true,
   autoSpeakOnCard: false,
+  dailyGoal: 0,
+  planMode: 'categories',
+  wordsPerDay: 30,
   nickname: ''
 }
 
