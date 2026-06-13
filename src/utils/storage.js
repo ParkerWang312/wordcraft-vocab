@@ -16,6 +16,19 @@ export function loadState() {
       if (state.currentDay === 1 && state.completedDays && state.completedDays.length > 0) {
         state.currentDay = Math.max(...state.completedDays) + 1
       }
+      // 迁移：旧数据缺少新字段时自动补充
+      if (!Array.isArray(state.completedUnits)) {
+        state.completedUnits = Array.isArray(state.completedDays) ? [...state.completedDays] : []
+      }
+      if (typeof state.currentPlanUnit !== 'number' || state.currentPlanUnit < 1) {
+        state.currentPlanUnit = (state.completedUnits.length > 0)
+          ? Math.max(...state.completedUnits) + 1
+          : (state.currentDay && state.currentDay > 1 ? state.currentDay : 1)
+      }
+      if (!state.stats || typeof state.stats !== 'object') {
+        state.stats = { totalLearned: 0, totalReviewed: 0, totalMastered: 0 }
+      }
+      if (!state.dailyActivity) state.dailyActivity = {}
       return state
     }
   } catch (e) {
