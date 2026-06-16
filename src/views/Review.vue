@@ -233,6 +233,7 @@ const currentReviewWord = computed(() => {
 // 第一个单词自动发音（需开启设置）
 let firstWordSpoken = false
 watch(currentReviewWord, (word) => {
+  cardFlipped.value = false
   if (firstWordSpoken || !word || !settings.data.autoSpeakOnCard) return
   firstWordSpoken = true
   speak(word.word)

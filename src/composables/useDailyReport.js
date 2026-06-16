@@ -42,9 +42,32 @@ export function useDailyReport() {
     return Math.round((todayWrongWords.value.length / learned) * 100)
   })
 
-  /** 当前 Day 主题 */
+  /** 今日主题（从今天学习的单词中提取主要分类） */
   const dayTheme = computed(() => {
-    return store.getDayTitle(store.state.currentDay)
+    const todayStr = todayKey.value
+    const categoryCount = {}
+
+    // 遍历今天学过的单词，按 category 计数
+    Object.entries(store.state.wordStates || {}).forEach(([id, ws]) => {
+      if (!ws.learnedAt) return
+      if (ws.learnedAt.slice(0, 10) !== todayStr) return
+      // 通过 generateWordId 推导单词原文，匹配 allWords 获取 category
+      const word = store.allWords.find(w => generateWordId(w) === id)
+      if (word && word.category) {
+        categoryCount[word.category] = (categoryCount[word.category] || 0) + 1
+      }
+    })
+
+    // 取出现次数最多的分类
+    let bestCat = ''
+    let bestCount = 0
+    Object.entries(categoryCount).forEach(([cat, count]) => {
+      if (count > bestCount) {
+        bestCount = count
+        bestCat = cat
+      }
+    })
+    return bestCat || '今日学习'
   })
 
   /** 掌握率（复用 masteryData 逻辑） */
