@@ -410,10 +410,10 @@ export const useLearningStore = defineStore('learning', () => {
 
     if (mode === 'categories') {
       return {
-        completed: completedCategories.value,
+        completed: state.value.completedUnits.length,
         total: totalCategories.value,
         percentage: totalCategories.value
-          ? Math.round((completedCategories.value / totalCategories.value) * 100)
+          ? Math.round((state.value.completedUnits.length / totalCategories.value) * 100)
           : 0
       }
     }
@@ -421,16 +421,14 @@ export const useLearningStore = defineStore('learning', () => {
     if (mode === 'custom') {
       const wpd = settings.data.wordsPerDay || 30
       const totalPlanDays = Math.ceil(totalWords.value / wpd)
-      const learned = state.value.stats?.totalLearned || 0
-      const completedPlanDays = Math.min(totalPlanDays, Math.ceil(learned / wpd))
       return {
-        completed: completedPlanDays,
+        completed: state.value.completedUnits.length,
         total: totalPlanDays,
-        percentage: Math.round((completedPlanDays / totalPlanDays) * 100)
+        percentage: Math.round((state.value.completedUnits.length / totalPlanDays) * 100)
       }
     }
 
-    // 默认：28天计划（使用 completedUnits 统一追踪）
+    // 默认：28天计划
     return {
       completed: state.value.completedUnits.length,
       total: vocabularyData.totalDays,
