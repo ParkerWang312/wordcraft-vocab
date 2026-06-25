@@ -109,6 +109,8 @@ function speak() {
   speakWord(props.word.word)
 }
 
+defineExpose({ flip, isFlipped })
+
 function onStar() {
   emit('star')
 }

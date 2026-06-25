@@ -13,6 +13,7 @@ const defaults = {
   dailyGoal: 0,
   planMode: 'categories',
   wordsPerDay: 30,
+  voiceInput: false,
   nickname: ''
 }
 

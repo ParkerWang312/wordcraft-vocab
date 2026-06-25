@@ -63,6 +63,7 @@
       </div>
 
       <WordCard
+        ref="cardRef"
         :word="currentReviewWord"
         :show-known="false"
         :show-star="true"
@@ -70,6 +71,12 @@
         :is-wrong="currentReviewWord.isWrong"
         @star="toggleStar"
         @flip="onCardFlip"
+      />
+
+      <VoiceButton
+        v-if="currentReviewWord && !cardFlipped && settings.data.voiceInput"
+        :word="currentReviewWord.word"
+        @correct="onVoiceCorrect"
       />
 
       <div class="review-actions" v-if="cardFlipped">
@@ -107,11 +114,13 @@ import WordCard from '../components/WordCard.vue'
 import { useTimer, formatTime } from '../composables/useTimer.js'
 import { useSettingsStore } from '../stores/settings.js'
 import { speak } from '../utils/speech.js'
+import VoiceButton from '../components/VoiceButton.vue'
 
 const router = useRouter()
 const route = useRoute()
 const store = useLearningStore()
 const settings = useSettingsStore()
+const cardRef = ref(null)
 
 const { elapsed } = useTimer()
 const displayTime = computed(() => formatTime(elapsed.value))
@@ -241,6 +250,12 @@ watch(currentReviewWord, (word) => {
 
 function onCardFlip() {
   cardFlipped.value = true
+}
+
+function onVoiceCorrect() {
+  if (cardRef.value) {
+    cardRef.value.flip()
+  }
 }
 
 function rateQuality(quality) {

@@ -34,6 +34,11 @@
             <van-switch v-model="settingsStore.data.forcePractice" @change="settingsStore.persistDirect" size="22" />
           </template>
         </van-cell>
+        <van-cell title="🎤 语音跟读（朗读单词自动翻转）" center>
+          <template #right-icon>
+            <van-switch v-model="settingsStore.data.voiceInput" @change="settingsStore.persistDirect" size="22" />
+          </template>
+        </van-cell>
       </van-cell-group>
       <van-cell-group title="通用">
         <van-field

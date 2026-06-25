@@ -28,12 +28,19 @@
     <!-- 单词卡片 -->
     <WordCard
       v-if="currentWord && !allDone"
+      ref="cardRef"
       :word="currentWord"
       :is-starred="isCurrentStarred"
       :show-known="true"
       @known="swipeWord(true)"
       @unknown="swipeWord(false)"
       @star="toggleStar"
+    />
+
+    <VoiceButton
+      v-if="currentWord && !allDone && settings.data.voiceInput"
+      :word="currentWord.word"
+      @correct="onVoiceCorrect"
     />
 
     <!-- 下一步提示 -->
@@ -62,6 +69,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { useLearningStore, generateWordId } from '../stores/learning.js'
 import { useSettingsStore } from '../stores/settings.js'
 import WordCard from '../components/WordCard.vue'
+import VoiceButton from '../components/VoiceButton.vue'
 import { showToast } from 'vant'
 import { useTimer, formatTime } from '../composables/useTimer.js'
 import { speak } from '../utils/speech.js'
@@ -71,6 +79,7 @@ const router = useRouter()
 const route = useRoute()
 const store = useLearningStore()
 const settings = useSettingsStore()
+const cardRef = ref(null)
 
 const { elapsed } = useTimer()
 const displayTime = computed(() => formatTime(elapsed.value))
@@ -163,6 +172,13 @@ function toggleStar() {
   if (!currentWord.value) return
   const id = generateWordId(currentWord.value)
   store.toggleWordBook(id)
+}
+
+function onVoiceCorrect() {
+  // 语音读对后自动翻转卡片
+  if (cardRef.value) {
+    cardRef.value.flip()
+  }
 }
 
 function goPractice() {
