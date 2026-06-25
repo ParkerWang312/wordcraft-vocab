@@ -1,10 +1,5 @@
 <template>
-  <div class="voice-wrapper">
-    <!-- 浏览器不支持时显示提示 -->
-    <div class="voice-unsupported" v-if="!isSupported && !shownUnsupported">
-      ⚠️ 当前浏览器不支持语音识别（请使用 Chrome/Edge）
-      <span class="voice-dismiss" @click="shownUnsupported = true">✕</span>
-    </div>
+  <div class="voice-wrapper" v-if="isSupported">
     <div class="voice-hint" v-if="showFlipHint">
       👆 点击卡片翻转
     </div>
@@ -35,7 +30,6 @@ const voice = useVoiceInput()
 const voiceActive = ref(false)
 const showSuccess = ref(false)
 const showError = ref(false)
-const shownUnsupported = ref(false)
 let errorTimer = null
 let successTimer = null
 
@@ -152,21 +146,5 @@ watch(() => props.word, () => {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
-}
-.voice-unsupported {
-  font-size: 12px;
-  color: #9CA3AF;
-  padding: 8px 12px;
-  background: #F9FAFB;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-}
-.voice-dismiss {
-  color: #6B7280;
-  cursor: pointer;
-  font-size: 14px;
 }
 </style>
