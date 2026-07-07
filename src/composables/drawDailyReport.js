@@ -144,7 +144,7 @@ export function drawDailyReport(params) {
 
   ctx.fillStyle = text
   ctx.font = 'bold 22px "PingFang SC", "Microsoft YaHei", sans-serif'
-  ctx.fillText(`📊 Day ${currentDay} / ${totalDays}  ·  学习进度 ${percentage}%`, 50, y + 40)
+  ctx.fillText(`📊 ${currentDay} / ${totalDays}  ·  学习进度 ${percentage}%`, 50, y + 40)
 
   // 进度条
   const pbarX = 50, pbarY = y + 60, pbarW = W - 100, pbarH = 14
