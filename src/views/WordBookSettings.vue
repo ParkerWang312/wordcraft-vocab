@@ -51,12 +51,6 @@
           @click="exportBook"
         />
         <div class="cell-hint">导出为 JSON 文件，可用于备份或迁移</div>
-        <van-cell
-          title="🗑️ 清空练习历史"
-          is-link
-          @click="confirmClearHistory"
-        />
-        <div class="cell-hint">清除所有练习历史数据（不影响单词和学习进度）</div>
       </van-cell-group>
 
       <!-- 删除（仅用户单词本） -->
@@ -72,7 +66,7 @@
         <van-button round block plain type="danger" @click="confirmReset">
           重置学习进度
         </van-button>
-        <div class="cell-hint">将所有单词设为未学，重新从第1轮开始</div>
+        <div class="cell-hint">所有单词未学、清除练习历史，重新从第1轮开始</div>
       </div>
     </div>
 
@@ -258,22 +252,12 @@ function confirmDelete() {
 function confirmReset() {
   showConfirmDialog({
     title: '重置学习进度',
-    message: '所有单词将标记为未学，重新从第1轮开始。',
+    message: '所有单词将标记为未学，练习历史将被清除，重新从第1轮开始。',
     confirmButtonColor: '#EF4444'
   }).then(() => {
     store.resetAllLearned(id.value)
-    showToast('已重置')
-  }).catch(() => {})
-}
-
-function confirmClearHistory() {
-  showConfirmDialog({
-    title: '清空练习历史',
-    message: '清除所有练习历史记录（包括报告数据），不可恢复。',
-    confirmButtonColor: '#EF4444'
-  }).then(() => {
     store.clearPracticeHistory(id.value)
-    showToast('已清空')
+    showToast('已重置')
   }).catch(() => {})
 }
 
