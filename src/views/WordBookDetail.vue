@@ -51,8 +51,8 @@
 
     <!-- 单词列表 -->
     <div class="word-list" v-if="words.length > 0">
-      <van-swipe-cell v-for="entry in words" :key="entry.id">
-        <div class="word-item" @click="speakWord(entry.word)">
+      <div class="word-card" v-for="entry in words" :key="entry.id">
+        <div class="word-card-content" @click="speakWord(entry.word)">
           <div class="word-main">
             <span class="word-en">{{ entry.word }}</span>
             <span class="word-phonetic" v-if="entry.phonetic">{{ entry.phonetic }}</span>
@@ -61,10 +61,13 @@
           </div>
           <div class="word-cn">{{ entry.meaning }}</div>
         </div>
-        <template #right>
-          <van-button square type="danger" text="删除" @click="doDelete(entry.id)" />
-        </template>
-      </van-swipe-cell>
+        <van-icon
+          v-if="book?.type === 'user'"
+          name="delete-o"
+          class="word-delete-icon"
+          @click="confirmDeleteWord(entry)"
+        />
+      </div>
     </div>
 
     <!-- 空状态 -->
@@ -110,7 +113,7 @@ import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useWordbookStore } from '../stores/wordbook.js'
 import { speak } from '../utils/speech.js'
-import { showToast } from 'vant'
+import { showToast, showConfirmDialog } from 'vant'
 import { translateWord } from '../utils/translate.js'
 
 const route = useRoute()
@@ -181,9 +184,15 @@ async function doBatchImport() {
   showToast(`导入 ${successCount} 个${failCount > 0 ? `，${failCount} 个失败` : ''}`)
 }
 
-function doDelete(entryId) {
-  store.deleteWord(entryId)
-  showToast('已删除')
+function confirmDeleteWord(entry) {
+  showConfirmDialog({
+    title: '删除单词',
+    message: `确定删除「${entry.word}」吗？`,
+    confirmButtonColor: '#EF4444'
+  }).then(() => {
+    store.deleteWord(entry.id)
+    showToast('已删除')
+  }).catch(() => {})
 }
 
 function goPractice() {
@@ -266,12 +275,20 @@ function showBatchDialog() {
   gap: 6px;
 }
 
-.word-item {
+.word-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background: var(--bg-card);
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 12px 12px 12px 16px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
+}
+
+.word-card-content {
+  flex: 1;
+  min-width: 0;
   cursor: pointer;
 }
 
@@ -305,6 +322,18 @@ function showBatchDialog() {
   font-weight: 700;
   margin-left: auto;
 }
+
+.word-delete-icon {
+  font-size: 20px;
+  color: #EF4444;
+  padding: 6px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  opacity: 0.7;
+}
+
+.word-delete-icon:active { opacity: 1; }
 
 .word-cn {
   font-size: 14px;
