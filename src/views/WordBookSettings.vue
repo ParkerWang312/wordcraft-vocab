@@ -51,6 +51,12 @@
           @click="exportBook"
         />
         <div class="cell-hint">导出为 JSON 文件，可用于备份或迁移</div>
+        <van-cell
+          title="🗑️ 清空练习历史"
+          is-link
+          @click="confirmClearHistory"
+        />
+        <div class="cell-hint">清除所有练习历史数据（不影响单词和学习进度）</div>
       </van-cell-group>
 
       <!-- 删除（仅用户单词本） -->
@@ -257,6 +263,17 @@ function confirmReset() {
   }).then(() => {
     store.resetAllLearned(id.value)
     showToast('已重置')
+  }).catch(() => {})
+}
+
+function confirmClearHistory() {
+  showConfirmDialog({
+    title: '清空练习历史',
+    message: '清除所有练习历史记录（包括报告数据），不可恢复。',
+    confirmButtonColor: '#EF4444'
+  }).then(() => {
+    store.clearPracticeHistory(id.value)
+    showToast('已清空')
   }).catch(() => {})
 }
 

@@ -332,6 +332,13 @@ export const useWordbookStore = defineStore('wordbook', () => {
     }
   }
 
+  function clearPracticeHistory(wordbookId) {
+    const book = getBook(wordbookId)
+    if (!book) return
+    book.practiceHistory = []
+    persistAll()
+  }
+
   // ===== Init on creation =====
   init()
 
@@ -356,6 +363,7 @@ export const useWordbookStore = defineStore('wordbook', () => {
     recordPractice,
     getTodayHistory,
     generateReportData,
+    clearPracticeHistory,
     persistAll
   }
 })
