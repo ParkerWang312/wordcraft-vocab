@@ -7,6 +7,7 @@
       <van-tabbar-item to="/" icon="home-o" replace>首页</van-tabbar-item>
       <van-tabbar-item to="/review" icon="replay" replace :badge="store.dueReviewCount || ''">复习</van-tabbar-item>
       <van-tabbar-item to="/wordbook" icon="star-o" replace>生词本</van-tabbar-item>
+      <van-tabbar-item to="/wordbooks" icon="bookmark-o" replace>单词本</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -43,7 +44,7 @@ const unlockAll = ref(false)
 provide('unlockAll', unlockAll)
 provide('openSettings', () => { showSettings.value = true })
 
-const showTabbar = computed(() => ['/', '/review', '/wordbook'].includes(route.path))
+const showTabbar = computed(() => ['/', '/review', '/wordbook', '/wordbooks'].includes(route.path))
 </script>
 
 <style>
