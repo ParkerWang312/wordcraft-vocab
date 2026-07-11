@@ -7,6 +7,7 @@
       :fixed="false"
     >
       <template #right>
+        <van-icon name="plus" size="20" style="margin-right:16px" @click="showBatchDialog" />
         <van-icon name="setting-o" size="20" @click="goSettings" />
       </template>
     </van-nav-bar>
@@ -47,10 +48,6 @@
         开始练习
       </van-button>
     </div>
-    <div class="action-row sub-row">
-      <van-button round plain size="small" @click="showAddDialog">+ 添加单词</van-button>
-      <van-button round plain size="small" @click="showBatchDialog">+ 批量导入</van-button>
-    </div>
 
     <!-- 单词列表 -->
     <div class="word-list" v-if="words.length > 0">
@@ -73,34 +70,9 @@
     <!-- 空状态 -->
     <van-empty
       v-if="words.length === 0"
-      description="还没有单词"
+      description="还没有单词，点击右上角 + 批量导入"
       image="search"
-    >
-      <van-button round type="primary" size="small" @click="showAddDialog">添加第一个单词</van-button>
-    </van-empty>
-
-    <!-- 添加单词弹窗 -->
-    <van-dialog
-      v-model:show="addShow"
-      title="添加单词"
-      :show-confirm-button="false"
-      :show-cancel-button="false"
-    >
-      <div class="dialog-body">
-        <van-field v-model="newWord" label="英文" placeholder="输入英文单词" maxlength="50" />
-        <div class="dialog-actions">
-          <van-button round plain size="small" @click="addShow = false" :loading="translating">取消</van-button>
-          <van-button
-            round
-            type="primary"
-            size="small"
-            :disabled="!newWord.trim()"
-            :loading="translating"
-            @click="doAddWord"
-          >添加</van-button>
-        </div>
-      </div>
-    </van-dialog>
+    />
 
     <!-- 批量导入弹窗 -->
     <van-dialog
@@ -134,12 +106,12 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useWordbookStore } from '../stores/wordbook.js'
-import { translateWord } from '../utils/translate.js'
 import { speak } from '../utils/speech.js'
 import { showToast } from 'vant'
+import { translateWord } from '../utils/translate.js'
 
 const route = useRoute()
 const router = useRouter()
@@ -148,11 +120,8 @@ const store = useWordbookStore()
 const id = computed(() => route.params.id)
 const book = computed(() => store.getBook(id.value))
 
-const addShow = ref(false)
 const batchShow = ref(false)
-const newWord = ref('')
 const batchInput = ref('')
-const translating = ref(false)
 const batchLoading = ref(false)
 
 const words = computed(() => {
@@ -171,24 +140,6 @@ const progressPct = computed(() => {
 
 function speakWord(word) {
   speak(word)
-}
-
-// 添加单词（自动翻译）
-async function doAddWord() {
-  const raw = newWord.value.trim()
-  if (!raw) return
-  translating.value = true
-  try {
-    const result = await translateWord(raw)
-    store.addWord(id.value, result.word, result.meaning, result.phonetic)
-    newWord.value = ''
-    addShow.value = false
-    showToast('已添加')
-  } catch (e) {
-    showToast(e.message || '翻译失败')
-  } finally {
-    translating.value = false
-  }
 }
 
 // 批量导入
@@ -241,11 +192,6 @@ function goPractice() {
 
 function goSettings() {
   router.push(`/wordbook/${id.value}/settings`)
-}
-
-function showAddDialog() {
-  newWord.value = ''
-  addShow.value = true
 }
 
 function showBatchDialog() {
@@ -311,13 +257,6 @@ function showBatchDialog() {
 
 .action-row {
   padding: 12px 16px 0;
-}
-
-.sub-row {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  padding-top: 8px;
 }
 
 .word-list {
