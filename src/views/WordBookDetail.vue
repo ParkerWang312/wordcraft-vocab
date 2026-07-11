@@ -3,7 +3,7 @@
     <van-nav-bar
       :title="book?.name || '单词本'"
       left-arrow
-      @click-left="$router.back()"
+      @click-left="$router.push('/wordbooks')"
       :fixed="false"
     >
       <template #right>
