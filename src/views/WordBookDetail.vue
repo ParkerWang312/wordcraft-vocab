@@ -7,7 +7,7 @@
       :fixed="false"
     >
       <template #right>
-        <van-icon name="plus" size="20" style="margin-right:16px" @click="showBatchDialog" />
+        <van-icon v-if="book?.type === 'user'" name="plus" size="20" style="margin-right:16px" @click="showBatchDialog" />
         <van-icon name="setting-o" size="20" @click="goSettings" />
       </template>
     </van-nav-bar>
@@ -73,11 +73,11 @@
     <!-- 空状态 -->
     <van-empty
       v-if="words.length === 0"
-      description="还没有单词，点击右上角 + 批量导入"
+      :description="book?.type === 'user' ? '还没有单词，点击右上角 + 批量导入' : '系统单词本，暂不支持导入'"
       image="search"
     />
 
-    <!-- 批量导入弹窗 -->
+    <!-- 批量导入 - 输入弹窗 -->
     <van-dialog
       v-model:show="batchShow"
       title="批量导入"
@@ -100,8 +100,43 @@
             size="small"
             :disabled="!batchInput.trim()"
             :loading="batchLoading"
-            @click="doBatchImport"
-          >导入</van-button>
+            @click="doBatchRecognize"
+          >识别</van-button>
+        </div>
+      </div>
+    </van-dialog>
+
+    <!-- 批量导入 - 识别结果预览弹窗 -->
+    <van-dialog
+      v-model:show="batchPreviewShow"
+      title="识别结果"
+      :show-confirm-button="false"
+      :show-cancel-button="false"
+    >
+      <div class="dialog-body">
+        <div class="preview-hint">共识别 {{ batchPreviewList.length }} 个单词，可删除不需要的</div>
+        <div class="preview-list">
+          <div
+            class="preview-item"
+            v-for="(item, idx) in batchPreviewList"
+            :key="idx"
+          >
+            <div class="preview-word">
+              <span class="preview-en">{{ item.word }}</span>
+              <span class="preview-cn">{{ item.meaning }}</span>
+            </div>
+            <van-icon name="cross" size="16" color="#EF4444" class="preview-delete" @click="removePreviewItem(idx)" />
+          </div>
+        </div>
+        <div class="dialog-actions">
+          <van-button round plain size="small" @click="backToInput">返回修改</van-button>
+          <van-button
+            round
+            type="primary"
+            size="small"
+            :disabled="batchPreviewList.length === 0"
+            @click="confirmBatchImport"
+          >确认导入 ({{ batchPreviewList.length }})</van-button>
         </div>
       </div>
     </van-dialog>
@@ -126,6 +161,8 @@ const book = computed(() => store.getBook(id.value))
 const batchShow = ref(false)
 const batchInput = ref('')
 const batchLoading = ref(false)
+const batchPreviewShow = ref(false)
+const batchPreviewList = ref([])
 
 const words = computed(() => {
   if (!route.params.id) return []
@@ -145,8 +182,8 @@ function speakWord(word) {
   speak(word)
 }
 
-// 批量导入
-async function doBatchImport() {
+// 批量识别：输入单词 → 翻译 → 弹出预览列表
+async function doBatchRecognize() {
   const raw = batchInput.value.trim()
   if (!raw) return
 
@@ -161,15 +198,14 @@ async function doBatchImport() {
   }
 
   batchLoading.value = true
-  let successCount = 0
+  const results = []
   let failCount = 0
 
   for (const w of wordList) {
     try {
       const result = await translateWord(w)
       if (result.meaning) {
-        store.addWord(id.value, result.word, result.meaning, result.phonetic)
-        successCount++
+        results.push(result)
       } else {
         failCount++
       }
@@ -179,9 +215,43 @@ async function doBatchImport() {
   }
 
   batchLoading.value = false
-  batchInput.value = ''
+
+  if (results.length === 0) {
+    showToast('未能识别任何单词，请检查输入')
+    return
+  }
+
+  batchPreviewList.value = results
   batchShow.value = false
-  showToast(`导入 ${successCount} 个${failCount > 0 ? `，${failCount} 个失败` : ''}`)
+  batchPreviewShow.value = true
+}
+
+// 从预览列表删除单个单词
+function removePreviewItem(idx) {
+  batchPreviewList.value.splice(idx, 1)
+}
+
+// 返回输入弹窗
+function backToInput() {
+  batchPreviewShow.value = false
+  batchShow.value = true
+}
+
+// 确认导入：把预览列表导入到单词本
+function confirmBatchImport() {
+  const list = batchPreviewList.value
+  if (list.length === 0) return
+
+  let successCount = 0
+  list.forEach(item => {
+    store.addWord(id.value, item.word, item.meaning, item.phonetic)
+    successCount++
+  })
+
+  batchPreviewShow.value = false
+  batchInput.value = ''
+  batchPreviewList.value = []
+  showToast(`成功导入 ${successCount} 个单词`)
 }
 
 function confirmDeleteWord(entry) {
@@ -356,5 +426,55 @@ function showBatchDialog() {
   justify-content: flex-end;
   gap: 10px;
   padding: 12px 16px;
+}
+
+.preview-hint {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 4px 16px 8px;
+}
+
+.preview-list {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 16px;
+}
+
+.preview-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+}
+
+.preview-word {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.preview-en {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.preview-cn {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.preview-delete {
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
 }
 </style>
