@@ -107,7 +107,7 @@
             <span class="report-lab">练习时长</span>
           </div>
           <div class="report-stat">
-            <span class="report-val c-orange">{{ reportData.round }}</span>
+            <span class="report-val c-orange">{{ reportData.round + 1 }}</span>
             <span class="report-lab">当前轮次</span>
           </div>
 

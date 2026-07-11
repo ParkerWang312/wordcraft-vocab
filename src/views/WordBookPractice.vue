@@ -88,7 +88,7 @@
         <p class="result-detail">正确率：{{ accuracy }}%</p>
         <p class="result-detail">正确 {{ correctCount }} / {{ questions.length }} 题</p>
         <p class="result-detail">首次答错 {{ totalWrongCount }} 题</p>
-        <p class="result-detail" v-if="currentRound > 0">已学到第 {{ currentRound }} 轮</p>
+        <p class="result-detail" v-if="currentRound >= 0">已学到第 {{ currentRound + 1 }} 轮</p>
       </div>
       <div class="result-actions">
         <van-button class="btn-home" round @click="goBack">返回</van-button>
