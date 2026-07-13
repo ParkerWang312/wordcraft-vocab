@@ -787,5 +787,355 @@
       }
     ],
     "coverLetter": "一"
+  },
+  {
+    "id": "system-day3",
+    "name": "暑假英语第二天",
+    "description": "家庭成员与人际关系词汇",
+    "type": "system",
+    "coverColor": "#06B6D4",
+    "coverLetter": "二",
+    "isDeletable": false,
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
+      {
+        "id": "sys-day3-writer",
+        "word": "writer",
+        "meaning": "作家，文书",
+        "phonetic": "/ˈraɪtər/"
+      },
+      {
+        "id": "sys-day3-family",
+        "word": "family",
+        "meaning": "家庭，家族",
+        "phonetic": "/ˈfæməli/"
+      },
+      {
+        "id": "sys-day3-relative",
+        "word": "relative",
+        "meaning": "亲戚，亲属",
+        "phonetic": "/ˈrelətɪv/"
+      },
+      {
+        "id": "sys-day3-relationship",
+        "word": "relationship",
+        "meaning": "关系，关联",
+        "phonetic": "/rɪˈleɪʃnʃɪp/"
+      },
+      {
+        "id": "sys-day3-couple",
+        "word": "couple",
+        "meaning": "夫妇，情侣",
+        "phonetic": "/ˈkʌpl/"
+      },
+      {
+        "id": "sys-day3-parent",
+        "word": "parent",
+        "meaning": "父亲或母亲",
+        "phonetic": "/ˈpeərənt/"
+      },
+      {
+        "id": "sys-day3-grandparent",
+        "word": "grandparent",
+        "meaning": "祖父或祖母",
+        "phonetic": "/ˈɡrænpeərənt/"
+      },
+      {
+        "id": "sys-day3-grandpa",
+        "word": "grandpa",
+        "meaning": "爷爷，外公",
+        "phonetic": "/ˈɡrænpɑː/"
+      },
+      {
+        "id": "sys-day3-grandfather",
+        "word": "grandfather",
+        "meaning": "祖父，外公",
+        "phonetic": "/ˈɡrænfɑːðər/"
+      },
+      {
+        "id": "sys-day3-grandma",
+        "word": "grandma",
+        "meaning": "奶奶，外婆",
+        "phonetic": "/ˈɡrænmɑː/"
+      },
+      {
+        "id": "sys-day3-grandmother",
+        "word": "grandmother",
+        "meaning": "祖母，外婆",
+        "phonetic": "/ˈɡrænmʌðər/"
+      },
+      {
+        "id": "sys-day3-grandson",
+        "word": "grandson",
+        "meaning": "孙子，外孙",
+        "phonetic": "/ˈɡrænsʌn/"
+      },
+      {
+        "id": "sys-day3-granddaughter",
+        "word": "granddaughter",
+        "meaning": "孙女，外孙女",
+        "phonetic": "/ˈɡrændɔːtər/"
+      },
+      {
+        "id": "sys-day3-father",
+        "word": "father",
+        "meaning": "爸爸，父亲",
+        "phonetic": "/ˈfɑːðər/"
+      },
+      {
+        "id": "sys-day3-dad",
+        "word": "dad",
+        "meaning": "爸爸，爹爹",
+        "phonetic": "/dæd/"
+      },
+      {
+        "id": "sys-day3-daddy",
+        "word": "daddy",
+        "meaning": "爸爸",
+        "phonetic": "/ˈdædi/"
+      },
+      {
+        "id": "sys-day3-mother",
+        "word": "mother",
+        "meaning": "母亲，妈妈",
+        "phonetic": "/ˈmʌðər/"
+      },
+      {
+        "id": "sys-day3-friendship",
+        "word": "friendship",
+        "meaning": "友谊，友情",
+        "phonetic": "/ˈfrendʃɪp/"
+      },
+      {
+        "id": "sys-day3-uncle",
+        "word": "uncle",
+        "meaning": "叔叔，伯父，舅父",
+        "phonetic": "/ˈʌŋkl/"
+      },
+      {
+        "id": "sys-day3-aunt",
+        "word": "aunt",
+        "meaning": "阿姨，姑妈，伯母",
+        "phonetic": "/ɑːnt/"
+      },
+      {
+        "id": "sys-day3-brother",
+        "word": "brother",
+        "meaning": "兄弟，哥哥，弟弟",
+        "phonetic": "/ˈbrʌðər/"
+      },
+      {
+        "id": "sys-day3-sister",
+        "word": "sister",
+        "meaning": "姐妹，姐，妹",
+        "phonetic": "/ˈsɪstər/"
+      },
+      {
+        "id": "sys-day3-son",
+        "word": "son",
+        "meaning": "儿子",
+        "phonetic": "/sʌn/"
+      },
+      {
+        "id": "sys-day3-daughter",
+        "word": "daughter",
+        "meaning": "女儿",
+        "phonetic": "/ˈdɔːtər/"
+      },
+      {
+        "id": "sys-day3-cousin",
+        "word": "cousin",
+        "meaning": "堂表兄弟姐妹",
+        "phonetic": "/ˈkʌzn/"
+      },
+      {
+        "id": "sys-day3-wife",
+        "word": "wife",
+        "meaning": "妻子，夫人",
+        "phonetic": "/waɪf/"
+      },
+      {
+        "id": "sys-day3-husband",
+        "word": "husband",
+        "meaning": "丈夫",
+        "phonetic": "/ˈhʌzbənd/"
+      },
+      {
+        "id": "sys-day3-raise",
+        "word": "raise",
+        "meaning": "举起，抚养",
+        "phonetic": "/reɪz/"
+      },
+      {
+        "id": "sys-day3-marriage",
+        "word": "marriage",
+        "meaning": "结婚，婚姻",
+        "phonetic": "/ˈmærɪdʒ/"
+      },
+      {
+        "id": "sys-day3-marry",
+        "word": "marry",
+        "meaning": "结婚，娶，嫁",
+        "phonetic": "/ˈmæri/"
+      },
+      {
+        "id": "sys-day3-friend",
+        "word": "friend",
+        "meaning": "朋友",
+        "phonetic": "/frend/"
+      },
+      {
+        "id": "sys-day3-human",
+        "word": "human",
+        "meaning": "人，人类",
+        "phonetic": "/ˈhjuːmən/"
+      },
+      {
+        "id": "sys-day3-people",
+        "word": "people",
+        "meaning": "人们，人类",
+        "phonetic": "/ˈpiːpl/"
+      },
+      {
+        "id": "sys-day3-person",
+        "word": "person",
+        "meaning": "人，个人",
+        "phonetic": "/ˈpɜːrsn/"
+      },
+      {
+        "id": "sys-day3-gentleman",
+        "word": "gentleman",
+        "meaning": "绅士，先生",
+        "phonetic": "/ˈdʒentlmən/"
+      },
+      {
+        "id": "sys-day3-stranger",
+        "word": "stranger",
+        "meaning": "陌生人",
+        "phonetic": "/ˈstreɪndʒər/"
+      },
+      {
+        "id": "sys-day3-hero",
+        "word": "hero",
+        "meaning": "英雄，男主角",
+        "phonetic": "/ˈhɪərəʊ/"
+      },
+      {
+        "id": "sys-day3-pioneer",
+        "word": "pioneer",
+        "meaning": "先锋，先驱",
+        "phonetic": "/ˌpaɪəˈnɪər/"
+      },
+      {
+        "id": "sys-day3-classmate",
+        "word": "classmate",
+        "meaning": "同班同学",
+        "phonetic": "/ˈklɑːsmeɪt/"
+      },
+      {
+        "id": "sys-day3-neighbour",
+        "word": "neighbour",
+        "meaning": "邻居",
+        "phonetic": "/ˈneɪbər/"
+      },
+      {
+        "id": "sys-day3-neighbor",
+        "word": "neighbor",
+        "meaning": "邻居",
+        "phonetic": "/ˈneɪbər/"
+      },
+      {
+        "id": "sys-day3-child",
+        "word": "child",
+        "meaning": "小孩，儿童",
+        "phonetic": "/tʃaɪld/"
+      },
+      {
+        "id": "sys-day3-woman",
+        "word": "woman",
+        "meaning": "女人，妇女",
+        "phonetic": "/ˈwʊmən/"
+      },
+      {
+        "id": "sys-day3-women",
+        "word": "women",
+        "meaning": "女人们",
+        "phonetic": "/ˈwɪmɪn/"
+      },
+      {
+        "id": "sys-day3-man",
+        "word": "man",
+        "meaning": "男人，成年男子",
+        "phonetic": "/mæn/"
+      },
+      {
+        "id": "sys-day3-men",
+        "word": "men",
+        "meaning": "男人们",
+        "phonetic": "/men/"
+      },
+      {
+        "id": "sys-day3-girl",
+        "word": "girl",
+        "meaning": "女孩，女生",
+        "phonetic": "/ɡɜːrl/"
+      },
+      {
+        "id": "sys-day3-boy",
+        "word": "boy",
+        "meaning": "男孩，少年",
+        "phonetic": "/bɔɪ/"
+      },
+      {
+        "id": "sys-day3-kid",
+        "word": "kid",
+        "meaning": "小孩，儿童",
+        "phonetic": "/kɪd/"
+      },
+      {
+        "id": "sys-day3-baby",
+        "word": "baby",
+        "meaning": "宝宝，婴儿",
+        "phonetic": "/ˈbeɪbi/"
+      },
+      {
+        "id": "sys-day3-elder",
+        "word": "elder",
+        "meaning": "长辈；年长的",
+        "phonetic": "/ˈeldər/"
+      },
+      {
+        "id": "sys-day3-lady",
+        "word": "lady",
+        "meaning": "女士，夫人",
+        "phonetic": "/ˈleɪdi/"
+      },
+      {
+        "id": "sys-day3-miss",
+        "word": "Miss",
+        "meaning": "小姐",
+        "phonetic": "/mɪs/"
+      },
+      {
+        "id": "sys-day3-guest",
+        "word": "guest",
+        "meaning": "客人，宾客",
+        "phonetic": "/ɡest/"
+      },
+      {
+        "id": "sys-day3-member",
+        "word": "member",
+        "meaning": "成员，会员",
+        "phonetic": "/ˈmembər/"
+      },
+      {
+        "id": "sys-day3-single",
+        "word": "single",
+        "meaning": "单个的；单身的",
+        "phonetic": "/ˈsɪŋɡl/"
+      }
+    ]
   }
 ]
