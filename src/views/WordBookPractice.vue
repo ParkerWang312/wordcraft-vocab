@@ -101,7 +101,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useWordbookStore } from '../stores/wordbook.js'
 import { speak } from '../utils/speech.js'
@@ -290,6 +290,13 @@ function startPractice() {
   timerElapsed.value = 0
   clearInterval(timerInterval)
   timerInterval = setInterval(() => { timerElapsed.value++ }, 1000)
+
+  // 首题自动播放（startPractice 不会触发 watch，需要手动播）
+  nextTick(() => {
+    if (currentQuestion.value) {
+      speak(currentQuestion.value.word)
+    }
+  })
 }
 
 function selectOption(idx) {
@@ -346,10 +353,6 @@ function nextQuestion() {
     selectedIndex.value = -1
     isLastCorrect.value = false
     showErrorCard.value = false
-    // 自动播放新题目发音
-    if (currentQuestion.value) {
-      setTimeout(() => speak(currentQuestion.value.word), 300)
-    }
   } else {
     finishPractice()
   }
@@ -469,13 +472,14 @@ onUnmounted(() => {
 /* 连击动画 */
 .combo-pop {
   animation: comboBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
 }
 
 @keyframes comboBounce {
-  0% { transform: scale(1); }
-  30% { transform: scale(1.4); }
-  60% { transform: scale(0.9); }
-  100% { transform: scale(1); }
+  0% { transform: translateZ(0) scale(1); }
+  30% { transform: translateZ(0) scale(1.4); }
+  60% { transform: translateZ(0) scale(0.9); }
+  100% { transform: translateZ(0) scale(1); }
 }
 
 .stat-card.combo-warm {
@@ -492,6 +496,7 @@ onUnmounted(() => {
   background: #FFFBEB;
   border: 2px solid #F59E0B;
   animation: comboPulse 1.5s ease-in-out infinite;
+  will-change: transform;
 }
 
 [data-theme="dark"] .stat-card.combo-hot {
@@ -504,6 +509,7 @@ onUnmounted(() => {
   border: 2px solid #F59E0B;
   animation: comboPulse 0.8s ease-in-out infinite;
   box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+  will-change: transform;
 }
 
 [data-theme="dark"] .stat-card.combo-fire {
@@ -513,8 +519,8 @@ onUnmounted(() => {
 }
 
 @keyframes comboPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%, 100% { transform: translateZ(0) scale(1); }
+  50% { transform: translateZ(0) scale(1.05); }
 }
 
 .day-progress {
