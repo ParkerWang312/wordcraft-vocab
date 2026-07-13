@@ -142,7 +142,7 @@ export function drawWordbookShareImage(report, bookName = '') {
   ctx.fillText('总题数', cx, ringY + 38)
   ctx.textAlign = 'left'
 
-  // 四个标注
+  // 四个标注：两列，每项居中对齐
   const legendY = my1 + 330
   const labels = [
     { label: '正确题数', val: report.totalCorrect, color: '#10B981' },
@@ -150,17 +150,31 @@ export function drawWordbookShareImage(report, bookName = '') {
     { label: '本轮已学', val: report.roundLearned, color: '#3B82F6' },
     { label: '本轮未学', val: report.roundUnlearned, color: '#9CA3AF' }
   ]
+  const labelColW = 320
   labels.forEach((l, i) => {
-    const lx = mx1 + 30 + (i % 2) * 340
-    const ly = legendY + Math.floor(i / 2) * 36
+    const col = i % 2
+    const row = Math.floor(i / 2)
+    const colCenterX = mx1 + mw1 / 2 + (col === 0 ? -labelColW / 2 : labelColW / 2)
+    const ly = legendY + row * 36
+
+    ctx.textAlign = 'left'
+    ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif'
+    const labelW = ctx.measureText(l.label).width
+    ctx.font = 'bold 18px "PingFang SC", "Microsoft YaHei", sans-serif'
+    const valW = ctx.measureText(String(l.val)).width
+    const dotW = 14
+    const gapLabelVal = 16
+    const totalW = dotW + 6 + labelW + gapLabelVal + valW
+    const startX = colCenterX - totalW / 2
+
     ctx.fillStyle = l.color
-    ctx.fillRect(lx, ly + 2, 14, 14)
+    ctx.fillRect(startX, ly + 2, dotW, 14)
     ctx.fillStyle = text
     ctx.font = '18px "PingFang SC", "Microsoft YaHei", sans-serif'
-    ctx.fillText(l.label, lx + 22, ly + 14)
+    ctx.fillText(l.label, startX + dotW + 6, ly + 14)
     ctx.fillStyle = sub
     ctx.font = 'bold 18px "PingFang SC", "Microsoft YaHei", sans-serif'
-    ctx.fillText(String(l.val), lx + 150, ly + 14)
+    ctx.fillText(String(l.val), startX + dotW + 6 + labelW + gapLabelVal, ly + 14)
   })
 
   // ===== 错题 TOP 5 卡片 =====

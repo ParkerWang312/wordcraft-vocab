@@ -140,18 +140,22 @@ const wrongDashOffset = computed(() => circumference - correctAngle.value)
 }
 
 .ring-labels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .ring-label {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   font-size: 12px;
   color: var(--text-secondary);
+  white-space: nowrap;
 }
 
 .ring-label .dot {
