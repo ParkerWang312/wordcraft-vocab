@@ -208,7 +208,7 @@ function confirmReset() {
   show.value = false
   showDialog({
     title: '⚠️ 重置进度',
-    message: '确认清除所有学习记录、复习进度和错题本？此操作不可撤销。',
+    message: '确认清除所有学习记录、复习进度、错题本和单词本数据？此操作不可撤销。',
     confirmButtonText: '取消', cancelButtonText: '确认重置',
     cancelButtonColor: '#EF4444', showCancelButton: true
   }).catch(() => {
@@ -217,6 +217,8 @@ function confirmReset() {
     localStorage.removeItem('wordcraft_settings')
     localStorage.removeItem('wordcraft_theme')
     localStorage.removeItem('wordcraft_review_progress')
+    localStorage.removeItem('wordcraft_wordbooks')
+    localStorage.removeItem('wordcraft_wordbook_entries')
     window.location.reload()
   })
 }
