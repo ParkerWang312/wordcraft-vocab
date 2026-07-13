@@ -6,38 +6,190 @@
     "type": "system",
     "coverColor": "#4F46E5",
     "isDeletable": false,
-    "settings": { "wordsPerSession": 20 },
+    "settings": {
+      "wordsPerSession": 20
+    },
     "words": [
-      { "id": "sys-common-001", "word": "hello", "meaning": "你好", "phonetic": "/həˈloʊ/" },
-      { "id": "sys-common-002", "word": "world", "meaning": "世界", "phonetic": "/wɜːrld/" },
-      { "id": "sys-common-003", "word": "love", "meaning": "爱", "phonetic": "/lʌv/" },
-      { "id": "sys-common-004", "word": "friend", "meaning": "朋友", "phonetic": "/frend/" },
-      { "id": "sys-common-005", "word": "happy", "meaning": "快乐的", "phonetic": "/ˈhæpi/" },
-      { "id": "sys-common-006", "word": "sad", "meaning": "悲伤的", "phonetic": "/sæd/" },
-      { "id": "sys-common-007", "word": "big", "meaning": "大的", "phonetic": "/bɪɡ/" },
-      { "id": "sys-common-008", "word": "small", "meaning": "小的", "phonetic": "/smɔːl/" },
-      { "id": "sys-common-009", "word": "good", "meaning": "好的", "phonetic": "/ɡʊd/" },
-      { "id": "sys-common-010", "word": "bad", "meaning": "坏的", "phonetic": "/bæd/" },
-      { "id": "sys-common-011", "word": "beautiful", "meaning": "美丽的", "phonetic": "/ˈbjuːtɪfl/" },
-      { "id": "sys-common-012", "word": "important", "meaning": "重要的", "phonetic": "/ɪmˈpɔːrtnt/" },
-      { "id": "sys-common-013", "word": "different", "meaning": "不同的", "phonetic": "/ˈdɪfrənt/" },
-      { "id": "sys-common-014", "word": "difficult", "meaning": "困难的", "phonetic": "/ˈdɪfɪkəlt/" },
-      { "id": "sys-common-015", "word": "easy", "meaning": "容易的", "phonetic": "/ˈiːzi/" },
-      { "id": "sys-common-016", "word": "family", "meaning": "家庭", "phonetic": "/ˈfæməli/" },
-      { "id": "sys-common-017", "word": "school", "meaning": "学校", "phonetic": "/skuːl/" },
-      { "id": "sys-common-018", "word": "water", "meaning": "水", "phonetic": "/ˈwɔːtər/" },
-      { "id": "sys-common-019", "word": "food", "meaning": "食物", "phonetic": "/fuːd/" },
-      { "id": "sys-common-020", "word": "time", "meaning": "时间", "phonetic": "/taɪm/" },
-      { "id": "sys-common-021", "word": "money", "meaning": "钱", "phonetic": "/ˈmʌni/" },
-      { "id": "sys-common-022", "word": "people", "meaning": "人们", "phonetic": "/ˈpiːpl/" },
-      { "id": "sys-common-023", "word": "country", "meaning": "国家", "phonetic": "/ˈkʌntri/" },
-      { "id": "sys-common-024", "word": "city", "meaning": "城市", "phonetic": "/ˈsɪti/" },
-      { "id": "sys-common-025", "word": "music", "meaning": "音乐", "phonetic": "/ˈmjuːzɪk/" },
-      { "id": "sys-common-026", "word": "phone", "meaning": "电话", "phonetic": "/foʊn/" },
-      { "id": "sys-common-027", "word": "computer", "meaning": "电脑", "phonetic": "/kəmˈpjuːtər/" },
-      { "id": "sys-common-028", "word": "morning", "meaning": "早晨", "phonetic": "/ˈmɔːrnɪŋ/" },
-      { "id": "sys-common-029", "word": "night", "meaning": "夜晚", "phonetic": "/naɪt/" },
-      { "id": "sys-common-030", "word": "today", "meaning": "今天", "phonetic": "/təˈdeɪ/" }
+      {
+        "id": "sys-common-001",
+        "word": "hello",
+        "meaning": "你好",
+        "phonetic": "/həˈloʊ/"
+      },
+      {
+        "id": "sys-common-002",
+        "word": "world",
+        "meaning": "世界",
+        "phonetic": "/wɜːrld/"
+      },
+      {
+        "id": "sys-common-003",
+        "word": "love",
+        "meaning": "爱",
+        "phonetic": "/lʌv/"
+      },
+      {
+        "id": "sys-common-004",
+        "word": "friend",
+        "meaning": "朋友",
+        "phonetic": "/frend/"
+      },
+      {
+        "id": "sys-common-005",
+        "word": "happy",
+        "meaning": "快乐的",
+        "phonetic": "/ˈhæpi/"
+      },
+      {
+        "id": "sys-common-006",
+        "word": "sad",
+        "meaning": "悲伤的",
+        "phonetic": "/sæd/"
+      },
+      {
+        "id": "sys-common-007",
+        "word": "big",
+        "meaning": "大的",
+        "phonetic": "/bɪɡ/"
+      },
+      {
+        "id": "sys-common-008",
+        "word": "small",
+        "meaning": "小的",
+        "phonetic": "/smɔːl/"
+      },
+      {
+        "id": "sys-common-009",
+        "word": "good",
+        "meaning": "好的",
+        "phonetic": "/ɡʊd/"
+      },
+      {
+        "id": "sys-common-010",
+        "word": "bad",
+        "meaning": "坏的",
+        "phonetic": "/bæd/"
+      },
+      {
+        "id": "sys-common-011",
+        "word": "beautiful",
+        "meaning": "美丽的",
+        "phonetic": "/ˈbjuːtɪfl/"
+      },
+      {
+        "id": "sys-common-012",
+        "word": "important",
+        "meaning": "重要的",
+        "phonetic": "/ɪmˈpɔːrtnt/"
+      },
+      {
+        "id": "sys-common-013",
+        "word": "different",
+        "meaning": "不同的",
+        "phonetic": "/ˈdɪfrənt/"
+      },
+      {
+        "id": "sys-common-014",
+        "word": "difficult",
+        "meaning": "困难的",
+        "phonetic": "/ˈdɪfɪkəlt/"
+      },
+      {
+        "id": "sys-common-015",
+        "word": "easy",
+        "meaning": "容易的",
+        "phonetic": "/ˈiːzi/"
+      },
+      {
+        "id": "sys-common-016",
+        "word": "family",
+        "meaning": "家庭",
+        "phonetic": "/ˈfæməli/"
+      },
+      {
+        "id": "sys-common-017",
+        "word": "school",
+        "meaning": "学校",
+        "phonetic": "/skuːl/"
+      },
+      {
+        "id": "sys-common-018",
+        "word": "water",
+        "meaning": "水",
+        "phonetic": "/ˈwɔːtər/"
+      },
+      {
+        "id": "sys-common-019",
+        "word": "food",
+        "meaning": "食物",
+        "phonetic": "/fuːd/"
+      },
+      {
+        "id": "sys-common-020",
+        "word": "time",
+        "meaning": "时间",
+        "phonetic": "/taɪm/"
+      },
+      {
+        "id": "sys-common-021",
+        "word": "money",
+        "meaning": "钱",
+        "phonetic": "/ˈmʌni/"
+      },
+      {
+        "id": "sys-common-022",
+        "word": "people",
+        "meaning": "人们",
+        "phonetic": "/ˈpiːpl/"
+      },
+      {
+        "id": "sys-common-023",
+        "word": "country",
+        "meaning": "国家",
+        "phonetic": "/ˈkʌntri/"
+      },
+      {
+        "id": "sys-common-024",
+        "word": "city",
+        "meaning": "城市",
+        "phonetic": "/ˈsɪti/"
+      },
+      {
+        "id": "sys-common-025",
+        "word": "music",
+        "meaning": "音乐",
+        "phonetic": "/ˈmjuːzɪk/"
+      },
+      {
+        "id": "sys-common-026",
+        "word": "phone",
+        "meaning": "电话",
+        "phonetic": "/foʊn/"
+      },
+      {
+        "id": "sys-common-027",
+        "word": "computer",
+        "meaning": "电脑",
+        "phonetic": "/kəmˈpjuːtər/"
+      },
+      {
+        "id": "sys-common-028",
+        "word": "morning",
+        "meaning": "早晨",
+        "phonetic": "/ˈmɔːrnɪŋ/"
+      },
+      {
+        "id": "sys-common-029",
+        "word": "night",
+        "meaning": "夜晚",
+        "phonetic": "/naɪt/"
+      },
+      {
+        "id": "sys-common-030",
+        "word": "today",
+        "meaning": "今天",
+        "phonetic": "/təˈdeɪ/"
+      }
     ]
   },
   {
@@ -47,82 +199,396 @@
     "type": "system",
     "coverColor": "#10B981",
     "isDeletable": false,
-    "settings": { "wordsPerSession": 20 },
+    "settings": {
+      "wordsPerSession": 20
+    },
     "words": [
-      { "id": "sys-cet4-001", "word": "abandon", "meaning": "放弃", "phonetic": "/əˈbændən/" },
-      { "id": "sys-cet4-002", "word": "ability", "meaning": "能力", "phonetic": "/əˈbɪləti/" },
-      { "id": "sys-cet4-003", "word": "absent", "meaning": "缺席的", "phonetic": "/ˈæbsənt/" },
-      { "id": "sys-cet4-004", "word": "absorb", "meaning": "吸收", "phonetic": "/əbˈzɔːrb/" },
-      { "id": "sys-cet4-005", "word": "abstract", "meaning": "抽象的", "phonetic": "/ˈæbstrækt/" },
-      { "id": "sys-cet4-006", "word": "abundant", "meaning": "丰富的", "phonetic": "/əˈbʌndənt/" },
-      { "id": "sys-cet4-007", "word": "abuse", "meaning": "滥用", "phonetic": "/əˈbjuːs/" },
-      { "id": "sys-cet4-008", "word": "academic", "meaning": "学术的", "phonetic": "/ˌækəˈdemɪk/" },
-      { "id": "sys-cet4-009", "word": "accelerate", "meaning": "加速", "phonetic": "/əkˈseləreɪt/" },
-      { "id": "sys-cet4-010", "word": "access", "meaning": "进入, 通道", "phonetic": "/ˈækses/" },
-      { "id": "sys-cet4-011", "word": "accompany", "meaning": "陪伴", "phonetic": "/əˈkʌmpəni/" },
-      { "id": "sys-cet4-012", "word": "accomplish", "meaning": "完成", "phonetic": "/əˈkɑːmplɪʃ/" },
-      { "id": "sys-cet4-013", "word": "accurate", "meaning": "准确的", "phonetic": "/ˈækjərət/" },
-      { "id": "sys-cet4-014", "word": "achieve", "meaning": "实现", "phonetic": "/əˈtʃiːv/" },
-      { "id": "sys-cet4-015", "word": "acknowledge", "meaning": "承认", "phonetic": "/əkˈnɑːlɪdʒ/" },
-      { "id": "sys-cet4-016", "word": "acquire", "meaning": "获得", "phonetic": "/əˈkwaɪər/" },
-      { "id": "sys-cet4-017", "word": "adapt", "meaning": "适应", "phonetic": "/əˈdæpt/" },
-      { "id": "sys-cet4-018", "word": "adequate", "meaning": "足够的", "phonetic": "/ˈædɪkwət/" },
-      { "id": "sys-cet4-019", "word": "adjust", "meaning": "调整", "phonetic": "/əˈdʒʌst/" },
-      { "id": "sys-cet4-020", "word": "administration", "meaning": "管理", "phonetic": "/ədˌmɪnɪˈstreɪʃn/" }
+      {
+        "id": "sys-cet4-001",
+        "word": "abandon",
+        "meaning": "放弃",
+        "phonetic": "/əˈbændən/"
+      },
+      {
+        "id": "sys-cet4-002",
+        "word": "ability",
+        "meaning": "能力",
+        "phonetic": "/əˈbɪləti/"
+      },
+      {
+        "id": "sys-cet4-003",
+        "word": "absent",
+        "meaning": "缺席的",
+        "phonetic": "/ˈæbsənt/"
+      },
+      {
+        "id": "sys-cet4-004",
+        "word": "absorb",
+        "meaning": "吸收",
+        "phonetic": "/əbˈzɔːrb/"
+      },
+      {
+        "id": "sys-cet4-005",
+        "word": "abstract",
+        "meaning": "抽象的",
+        "phonetic": "/ˈæbstrækt/"
+      },
+      {
+        "id": "sys-cet4-006",
+        "word": "abundant",
+        "meaning": "丰富的",
+        "phonetic": "/əˈbʌndənt/"
+      },
+      {
+        "id": "sys-cet4-007",
+        "word": "abuse",
+        "meaning": "滥用",
+        "phonetic": "/əˈbjuːs/"
+      },
+      {
+        "id": "sys-cet4-008",
+        "word": "academic",
+        "meaning": "学术的",
+        "phonetic": "/ˌækəˈdemɪk/"
+      },
+      {
+        "id": "sys-cet4-009",
+        "word": "accelerate",
+        "meaning": "加速",
+        "phonetic": "/əkˈseləreɪt/"
+      },
+      {
+        "id": "sys-cet4-010",
+        "word": "access",
+        "meaning": "进入, 通道",
+        "phonetic": "/ˈækses/"
+      },
+      {
+        "id": "sys-cet4-011",
+        "word": "accompany",
+        "meaning": "陪伴",
+        "phonetic": "/əˈkʌmpəni/"
+      },
+      {
+        "id": "sys-cet4-012",
+        "word": "accomplish",
+        "meaning": "完成",
+        "phonetic": "/əˈkɑːmplɪʃ/"
+      },
+      {
+        "id": "sys-cet4-013",
+        "word": "accurate",
+        "meaning": "准确的",
+        "phonetic": "/ˈækjərət/"
+      },
+      {
+        "id": "sys-cet4-014",
+        "word": "achieve",
+        "meaning": "实现",
+        "phonetic": "/əˈtʃiːv/"
+      },
+      {
+        "id": "sys-cet4-015",
+        "word": "acknowledge",
+        "meaning": "承认",
+        "phonetic": "/əkˈnɑːlɪdʒ/"
+      },
+      {
+        "id": "sys-cet4-016",
+        "word": "acquire",
+        "meaning": "获得",
+        "phonetic": "/əˈkwaɪər/"
+      },
+      {
+        "id": "sys-cet4-017",
+        "word": "adapt",
+        "meaning": "适应",
+        "phonetic": "/əˈdæpt/"
+      },
+      {
+        "id": "sys-cet4-018",
+        "word": "adequate",
+        "meaning": "足够的",
+        "phonetic": "/ˈædɪkwət/"
+      },
+      {
+        "id": "sys-cet4-019",
+        "word": "adjust",
+        "meaning": "调整",
+        "phonetic": "/əˈdʒʌst/"
+      },
+      {
+        "id": "sys-cet4-020",
+        "word": "administration",
+        "meaning": "管理",
+        "phonetic": "/ədˌmɪnɪˈstreɪʃn/"
+      }
     ]
   },
   {
     "id": "system-day2",
-    "name": "暑假单词第二天",
+    "name": "日期与颜色",
     "description": "暑假单词第二天 - 日期与颜色",
     "coverLetter": "二",
     "type": "system",
     "coverColor": "#F59E0B",
     "isDeletable": false,
-    "settings": { "wordsPerSession": 20 },
+    "settings": {
+      "wordsPerSession": 20
+    },
     "words": [
-      { "id": "sys-day2-001", "word": "colour", "meaning": "颜色，涂色", "phonetic": "/ˈkʌlər/" },
-      { "id": "sys-day2-002", "word": "color", "meaning": "颜色，颜料", "phonetic": "/ˈkʌlər/" },
-      { "id": "sys-day2-003", "word": "green", "meaning": "绿色的", "phonetic": "/ɡriːn/" },
-      { "id": "sys-day2-004", "word": "red", "meaning": "红色的", "phonetic": "/red/" },
-      { "id": "sys-day2-005", "word": "blue", "meaning": "蓝色的", "phonetic": "/bluː/" },
-      { "id": "sys-day2-006", "word": "black", "meaning": "黑色的", "phonetic": "/blæk/" },
-      { "id": "sys-day2-007", "word": "grey", "meaning": "灰色的", "phonetic": "/ɡreɪ/" },
-      { "id": "sys-day2-008", "word": "gray", "meaning": "灰色的，暗淡的", "phonetic": "/ɡreɪ/" },
-      { "id": "sys-day2-009", "word": "yellow", "meaning": "黄色的", "phonetic": "/ˈjeləʊ/" },
-      { "id": "sys-day2-010", "word": "purple", "meaning": "紫色的", "phonetic": "/ˈpɜːrpl/" },
-      { "id": "sys-day2-011", "word": "white", "meaning": "白色的", "phonetic": "/waɪt/" },
-      { "id": "sys-day2-012", "word": "brown", "meaning": "褐色的，棕色的", "phonetic": "/braʊn/" },
-      { "id": "sys-day2-013", "word": "pink", "meaning": "粉红色的", "phonetic": "/pɪŋk/" },
-      { "id": "sys-day2-014", "word": "light", "meaning": "轻的，明亮的", "phonetic": "/laɪt/" },
-      { "id": "sys-day2-015", "word": "dark", "meaning": "黑暗，深色的", "phonetic": "/dɑːrk/" },
-      { "id": "sys-day2-016", "word": "golden", "meaning": "金黄色的", "phonetic": "/ˈɡəʊldən/" },
-      { "id": "sys-day2-017", "word": "silver", "meaning": "银，银色", "phonetic": "/ˈsɪlvər/" },
-      { "id": "sys-day2-018", "word": "pale", "meaning": "苍白的，浅色的", "phonetic": "/peɪl/" },
-      { "id": "sys-day2-019", "word": "run", "meaning": "跑步，奔跑", "phonetic": "/rʌn/" },
-      { "id": "sys-day2-020", "word": "week", "meaning": "星期，周", "phonetic": "/wiːk/" },
-      { "id": "sys-day2-021", "word": "Monday", "meaning": "星期一", "phonetic": "/ˈmʌndeɪ/" },
-      { "id": "sys-day2-022", "word": "Tuesday", "meaning": "星期二", "phonetic": "/ˈtjuːzdeɪ/" },
-      { "id": "sys-day2-023", "word": "Wednesday", "meaning": "星期三", "phonetic": "/ˈwenzdeɪ/" },
-      { "id": "sys-day2-024", "word": "Thursday", "meaning": "星期四", "phonetic": "/ˈθɜːrzdeɪ/" },
-      { "id": "sys-day2-025", "word": "Friday", "meaning": "星期五", "phonetic": "/ˈfraɪdeɪ/" },
-      { "id": "sys-day2-026", "word": "Saturday", "meaning": "星期六", "phonetic": "/ˈsætərdeɪ/" },
-      { "id": "sys-day2-027", "word": "Sunday", "meaning": "星期天", "phonetic": "/ˈsʌndeɪ/" },
-      { "id": "sys-day2-028", "word": "weekday", "meaning": "工作日", "phonetic": "/ˈwiːkdeɪ/" },
-      { "id": "sys-day2-029", "word": "date", "meaning": "日期，约会", "phonetic": "/deɪt/" },
-      { "id": "sys-day2-030", "word": "month", "meaning": "月", "phonetic": "/mʌnθ/" },
-      { "id": "sys-day2-031", "word": "January", "meaning": "一月", "phonetic": "/ˈdʒænjueri/" },
-      { "id": "sys-day2-032", "word": "February", "meaning": "二月", "phonetic": "/ˈfebrueri/" },
-      { "id": "sys-day2-033", "word": "March", "meaning": "三月", "phonetic": "/mɑːrtʃ/" },
-      { "id": "sys-day2-034", "word": "April", "meaning": "四月", "phonetic": "/ˈeɪprəl/" },
-      { "id": "sys-day2-035", "word": "May", "meaning": "五月", "phonetic": "/meɪ/" },
-      { "id": "sys-day2-036", "word": "June", "meaning": "六月", "phonetic": "/dʒuːn/" },
-      { "id": "sys-day2-037", "word": "July", "meaning": "七月", "phonetic": "/dʒuˈlaɪ/" },
-      { "id": "sys-day2-038", "word": "August", "meaning": "八月", "phonetic": "/ˈɔːɡəst/" },
-      { "id": "sys-day2-039", "word": "September", "meaning": "九月", "phonetic": "/sepˈtembər/" },
-      { "id": "sys-day2-040", "word": "October", "meaning": "十月", "phonetic": "/ɒkˈtəʊbər/" },
-      { "id": "sys-day2-041", "word": "November", "meaning": "十一月", "phonetic": "/nəʊˈvembər/" },
-      { "id": "sys-day2-042", "word": "December", "meaning": "十二月", "phonetic": "/dɪˈsembər/" }
+      {
+        "id": "sys-day2-colour",
+        "word": "colour",
+        "meaning": "颜色，涂色",
+        "phonetic": "/ˈkʌlər/"
+      },
+      {
+        "id": "sys-day2-color",
+        "word": "color",
+        "meaning": "颜色，颜料",
+        "phonetic": "/ˈkʌlər/"
+      },
+      {
+        "id": "sys-day2-green",
+        "word": "green",
+        "meaning": "绿色的",
+        "phonetic": "/ɡriːn/"
+      },
+      {
+        "id": "sys-day2-red",
+        "word": "red",
+        "meaning": "红色的",
+        "phonetic": "/red/"
+      },
+      {
+        "id": "sys-day2-blue",
+        "word": "blue",
+        "meaning": "蓝色的",
+        "phonetic": "/bluː/"
+      },
+      {
+        "id": "sys-day2-black",
+        "word": "black",
+        "meaning": "黑色的",
+        "phonetic": "/blæk/"
+      },
+      {
+        "id": "sys-day2-grey",
+        "word": "grey",
+        "meaning": "灰色的",
+        "phonetic": "/ɡreɪ/"
+      },
+      {
+        "id": "sys-day2-gray",
+        "word": "gray",
+        "meaning": "灰色的，暗淡的",
+        "phonetic": "/ɡreɪ/"
+      },
+      {
+        "id": "sys-day2-yellow",
+        "word": "yellow",
+        "meaning": "黄色的",
+        "phonetic": "/ˈjeləʊ/"
+      },
+      {
+        "id": "sys-day2-purple",
+        "word": "purple",
+        "meaning": "紫色的",
+        "phonetic": "/ˈpɜːrpl/"
+      },
+      {
+        "id": "sys-day2-white",
+        "word": "white",
+        "meaning": "白色的",
+        "phonetic": "/waɪt/"
+      },
+      {
+        "id": "sys-day2-brown",
+        "word": "brown",
+        "meaning": "褐色的，棕色的",
+        "phonetic": "/braʊn/"
+      },
+      {
+        "id": "sys-day2-pink",
+        "word": "pink",
+        "meaning": "粉红色的",
+        "phonetic": "/pɪŋk/"
+      },
+      {
+        "id": "sys-day2-light",
+        "word": "light",
+        "meaning": "轻的，明亮的",
+        "phonetic": "/laɪt/"
+      },
+      {
+        "id": "sys-day2-dark",
+        "word": "dark",
+        "meaning": "黑暗，深色的",
+        "phonetic": "/dɑːrk/"
+      },
+      {
+        "id": "sys-day2-golden",
+        "word": "golden",
+        "meaning": "金黄色的",
+        "phonetic": "/ˈɡəʊldən/"
+      },
+      {
+        "id": "sys-day2-silver",
+        "word": "silver",
+        "meaning": "银，银色",
+        "phonetic": "/ˈsɪlvər/"
+      },
+      {
+        "id": "sys-day2-pale",
+        "word": "pale",
+        "meaning": "苍白的，浅色的",
+        "phonetic": "/peɪl/"
+      },
+      {
+        "id": "sys-day2-run",
+        "word": "run",
+        "meaning": "跑步，奔跑",
+        "phonetic": "/rʌn/"
+      },
+      {
+        "id": "sys-day2-week",
+        "word": "week",
+        "meaning": "星期，周",
+        "phonetic": "/wiːk/"
+      },
+      {
+        "id": "sys-day2-monday",
+        "word": "Monday",
+        "meaning": "星期一",
+        "phonetic": "/ˈmʌndeɪ/"
+      },
+      {
+        "id": "sys-day2-tuesday",
+        "word": "Tuesday",
+        "meaning": "星期二",
+        "phonetic": "/ˈtjuːzdeɪ/"
+      },
+      {
+        "id": "sys-day2-wednesday",
+        "word": "Wednesday",
+        "meaning": "星期三",
+        "phonetic": "/ˈwenzdeɪ/"
+      },
+      {
+        "id": "sys-day2-thursday",
+        "word": "Thursday",
+        "meaning": "星期四",
+        "phonetic": "/ˈθɜːrzdeɪ/"
+      },
+      {
+        "id": "sys-day2-friday",
+        "word": "Friday",
+        "meaning": "星期五",
+        "phonetic": "/ˈfraɪdeɪ/"
+      },
+      {
+        "id": "sys-day2-saturday",
+        "word": "Saturday",
+        "meaning": "星期六",
+        "phonetic": "/ˈsætərdeɪ/"
+      },
+      {
+        "id": "sys-day2-sunday",
+        "word": "Sunday",
+        "meaning": "星期天",
+        "phonetic": "/ˈsʌndeɪ/"
+      },
+      {
+        "id": "sys-day2-weekday",
+        "word": "weekday",
+        "meaning": "工作日",
+        "phonetic": "/ˈwiːkdeɪ/"
+      },
+      {
+        "id": "sys-day2-date",
+        "word": "date",
+        "meaning": "日期，约会",
+        "phonetic": "/deɪt/"
+      },
+      {
+        "id": "sys-day2-month",
+        "word": "month",
+        "meaning": "月",
+        "phonetic": "/mʌnθ/"
+      },
+      {
+        "id": "sys-day2-january",
+        "word": "January",
+        "meaning": "一月",
+        "phonetic": "/ˈdʒænjueri/"
+      },
+      {
+        "id": "sys-day2-february",
+        "word": "February",
+        "meaning": "二月",
+        "phonetic": "/ˈfebrueri/"
+      },
+      {
+        "id": "sys-day2-march",
+        "word": "March",
+        "meaning": "三月",
+        "phonetic": "/mɑːrtʃ/"
+      },
+      {
+        "id": "sys-day2-april",
+        "word": "April",
+        "meaning": "四月",
+        "phonetic": "/ˈeɪprəl/"
+      },
+      {
+        "id": "sys-day2-may",
+        "word": "May",
+        "meaning": "五月",
+        "phonetic": "/meɪ/"
+      },
+      {
+        "id": "sys-day2-june",
+        "word": "June",
+        "meaning": "六月",
+        "phonetic": "/dʒuːn/"
+      },
+      {
+        "id": "sys-day2-july",
+        "word": "July",
+        "meaning": "七月",
+        "phonetic": "/dʒuˈlaɪ/"
+      },
+      {
+        "id": "sys-day2-august",
+        "word": "August",
+        "meaning": "八月",
+        "phonetic": "/ˈɔːɡəst/"
+      },
+      {
+        "id": "sys-day2-september",
+        "word": "September",
+        "meaning": "九月",
+        "phonetic": "/sepˈtembər/"
+      },
+      {
+        "id": "sys-day2-october",
+        "word": "October",
+        "meaning": "十月",
+        "phonetic": "/ɒkˈtəʊbər/"
+      },
+      {
+        "id": "sys-day2-november",
+        "word": "November",
+        "meaning": "十一月",
+        "phonetic": "/nəʊˈvembər/"
+      },
+      {
+        "id": "sys-day2-december",
+        "word": "December",
+        "meaning": "十二月",
+        "phonetic": "/dɪˈsembər/"
+      }
     ]
   },
   {
@@ -132,93 +598,520 @@
     "type": "system",
     "coverColor": "#8B5CF6",
     "isDeletable": false,
-    "settings": { "wordsPerSession": 20 },
+    "settings": {
+      "wordsPerSession": 20
+    },
     "words": [
-      { "id": "sys-day1-001", "word": "energy", "meaning": "能量，活力", "phonetic": "/ˈenərdʒi/" },
-      { "id": "sys-day1-002", "word": "lively", "meaning": "活泼的，生动的", "phonetic": "/ˈlaɪvli/" },
-      { "id": "sys-day1-003", "word": "lovely", "meaning": "可爱的，美丽的", "phonetic": "/ˈlʌvli/" },
-      { "id": "sys-day1-004", "word": "quiet", "meaning": "安静的，寂静的", "phonetic": "/ˈkwaɪət/" },
-      { "id": "sys-day1-005", "word": "kind", "meaning": "善良的；种类", "phonetic": "/kaɪnd/" },
-      { "id": "sys-day1-006", "word": "helpful", "meaning": "有帮助的，有益的", "phonetic": "/ˈhelpfl/" },
-      { "id": "sys-day1-007", "word": "excellent", "meaning": "优秀的，卓越的", "phonetic": "/ˈeksələnt/" },
-      { "id": "sys-day1-008", "word": "cute", "meaning": "可爱的，聪明的", "phonetic": "/kjuːt/" },
-      { "id": "sys-day1-009", "word": "wise", "meaning": "明智的，有智慧的", "phonetic": "/waɪz/" },
-      { "id": "sys-day1-010", "word": "bright", "meaning": "明亮的，聪明的", "phonetic": "/braɪt/" },
-      { "id": "sys-day1-011", "word": "clever", "meaning": "聪明的，机智的", "phonetic": "/ˈklevər/" },
-      { "id": "sys-day1-012", "word": "smart", "meaning": "聪明的，时髦的", "phonetic": "/smɑːrt/" },
-      { "id": "sys-day1-013", "word": "spirit", "meaning": "精神，心灵，活力", "phonetic": "/ˈspɪrɪt/" },
-      { "id": "sys-day1-014", "word": "courage", "meaning": "勇气，胆量", "phonetic": "/ˈkʌrɪdʒ/" },
-      { "id": "sys-day1-015", "word": "silly", "meaning": "愚蠢的", "phonetic": "/ˈsɪli/" },
-      { "id": "sys-day1-016", "word": "moral", "meaning": "道德的，道义的", "phonetic": "/ˈmɔːrəl/" },
-      { "id": "sys-day1-017", "word": "job", "meaning": "工作，职业，职位", "phonetic": "/dʒɒb/" },
-      { "id": "sys-day1-018", "word": "dream", "meaning": "梦想；做梦", "phonetic": "/driːm/" },
-      { "id": "sys-day1-019", "word": "government", "meaning": "政府，治理", "phonetic": "/ˈɡʌvərnmənt/" },
-      { "id": "sys-day1-020", "word": "district", "meaning": "地区，区域", "phonetic": "/ˈdɪstrɪkt/" },
-      { "id": "sys-day1-021", "word": "board", "meaning": "登机，上船；板", "phonetic": "/bɔːrd/" },
-      { "id": "sys-day1-022", "word": "province", "meaning": "省，领域", "phonetic": "/ˈprɒvɪns/" },
-      { "id": "sys-day1-023", "word": "notice", "meaning": "通知，注意", "phonetic": "/ˈnəʊtɪs/" },
-      { "id": "sys-day1-024", "word": "officer", "meaning": "官员，军官，警官", "phonetic": "/ˈɒfɪsər/" },
-      { "id": "sys-day1-025", "word": "ruler", "meaning": "尺子", "phonetic": "/ˈruːlər/" },
-      { "id": "sys-day1-026", "word": "president", "meaning": "总统，院长", "phonetic": "/ˈprezɪdənt/" },
-      { "id": "sys-day1-027", "word": "king", "meaning": "国王，君主", "phonetic": "/kɪŋ/" },
-      { "id": "sys-day1-028", "word": "queen", "meaning": "女王，王后", "phonetic": "/kwiːn/" },
-      { "id": "sys-day1-029", "word": "secretary", "meaning": "秘书，干事，部长", "phonetic": "/ˈsekrətri/" },
-      { "id": "sys-day1-030", "word": "speaker", "meaning": "演讲人，扬声器", "phonetic": "/ˈspiːkər/" },
-      { "id": "sys-day1-031", "word": "education", "meaning": "教育，培养", "phonetic": "/ˌedʒuˈkeɪʃn/" },
-      { "id": "sys-day1-032", "word": "medical", "meaning": "医学的，医疗的", "phonetic": "/ˈmedɪkl/" },
-      { "id": "sys-day1-033", "word": "operation", "meaning": "操作，手术", "phonetic": "/ˌɒpəˈreɪʃn/" },
-      { "id": "sys-day1-034", "word": "medicine", "meaning": "药，医学", "phonetic": "/ˈmedɪsn/" },
-      { "id": "sys-day1-035", "word": "doctor", "meaning": "医生，博士", "phonetic": "/ˈdɒktər/" },
-      { "id": "sys-day1-036", "word": "nurse", "meaning": "护士；护理", "phonetic": "/nɜːrs/" },
-      { "id": "sys-day1-037", "word": "dentist", "meaning": "牙医", "phonetic": "/ˈdentɪst/" },
-      { "id": "sys-day1-038", "word": "patient", "meaning": "病人；有耐心的", "phonetic": "/ˈpeɪʃnt/" },
-      { "id": "sys-day1-039", "word": "countryside", "meaning": "乡村，乡下", "phonetic": "/ˈkʌntrisaɪd/" },
-      { "id": "sys-day1-040", "word": "local", "meaning": "本地的，地方的", "phonetic": "/ˈləʊkl/" },
-      { "id": "sys-day1-041", "word": "village", "meaning": "村庄，乡村", "phonetic": "/ˈvɪlɪdʒ/" },
-      { "id": "sys-day1-042", "word": "farm", "meaning": "农场，饲养场", "phonetic": "/fɑːrm/" },
-      { "id": "sys-day1-043", "word": "farmer", "meaning": "农民，农夫", "phonetic": "/ˈfɑːrmər/" },
-      { "id": "sys-day1-044", "word": "field", "meaning": "田地，领域", "phonetic": "/fiːld/" },
-      { "id": "sys-day1-045", "word": "business", "meaning": "商业，生意，事务", "phonetic": "/ˈbɪznəs/" },
-      { "id": "sys-day1-046", "word": "boss", "meaning": "老板，上司", "phonetic": "/bɒs/" },
-      { "id": "sys-day1-047", "word": "industry", "meaning": "工业，产业，行业", "phonetic": "/ˈɪndəstri/" },
-      { "id": "sys-day1-048", "word": "company", "meaning": "公司，陪伴", "phonetic": "/ˈkʌmpəni/" },
-      { "id": "sys-day1-049", "word": "shop", "meaning": "商店；购物", "phonetic": "/ʃɒp/" },
-      { "id": "sys-day1-050", "word": "market", "meaning": "市场，集市", "phonetic": "/ˈmɑːrkɪt/" },
-      { "id": "sys-day1-051", "word": "supermarket", "meaning": "超市", "phonetic": "/ˈsuːpərmɑːrkɪt/" },
-      { "id": "sys-day1-052", "word": "factory", "meaning": "工厂", "phonetic": "/ˈfæktri/" },
-      { "id": "sys-day1-053", "word": "set", "meaning": "放置，设定；一套", "phonetic": "/set/" },
-      { "id": "sys-day1-054", "word": "customer", "meaning": "顾客，客户", "phonetic": "/ˈkʌstəmər/" },
-      { "id": "sys-day1-055", "word": "manage", "meaning": "管理，设法完成", "phonetic": "/ˈmænɪdʒ/" },
-      { "id": "sys-day1-056", "word": "produce", "meaning": "生产，制造，创作", "phonetic": "/prəˈdjuːs/" },
-      { "id": "sys-day1-057", "word": "production", "meaning": "生产，产量", "phonetic": "/prəˈdʌkʃn/" },
-      { "id": "sys-day1-058", "word": "instruction", "meaning": "说明，指令，指示", "phonetic": "/ɪnˈstrʌkʃn/" },
-      { "id": "sys-day1-059", "word": "meeting", "meaning": "会议，会面", "phonetic": "/ˈmiːtɪŋ/" },
-      { "id": "sys-day1-060", "word": "work", "meaning": "工作，运作，起作用", "phonetic": "/wɜːrk/" },
-      { "id": "sys-day1-061", "word": "worker", "meaning": "工人，雇员", "phonetic": "/ˈwɜːrkər/" },
-      { "id": "sys-day1-062", "word": "manager", "meaning": "经理，管理人", "phonetic": "/ˈmænɪdʒər/" },
-      { "id": "sys-day1-063", "word": "robot", "meaning": "机器人", "phonetic": "/ˈrəʊbɒt/" },
-      { "id": "sys-day1-064", "word": "army", "meaning": "陆军，军队，部队", "phonetic": "/ˈɑːrmi/" },
-      { "id": "sys-day1-065", "word": "enemy", "meaning": "敌人，敌国", "phonetic": "/ˈenəmi/" },
-      { "id": "sys-day1-066", "word": "gun", "meaning": "枪，炮", "phonetic": "/ɡʌn/" },
-      { "id": "sys-day1-067", "word": "police", "meaning": "警察，警方", "phonetic": "/pəˈliːs/" },
-      { "id": "sys-day1-068", "word": "policeman", "meaning": "男警察", "phonetic": "/pəˈliːsmən/" },
-      { "id": "sys-day1-069", "word": "policewoman", "meaning": "女警察", "phonetic": "/pəˈliːswʊmən/" },
-      { "id": "sys-day1-070", "word": "guard", "meaning": "卫兵，警卫员", "phonetic": "/ɡɑːrd/" },
-      { "id": "sys-day1-071", "word": "postman", "meaning": "邮递员", "phonetic": "/ˈpəʊstmən/" },
-      { "id": "sys-day1-072", "word": "law", "meaning": "法律，法令", "phonetic": "/lɔː/" },
-      { "id": "sys-day1-073", "word": "right", "meaning": "正确的；右边", "phonetic": "/raɪt/" },
-      { "id": "sys-day1-074", "word": "fair", "meaning": "公平的，合理的", "phonetic": "/feər/" },
-      { "id": "sys-day1-075", "word": "kill", "meaning": "杀死", "phonetic": "/kɪl/" },
-      { "id": "sys-day1-076", "word": "punish", "meaning": "惩罚，处罚", "phonetic": "/ˈpʌnɪʃ/" },
-      { "id": "sys-day1-077", "word": "warn", "meaning": "警告，告诫，提醒", "phonetic": "/wɔːrn/" },
-      { "id": "sys-day1-078", "word": "break", "meaning": "打破，折断；休息", "phonetic": "/breɪk/" },
-      { "id": "sys-day1-079", "word": "fight", "meaning": "打架，争斗，奋斗", "phonetic": "/faɪt/" },
-      { "id": "sys-day1-080", "word": "prison", "meaning": "监狱，监禁", "phonetic": "/ˈprɪzn/" },
-      { "id": "sys-day1-081", "word": "prisoner", "meaning": "囚犯，俘虏", "phonetic": "/ˈprɪznər/" },
-      { "id": "sys-day1-082", "word": "actor", "meaning": "男演员", "phonetic": "/ˈæktər/" },
-      { "id": "sys-day1-083", "word": "actress", "meaning": "女演员", "phonetic": "/ˈæktrəs/" },
-      { "id": "sys-day1-084", "word": "player", "meaning": "选手，播放器", "phonetic": "/ˈpleɪər/" },
-      { "id": "sys-day1-085", "word": "director", "meaning": "导演，经理，董事", "phonetic": "/dəˈrektər/" }
+      {
+        "id": "sys-day1-energy",
+        "word": "energy",
+        "meaning": "能量，活力",
+        "phonetic": "/ˈenərdʒi/"
+      },
+      {
+        "id": "sys-day1-lively",
+        "word": "lively",
+        "meaning": "活泼的，生动的",
+        "phonetic": "/ˈlaɪvli/"
+      },
+      {
+        "id": "sys-day1-lovely",
+        "word": "lovely",
+        "meaning": "可爱的，美丽的",
+        "phonetic": "/ˈlʌvli/"
+      },
+      {
+        "id": "sys-day1-quiet",
+        "word": "quiet",
+        "meaning": "安静的，寂静的",
+        "phonetic": "/ˈkwaɪət/"
+      },
+      {
+        "id": "sys-day1-kind",
+        "word": "kind",
+        "meaning": "善良的；种类",
+        "phonetic": "/kaɪnd/"
+      },
+      {
+        "id": "sys-day1-helpful",
+        "word": "helpful",
+        "meaning": "有帮助的，有益的",
+        "phonetic": "/ˈhelpfl/"
+      },
+      {
+        "id": "sys-day1-excellent",
+        "word": "excellent",
+        "meaning": "优秀的，卓越的",
+        "phonetic": "/ˈeksələnt/"
+      },
+      {
+        "id": "sys-day1-cute",
+        "word": "cute",
+        "meaning": "可爱的，聪明的",
+        "phonetic": "/kjuːt/"
+      },
+      {
+        "id": "sys-day1-wise",
+        "word": "wise",
+        "meaning": "明智的，有智慧的",
+        "phonetic": "/waɪz/"
+      },
+      {
+        "id": "sys-day1-bright",
+        "word": "bright",
+        "meaning": "明亮的，聪明的",
+        "phonetic": "/braɪt/"
+      },
+      {
+        "id": "sys-day1-clever",
+        "word": "clever",
+        "meaning": "聪明的，机智的",
+        "phonetic": "/ˈklevər/"
+      },
+      {
+        "id": "sys-day1-smart",
+        "word": "smart",
+        "meaning": "聪明的，时髦的",
+        "phonetic": "/smɑːrt/"
+      },
+      {
+        "id": "sys-day1-spirit",
+        "word": "spirit",
+        "meaning": "精神，心灵，活力",
+        "phonetic": "/ˈspɪrɪt/"
+      },
+      {
+        "id": "sys-day1-courage",
+        "word": "courage",
+        "meaning": "勇气，胆量",
+        "phonetic": "/ˈkʌrɪdʒ/"
+      },
+      {
+        "id": "sys-day1-silly",
+        "word": "silly",
+        "meaning": "愚蠢的",
+        "phonetic": "/ˈsɪli/"
+      },
+      {
+        "id": "sys-day1-moral",
+        "word": "moral",
+        "meaning": "道德的，道义的",
+        "phonetic": "/ˈmɔːrəl/"
+      },
+      {
+        "id": "sys-day1-job",
+        "word": "job",
+        "meaning": "工作，职业，职位",
+        "phonetic": "/dʒɒb/"
+      },
+      {
+        "id": "sys-day1-dream",
+        "word": "dream",
+        "meaning": "梦想；做梦",
+        "phonetic": "/driːm/"
+      },
+      {
+        "id": "sys-day1-government",
+        "word": "government",
+        "meaning": "政府，治理",
+        "phonetic": "/ˈɡʌvərnmənt/"
+      },
+      {
+        "id": "sys-day1-district",
+        "word": "district",
+        "meaning": "地区，区域",
+        "phonetic": "/ˈdɪstrɪkt/"
+      },
+      {
+        "id": "sys-day1-board",
+        "word": "board",
+        "meaning": "登机，上船；板",
+        "phonetic": "/bɔːrd/"
+      },
+      {
+        "id": "sys-day1-province",
+        "word": "province",
+        "meaning": "省，领域",
+        "phonetic": "/ˈprɒvɪns/"
+      },
+      {
+        "id": "sys-day1-notice",
+        "word": "notice",
+        "meaning": "通知，注意",
+        "phonetic": "/ˈnəʊtɪs/"
+      },
+      {
+        "id": "sys-day1-officer",
+        "word": "officer",
+        "meaning": "官员，军官，警官",
+        "phonetic": "/ˈɒfɪsər/"
+      },
+      {
+        "id": "sys-day1-ruler",
+        "word": "ruler",
+        "meaning": "尺子",
+        "phonetic": "/ˈruːlər/"
+      },
+      {
+        "id": "sys-day1-president",
+        "word": "president",
+        "meaning": "总统，院长",
+        "phonetic": "/ˈprezɪdənt/"
+      },
+      {
+        "id": "sys-day1-king",
+        "word": "king",
+        "meaning": "国王，君主",
+        "phonetic": "/kɪŋ/"
+      },
+      {
+        "id": "sys-day1-queen",
+        "word": "queen",
+        "meaning": "女王，王后",
+        "phonetic": "/kwiːn/"
+      },
+      {
+        "id": "sys-day1-secretary",
+        "word": "secretary",
+        "meaning": "秘书，干事，部长",
+        "phonetic": "/ˈsekrətri/"
+      },
+      {
+        "id": "sys-day1-speaker",
+        "word": "speaker",
+        "meaning": "演讲人，扬声器",
+        "phonetic": "/ˈspiːkər/"
+      },
+      {
+        "id": "sys-day1-education",
+        "word": "education",
+        "meaning": "教育，培养",
+        "phonetic": "/ˌedʒuˈkeɪʃn/"
+      },
+      {
+        "id": "sys-day1-medical",
+        "word": "medical",
+        "meaning": "医学的，医疗的",
+        "phonetic": "/ˈmedɪkl/"
+      },
+      {
+        "id": "sys-day1-operation",
+        "word": "operation",
+        "meaning": "操作，手术",
+        "phonetic": "/ˌɒpəˈreɪʃn/"
+      },
+      {
+        "id": "sys-day1-medicine",
+        "word": "medicine",
+        "meaning": "药，医学",
+        "phonetic": "/ˈmedɪsn/"
+      },
+      {
+        "id": "sys-day1-doctor",
+        "word": "doctor",
+        "meaning": "医生，博士",
+        "phonetic": "/ˈdɒktər/"
+      },
+      {
+        "id": "sys-day1-nurse",
+        "word": "nurse",
+        "meaning": "护士；护理",
+        "phonetic": "/nɜːrs/"
+      },
+      {
+        "id": "sys-day1-dentist",
+        "word": "dentist",
+        "meaning": "牙医",
+        "phonetic": "/ˈdentɪst/"
+      },
+      {
+        "id": "sys-day1-patient",
+        "word": "patient",
+        "meaning": "病人；有耐心的",
+        "phonetic": "/ˈpeɪʃnt/"
+      },
+      {
+        "id": "sys-day1-countryside",
+        "word": "countryside",
+        "meaning": "乡村，乡下",
+        "phonetic": "/ˈkʌntrisaɪd/"
+      },
+      {
+        "id": "sys-day1-local",
+        "word": "local",
+        "meaning": "本地的，地方的",
+        "phonetic": "/ˈləʊkl/"
+      },
+      {
+        "id": "sys-day1-village",
+        "word": "village",
+        "meaning": "村庄，乡村",
+        "phonetic": "/ˈvɪlɪdʒ/"
+      },
+      {
+        "id": "sys-day1-farm",
+        "word": "farm",
+        "meaning": "农场，饲养场",
+        "phonetic": "/fɑːrm/"
+      },
+      {
+        "id": "sys-day1-farmer",
+        "word": "farmer",
+        "meaning": "农民，农夫",
+        "phonetic": "/ˈfɑːrmər/"
+      },
+      {
+        "id": "sys-day1-field",
+        "word": "field",
+        "meaning": "田地，领域",
+        "phonetic": "/fiːld/"
+      },
+      {
+        "id": "sys-day1-business",
+        "word": "business",
+        "meaning": "商业，生意，事务",
+        "phonetic": "/ˈbɪznəs/"
+      },
+      {
+        "id": "sys-day1-boss",
+        "word": "boss",
+        "meaning": "老板，上司",
+        "phonetic": "/bɒs/"
+      },
+      {
+        "id": "sys-day1-industry",
+        "word": "industry",
+        "meaning": "工业，产业，行业",
+        "phonetic": "/ˈɪndəstri/"
+      },
+      {
+        "id": "sys-day1-company",
+        "word": "company",
+        "meaning": "公司，陪伴",
+        "phonetic": "/ˈkʌmpəni/"
+      },
+      {
+        "id": "sys-day1-shop",
+        "word": "shop",
+        "meaning": "商店；购物",
+        "phonetic": "/ʃɒp/"
+      },
+      {
+        "id": "sys-day1-market",
+        "word": "market",
+        "meaning": "市场，集市",
+        "phonetic": "/ˈmɑːrkɪt/"
+      },
+      {
+        "id": "sys-day1-supermarket",
+        "word": "supermarket",
+        "meaning": "超市",
+        "phonetic": "/ˈsuːpərmɑːrkɪt/"
+      },
+      {
+        "id": "sys-day1-factory",
+        "word": "factory",
+        "meaning": "工厂",
+        "phonetic": "/ˈfæktri/"
+      },
+      {
+        "id": "sys-day1-set",
+        "word": "set",
+        "meaning": "放置，设定；一套",
+        "phonetic": "/set/"
+      },
+      {
+        "id": "sys-day1-customer",
+        "word": "customer",
+        "meaning": "顾客，客户",
+        "phonetic": "/ˈkʌstəmər/"
+      },
+      {
+        "id": "sys-day1-manage",
+        "word": "manage",
+        "meaning": "管理，设法完成",
+        "phonetic": "/ˈmænɪdʒ/"
+      },
+      {
+        "id": "sys-day1-produce",
+        "word": "produce",
+        "meaning": "生产，制造，创作",
+        "phonetic": "/prəˈdjuːs/"
+      },
+      {
+        "id": "sys-day1-production",
+        "word": "production",
+        "meaning": "生产，产量",
+        "phonetic": "/prəˈdʌkʃn/"
+      },
+      {
+        "id": "sys-day1-instruction",
+        "word": "instruction",
+        "meaning": "说明，指令，指示",
+        "phonetic": "/ɪnˈstrʌkʃn/"
+      },
+      {
+        "id": "sys-day1-meeting",
+        "word": "meeting",
+        "meaning": "会议，会面",
+        "phonetic": "/ˈmiːtɪŋ/"
+      },
+      {
+        "id": "sys-day1-work",
+        "word": "work",
+        "meaning": "工作，运作，起作用",
+        "phonetic": "/wɜːrk/"
+      },
+      {
+        "id": "sys-day1-worker",
+        "word": "worker",
+        "meaning": "工人，雇员",
+        "phonetic": "/ˈwɜːrkər/"
+      },
+      {
+        "id": "sys-day1-manager",
+        "word": "manager",
+        "meaning": "经理，管理人",
+        "phonetic": "/ˈmænɪdʒər/"
+      },
+      {
+        "id": "sys-day1-robot",
+        "word": "robot",
+        "meaning": "机器人",
+        "phonetic": "/ˈrəʊbɒt/"
+      },
+      {
+        "id": "sys-day1-army",
+        "word": "army",
+        "meaning": "陆军，军队，部队",
+        "phonetic": "/ˈɑːrmi/"
+      },
+      {
+        "id": "sys-day1-enemy",
+        "word": "enemy",
+        "meaning": "敌人，敌国",
+        "phonetic": "/ˈenəmi/"
+      },
+      {
+        "id": "sys-day1-gun",
+        "word": "gun",
+        "meaning": "枪，炮",
+        "phonetic": "/ɡʌn/"
+      },
+      {
+        "id": "sys-day1-police",
+        "word": "police",
+        "meaning": "警察，警方",
+        "phonetic": "/pəˈliːs/"
+      },
+      {
+        "id": "sys-day1-policeman",
+        "word": "policeman",
+        "meaning": "男警察",
+        "phonetic": "/pəˈliːsmən/"
+      },
+      {
+        "id": "sys-day1-policewoman",
+        "word": "policewoman",
+        "meaning": "女警察",
+        "phonetic": "/pəˈliːswʊmən/"
+      },
+      {
+        "id": "sys-day1-guard",
+        "word": "guard",
+        "meaning": "卫兵，警卫员",
+        "phonetic": "/ɡɑːrd/"
+      },
+      {
+        "id": "sys-day1-postman",
+        "word": "postman",
+        "meaning": "邮递员",
+        "phonetic": "/ˈpəʊstmən/"
+      },
+      {
+        "id": "sys-day1-law",
+        "word": "law",
+        "meaning": "法律，法令",
+        "phonetic": "/lɔː/"
+      },
+      {
+        "id": "sys-day1-right",
+        "word": "right",
+        "meaning": "正确的；右边",
+        "phonetic": "/raɪt/"
+      },
+      {
+        "id": "sys-day1-fair",
+        "word": "fair",
+        "meaning": "公平的，合理的",
+        "phonetic": "/feər/"
+      },
+      {
+        "id": "sys-day1-kill",
+        "word": "kill",
+        "meaning": "杀死",
+        "phonetic": "/kɪl/"
+      },
+      {
+        "id": "sys-day1-punish",
+        "word": "punish",
+        "meaning": "惩罚，处罚",
+        "phonetic": "/ˈpʌnɪʃ/"
+      },
+      {
+        "id": "sys-day1-warn",
+        "word": "warn",
+        "meaning": "警告，告诫，提醒",
+        "phonetic": "/wɔːrn/"
+      },
+      {
+        "id": "sys-day1-break",
+        "word": "break",
+        "meaning": "打破，折断；休息",
+        "phonetic": "/breɪk/"
+      },
+      {
+        "id": "sys-day1-fight",
+        "word": "fight",
+        "meaning": "打架，争斗，奋斗",
+        "phonetic": "/faɪt/"
+      },
+      {
+        "id": "sys-day1-prison",
+        "word": "prison",
+        "meaning": "监狱，监禁",
+        "phonetic": "/ˈprɪzn/"
+      },
+      {
+        "id": "sys-day1-prisoner",
+        "word": "prisoner",
+        "meaning": "囚犯，俘虏",
+        "phonetic": "/ˈprɪznər/"
+      },
+      {
+        "id": "sys-day1-actor",
+        "word": "actor",
+        "meaning": "男演员",
+        "phonetic": "/ˈæktər/"
+      },
+      {
+        "id": "sys-day1-actress",
+        "word": "actress",
+        "meaning": "女演员",
+        "phonetic": "/ˈæktrəs/"
+      },
+      {
+        "id": "sys-day1-player",
+        "word": "player",
+        "meaning": "选手，播放器",
+        "phonetic": "/ˈpleɪər/"
+      },
+      {
+        "id": "sys-day1-director",
+        "word": "director",
+        "meaning": "导演，经理，董事",
+        "phonetic": "/dəˈrektər/"
+      }
     ]
   }
 ]
