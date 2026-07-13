@@ -33,16 +33,6 @@
         </div>
       </van-cell-group>
 
-      <!-- 每日学习报告 -->
-      <van-cell-group title="学习报告">
-        <van-cell
-          title="📊 生成今日学习报告"
-          is-link
-          @click="generateReport"
-        />
-        <div class="cell-hint">基于今日练习数据生成可分享的报告图片</div>
-      </van-cell-group>
-
       <!-- 数据管理 -->
       <van-cell-group title="数据管理">
         <van-cell
@@ -70,59 +60,6 @@
       </div>
     </div>
 
-    <!-- 报告弹窗 -->
-    <van-dialog
-      v-model:show="reportShow"
-      :title="reportTitle"
-      :show-cancel-button="reportData && !reportData.isEmpty"
-      :cancel-button-text="'关闭'"
-      :confirm-button-text="reportData && !reportData.isEmpty ? '分享' : '关闭'"
-      :show-confirm-button="true"
-      @confirm="shareReport"
-    >
-      <div class="report-preview" v-if="reportData">
-        <div class="report-empty" v-if="reportData.isEmpty">
-          <p>今日暂无练习记录</p>
-          <p class="report-hint">完成一次练习后再来生成报告吧</p>
-        </div>
-        <div class="report-content" v-else>
-          <div class="report-stat">
-            <span class="report-val">{{ reportData.totalSessions }}</span>
-            <span class="report-lab">练习次数</span>
-          </div>
-          <div class="report-stat">
-            <span class="report-val c-green">{{ reportData.accuracy }}%</span>
-            <span class="report-lab">正确率</span>
-          </div>
-          <div class="report-stat">
-            <span class="report-val">{{ reportData.totalCorrect }}</span>
-            <span class="report-lab">正确题数</span>
-          </div>
-          <div class="report-stat">
-            <span class="report-val c-red">{{ reportData.totalWrong }}</span>
-            <span class="report-lab">错误题数</span>
-          </div>
-          <div class="report-stat">
-            <span class="report-val">{{ formatDuration(reportData.totalDuration) }}</span>
-            <span class="report-lab">练习时长</span>
-          </div>
-          <div class="report-stat">
-            <span class="report-val c-orange">{{ reportData.round + 1 }}</span>
-            <span class="report-lab">当前轮次</span>
-          </div>
-
-          <div class="report-wrong-words" v-if="reportData.topWrongWords.length > 0">
-            <div class="rw-title">❌ 易错单词 TOP 5</div>
-            <div class="rw-item" v-for="(w, i) in reportData.topWrongWords" :key="i">
-              <span class="rw-idx">{{ i + 1 }}</span>
-              <span class="rw-word">{{ w.word }}</span>
-              <span class="rw-meaning">{{ w.meaning }}</span>
-              <span class="rw-count">×{{ w.count }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </van-dialog>
   </div>
 </template>
 
@@ -130,7 +67,6 @@
 import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useWordbookStore } from '../stores/wordbook.js'
-import { drawWordbookReport } from '../composables/useWordbookReport.js'
 import { showToast, showConfirmDialog } from 'vant'
 
 const route = useRoute()
@@ -142,9 +78,6 @@ const book = computed(() => store.getBook(id.value))
 
 const editName = ref('')
 const wordsPerSession = ref(20)
-const reportShow = ref(false)
-const reportData = ref(null)
-const reportTitle = ref('')
 
 // 初始化设置值
 if (book.value) {
@@ -164,55 +97,6 @@ function saveName() {
 function saveWordsPerSession() {
   store.updateSettings(id.value, { wordsPerSession: wordsPerSession.value })
   showToast(`已设为 ${wordsPerSession.value} 词/次`)
-}
-
-function generateReport() {
-  reportTitle.value = `《${book.value?.name}》每日报告`
-  reportData.value = store.generateReportData(id.value)
-  reportShow.value = true
-}
-
-async function shareReport() {
-  if (!reportData.value || reportData.value.isEmpty) {
-    reportShow.value = false
-    return
-  }
-
-  try {
-    const blob = await drawWordbookReport(reportData.value)
-    const file = new File([blob], `${reportData.value.bookName}-每日报告.png`, { type: 'image/png' })
-
-    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-      await navigator.share({
-        title: `${reportData.value.bookName} 每日学习报告`,
-        files: [file]
-      })
-    } else {
-      // Fallback: download
-      const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `${reportData.value.bookName}-每日报告.png`
-      a.click()
-      URL.revokeObjectURL(url)
-      showToast('已保存到下载')
-    }
-  } catch {
-    // 分享失败，降级为下载
-    try {
-      const blob = await drawWordbookReport(reportData.value)
-      const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `${reportData.value.bookName}-每日报告.png`
-      a.click()
-      URL.revokeObjectURL(url)
-      showToast('已保存到下载')
-    } catch {
-      showToast('生成报告失败')
-    }
-  }
-  reportShow.value = false
 }
 
 function exportBook() {
@@ -261,12 +145,6 @@ function confirmReset() {
   }).catch(() => {})
 }
 
-function formatDuration(s) {
-  const m = Math.floor(s / 60)
-  const sec = s % 60
-  if (m > 0) return `${m}分${sec}秒`
-  return `${sec}秒`
-}
 </script>
 
 <style scoped>
@@ -300,93 +178,5 @@ function formatDuration(s) {
 .danger-section {
   padding: 20px 16px;
   text-align: center;
-}
-
-.report-preview {
-  padding: 16px 20px;
-}
-
-.report-empty {
-  text-align: center;
-  padding: 20px;
-  color: var(--text-secondary);
-}
-
-.report-hint {
-  font-size: 13px;
-  margin-top: 8px;
-  color: var(--text-secondary);
-}
-
-.report-content {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.report-stat {
-  width: 33.33%;
-  text-align: center;
-  padding: 8px 0;
-}
-
-.report-val {
-  display: block;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.report-val.c-green { color: #10B981; }
-.report-val.c-red { color: #EF4444; }
-.report-val.c-orange { color: #F59E0B; }
-
-.report-lab {
-  font-size: 12px;
-  color: var(--text-secondary);
-  margin-top: 2px;
-}
-
-.report-wrong-words {
-  width: 100%;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-}
-
-.rw-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.rw-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 0;
-  font-size: 14px;
-}
-
-.rw-idx {
-  width: 20px;
-  color: var(--text-secondary);
-  font-weight: 600;
-}
-
-.rw-word {
-  font-weight: 600;
-  color: var(--text-primary);
-  min-width: 80px;
-}
-
-.rw-meaning {
-  flex: 1;
-  color: var(--text-secondary);
-}
-
-.rw-count {
-  color: #EF4444;
-  font-weight: 600;
 }
 </style>

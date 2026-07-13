@@ -8,6 +8,7 @@
     >
       <template #right>
         <van-icon v-if="book?.type === 'user'" name="plus" size="20" style="margin-right:16px" @click="showBatchDialog" />
+        <van-icon name="chart-trending-o" size="20" style="margin-right:16px" @click="showDashboard = true" />
         <van-icon name="setting-o" size="20" @click="goSettings" />
       </template>
     </van-nav-bar>
@@ -23,8 +24,8 @@
         <span class="stat-label">本轮已学</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num c-orange">{{ book.practiceRound || 0 }}</span>
-        <span class="stat-label">已到第N轮</span>
+        <span class="stat-num c-orange">{{ (book.practiceRound || 0) + 1 }}</span>
+        <span class="stat-label">当前轮次</span>
       </div>
     </div>
 
@@ -140,6 +141,9 @@
         </div>
       </div>
     </van-dialog>
+
+    <!-- 学习报告弹窗 -->
+    <WordBookDashboard v-model:show="showDashboard" :book-id="id" />
   </div>
 </template>
 
@@ -150,6 +154,7 @@ import { useWordbookStore } from '../stores/wordbook.js'
 import { speak } from '../utils/speech.js'
 import { showToast, showConfirmDialog } from 'vant'
 import { translateWord } from '../utils/translate.js'
+import WordBookDashboard from '../components/WordBookDashboard.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -163,6 +168,7 @@ const batchInput = ref('')
 const batchLoading = ref(false)
 const batchPreviewShow = ref(false)
 const batchPreviewList = ref([])
+const showDashboard = ref(false)
 
 const words = computed(() => {
   if (!route.params.id) return []

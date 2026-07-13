@@ -23,9 +23,9 @@
           <span class="stat-card-num">{{ totalWrongCount }}</span>
           <span class="stat-card-label">错误</span>
         </div>
-        <div class="stat-card">
-          <span class="stat-card-num">{{ currentIndex + 1 }}/{{ questions.length }}</span>
-          <span class="stat-card-label">进度</span>
+        <div class="stat-card" :class="comboCardClass">
+          <span class="stat-card-num" :class="{ 'combo-pop': comboAnimating }" :style="comboStyle">{{ combo }}</span>
+          <span class="stat-card-label">连击</span>
         </div>
       </div>
 
@@ -89,6 +89,7 @@
         <p class="result-detail">正确率：{{ accuracy }}%</p>
         <p class="result-detail">正确 {{ correctCount }} / {{ questions.length }} 题</p>
         <p class="result-detail">首次答错 {{ totalWrongCount }} 题</p>
+        <p class="result-detail">最大连击: {{ maxCombo }}</p>
         <p class="result-detail" v-if="currentRound >= 0">已学到第 {{ currentRound + 1 }} 轮</p>
       </div>
       <div class="result-actions">
@@ -129,6 +130,11 @@ const finished = ref(false)
 // 记录每道题的首次答题状态：unanswered / correct / wrong
 const questionStates = ref([])
 
+// 连击
+const combo = ref(0)
+const comboAnimating = ref(false)
+const maxCombo = ref(0)
+
 // 记录本次练习中首次答错的单词（retries），用于 practiceHistory
 const wrongWordRetries = ref({})
 
@@ -138,6 +144,27 @@ let timerInterval = null
 
 // 当前轮次（记录练习开始时）
 const currentRound = ref(0)
+
+// 连击动画
+watch(combo, (val) => {
+  if (val > 1) {
+    comboAnimating.value = true
+    setTimeout(() => { comboAnimating.value = false }, 400)
+  }
+})
+
+const comboCardClass = computed(() => {
+  if (combo.value >= 10) return 'combo-fire'
+  if (combo.value >= 5) return 'combo-hot'
+  if (combo.value >= 3) return 'combo-warm'
+  return ''
+})
+
+const comboStyle = computed(() => {
+  if (combo.value >= 10) return { color: '#fff', textShadow: '0 0 10px #F59E0B, 0 0 20px #EF4444' }
+  if (combo.value >= 5) return { color: '#F59E0B' }
+  return {}
+})
 
 function formatTime(s) {
   const m = Math.floor(s / 60)
@@ -189,26 +216,31 @@ function generateQuestions() {
   if (allWords.length === 0) return []
 
   // 筛选未学过的单词
-  let pool = allWords.filter(e => !e.learned)
+  let unlearned = allWords.filter(e => !e.learned)
 
-  // 不够的话 重置新一轮
-  if (pool.length < wordPerSession) {
+  // 全部学完才重置新一轮；有少量未学则用已学补足
+  if (unlearned.length === 0) {
     store.checkAndResetRound(id.value, wordPerSession)
     currentRound.value = bookObj.practiceRound || 0
-    pool = allWords.filter(e => !e.learned)
-    // 如果还是不够（单词总数就不够），用所有单词
-    if (pool.length < wordPerSession) {
-      pool = [...allWords]
-    }
+    unlearned = allWords.filter(e => !e.learned)
   } else {
     currentRound.value = bookObj.practiceRound || 0
   }
 
-  // 随机取 N 个
-  const selected = shuffle(pool).slice(0, wordPerSession)
+  // 构建选题池：优先未学，不够的用已学单词补足
+  let pool
+  if (unlearned.length >= wordPerSession) {
+    pool = shuffle(unlearned).slice(0, wordPerSession)
+  } else {
+    const learned = allWords.filter(e => e.learned)
+    pool = [
+      ...unlearned,
+      ...shuffle(learned).slice(0, wordPerSession - unlearned.length)
+    ]
+  }
 
   // 生成题目
-  return selected.map(entry => {
+  return pool.map(entry => {
     // 从其他单词取3个干扰项
     const others = allWords
       .filter(e => e.id !== entry.id)
@@ -250,6 +282,9 @@ function startPractice() {
   finished.value = false
   questionStates.value = new Array(q.length).fill('unanswered')
   wrongWordRetries.value = {}
+  combo.value = 0
+  comboAnimating.value = false
+  maxCombo.value = 0
 
   // 启动计时
   timerElapsed.value = 0
@@ -268,6 +303,9 @@ function selectOption(idx) {
   if (correct) {
     isLastCorrect.value = true
     score.value += 10
+    // 连击
+    combo.value++
+    if (combo.value >= 3) score.value += 5
     // 只有首次答对才计分，重试不再增加 correctCount
     if (currentState === 'unanswered') {
       correctCount.value++
@@ -279,6 +317,7 @@ function selectOption(idx) {
     setTimeout(() => nextQuestion(), 800)
   } else {
     isLastCorrect.value = false
+    combo.value = 0
     // 只有首次答错才计 wrong
     if (currentState === 'unanswered') {
       totalWrongCount.value++
@@ -290,6 +329,8 @@ function selectOption(idx) {
     // 弹出错误卡片
     showErrorCard.value = true
   }
+
+  maxCombo.value = Math.max(maxCombo.value, combo.value)
 }
 
 function retryQuestion() {
@@ -423,6 +464,57 @@ onUnmounted(() => {
   font-size: 12px;
   color: var(--text-secondary);
   margin-top: 2px;
+}
+
+/* 连击动画 */
+.combo-pop {
+  animation: comboBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes comboBounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.4); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.stat-card.combo-warm {
+  background: #FFF7ED;
+  border: 1px solid #FDBA74;
+}
+
+[data-theme="dark"] .stat-card.combo-warm {
+  background: #3B1F0A;
+  border-color: #F59E0B;
+}
+
+.stat-card.combo-hot {
+  background: #FFFBEB;
+  border: 2px solid #F59E0B;
+  animation: comboPulse 1.5s ease-in-out infinite;
+}
+
+[data-theme="dark"] .stat-card.combo-hot {
+  background: #3B2E00;
+  border-color: #F59E0B;
+}
+
+.stat-card.combo-fire {
+  background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+  border: 2px solid #F59E0B;
+  animation: comboPulse 0.8s ease-in-out infinite;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+}
+
+[data-theme="dark"] .stat-card.combo-fire {
+  background: linear-gradient(135deg, #4A2E00, #78350F);
+  border-color: #F59E0B;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
+}
+
+@keyframes comboPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 .day-progress {
