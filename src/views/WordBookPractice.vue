@@ -30,10 +30,11 @@
       </div>
 
       <!-- 进度条 -->
-      <div class="progress-bar">
+      <div class="day-progress">
         <div class="progress-track">
           <div class="progress-fill" :style="{ width: progressPct + '%' }"></div>
         </div>
+        <span class="progress-text">{{ currentIndex + 1 }} / {{ questions.length }}</span>
       </div>
 
       <!-- 题目区域 -->
@@ -383,7 +384,7 @@ onUnmounted(() => {
   display: flex;
   gap: 6px;
   justify-content: center;
-  margin: 16px 0 8px;
+  margin: 20px 0 16px;
 }
 
 .stat-card {
@@ -406,7 +407,7 @@ onUnmounted(() => {
 }
 
 .stat-card-num {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
   color: var(--accent);
   line-height: 1.1;
@@ -419,28 +420,39 @@ onUnmounted(() => {
 }
 
 .stat-card-label {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-secondary);
   margin-top: 2px;
 }
 
-.progress-bar {
-  margin: 8px auto 14px;
+.day-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   max-width: 360px;
+  margin: 0 auto 14px;
 }
 
-.progress-track {
+.day-progress .progress-track {
+  flex: 1;
   height: 5px;
   border-radius: 3px;
   background: var(--border);
   overflow: hidden;
 }
 
-.progress-fill {
+.day-progress .progress-fill {
   height: 100%;
   border-radius: 3px;
   background: linear-gradient(90deg, var(--accent), #EC4899);
   transition: width 0.3s ease;
+}
+
+.day-progress .progress-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 44px;
 }
 
 .question-box {
