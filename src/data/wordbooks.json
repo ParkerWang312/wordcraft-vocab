@@ -1137,5 +1137,721 @@
         "phonetic": "/ˈsɪŋɡl/"
       }
     ]
+  },
+  {
+    "id": "system-day4",
+    "name": "暑假单词第三天",
+    "description": "房屋、日常用品与生活场景词汇",
+    "type": "system",
+    "coverColor": "#84CC16",
+    "coverLetter": "三",
+    "isDeletable": false,
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
+      {
+        "id": "sys-day4-house",
+        "word": "house",
+        "meaning": "房屋，住宅",
+        "phonetic": "/haʊs/"
+      },
+      {
+        "id": "sys-day4-flat",
+        "word": "flat",
+        "meaning": "公寓，平坦的",
+        "phonetic": "/flæt/"
+      },
+      {
+        "id": "sys-day4-address",
+        "word": "address",
+        "meaning": "地址，演说",
+        "phonetic": "/əˈdres/"
+      },
+      {
+        "id": "sys-day4-yard",
+        "word": "yard",
+        "meaning": "院子，场地",
+        "phonetic": "/jɑːrd/"
+      },
+      {
+        "id": "sys-day4-door",
+        "word": "door",
+        "meaning": "门，通道",
+        "phonetic": "/dɔːr/"
+      },
+      {
+        "id": "sys-day4-window",
+        "word": "window",
+        "meaning": "窗，橱窗",
+        "phonetic": "/ˈwɪndəʊ/"
+      },
+      {
+        "id": "sys-day4-glass",
+        "word": "glass",
+        "meaning": "玻璃，玻璃杯",
+        "phonetic": "/ɡlɑːs/"
+      },
+      {
+        "id": "sys-day4-gate",
+        "word": "gate",
+        "meaning": "大门，通道",
+        "phonetic": "/ɡeɪt/"
+      },
+      {
+        "id": "sys-day4-floor",
+        "word": "floor",
+        "meaning": "地板，楼层",
+        "phonetic": "/flɔːr/"
+      },
+      {
+        "id": "sys-day4-garden",
+        "word": "garden",
+        "meaning": "花园，果园",
+        "phonetic": "/ˈɡɑːrdn/"
+      },
+      {
+        "id": "sys-day4-upstairs",
+        "word": "upstairs",
+        "meaning": "在楼上",
+        "phonetic": "/ˌʌpˈsteəz/"
+      },
+      {
+        "id": "sys-day4-stairs",
+        "word": "stairs",
+        "meaning": "楼梯",
+        "phonetic": "/steəz/"
+      },
+      {
+        "id": "sys-day4-downstairs",
+        "word": "downstairs",
+        "meaning": "在楼下",
+        "phonetic": "/ˌdaʊnˈsteəz/"
+      },
+      {
+        "id": "sys-day4-wall",
+        "word": "wall",
+        "meaning": "墙，围墙",
+        "phonetic": "/wɔːl/"
+      },
+      {
+        "id": "sys-day4-room",
+        "word": "room",
+        "meaning": "房间，空间",
+        "phonetic": "/ruːm/"
+      },
+      {
+        "id": "sys-day4-bathroom",
+        "word": "bathroom",
+        "meaning": "浴室",
+        "phonetic": "/ˈbɑːθruːm/"
+      },
+      {
+        "id": "sys-day4-bedroom",
+        "word": "bedroom",
+        "meaning": "卧室",
+        "phonetic": "/ˈbedruːm/"
+      },
+      {
+        "id": "sys-day4-kitchen",
+        "word": "kitchen",
+        "meaning": "厨房",
+        "phonetic": "/ˈkɪtʃɪn/"
+      },
+      {
+        "id": "sys-day4-study",
+        "word": "study",
+        "meaning": "学习，书房",
+        "phonetic": "/ˈstʌdi/"
+      },
+      {
+        "id": "sys-day4-town",
+        "word": "town",
+        "meaning": "城镇，市镇",
+        "phonetic": "/taʊn/"
+      },
+      {
+        "id": "sys-day4-building",
+        "word": "building",
+        "meaning": "大楼，建筑",
+        "phonetic": "/ˈbɪldɪŋ/"
+      },
+      {
+        "id": "sys-day4-community",
+        "word": "community",
+        "meaning": "社区，群体",
+        "phonetic": "/kəˈmjuːnəti/"
+      },
+      {
+        "id": "sys-day4-road",
+        "word": "road",
+        "meaning": "道路，公路",
+        "phonetic": "/rəʊd/"
+      },
+      {
+        "id": "sys-day4-street",
+        "word": "street",
+        "meaning": "大街，街道",
+        "phonetic": "/striːt/"
+      },
+      {
+        "id": "sys-day4-block",
+        "word": "block",
+        "meaning": "阻挡，街区",
+        "phonetic": "/blɒk/"
+      },
+      {
+        "id": "sys-day4-corner",
+        "word": "corner",
+        "meaning": "角落，拐角",
+        "phonetic": "/ˈkɔːrnər/"
+      },
+      {
+        "id": "sys-day4-bridge",
+        "word": "bridge",
+        "meaning": "桥，桥梁",
+        "phonetic": "/brɪdʒ/"
+      },
+      {
+        "id": "sys-day4-church",
+        "word": "church",
+        "meaning": "教堂，教会",
+        "phonetic": "/tʃɜːrtʃ/"
+      },
+      {
+        "id": "sys-day4-museum",
+        "word": "museum",
+        "meaning": "博物馆",
+        "phonetic": "/mjuˈziːəm/"
+      },
+      {
+        "id": "sys-day4-gym",
+        "word": "gym",
+        "meaning": "体育馆",
+        "phonetic": "/dʒɪm/"
+      },
+      {
+        "id": "sys-day4-gymnasium",
+        "word": "gymnasium",
+        "meaning": "体育馆",
+        "phonetic": "/dʒɪmˈneɪziəm/"
+      },
+      {
+        "id": "sys-day4-company",
+        "word": "company",
+        "meaning": "公司，陪伴",
+        "phonetic": "/ˈkʌmpəni/"
+      },
+      {
+        "id": "sys-day4-factory",
+        "word": "factory",
+        "meaning": "工厂",
+        "phonetic": "/ˈfæktri/"
+      },
+      {
+        "id": "sys-day4-hospital",
+        "word": "hospital",
+        "meaning": "医院",
+        "phonetic": "/ˈhɒspɪtl/"
+      },
+      {
+        "id": "sys-day4-toilet",
+        "word": "toilet",
+        "meaning": "厕所，马桶",
+        "phonetic": "/ˈtɔɪlət/"
+      },
+      {
+        "id": "sys-day4-hotel",
+        "word": "hotel",
+        "meaning": "酒店，旅馆",
+        "phonetic": "/həʊˈtel/"
+      },
+      {
+        "id": "sys-day4-library",
+        "word": "library",
+        "meaning": "图书馆",
+        "phonetic": "/ˈlaɪbreri/"
+      },
+      {
+        "id": "sys-day4-park",
+        "word": "park",
+        "meaning": "公园，停车",
+        "phonetic": "/pɑːrk/"
+      },
+      {
+        "id": "sys-day4-zoo",
+        "word": "zoo",
+        "meaning": "动物园",
+        "phonetic": "/zuː/"
+      },
+      {
+        "id": "sys-day4-cinema",
+        "word": "cinema",
+        "meaning": "电影院",
+        "phonetic": "/ˈsɪnəmə/"
+      },
+      {
+        "id": "sys-day4-theatre",
+        "word": "theatre",
+        "meaning": "戏院，剧院",
+        "phonetic": "/ˈθɪətər/"
+      },
+      {
+        "id": "sys-day4-theater",
+        "word": "theater",
+        "meaning": "戏院，剧场",
+        "phonetic": "/ˈθɪətər/"
+      },
+      {
+        "id": "sys-day4-row",
+        "word": "row",
+        "meaning": "划船；排，行",
+        "phonetic": "/rəʊ/"
+      },
+      {
+        "id": "sys-day4-club",
+        "word": "club",
+        "meaning": "俱乐部，社团",
+        "phonetic": "/klʌb/"
+      },
+      {
+        "id": "sys-day4-restaurant",
+        "word": "restaurant",
+        "meaning": "餐厅，餐馆",
+        "phonetic": "/ˈrestrɒnt/"
+      },
+      {
+        "id": "sys-day4-hall",
+        "word": "hall",
+        "meaning": "大厅，会堂",
+        "phonetic": "/hɔːl/"
+      },
+      {
+        "id": "sys-day4-square",
+        "word": "square",
+        "meaning": "广场；正方形",
+        "phonetic": "/skweər/"
+      },
+      {
+        "id": "sys-day4-store",
+        "word": "store",
+        "meaning": "商店，储存",
+        "phonetic": "/stɔːr/"
+      },
+      {
+        "id": "sys-day4-tower",
+        "word": "tower",
+        "meaning": "塔，高耸",
+        "phonetic": "/ˈtaʊər/"
+      },
+      {
+        "id": "sys-day4-palace",
+        "word": "palace",
+        "meaning": "宫殿，皇宫",
+        "phonetic": "/ˈpælɪs/"
+      },
+      {
+        "id": "sys-day4-live",
+        "word": "live",
+        "meaning": "居住，活着",
+        "phonetic": "/lɪv/"
+      },
+      {
+        "id": "sys-day4-life",
+        "word": "life",
+        "meaning": "生命，生活",
+        "phonetic": "/laɪf/"
+      },
+      {
+        "id": "sys-day4-meal",
+        "word": "meal",
+        "meaning": "一餐，膳食",
+        "phonetic": "/miːl/"
+      },
+      {
+        "id": "sys-day4-eat",
+        "word": "eat",
+        "meaning": "吃",
+        "phonetic": "/iːt/"
+      },
+      {
+        "id": "sys-day4-asleep",
+        "word": "asleep",
+        "meaning": "睡着的",
+        "phonetic": "/əˈsliːp/"
+      },
+      {
+        "id": "sys-day4-order",
+        "word": "order",
+        "meaning": "订购，命令",
+        "phonetic": "/ˈɔːrdər/"
+      },
+      {
+        "id": "sys-day4-wake",
+        "word": "wake",
+        "meaning": "醒来，唤醒",
+        "phonetic": "/weɪk/"
+      },
+      {
+        "id": "sys-day4-awake",
+        "word": "awake",
+        "meaning": "醒着的",
+        "phonetic": "/əˈweɪk/"
+      },
+      {
+        "id": "sys-day4-sleep",
+        "word": "sleep",
+        "meaning": "睡觉",
+        "phonetic": "/sliːp/"
+      },
+      {
+        "id": "sys-day4-wear",
+        "word": "wear",
+        "meaning": "穿，戴",
+        "phonetic": "/weər/"
+      },
+      {
+        "id": "sys-day4-repair",
+        "word": "repair",
+        "meaning": "修理，修补",
+        "phonetic": "/rɪˈpeər/"
+      },
+      {
+        "id": "sys-day4-fix",
+        "word": "fix",
+        "meaning": "修理，固定",
+        "phonetic": "/fɪks/"
+      },
+      {
+        "id": "sys-day4-habit",
+        "word": "habit",
+        "meaning": "习惯",
+        "phonetic": "/ˈhæbɪt/"
+      },
+      {
+        "id": "sys-day4-burn",
+        "word": "burn",
+        "meaning": "烧，燃烧",
+        "phonetic": "/bɜːrn/"
+      },
+      {
+        "id": "sys-day4-handbag",
+        "word": "handbag",
+        "meaning": "手提包",
+        "phonetic": "/ˈhændbæɡ/"
+      },
+      {
+        "id": "sys-day4-wallet",
+        "word": "wallet",
+        "meaning": "钱包",
+        "phonetic": "/ˈwɒlɪt/"
+      },
+      {
+        "id": "sys-day4-lock",
+        "word": "lock",
+        "meaning": "锁上",
+        "phonetic": "/lɒk/"
+      },
+      {
+        "id": "sys-day4-key",
+        "word": "key",
+        "meaning": "钥匙，键",
+        "phonetic": "/kiː/"
+      },
+      {
+        "id": "sys-day4-line",
+        "word": "line",
+        "meaning": "线，排队",
+        "phonetic": "/laɪn/"
+      },
+      {
+        "id": "sys-day4-basket",
+        "word": "basket",
+        "meaning": "篮，篓，筐",
+        "phonetic": "/ˈbɑːskɪt/"
+      },
+      {
+        "id": "sys-day4-lamp",
+        "word": "lamp",
+        "meaning": "灯，台灯",
+        "phonetic": "/læmp/"
+      },
+      {
+        "id": "sys-day4-camera",
+        "word": "camera",
+        "meaning": "相机，摄像机",
+        "phonetic": "/ˈkæmərə/"
+      },
+      {
+        "id": "sys-day4-electricity",
+        "word": "electricity",
+        "meaning": "电，电力",
+        "phonetic": "/ɪˌlekˈtrɪsəti/"
+      },
+      {
+        "id": "sys-day4-fire",
+        "word": "fire",
+        "meaning": "火，火灾",
+        "phonetic": "/ˈfaɪər/"
+      },
+      {
+        "id": "sys-day4-candle",
+        "word": "candle",
+        "meaning": "蜡烛",
+        "phonetic": "/ˈkændl/"
+      },
+      {
+        "id": "sys-day4-soap",
+        "word": "soap",
+        "meaning": "肥皂",
+        "phonetic": "/səʊp/"
+      },
+      {
+        "id": "sys-day4-brush",
+        "word": "brush",
+        "meaning": "刷，抹",
+        "phonetic": "/brʌʃ/"
+      },
+      {
+        "id": "sys-day4-toothbrush",
+        "word": "toothbrush",
+        "meaning": "牙刷",
+        "phonetic": "/ˈtuːθbrʌʃ/"
+      },
+      {
+        "id": "sys-day4-watch",
+        "word": "watch",
+        "meaning": "观看，手表",
+        "phonetic": "/wɒtʃ/"
+      },
+      {
+        "id": "sys-day4-clock",
+        "word": "clock",
+        "meaning": "钟",
+        "phonetic": "/klɒk/"
+      },
+      {
+        "id": "sys-day4-tool",
+        "word": "tool",
+        "meaning": "工具",
+        "phonetic": "/tuːl/"
+      },
+      {
+        "id": "sys-day4-card",
+        "word": "card",
+        "meaning": "卡片，贺卡",
+        "phonetic": "/kɑːrd/"
+      },
+      {
+        "id": "sys-day4-stamp",
+        "word": "stamp",
+        "meaning": "邮票，盖章",
+        "phonetic": "/stæmp/"
+      },
+      {
+        "id": "sys-day4-toothpaste",
+        "word": "toothpaste",
+        "meaning": "牙膏",
+        "phonetic": "/ˈtuːθpeɪst/"
+      },
+      {
+        "id": "sys-day4-diary",
+        "word": "diary",
+        "meaning": "日记",
+        "phonetic": "/ˈdaɪəri/"
+      },
+      {
+        "id": "sys-day4-calendar",
+        "word": "calendar",
+        "meaning": "日历",
+        "phonetic": "/ˈkælɪndər/"
+      },
+      {
+        "id": "sys-day4-towel",
+        "word": "towel",
+        "meaning": "毛巾",
+        "phonetic": "/ˈtaʊəl/"
+      },
+      {
+        "id": "sys-day4-toy",
+        "word": "toy",
+        "meaning": "玩具",
+        "phonetic": "/tɔɪ/"
+      },
+      {
+        "id": "sys-day4-scissors",
+        "word": "scissors",
+        "meaning": "剪刀",
+        "phonetic": "/ˈsɪzərz/"
+      },
+      {
+        "id": "sys-day4-umbrella",
+        "word": "umbrella",
+        "meaning": "雨伞",
+        "phonetic": "/ʌmˈbrelə/"
+      },
+      {
+        "id": "sys-day4-match",
+        "word": "match",
+        "meaning": "匹配，比赛",
+        "phonetic": "/mætʃ/"
+      },
+      {
+        "id": "sys-day4-swing",
+        "word": "swing",
+        "meaning": "摇摆，秋千",
+        "phonetic": "/swɪŋ/"
+      },
+      {
+        "id": "sys-day4-tent",
+        "word": "tent",
+        "meaning": "帐篷",
+        "phonetic": "/tent/"
+      },
+      {
+        "id": "sys-day4-rope",
+        "word": "rope",
+        "meaning": "绳子",
+        "phonetic": "/rəʊp/"
+      },
+      {
+        "id": "sys-day4-photo",
+        "word": "photo",
+        "meaning": "照片",
+        "phonetic": "/ˈfəʊtəʊ/"
+      },
+      {
+        "id": "sys-day4-safe",
+        "word": "safe",
+        "meaning": "安全的",
+        "phonetic": "/seɪf/"
+      },
+      {
+        "id": "sys-day4-litter",
+        "word": "litter",
+        "meaning": "垃圾",
+        "phonetic": "/ˈlɪtər/"
+      },
+      {
+        "id": "sys-day4-circle",
+        "word": "circle",
+        "meaning": "圆圈，环绕",
+        "phonetic": "/ˈsɜːrkl/"
+      },
+      {
+        "id": "sys-day4-bed",
+        "word": "bed",
+        "meaning": "床",
+        "phonetic": "/bed/"
+      },
+      {
+        "id": "sys-day4-chair",
+        "word": "chair",
+        "meaning": "椅子",
+        "phonetic": "/tʃeər/"
+      },
+      {
+        "id": "sys-day4-sofa",
+        "word": "sofa",
+        "meaning": "沙发",
+        "phonetic": "/ˈsəʊfə/"
+      },
+      {
+        "id": "sys-day4-table",
+        "word": "table",
+        "meaning": "桌子",
+        "phonetic": "/ˈteɪbl/"
+      },
+      {
+        "id": "sys-day4-desk",
+        "word": "desk",
+        "meaning": "书桌",
+        "phonetic": "/desk/"
+      },
+      {
+        "id": "sys-day4-fridge",
+        "word": "fridge",
+        "meaning": "电冰箱",
+        "phonetic": "/frɪdʒ/"
+      },
+      {
+        "id": "sys-day4-refrigerator",
+        "word": "refrigerator",
+        "meaning": "冰箱",
+        "phonetic": "/rɪˈfrɪdʒəreɪtər/"
+      },
+      {
+        "id": "sys-day4-radio",
+        "word": "radio",
+        "meaning": "收音机",
+        "phonetic": "/ˈreɪdiəʊ/"
+      },
+      {
+        "id": "sys-day4-telephone",
+        "word": "telephone",
+        "meaning": "电话",
+        "phonetic": "/ˈtelɪfəʊn/"
+      },
+      {
+        "id": "sys-day4-tv",
+        "word": "TV",
+        "meaning": "电视",
+        "phonetic": "/ˌtiː ˈviː/"
+      },
+      {
+        "id": "sys-day4-television",
+        "word": "television",
+        "meaning": "电视机",
+        "phonetic": "/ˈtelɪvɪʒn/"
+      },
+      {
+        "id": "sys-day4-video",
+        "word": "video",
+        "meaning": "视频，录像",
+        "phonetic": "/ˈvɪdiəʊ/"
+      },
+      {
+        "id": "sys-day4-fan",
+        "word": "fan",
+        "meaning": "风扇，迷",
+        "phonetic": "/fæn/"
+      },
+      {
+        "id": "sys-day4-mirror",
+        "word": "mirror",
+        "meaning": "镜子",
+        "phonetic": "/ˈmɪrər/"
+      },
+      {
+        "id": "sys-day4-furniture",
+        "word": "furniture",
+        "meaning": "家具",
+        "phonetic": "/ˈfɜːrnɪtʃər/"
+      },
+      {
+        "id": "sys-day4-action",
+        "word": "action",
+        "meaning": "行为，行动",
+        "phonetic": "/ˈækʃn/"
+      },
+      {
+        "id": "sys-day4-let",
+        "word": "let",
+        "meaning": "允许，让",
+        "phonetic": "/let/"
+      },
+      {
+        "id": "sys-day4-do",
+        "word": "do",
+        "meaning": "做，干",
+        "phonetic": "/duː/"
+      },
+      {
+        "id": "sys-day4-use",
+        "word": "use",
+        "meaning": "使用，利用",
+        "phonetic": "/juːz/"
+      }
+    ]
   }
 ]
