@@ -253,8 +253,18 @@ export const useWordbookStore = defineStore('wordbook', () => {
     if (book) {
       book.totalLearnedInRound = 0
       book.practiceRound = 0
+      book.practiceHistory = []
     }
     persistAll()
+  }
+
+  function reloadSystemBooks() {
+    // 清除本地缓存，重新从 JSON 加载系统单词本
+    localStorage.removeItem(WBS_KEY)
+    localStorage.removeItem(ENTRIES_KEY)
+    wordbooks.value = []
+    entries.value = []
+    seedSystemWordbooks()
   }
 
   // ===== Actions: 练习历史 =====
@@ -365,6 +375,7 @@ export const useWordbookStore = defineStore('wordbook', () => {
     getTodayHistory,
     generateReportData,
     clearPracticeHistory,
+    reloadSystemBooks,
     persistAll
   }
 })

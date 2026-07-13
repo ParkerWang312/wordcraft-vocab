@@ -252,12 +252,12 @@ function confirmDelete() {
 function confirmReset() {
   showConfirmDialog({
     title: '重置学习进度',
-    message: '所有单词将标记为未学，练习历史将被清除，重新从第1轮开始。',
+    message: '将清除所有练习进度、历史记录和本地缓存。系统单词本将重新加载。',
     confirmButtonColor: '#EF4444'
   }).then(() => {
-    store.resetAllLearned(id.value)
-    store.clearPracticeHistory(id.value)
+    store.reloadSystemBooks()
     showToast('已重置')
+    router.replace('/wordbooks')
   }).catch(() => {})
 }
 
