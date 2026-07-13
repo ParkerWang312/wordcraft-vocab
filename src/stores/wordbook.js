@@ -38,6 +38,7 @@ export const useWordbookStore = defineStore('wordbook', () => {
           description: sys.description,
           type: sys.type,
           coverColor: sys.coverColor,
+          coverLetter: sys.coverLetter || '',
           isDeletable: sys.isDeletable,
           createdAt: Date.now(),
           settings: { ...sys.settings },

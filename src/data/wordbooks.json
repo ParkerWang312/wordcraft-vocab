@@ -73,8 +73,9 @@
   },
   {
     "id": "system-day2",
-    "name": "日期与颜色词汇",
-    "description": "星期、月份和颜色相关词汇",
+    "name": "暑假单词第二天",
+    "description": "暑假单词第二天 - 日期与颜色",
+    "coverLetter": "二",
     "type": "system",
     "coverColor": "#F59E0B",
     "isDeletable": false,

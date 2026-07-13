@@ -16,7 +16,7 @@
         @click="goDetail(book.id)"
       >
         <div class="book-cover" :style="{ background: book.coverColor }">
-          <span class="cover-letter">{{ book.name.charAt(0) }}</span>
+          <span class="cover-letter">{{ book.coverLetter || book.name.charAt(0) }}</span>
         </div>
         <div class="book-info">
           <div class="book-name-row">
@@ -38,7 +38,7 @@
         @click="goDetail(book.id)"
       >
         <div class="book-cover" :style="{ background: book.coverColor }">
-          <span class="cover-letter">{{ book.name.charAt(0) }}</span>
+          <span class="cover-letter">{{ book.coverLetter || book.name.charAt(0) }}</span>
         </div>
         <div class="book-info">
           <div class="book-name-row">
