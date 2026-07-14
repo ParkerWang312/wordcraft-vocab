@@ -13,256 +13,257 @@
       {
         "id": "sys-day2-colour",
         "word": "colour",
-        "meaning": "颜色，涂色",
+        "meaning": "n./v. 颜色，彩色；涂色，着色",
         "phonetic": "/ˈkʌlər/"
       },
       {
         "id": "sys-day2-color",
         "word": "color",
-        "meaning": "颜色，颜料",
+        "meaning": "n./v. 颜色，颜料，色彩；染色，上色",
         "phonetic": "/ˈkʌlər/"
       },
       {
         "id": "sys-day2-green",
         "word": "green",
-        "meaning": "绿色的",
+        "meaning": "adj./n. 绿色的，环保的；绿色，草地",
         "phonetic": "/ɡriːn/"
       },
       {
         "id": "sys-day2-red",
         "word": "red",
-        "meaning": "红色的",
+        "meaning": "adj./n. 红色的，充血的；红色，赤字",
         "phonetic": "/red/"
       },
       {
         "id": "sys-day2-blue",
         "word": "blue",
-        "meaning": "蓝色的",
+        "meaning": "adj./n. 蓝色的，忧郁的；蓝色，蓝天",
         "phonetic": "/bluː/"
       },
       {
         "id": "sys-day2-black",
         "word": "black",
-        "meaning": "黑色的",
+        "meaning": "adj./n. 黑色的，黑暗的；黑色，黑人",
         "phonetic": "/blæk/"
       },
       {
         "id": "sys-day2-grey",
         "word": "grey",
-        "meaning": "灰色的",
+        "meaning": "adj./n. 灰色的，灰暗的；灰色",
         "phonetic": "/ɡreɪ/"
       },
       {
         "id": "sys-day2-gray",
         "word": "gray",
-        "meaning": "灰色的，暗淡的",
+        "meaning": "adj./n. 灰色的，阴沉的，暗淡的；灰色",
         "phonetic": "/ɡreɪ/"
       },
       {
         "id": "sys-day2-yellow",
         "word": "yellow",
-        "meaning": "黄色的",
+        "meaning": "adj./n. 黄色的，胆小的；黄色",
         "phonetic": "/ˈjeləʊ/"
       },
       {
         "id": "sys-day2-purple",
         "word": "purple",
-        "meaning": "紫色的",
+        "meaning": "adj./n. 紫色的，帝王的；紫色",
         "phonetic": "/ˈpɜːrpl/"
       },
       {
         "id": "sys-day2-white",
         "word": "white",
-        "meaning": "白色的",
+        "meaning": "adj./n. 白色的，纯洁的；白色，蛋白",
         "phonetic": "/waɪt/"
       },
       {
         "id": "sys-day2-brown",
         "word": "brown",
-        "meaning": "褐色的，棕色的",
+        "meaning": "adj./n. 褐色的，棕色的，皮肤黝黑的；棕色",
         "phonetic": "/braʊn/"
       },
       {
         "id": "sys-day2-pink",
         "word": "pink",
-        "meaning": "粉红色的",
+        "meaning": "adj./n. 粉红色的，桃色的；粉红色",
         "phonetic": "/pɪŋk/"
       },
       {
         "id": "sys-day2-light",
         "word": "light",
-        "meaning": "轻的，明亮的",
+        "meaning": "n./adj./v. 光，灯；轻的，明亮的，浅的；点燃",
         "phonetic": "/laɪt/"
       },
       {
         "id": "sys-day2-dark",
         "word": "dark",
-        "meaning": "黑暗，深色的",
+        "meaning": "adj./n. 黑暗的，深色的，阴暗的；黑暗，黄昏",
         "phonetic": "/dɑːrk/"
       },
       {
         "id": "sys-day2-golden",
         "word": "golden",
-        "meaning": "金黄色的",
+        "meaning": "adj. 金黄色的，金的，黄金般的，珍贵的",
         "phonetic": "/ˈɡəʊldən/"
       },
       {
         "id": "sys-day2-silver",
         "word": "silver",
-        "meaning": "银，银色",
+        "meaning": "n./adj. 银，银币，银器；银色的，银制的",
         "phonetic": "/ˈsɪlvər/"
       },
       {
         "id": "sys-day2-pale",
         "word": "pale",
-        "meaning": "苍白的，浅色的",
+        "meaning": "adj./v. 苍白的，浅色的，暗淡的；变得苍白",
         "phonetic": "/peɪl/"
       },
       {
         "id": "sys-day2-run",
         "word": "run",
-        "meaning": "跑步，奔跑",
+        "meaning": "v./n. 跑步，奔跑，运转，经营；跑步，连续",
         "phonetic": "/rʌn/"
       },
       {
         "id": "sys-day2-week",
         "word": "week",
-        "meaning": "星期，周",
+        "meaning": "n. 星期，周，工作周",
         "phonetic": "/wiːk/"
       },
       {
         "id": "sys-day2-monday",
         "word": "Monday",
-        "meaning": "星期一",
+        "meaning": "n. 星期一，周一",
         "phonetic": "/ˈmʌndeɪ/"
       },
       {
         "id": "sys-day2-tuesday",
         "word": "Tuesday",
-        "meaning": "星期二",
+        "meaning": "n. 星期二，周二",
         "phonetic": "/ˈtjuːzdeɪ/"
       },
       {
         "id": "sys-day2-wednesday",
         "word": "Wednesday",
-        "meaning": "星期三",
+        "meaning": "n. 星期三，周三",
         "phonetic": "/ˈwenzdeɪ/"
       },
       {
         "id": "sys-day2-thursday",
         "word": "Thursday",
-        "meaning": "星期四",
+        "meaning": "n. 星期四，周四",
         "phonetic": "/ˈθɜːrzdeɪ/"
       },
       {
         "id": "sys-day2-friday",
         "word": "Friday",
-        "meaning": "星期五",
+        "meaning": "n. 星期五，周五",
         "phonetic": "/ˈfraɪdeɪ/"
       },
       {
         "id": "sys-day2-saturday",
         "word": "Saturday",
-        "meaning": "星期六",
+        "meaning": "n. 星期六，周六",
         "phonetic": "/ˈsætərdeɪ/"
       },
       {
         "id": "sys-day2-sunday",
         "word": "Sunday",
-        "meaning": "星期天",
+        "meaning": "n. 星期天，星期日，周日",
         "phonetic": "/ˈsʌndeɪ/"
       },
       {
         "id": "sys-day2-weekday",
         "word": "weekday",
-        "meaning": "工作日",
+        "meaning": "n. 工作日，平日（周一至周五）",
         "phonetic": "/ˈwiːkdeɪ/"
       },
       {
         "id": "sys-day2-date",
         "word": "date",
-        "meaning": "日期，约会",
+        "meaning": "n./v. 日期，约会，约会对象；注明日期，约会",
         "phonetic": "/deɪt/"
       },
       {
         "id": "sys-day2-month",
         "word": "month",
-        "meaning": "月",
+        "meaning": "n. 月，月份，一个月的时间",
         "phonetic": "/mʌnθ/"
       },
       {
         "id": "sys-day2-january",
         "word": "January",
-        "meaning": "一月",
+        "meaning": "n. 一月，正月",
         "phonetic": "/ˈdʒænjueri/"
       },
       {
         "id": "sys-day2-february",
         "word": "February",
-        "meaning": "二月",
+        "meaning": "n. 二月",
         "phonetic": "/ˈfebrueri/"
       },
       {
         "id": "sys-day2-march",
         "word": "March",
-        "meaning": "三月",
+        "meaning": "n. 三月；v. 行军，前进",
         "phonetic": "/mɑːrtʃ/"
       },
       {
         "id": "sys-day2-april",
         "word": "April",
-        "meaning": "四月",
+        "meaning": "n. 四月",
         "phonetic": "/ˈeɪprəl/"
       },
       {
         "id": "sys-day2-may",
         "word": "May",
-        "meaning": "五月",
+        "meaning": "n. 五月；aux. 可能，可以",
         "phonetic": "/meɪ/"
       },
       {
         "id": "sys-day2-june",
         "word": "June",
-        "meaning": "六月",
+        "meaning": "n. 六月",
         "phonetic": "/dʒuːn/"
       },
       {
         "id": "sys-day2-july",
         "word": "July",
-        "meaning": "七月",
+        "meaning": "n. 七月",
         "phonetic": "/dʒuˈlaɪ/"
       },
       {
         "id": "sys-day2-august",
         "word": "August",
-        "meaning": "八月",
+        "meaning": "n. 八月；adj. 威严的",
         "phonetic": "/ˈɔːɡəst/"
       },
       {
         "id": "sys-day2-september",
         "word": "September",
-        "meaning": "九月",
+        "meaning": "n. 九月",
         "phonetic": "/sepˈtembər/"
       },
       {
         "id": "sys-day2-october",
         "word": "October",
-        "meaning": "十月",
+        "meaning": "n. 十月",
         "phonetic": "/ɒkˈtəʊbər/"
       },
       {
         "id": "sys-day2-november",
         "word": "November",
-        "meaning": "十一月",
+        "meaning": "n. 十一月",
         "phonetic": "/nəʊˈvembər/"
       },
       {
         "id": "sys-day2-december",
         "word": "December",
-        "meaning": "十二月",
+        "meaning": "n. 十二月",
         "phonetic": "/dɪˈsembər/"
       }
-    ]
+    ],
+    "dataVersion": 2
   },
   {
     "id": "system-day1",
@@ -804,340 +805,341 @@
       {
         "id": "sys-day3-writer",
         "word": "writer",
-        "meaning": "作家，文书",
+        "meaning": "n. 作家，作者，文书，撰稿人",
         "phonetic": "/ˈraɪtər/"
       },
       {
         "id": "sys-day3-family",
         "word": "family",
-        "meaning": "家庭，家族",
+        "meaning": "n. 家庭，家族，家人，亲属",
         "phonetic": "/ˈfæməli/"
       },
       {
         "id": "sys-day3-relative",
         "word": "relative",
-        "meaning": "亲戚，亲属",
+        "meaning": "n./adj. 亲戚，亲属；相对的，相关的",
         "phonetic": "/ˈrelətɪv/"
       },
       {
         "id": "sys-day3-relationship",
         "word": "relationship",
-        "meaning": "关系，关联",
+        "meaning": "n. 关系，关联，联系，亲属关系",
         "phonetic": "/rɪˈleɪʃnʃɪp/"
       },
       {
         "id": "sys-day3-couple",
         "word": "couple",
-        "meaning": "夫妇，情侣",
+        "meaning": "n./v. 夫妇，情侣，一对；结合，连接",
         "phonetic": "/ˈkʌpl/"
       },
       {
         "id": "sys-day3-parent",
         "word": "parent",
-        "meaning": "父亲或母亲",
+        "meaning": "n. 父亲或母亲，家长，双亲之一",
         "phonetic": "/ˈpeərənt/"
       },
       {
         "id": "sys-day3-grandparent",
         "word": "grandparent",
-        "meaning": "祖父或祖母",
+        "meaning": "n. 祖父或祖母，外祖父或外祖母",
         "phonetic": "/ˈɡrænpeərənt/"
       },
       {
         "id": "sys-day3-grandpa",
         "word": "grandpa",
-        "meaning": "爷爷，外公",
+        "meaning": "n. 爷爷，外公（口语）",
         "phonetic": "/ˈɡrænpɑː/"
       },
       {
         "id": "sys-day3-grandfather",
         "word": "grandfather",
-        "meaning": "祖父，外公",
+        "meaning": "n. 祖父，外祖父，爷爷，外公",
         "phonetic": "/ˈɡrænfɑːðər/"
       },
       {
         "id": "sys-day3-grandma",
         "word": "grandma",
-        "meaning": "奶奶，外婆",
+        "meaning": "n. 奶奶，外婆（口语）",
         "phonetic": "/ˈɡrænmɑː/"
       },
       {
         "id": "sys-day3-grandmother",
         "word": "grandmother",
-        "meaning": "祖母，外婆",
+        "meaning": "n. 祖母，外祖母，奶奶，外婆",
         "phonetic": "/ˈɡrænmʌðər/"
       },
       {
         "id": "sys-day3-grandson",
         "word": "grandson",
-        "meaning": "孙子，外孙",
+        "meaning": "n. 孙子，外孙",
         "phonetic": "/ˈɡrænsʌn/"
       },
       {
         "id": "sys-day3-granddaughter",
         "word": "granddaughter",
-        "meaning": "孙女，外孙女",
+        "meaning": "n. 孙女，外孙女",
         "phonetic": "/ˈɡrændɔːtər/"
       },
       {
         "id": "sys-day3-father",
         "word": "father",
-        "meaning": "爸爸，父亲",
+        "meaning": "n. 爸爸，父亲，创始人",
         "phonetic": "/ˈfɑːðər/"
       },
       {
         "id": "sys-day3-dad",
         "word": "dad",
-        "meaning": "爸爸，爹爹",
+        "meaning": "n. 爸爸，爹爹（口语）",
         "phonetic": "/dæd/"
       },
       {
         "id": "sys-day3-daddy",
         "word": "daddy",
-        "meaning": "爸爸",
+        "meaning": "n. 爸爸（儿语）",
         "phonetic": "/ˈdædi/"
       },
       {
         "id": "sys-day3-mother",
         "word": "mother",
-        "meaning": "母亲，妈妈",
+        "meaning": "n. 母亲，妈妈，根源",
         "phonetic": "/ˈmʌðər/"
       },
       {
         "id": "sys-day3-friendship",
         "word": "friendship",
-        "meaning": "友谊，友情",
+        "meaning": "n. 友谊，友情，友好关系",
         "phonetic": "/ˈfrendʃɪp/"
       },
       {
         "id": "sys-day3-uncle",
         "word": "uncle",
-        "meaning": "叔叔，伯父，舅父",
+        "meaning": "n. 叔叔，伯父，舅父，姑父，姨父",
         "phonetic": "/ˈʌŋkl/"
       },
       {
         "id": "sys-day3-aunt",
         "word": "aunt",
-        "meaning": "阿姨，姑妈，伯母",
+        "meaning": "n. 阿姨，姑妈，伯母，舅母，婶婶",
         "phonetic": "/ɑːnt/"
       },
       {
         "id": "sys-day3-brother",
         "word": "brother",
-        "meaning": "兄弟，哥哥，弟弟",
+        "meaning": "n. 兄弟，哥哥，弟弟，同事",
         "phonetic": "/ˈbrʌðər/"
       },
       {
         "id": "sys-day3-sister",
         "word": "sister",
-        "meaning": "姐妹，姐，妹",
+        "meaning": "n. 姐妹，姐姐，妹妹，修女",
         "phonetic": "/ˈsɪstər/"
       },
       {
         "id": "sys-day3-son",
         "word": "son",
-        "meaning": "儿子",
+        "meaning": "n. 儿子，孩子，子孙",
         "phonetic": "/sʌn/"
       },
       {
         "id": "sys-day3-daughter",
         "word": "daughter",
-        "meaning": "女儿",
+        "meaning": "n. 女儿，养女",
         "phonetic": "/ˈdɔːtər/"
       },
       {
         "id": "sys-day3-cousin",
         "word": "cousin",
-        "meaning": "堂表兄弟姐妹",
+        "meaning": "n. 堂兄弟姐妹，表兄弟姐妹",
         "phonetic": "/ˈkʌzn/"
       },
       {
         "id": "sys-day3-wife",
         "word": "wife",
-        "meaning": "妻子，夫人",
+        "meaning": "n. 妻子，夫人，太太",
         "phonetic": "/waɪf/"
       },
       {
         "id": "sys-day3-husband",
         "word": "husband",
-        "meaning": "丈夫",
+        "meaning": "n. 丈夫，老公",
         "phonetic": "/ˈhʌzbənd/"
       },
       {
         "id": "sys-day3-raise",
         "word": "raise",
-        "meaning": "举起，抚养",
+        "meaning": "v./n. 举起，提高，抚养，筹集；加薪",
         "phonetic": "/reɪz/"
       },
       {
         "id": "sys-day3-marriage",
         "word": "marriage",
-        "meaning": "结婚，婚姻",
+        "meaning": "n. 结婚，婚姻，婚礼，密切结合",
         "phonetic": "/ˈmærɪdʒ/"
       },
       {
         "id": "sys-day3-marry",
         "word": "marry",
-        "meaning": "结婚，娶，嫁",
+        "meaning": "v. 结婚，娶，嫁，为…主持婚礼",
         "phonetic": "/ˈmæri/"
       },
       {
         "id": "sys-day3-friend",
         "word": "friend",
-        "meaning": "朋友",
+        "meaning": "n. 朋友，伙伴，熟人",
         "phonetic": "/frend/"
       },
       {
         "id": "sys-day3-human",
         "word": "human",
-        "meaning": "人，人类",
+        "meaning": "n./adj. 人，人类；人的，有人性的",
         "phonetic": "/ˈhjuːmən/"
       },
       {
         "id": "sys-day3-people",
         "word": "people",
-        "meaning": "人们，人类",
+        "meaning": "n. 人，人们，人民，民族，家人",
         "phonetic": "/ˈpiːpl/"
       },
       {
         "id": "sys-day3-person",
         "word": "person",
-        "meaning": "人，个人",
+        "meaning": "n. 人，个人，家伙，人称",
         "phonetic": "/ˈpɜːrsn/"
       },
       {
         "id": "sys-day3-gentleman",
         "word": "gentleman",
-        "meaning": "绅士，先生",
+        "meaning": "n. 绅士，先生，有教养的人",
         "phonetic": "/ˈdʒentlmən/"
       },
       {
         "id": "sys-day3-stranger",
         "word": "stranger",
-        "meaning": "陌生人",
+        "meaning": "n. 陌生人，外地人，新来者",
         "phonetic": "/ˈstreɪndʒər/"
       },
       {
         "id": "sys-day3-hero",
         "word": "hero",
-        "meaning": "英雄，男主角",
+        "meaning": "n. 英雄，勇士，男主角，偶像",
         "phonetic": "/ˈhɪərəʊ/"
       },
       {
         "id": "sys-day3-pioneer",
         "word": "pioneer",
-        "meaning": "先锋，先驱",
+        "meaning": "n./v. 先锋，先驱，开拓者；开拓，倡导",
         "phonetic": "/ˌpaɪəˈnɪər/"
       },
       {
         "id": "sys-day3-classmate",
         "word": "classmate",
-        "meaning": "同班同学",
+        "meaning": "n. 同班同学，同级同学",
         "phonetic": "/ˈklɑːsmeɪt/"
       },
       {
         "id": "sys-day3-neighbour",
         "word": "neighbour",
-        "meaning": "邻居",
+        "meaning": "n./v. 邻居，邻国；邻近，毗邻",
         "phonetic": "/ˈneɪbər/"
       },
       {
         "id": "sys-day3-neighbor",
         "word": "neighbor",
-        "meaning": "邻居",
+        "meaning": "n./v. 邻居，邻国；邻近，毗邻",
         "phonetic": "/ˈneɪbər/"
       },
       {
         "id": "sys-day3-child",
         "word": "child",
-        "meaning": "小孩，儿童",
+        "meaning": "n. 小孩，儿童，子女，孩子",
         "phonetic": "/tʃaɪld/"
       },
       {
         "id": "sys-day3-woman",
         "word": "woman",
-        "meaning": "女人，妇女",
+        "meaning": "n. 女人，妇女，成年女子",
         "phonetic": "/ˈwʊmən/"
       },
       {
         "id": "sys-day3-women",
         "word": "women",
-        "meaning": "女人们",
+        "meaning": "n. 女人们（woman的复数）",
         "phonetic": "/ˈwɪmɪn/"
       },
       {
         "id": "sys-day3-man",
         "word": "man",
-        "meaning": "男人，成年男子",
+        "meaning": "n. 男人，成年男子，人类",
         "phonetic": "/mæn/"
       },
       {
         "id": "sys-day3-men",
         "word": "men",
-        "meaning": "男人们",
+        "meaning": "n. 男人们（man的复数）",
         "phonetic": "/men/"
       },
       {
         "id": "sys-day3-girl",
         "word": "girl",
-        "meaning": "女孩，女生",
+        "meaning": "n. 女孩，女生，姑娘，女儿",
         "phonetic": "/ɡɜːrl/"
       },
       {
         "id": "sys-day3-boy",
         "word": "boy",
-        "meaning": "男孩，少年",
+        "meaning": "n. 男孩，少年，小伙子，儿子",
         "phonetic": "/bɔɪ/"
       },
       {
         "id": "sys-day3-kid",
         "word": "kid",
-        "meaning": "小孩，儿童",
+        "meaning": "n./v. 小孩，儿童，年轻人；开玩笑，哄骗",
         "phonetic": "/kɪd/"
       },
       {
         "id": "sys-day3-baby",
         "word": "baby",
-        "meaning": "宝宝，婴儿",
+        "meaning": "n./adj. 宝宝，婴儿，幼崽；婴儿的，小型的",
         "phonetic": "/ˈbeɪbi/"
       },
       {
         "id": "sys-day3-elder",
         "word": "elder",
-        "meaning": "长辈；年长的",
+        "meaning": "n./adj. 长辈，长者；年长的，资格老的",
         "phonetic": "/ˈeldər/"
       },
       {
         "id": "sys-day3-lady",
         "word": "lady",
-        "meaning": "女士，夫人",
+        "meaning": "n. 女士，夫人，小姐，淑女",
         "phonetic": "/ˈleɪdi/"
       },
       {
         "id": "sys-day3-miss",
         "word": "Miss",
-        "meaning": "小姐",
+        "meaning": "n. 小姐，女士（未婚女子）；v. 错过，想念",
         "phonetic": "/mɪs/"
       },
       {
         "id": "sys-day3-guest",
         "word": "guest",
-        "meaning": "客人，宾客",
+        "meaning": "n./v. 客人，宾客，旅客；做客，客串",
         "phonetic": "/ɡest/"
       },
       {
         "id": "sys-day3-member",
         "word": "member",
-        "meaning": "成员，会员",
+        "meaning": "n. 成员，会员，部件，分子",
         "phonetic": "/ˈmembər/"
       },
       {
         "id": "sys-day3-single",
         "word": "single",
-        "meaning": "单个的；单身的",
+        "meaning": "adj./n./v. 单个的，单一的，单身的；单曲；挑选",
         "phonetic": "/ˈsɪŋɡl/"
       }
-    ]
+    ],
+    "dataVersion": 2
   },
   {
     "id": "system-day4",
@@ -1154,705 +1156,706 @@
       {
         "id": "sys-day4-house",
         "word": "house",
-        "meaning": "房屋，住宅",
+        "meaning": "n./v. 房屋，住宅，房子；提供住所，容纳",
         "phonetic": "/haʊs/"
       },
       {
         "id": "sys-day4-flat",
         "word": "flat",
-        "meaning": "公寓，平坦的",
+        "meaning": "n./adj./adv. 公寓，套房；平坦的，扁平的；平直地",
         "phonetic": "/flæt/"
       },
       {
         "id": "sys-day4-address",
         "word": "address",
-        "meaning": "地址，演说",
+        "meaning": "n./v. 地址，演说，称呼；向…演说，处理，称呼",
         "phonetic": "/əˈdres/"
       },
       {
         "id": "sys-day4-yard",
         "word": "yard",
-        "meaning": "院子，场地",
+        "meaning": "n. 院子，庭院，场地，码（长度单位）",
         "phonetic": "/jɑːrd/"
       },
       {
         "id": "sys-day4-door",
         "word": "door",
-        "meaning": "门，通道",
+        "meaning": "n. 门，门道，入口，通道",
         "phonetic": "/dɔːr/"
       },
       {
         "id": "sys-day4-window",
         "word": "window",
-        "meaning": "窗，橱窗",
+        "meaning": "n. 窗户，橱窗，窗口，视窗",
         "phonetic": "/ˈwɪndəʊ/"
       },
       {
         "id": "sys-day4-glass",
         "word": "glass",
-        "meaning": "玻璃，玻璃杯",
+        "meaning": "n. 玻璃，玻璃杯，眼镜，镜子",
         "phonetic": "/ɡlɑːs/"
       },
       {
         "id": "sys-day4-gate",
         "word": "gate",
-        "meaning": "大门，通道",
+        "meaning": "n. 大门，出入口，闸门，登机口",
         "phonetic": "/ɡeɪt/"
       },
       {
         "id": "sys-day4-floor",
         "word": "floor",
-        "meaning": "地板，楼层",
+        "meaning": "n./v. 地板，地面，楼层；击倒，使困惑",
         "phonetic": "/flɔːr/"
       },
       {
         "id": "sys-day4-garden",
         "word": "garden",
-        "meaning": "花园，果园",
+        "meaning": "n./v. 花园，果园，菜园；从事园艺",
         "phonetic": "/ˈɡɑːrdn/"
       },
       {
         "id": "sys-day4-upstairs",
         "word": "upstairs",
-        "meaning": "在楼上",
+        "meaning": "adv./adj./n. 在楼上，向楼上；楼上的；楼上",
         "phonetic": "/ˌʌpˈsteəz/"
       },
       {
         "id": "sys-day4-stairs",
         "word": "stairs",
-        "meaning": "楼梯",
+        "meaning": "n. 楼梯，阶梯",
         "phonetic": "/steəz/"
       },
       {
         "id": "sys-day4-downstairs",
         "word": "downstairs",
-        "meaning": "在楼下",
+        "meaning": "adv./adj./n. 在楼下，向楼下；楼下的；楼下",
         "phonetic": "/ˌdaʊnˈsteəz/"
       },
       {
         "id": "sys-day4-wall",
         "word": "wall",
-        "meaning": "墙，围墙",
+        "meaning": "n./v. 墙，墙壁，围墙；用墙围住，堵塞",
         "phonetic": "/wɔːl/"
       },
       {
         "id": "sys-day4-room",
         "word": "room",
-        "meaning": "房间，空间",
+        "meaning": "n. 房间，室，空间，余地",
         "phonetic": "/ruːm/"
       },
       {
         "id": "sys-day4-bathroom",
         "word": "bathroom",
-        "meaning": "浴室",
+        "meaning": "n. 浴室，卫生间，洗手间",
         "phonetic": "/ˈbɑːθruːm/"
       },
       {
         "id": "sys-day4-bedroom",
         "word": "bedroom",
-        "meaning": "卧室",
+        "meaning": "n. 卧室，寝室",
         "phonetic": "/ˈbedruːm/"
       },
       {
         "id": "sys-day4-kitchen",
         "word": "kitchen",
-        "meaning": "厨房",
+        "meaning": "n. 厨房，灶间",
         "phonetic": "/ˈkɪtʃɪn/"
       },
       {
         "id": "sys-day4-study",
         "word": "study",
-        "meaning": "学习，书房",
+        "meaning": "v./n. 学习，研究，攻读；学习，书房，研究",
         "phonetic": "/ˈstʌdi/"
       },
       {
         "id": "sys-day4-town",
         "word": "town",
-        "meaning": "城镇，市镇",
+        "meaning": "n. 城镇，市镇，市区，商业中心",
         "phonetic": "/taʊn/"
       },
       {
         "id": "sys-day4-building",
         "word": "building",
-        "meaning": "大楼，建筑",
+        "meaning": "n. 大楼，建筑物，建筑业",
         "phonetic": "/ˈbɪldɪŋ/"
       },
       {
         "id": "sys-day4-community",
         "word": "community",
-        "meaning": "社区，群体",
+        "meaning": "n. 社区，社会，团体，群落",
         "phonetic": "/kəˈmjuːnəti/"
       },
       {
         "id": "sys-day4-road",
         "word": "road",
-        "meaning": "道路，公路",
+        "meaning": "n. 道路，公路，途径，路线",
         "phonetic": "/rəʊd/"
       },
       {
         "id": "sys-day4-street",
         "word": "street",
-        "meaning": "大街，街道",
+        "meaning": "n. 大街，街道，马路",
         "phonetic": "/striːt/"
       },
       {
         "id": "sys-day4-block",
         "word": "block",
-        "meaning": "阻挡，街区",
+        "meaning": "n./v. 街区，块，障碍；阻挡，阻止，堵塞",
         "phonetic": "/blɒk/"
       },
       {
         "id": "sys-day4-corner",
         "word": "corner",
-        "meaning": "角落，拐角",
+        "meaning": "n./v. 角落，拐角，困境；使走投无路，转弯",
         "phonetic": "/ˈkɔːrnər/"
       },
       {
         "id": "sys-day4-bridge",
         "word": "bridge",
-        "meaning": "桥，桥梁",
+        "meaning": "n./v. 桥，桥梁，纽带；架桥，弥合",
         "phonetic": "/brɪdʒ/"
       },
       {
         "id": "sys-day4-church",
         "word": "church",
-        "meaning": "教堂，教会",
+        "meaning": "n. 教堂，教会，教派，礼拜",
         "phonetic": "/tʃɜːrtʃ/"
       },
       {
         "id": "sys-day4-museum",
         "word": "museum",
-        "meaning": "博物馆",
+        "meaning": "n. 博物馆，展览馆",
         "phonetic": "/mjuˈziːəm/"
       },
       {
         "id": "sys-day4-gym",
         "word": "gym",
-        "meaning": "体育馆",
+        "meaning": "n. 体育馆，健身房，体操",
         "phonetic": "/dʒɪm/"
       },
       {
         "id": "sys-day4-gymnasium",
         "word": "gymnasium",
-        "meaning": "体育馆",
+        "meaning": "n. 体育馆，健身房，体操馆",
         "phonetic": "/dʒɪmˈneɪziəm/"
       },
       {
         "id": "sys-day4-company",
         "word": "company",
-        "meaning": "公司，陪伴",
+        "meaning": "n. 公司，商号，同伴，陪伴，连队",
         "phonetic": "/ˈkʌmpəni/"
       },
       {
         "id": "sys-day4-factory",
         "word": "factory",
-        "meaning": "工厂",
+        "meaning": "n. 工厂，制造厂，生产车间",
         "phonetic": "/ˈfæktri/"
       },
       {
         "id": "sys-day4-hospital",
         "word": "hospital",
-        "meaning": "医院",
+        "meaning": "n. 医院，收容所",
         "phonetic": "/ˈhɒspɪtl/"
       },
       {
         "id": "sys-day4-toilet",
         "word": "toilet",
-        "meaning": "厕所，马桶",
+        "meaning": "n. 厕所，马桶，洗手间，梳妆",
         "phonetic": "/ˈtɔɪlət/"
       },
       {
         "id": "sys-day4-hotel",
         "word": "hotel",
-        "meaning": "酒店，旅馆",
+        "meaning": "n. 酒店，旅馆，饭店，客栈",
         "phonetic": "/həʊˈtel/"
       },
       {
         "id": "sys-day4-library",
         "word": "library",
-        "meaning": "图书馆",
+        "meaning": "n. 图书馆，藏书室，文库",
         "phonetic": "/ˈlaɪbreri/"
       },
       {
         "id": "sys-day4-park",
         "word": "park",
-        "meaning": "公园，停车",
+        "meaning": "n./v. 公园，园区；停放（车辆）",
         "phonetic": "/pɑːrk/"
       },
       {
         "id": "sys-day4-zoo",
         "word": "zoo",
-        "meaning": "动物园",
+        "meaning": "n. 动物园",
         "phonetic": "/zuː/"
       },
       {
         "id": "sys-day4-cinema",
         "word": "cinema",
-        "meaning": "电影院",
+        "meaning": "n. 电影院，电影，电影业",
         "phonetic": "/ˈsɪnəmə/"
       },
       {
         "id": "sys-day4-theatre",
         "word": "theatre",
-        "meaning": "戏院，剧院",
+        "meaning": "n. 戏院，剧院，剧场，戏剧",
         "phonetic": "/ˈθɪətər/"
       },
       {
         "id": "sys-day4-theater",
         "word": "theater",
-        "meaning": "戏院，剧场",
+        "meaning": "n. 戏院，剧场，戏剧，阶梯教室",
         "phonetic": "/ˈθɪətər/"
       },
       {
         "id": "sys-day4-row",
         "word": "row",
-        "meaning": "划船；排，行",
+        "meaning": "v./n. 划船，划行；排，行，列，争吵",
         "phonetic": "/rəʊ/"
       },
       {
         "id": "sys-day4-club",
         "word": "club",
-        "meaning": "俱乐部，社团",
+        "meaning": "n./v. 俱乐部，社团，球棒；用棒击打",
         "phonetic": "/klʌb/"
       },
       {
         "id": "sys-day4-restaurant",
         "word": "restaurant",
-        "meaning": "餐厅，餐馆",
+        "meaning": "n. 餐厅，餐馆，饭店",
         "phonetic": "/ˈrestrɒnt/"
       },
       {
         "id": "sys-day4-hall",
         "word": "hall",
-        "meaning": "大厅，会堂",
+        "meaning": "n. 大厅，会堂，门厅，走廊",
         "phonetic": "/hɔːl/"
       },
       {
         "id": "sys-day4-square",
         "word": "square",
-        "meaning": "广场；正方形",
+        "meaning": "n./adj./v. 广场，正方形，平方；正方形的；使成方形",
         "phonetic": "/skweər/"
       },
       {
         "id": "sys-day4-store",
         "word": "store",
-        "meaning": "商店，储存",
+        "meaning": "n./v. 商店，店铺，储备；储存，存放",
         "phonetic": "/stɔːr/"
       },
       {
         "id": "sys-day4-tower",
         "word": "tower",
-        "meaning": "塔，高耸",
+        "meaning": "n./v. 塔，塔楼，高耸；高耸，超越",
         "phonetic": "/ˈtaʊər/"
       },
       {
         "id": "sys-day4-palace",
         "word": "palace",
-        "meaning": "宫殿，皇宫",
+        "meaning": "n. 宫殿，皇宫，豪华住宅",
         "phonetic": "/ˈpælɪs/"
       },
       {
         "id": "sys-day4-live",
         "word": "live",
-        "meaning": "居住，活着",
+        "meaning": "v./adj. 居住，生活，活着，生存；活的，直播的",
         "phonetic": "/lɪv/"
       },
       {
         "id": "sys-day4-life",
         "word": "life",
-        "meaning": "生命，生活",
+        "meaning": "n. 生命，生活，人生，一生，生物",
         "phonetic": "/laɪf/"
       },
       {
         "id": "sys-day4-meal",
         "word": "meal",
-        "meaning": "一餐，膳食",
+        "meaning": "n. 一餐，一顿饭，膳食，进餐时间",
         "phonetic": "/miːl/"
       },
       {
         "id": "sys-day4-eat",
         "word": "eat",
-        "meaning": "吃",
+        "meaning": "v. 吃，吃饭，进食，消耗",
         "phonetic": "/iːt/"
       },
       {
         "id": "sys-day4-asleep",
         "word": "asleep",
-        "meaning": "睡着的",
+        "meaning": "adj. 睡着的，麻木的，已死的",
         "phonetic": "/əˈsliːp/"
       },
       {
         "id": "sys-day4-order",
         "word": "order",
-        "meaning": "订购，命令",
+        "meaning": "n./v. 顺序，秩序，订单，命令；订购，命令，整理",
         "phonetic": "/ˈɔːrdər/"
       },
       {
         "id": "sys-day4-wake",
         "word": "wake",
-        "meaning": "醒来，唤醒",
+        "meaning": "v./n. 醒来，唤醒，觉醒；守夜，尾迹",
         "phonetic": "/weɪk/"
       },
       {
         "id": "sys-day4-awake",
         "word": "awake",
-        "meaning": "醒着的",
+        "meaning": "adj./v. 醒着的，清醒的；醒来，唤醒，觉悟",
         "phonetic": "/əˈweɪk/"
       },
       {
         "id": "sys-day4-sleep",
         "word": "sleep",
-        "meaning": "睡觉",
+        "meaning": "v./n. 睡觉，入睡；睡眠，睡意",
         "phonetic": "/sliːp/"
       },
       {
         "id": "sys-day4-wear",
         "word": "wear",
-        "meaning": "穿，戴",
+        "meaning": "v./n. 穿，戴，磨损，面带；衣着，磨损",
         "phonetic": "/weər/"
       },
       {
         "id": "sys-day4-repair",
         "word": "repair",
-        "meaning": "修理，修补",
+        "meaning": "v./n. 修理，修补，修复，纠正；修理，修补",
         "phonetic": "/rɪˈpeər/"
       },
       {
         "id": "sys-day4-fix",
         "word": "fix",
-        "meaning": "修理，固定",
+        "meaning": "v./n. 修理，固定，安装，解决；困境，定位",
         "phonetic": "/fɪks/"
       },
       {
         "id": "sys-day4-habit",
         "word": "habit",
-        "meaning": "习惯",
+        "meaning": "n. 习惯，习性，嗜好，惯常行为",
         "phonetic": "/ˈhæbɪt/"
       },
       {
         "id": "sys-day4-burn",
         "word": "burn",
-        "meaning": "烧，燃烧",
+        "meaning": "v./n. 烧，燃烧，烧毁，晒伤；烧伤，灼伤",
         "phonetic": "/bɜːrn/"
       },
       {
         "id": "sys-day4-handbag",
         "word": "handbag",
-        "meaning": "手提包",
+        "meaning": "n. 手提包，手袋，坤包",
         "phonetic": "/ˈhændbæɡ/"
       },
       {
         "id": "sys-day4-wallet",
         "word": "wallet",
-        "meaning": "钱包",
+        "meaning": "n. 钱包，皮夹，钱袋",
         "phonetic": "/ˈwɒlɪt/"
       },
       {
         "id": "sys-day4-lock",
         "word": "lock",
-        "meaning": "锁上",
+        "meaning": "v./n. 锁上，锁住，卡住；锁，船闸",
         "phonetic": "/lɒk/"
       },
       {
         "id": "sys-day4-key",
         "word": "key",
-        "meaning": "钥匙，键",
+        "meaning": "n./adj./v. 钥匙，键，关键，答案；关键的；键入",
         "phonetic": "/kiː/"
       },
       {
         "id": "sys-day4-line",
         "word": "line",
-        "meaning": "线，排队",
+        "meaning": "n./v. 线，线条，排队，行，台词；划线，排队",
         "phonetic": "/laɪn/"
       },
       {
         "id": "sys-day4-basket",
         "word": "basket",
-        "meaning": "篮，篓，筐",
+        "meaning": "n. 篮，篓，筐，一篮之量",
         "phonetic": "/ˈbɑːskɪt/"
       },
       {
         "id": "sys-day4-lamp",
         "word": "lamp",
-        "meaning": "灯，台灯",
+        "meaning": "n. 灯，台灯，照射器，光源",
         "phonetic": "/læmp/"
       },
       {
         "id": "sys-day4-camera",
         "word": "camera",
-        "meaning": "相机，摄像机",
+        "meaning": "n. 相机，摄像机，摄影机",
         "phonetic": "/ˈkæmərə/"
       },
       {
         "id": "sys-day4-electricity",
         "word": "electricity",
-        "meaning": "电，电力",
+        "meaning": "n. 电，电力，电流，电能",
         "phonetic": "/ɪˌlekˈtrɪsəti/"
       },
       {
         "id": "sys-day4-fire",
         "word": "fire",
-        "meaning": "火，火灾",
+        "meaning": "n./v. 火，火灾，炉火，热情；开火，解雇，点燃",
         "phonetic": "/ˈfaɪər/"
       },
       {
         "id": "sys-day4-candle",
         "word": "candle",
-        "meaning": "蜡烛",
+        "meaning": "n. 蜡烛，烛光",
         "phonetic": "/ˈkændl/"
       },
       {
         "id": "sys-day4-soap",
         "word": "soap",
-        "meaning": "肥皂",
+        "meaning": "n./v. 肥皂，香皂；用肥皂洗，抹肥皂",
         "phonetic": "/səʊp/"
       },
       {
         "id": "sys-day4-brush",
         "word": "brush",
-        "meaning": "刷，抹",
+        "meaning": "n./v. 刷子，画笔，灌木丛；刷，擦，掠过",
         "phonetic": "/brʌʃ/"
       },
       {
         "id": "sys-day4-toothbrush",
         "word": "toothbrush",
-        "meaning": "牙刷",
+        "meaning": "n. 牙刷",
         "phonetic": "/ˈtuːθbrʌʃ/"
       },
       {
         "id": "sys-day4-watch",
         "word": "watch",
-        "meaning": "观看，手表",
+        "meaning": "v./n. 观看，注视，看守，留意；手表，监视",
         "phonetic": "/wɒtʃ/"
       },
       {
         "id": "sys-day4-clock",
         "word": "clock",
-        "meaning": "钟",
+        "meaning": "n./v. 钟，时钟；计时，记录时间",
         "phonetic": "/klɒk/"
       },
       {
         "id": "sys-day4-tool",
         "word": "tool",
-        "meaning": "工具",
+        "meaning": "n./v. 工具，器具，手段；用工具加工",
         "phonetic": "/tuːl/"
       },
       {
         "id": "sys-day4-card",
         "word": "card",
-        "meaning": "卡片，贺卡",
+        "meaning": "n. 卡片，贺卡，纸牌，银行卡",
         "phonetic": "/kɑːrd/"
       },
       {
         "id": "sys-day4-stamp",
         "word": "stamp",
-        "meaning": "邮票，盖章",
+        "meaning": "n./v. 邮票，印章，印记；盖章，踩脚，贴邮票",
         "phonetic": "/stæmp/"
       },
       {
         "id": "sys-day4-toothpaste",
         "word": "toothpaste",
-        "meaning": "牙膏",
+        "meaning": "n. 牙膏",
         "phonetic": "/ˈtuːθpeɪst/"
       },
       {
         "id": "sys-day4-diary",
         "word": "diary",
-        "meaning": "日记",
+        "meaning": "n. 日记，日记本，记事簿",
         "phonetic": "/ˈdaɪəri/"
       },
       {
         "id": "sys-day4-calendar",
         "word": "calendar",
-        "meaning": "日历",
+        "meaning": "n. 日历，历法，日程表，记事录",
         "phonetic": "/ˈkælɪndər/"
       },
       {
         "id": "sys-day4-towel",
         "word": "towel",
-        "meaning": "毛巾",
+        "meaning": "n./v. 毛巾，手巾，纸巾；用毛巾擦",
         "phonetic": "/ˈtaʊəl/"
       },
       {
         "id": "sys-day4-toy",
         "word": "toy",
-        "meaning": "玩具",
+        "meaning": "n./adj./v. 玩具，玩物；玩具的；玩弄，戏耍",
         "phonetic": "/tɔɪ/"
       },
       {
         "id": "sys-day4-scissors",
         "word": "scissors",
-        "meaning": "剪刀",
+        "meaning": "n. 剪刀，剪子",
         "phonetic": "/ˈsɪzərz/"
       },
       {
         "id": "sys-day4-umbrella",
         "word": "umbrella",
-        "meaning": "雨伞",
+        "meaning": "n. 雨伞，伞，保护伞，庇护",
         "phonetic": "/ʌmˈbrelə/"
       },
       {
         "id": "sys-day4-match",
         "word": "match",
-        "meaning": "匹配，比赛",
+        "meaning": "n./v. 比赛，匹配，火柴；匹配，相配，匹敌",
         "phonetic": "/mætʃ/"
       },
       {
         "id": "sys-day4-swing",
         "word": "swing",
-        "meaning": "摇摆，秋千",
+        "meaning": "v./n. 摇摆，摆动，荡秋千；秋千，摇摆，节奏",
         "phonetic": "/swɪŋ/"
       },
       {
         "id": "sys-day4-tent",
         "word": "tent",
-        "meaning": "帐篷",
+        "meaning": "n./v. 帐篷，帐棚；住帐篷，扎营",
         "phonetic": "/tent/"
       },
       {
         "id": "sys-day4-rope",
         "word": "rope",
-        "meaning": "绳子",
+        "meaning": "n./v. 绳子，绳索；用绳捆，用绳系",
         "phonetic": "/rəʊp/"
       },
       {
         "id": "sys-day4-photo",
         "word": "photo",
-        "meaning": "照片",
+        "meaning": "n./v. 照片，相片；拍照，照相",
         "phonetic": "/ˈfəʊtəʊ/"
       },
       {
         "id": "sys-day4-safe",
         "word": "safe",
-        "meaning": "安全的",
+        "meaning": "adj./n. 安全的，平安的，可靠的；保险箱",
         "phonetic": "/seɪf/"
       },
       {
         "id": "sys-day4-litter",
         "word": "litter",
-        "meaning": "垃圾",
+        "meaning": "n./v. 垃圾，杂物，一窝幼崽；乱扔垃圾，使杂乱",
         "phonetic": "/ˈlɪtər/"
       },
       {
         "id": "sys-day4-circle",
         "word": "circle",
-        "meaning": "圆圈，环绕",
+        "meaning": "n./v. 圆圈，圆形，圈子，周期；环绕，盘旋",
         "phonetic": "/ˈsɜːrkl/"
       },
       {
         "id": "sys-day4-bed",
         "word": "bed",
-        "meaning": "床",
+        "meaning": "n. 床，床位，河床，地层",
         "phonetic": "/bed/"
       },
       {
         "id": "sys-day4-chair",
         "word": "chair",
-        "meaning": "椅子",
+        "meaning": "n./v. 椅子，主席；担任主席，主持",
         "phonetic": "/tʃeər/"
       },
       {
         "id": "sys-day4-sofa",
         "word": "sofa",
-        "meaning": "沙发",
+        "meaning": "n. 沙发，长椅",
         "phonetic": "/ˈsəʊfə/"
       },
       {
         "id": "sys-day4-table",
         "word": "table",
-        "meaning": "桌子",
+        "meaning": "n./v. 桌子，表格，餐桌；提出，搁置",
         "phonetic": "/ˈteɪbl/"
       },
       {
         "id": "sys-day4-desk",
         "word": "desk",
-        "meaning": "书桌",
+        "meaning": "n. 书桌，写字台，办公桌，服务台",
         "phonetic": "/desk/"
       },
       {
         "id": "sys-day4-fridge",
         "word": "fridge",
-        "meaning": "电冰箱",
+        "meaning": "n. 电冰箱，冷藏柜",
         "phonetic": "/frɪdʒ/"
       },
       {
         "id": "sys-day4-refrigerator",
         "word": "refrigerator",
-        "meaning": "冰箱",
+        "meaning": "n. 冰箱，冷藏室，冷冻机",
         "phonetic": "/rɪˈfrɪdʒəreɪtər/"
       },
       {
         "id": "sys-day4-radio",
         "word": "radio",
-        "meaning": "收音机",
+        "meaning": "n./v. 收音机，无线电，广播；用无线电发送",
         "phonetic": "/ˈreɪdiəʊ/"
       },
       {
         "id": "sys-day4-telephone",
         "word": "telephone",
-        "meaning": "电话",
+        "meaning": "n./v. 电话，电话机；打电话，通电话",
         "phonetic": "/ˈtelɪfəʊn/"
       },
       {
         "id": "sys-day4-tv",
         "word": "TV",
-        "meaning": "电视",
+        "meaning": "n. 电视，电视机",
         "phonetic": "/ˌtiː ˈviː/"
       },
       {
         "id": "sys-day4-television",
         "word": "television",
-        "meaning": "电视机",
+        "meaning": "n. 电视机，电视节目，电视行业",
         "phonetic": "/ˈtelɪvɪʒn/"
       },
       {
         "id": "sys-day4-video",
         "word": "video",
-        "meaning": "视频，录像",
+        "meaning": "n./adj./v. 视频，录像，录像带；视频的；录制视频",
         "phonetic": "/ˈvɪdiəʊ/"
       },
       {
         "id": "sys-day4-fan",
         "word": "fan",
-        "meaning": "风扇，迷",
+        "meaning": "n./v. 风扇，扇子，迷，狂热爱好者；扇风，煽动",
         "phonetic": "/fæn/"
       },
       {
         "id": "sys-day4-mirror",
         "word": "mirror",
-        "meaning": "镜子",
+        "meaning": "n./v. 镜子，反射镜，写照；反射，反映",
         "phonetic": "/ˈmɪrər/"
       },
       {
         "id": "sys-day4-furniture",
         "word": "furniture",
-        "meaning": "家具",
+        "meaning": "n. 家具，设备，装置",
         "phonetic": "/ˈfɜːrnɪtʃər/"
       },
       {
         "id": "sys-day4-action",
         "word": "action",
-        "meaning": "行为，行动",
+        "meaning": "n. 行为，行动，动作，作用，情节",
         "phonetic": "/ˈækʃn/"
       },
       {
         "id": "sys-day4-let",
         "word": "let",
-        "meaning": "允许，让",
+        "meaning": "v. 允许，让，出租，假设",
         "phonetic": "/let/"
       },
       {
         "id": "sys-day4-do",
         "word": "do",
-        "meaning": "做，干",
+        "meaning": "v./aux. 做，干，行动，完成；助动（构成疑问或否定）",
         "phonetic": "/duː/"
       },
       {
         "id": "sys-day4-use",
         "word": "use",
-        "meaning": "使用，利用",
+        "meaning": "v./n. 使用，利用，消耗，对待；使用，用途，用法",
         "phonetic": "/juːz/"
       }
-    ]
+    ],
+    "dataVersion": 2
   }
 ]
