@@ -1,5 +1,5 @@
 /**
- * Web Audio API 音效工具
+ * Web Audio API 音效工具 — 百词斩风格
  * 无需任何外部音频文件
  */
 let audioCtx = null
@@ -8,61 +8,70 @@ function getCtx() {
   if (!audioCtx) {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)()
   }
+  // 恢复被浏览器暂停的 AudioContext
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume()
+  }
   return audioCtx
 }
 
-/** 答对 — 清脆双音上行 */
+function playTone(ctx, freq, start, duration, type = 'sine', gain = 0.4) {
+  const osc = ctx.createOscillator()
+  const g = ctx.createGain()
+  osc.type = type
+  osc.frequency.setValueAtTime(freq, start)
+  g.gain.setValueAtTime(gain, start)
+  g.gain.exponentialRampToValueAtTime(0.001, start + duration)
+  osc.connect(g)
+  g.connect(ctx.destination)
+  osc.start(start)
+  osc.stop(start + duration + 0.01)
+}
+
+/** 答对 — 明亮三音上行琶音 ✨ */
 export function playCorrectSound() {
   try {
     const ctx = getCtx()
     const now = ctx.currentTime
 
-    // 第一音：880Hz 持续 80ms
-    const osc1 = ctx.createOscillator()
-    const gain1 = ctx.createGain()
-    osc1.type = 'sine'
-    osc1.frequency.setValueAtTime(880, now)
-    gain1.gain.setValueAtTime(0.3, now)
-    gain1.gain.exponentialRampToValueAtTime(0.01, now + 0.08)
-    osc1.connect(gain1)
-    gain1.connect(ctx.destination)
-    osc1.start(now)
-    osc1.stop(now + 0.08)
+    // C5 → E5 → G5 (523→659→784) 大三和弦上行
+    playTone(ctx, 523, now,        0.15, 'triangle', 0.45)
+    playTone(ctx, 659, now + 0.08, 0.15, 'triangle', 0.45)
+    playTone(ctx, 784, now + 0.16, 0.22, 'triangle', 0.5)
 
-    // 第二音：1100Hz 持续 100ms
-    const osc2 = ctx.createOscillator()
-    const gain2 = ctx.createGain()
-    osc2.type = 'sine'
-    osc2.frequency.setValueAtTime(1100, now + 0.06)
-    gain2.gain.setValueAtTime(0.3, now + 0.06)
-    gain2.gain.exponentialRampToValueAtTime(0.01, now + 0.18)
-    osc2.connect(gain2)
-    gain2.connect(ctx.destination)
-    osc2.start(now + 0.06)
-    osc2.stop(now + 0.18)
-  } catch {
-    // AudioContext not supported, silently ignore
-  }
+    // 叠加高音泛音增加清脆感
+    playTone(ctx, 1047, now + 0.14, 0.18, 'sine', 0.15)
+
+    // 顶部叮叮声
+    playTone(ctx, 1319, now + 0.20, 0.12, 'sine', 0.1)
+  } catch { /* ignore */ }
 }
 
-/** 答错 — 低沉闷音 */
+/** 答错 — 低沉闷音 ❌ */
 export function playWrongSound() {
   try {
     const ctx = getCtx()
     const now = ctx.currentTime
 
-    const osc = ctx.createOscillator()
-    const gain = ctx.createGain()
-    osc.type = 'triangle'
-    osc.frequency.setValueAtTime(200, now)
-    osc.frequency.exponentialRampToValueAtTime(120, now + 0.2)
-    gain.gain.setValueAtTime(0.25, now)
-    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2)
-    osc.connect(gain)
-    gain.connect(ctx.destination)
-    osc.start(now)
-    osc.stop(now + 0.2)
-  } catch {
-    // silently ignore
-  }
+    // 低频闷响 150Hz 方形波 + 200Hz 不和谐
+    playTone(ctx, 150, now, 0.35, 'sawtooth', 0.3)
+    playTone(ctx, 220, now, 0.35, 'square', 0.15)
+
+    // 噪声垫底
+    const bufferSize = ctx.sampleRate * 0.15
+    const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate)
+    const data = noiseBuffer.getChannelData(0)
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = Math.random() * 2 - 1
+    }
+    const noise = ctx.createBufferSource()
+    noise.buffer = noiseBuffer
+    const noiseGain = ctx.createGain()
+    noiseGain.gain.setValueAtTime(0.06, now)
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.25)
+    noise.connect(noiseGain)
+    noiseGain.connect(ctx.destination)
+    noise.start(now)
+    noise.stop(now + 0.25)
+  } catch { /* ignore */ }
 }
