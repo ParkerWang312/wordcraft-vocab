@@ -28,10 +28,12 @@ export const useWordbookStore = defineStore('wordbook', () => {
   }
 
   function migrateWordbooks(books, existingEntries) {
-    const existingIds = new Set(books.map(b => b.id))
+    const existingMap = new Map(books.map(b => [b.id, b]))
     let needsSave = false
     systemWordbooks.forEach(sys => {
-      if (!existingIds.has(sys.id)) {
+      const existing = existingMap.get(sys.id)
+      if (!existing) {
+        // 新系统单词本，添加
         books.push({
           id: sys.id,
           name: sys.name,
@@ -40,6 +42,7 @@ export const useWordbookStore = defineStore('wordbook', () => {
           coverColor: sys.coverColor,
           coverLetter: sys.coverLetter || '',
           isDeletable: sys.isDeletable,
+          dataVersion: sys.dataVersion || 0,
           createdAt: Date.now(),
           settings: { ...sys.settings },
           practiceRound: 0,
@@ -53,6 +56,19 @@ export const useWordbookStore = defineStore('wordbook', () => {
             learned: false,
             createdAt: Date.now()
           })
+        })
+        needsSave = true
+      } else if (sys.dataVersion && (existing.dataVersion || 0) < sys.dataVersion) {
+        // 数据版本升级，更新单词释义但保留学习状态
+        existing.dataVersion = sys.dataVersion
+        const wordMap = new Map(sys.words.map(w => [w.id, w]))
+        existingEntries.filter(e => e.wordbookId === sys.id).forEach(e => {
+          const updated = wordMap.get(e.id)
+          if (updated) {
+            e.word = updated.word
+            e.meaning = updated.meaning
+            e.phonetic = updated.phonetic
+          }
         })
         needsSave = true
       }
@@ -72,7 +88,9 @@ export const useWordbookStore = defineStore('wordbook', () => {
         description: sys.description,
         type: sys.type,
         coverColor: sys.coverColor,
+        coverLetter: sys.coverLetter || '',
         isDeletable: sys.isDeletable,
+        dataVersion: sys.dataVersion || 0,
         createdAt: Date.now(),
         settings: { ...sys.settings },
         practiceRound: 0,

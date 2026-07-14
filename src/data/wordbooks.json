@@ -269,6 +269,7 @@
     "name": "暑假单词第一天",
     "description": "职业、品格、地点等主题词汇",
     "type": "system",
+    "dataVersion": 2,
     "coverColor": "#8B5CF6",
     "isDeletable": false,
     "settings": {
@@ -278,511 +279,511 @@
       {
         "id": "sys-day1-energy",
         "word": "energy",
-        "meaning": "能量，活力",
+        "meaning": "n. 能量，精力，活力，能源",
         "phonetic": "/ˈenərdʒi/"
       },
       {
         "id": "sys-day1-lively",
         "word": "lively",
-        "meaning": "活泼的，生动的",
+        "meaning": "adj. 活泼的，生动的，充满活力的，热闹的",
         "phonetic": "/ˈlaɪvli/"
       },
       {
         "id": "sys-day1-lovely",
         "word": "lovely",
-        "meaning": "可爱的，美丽的",
+        "meaning": "adj. 可爱的，美丽的，令人愉快的，美好的",
         "phonetic": "/ˈlʌvli/"
       },
       {
         "id": "sys-day1-quiet",
         "word": "quiet",
-        "meaning": "安静的，寂静的",
+        "meaning": "adj. 安静的，寂静的，文静的，轻声的",
         "phonetic": "/ˈkwaɪət/"
       },
       {
         "id": "sys-day1-kind",
         "word": "kind",
-        "meaning": "善良的；种类",
+        "meaning": "adj. 善良的，仁慈的，友好的；n. 种类，类型",
         "phonetic": "/kaɪnd/"
       },
       {
         "id": "sys-day1-helpful",
         "word": "helpful",
-        "meaning": "有帮助的，有益的",
+        "meaning": "adj. 有帮助的，有益的，乐于助人的",
         "phonetic": "/ˈhelpfl/"
       },
       {
         "id": "sys-day1-excellent",
         "word": "excellent",
-        "meaning": "优秀的，卓越的",
+        "meaning": "adj. 优秀的，卓越的，极好的，杰出的",
         "phonetic": "/ˈeksələnt/"
       },
       {
         "id": "sys-day1-cute",
         "word": "cute",
-        "meaning": "可爱的，聪明的",
+        "meaning": "adj. 可爱的，漂亮的，聪明的，机灵的",
         "phonetic": "/kjuːt/"
       },
       {
         "id": "sys-day1-wise",
         "word": "wise",
-        "meaning": "明智的，有智慧的",
+        "meaning": "adj. 明智的，有智慧的，聪明的，英明的",
         "phonetic": "/waɪz/"
       },
       {
         "id": "sys-day1-bright",
         "word": "bright",
-        "meaning": "明亮的，聪明的",
+        "meaning": "adj. 明亮的，聪明的，光明的，鲜艳的",
         "phonetic": "/braɪt/"
       },
       {
         "id": "sys-day1-clever",
         "word": "clever",
-        "meaning": "聪明的，机智的",
+        "meaning": "adj. 聪明的，机智的，灵巧的，巧妙的",
         "phonetic": "/ˈklevər/"
       },
       {
         "id": "sys-day1-smart",
         "word": "smart",
-        "meaning": "聪明的，时髦的",
+        "meaning": "adj. 聪明的，时髦的，智能的，机敏的",
         "phonetic": "/smɑːrt/"
       },
       {
         "id": "sys-day1-spirit",
         "word": "spirit",
-        "meaning": "精神，心灵，活力",
+        "meaning": "n. 精神，心灵，灵魂，活力，情绪",
         "phonetic": "/ˈspɪrɪt/"
       },
       {
         "id": "sys-day1-courage",
         "word": "courage",
-        "meaning": "勇气，胆量",
+        "meaning": "n. 勇气，胆量，勇敢，无畏",
         "phonetic": "/ˈkʌrɪdʒ/"
       },
       {
         "id": "sys-day1-silly",
         "word": "silly",
-        "meaning": "愚蠢的",
+        "meaning": "adj. 愚蠢的，傻的，可笑的，糊涂的",
         "phonetic": "/ˈsɪli/"
       },
       {
         "id": "sys-day1-moral",
         "word": "moral",
-        "meaning": "道德的，道义的",
+        "meaning": "adj. 道德的，道义的，品行端正的；n. 道德，品行，寓意",
         "phonetic": "/ˈmɔːrəl/"
       },
       {
         "id": "sys-day1-job",
         "word": "job",
-        "meaning": "工作，职业，职位",
+        "meaning": "n. 工作，职业，职位，任务，职责",
         "phonetic": "/dʒɒb/"
       },
       {
         "id": "sys-day1-dream",
         "word": "dream",
-        "meaning": "梦想；做梦",
+        "meaning": "n. 梦想，梦，理想；v. 做梦，梦想，想象",
         "phonetic": "/driːm/"
       },
       {
         "id": "sys-day1-government",
         "word": "government",
-        "meaning": "政府，治理",
+        "meaning": "n. 政府，内阁，政体，治理，管理",
         "phonetic": "/ˈɡʌvərnmənt/"
       },
       {
         "id": "sys-day1-district",
         "word": "district",
-        "meaning": "地区，区域",
+        "meaning": "n. 地区，区域，行政区，管区",
         "phonetic": "/ˈdɪstrɪkt/"
       },
       {
         "id": "sys-day1-board",
         "word": "board",
-        "meaning": "登机，上船；板",
+        "meaning": "n. 板，木板，董事会，委员会；v. 登机，上船，寄宿",
         "phonetic": "/bɔːrd/"
       },
       {
         "id": "sys-day1-province",
         "word": "province",
-        "meaning": "省，领域",
+        "meaning": "n. 省，省份，领域，范围，职权",
         "phonetic": "/ˈprɒvɪns/"
       },
       {
         "id": "sys-day1-notice",
         "word": "notice",
-        "meaning": "通知，注意",
+        "meaning": "n. 通知，公告，布告，注意；v. 注意到，察觉，留心",
         "phonetic": "/ˈnəʊtɪs/"
       },
       {
         "id": "sys-day1-officer",
         "word": "officer",
-        "meaning": "官员，军官，警官",
+        "meaning": "n. 官员，军官，警官，高级职员，干事",
         "phonetic": "/ˈɒfɪsər/"
       },
       {
         "id": "sys-day1-ruler",
         "word": "ruler",
-        "meaning": "尺子",
+        "meaning": "n. 尺子，直尺；统治者，支配者",
         "phonetic": "/ˈruːlər/"
       },
       {
         "id": "sys-day1-president",
         "word": "president",
-        "meaning": "总统，院长",
+        "meaning": "n. 总统，主席，院长，会长，总裁",
         "phonetic": "/ˈprezɪdənt/"
       },
       {
         "id": "sys-day1-king",
         "word": "king",
-        "meaning": "国王，君主",
+        "meaning": "n. 国王，君主，大王，最重要者",
         "phonetic": "/kɪŋ/"
       },
       {
         "id": "sys-day1-queen",
         "word": "queen",
-        "meaning": "女王，王后",
+        "meaning": "n. 女王，王后，皇后，出众的女性",
         "phonetic": "/kwiːn/"
       },
       {
         "id": "sys-day1-secretary",
         "word": "secretary",
-        "meaning": "秘书，干事，部长",
+        "meaning": "n. 秘书，干事，部长，大臣，文书",
         "phonetic": "/ˈsekrətri/"
       },
       {
         "id": "sys-day1-speaker",
         "word": "speaker",
-        "meaning": "演讲人，扬声器",
+        "meaning": "n. 演讲人，发言者，扬声器，议长",
         "phonetic": "/ˈspiːkər/"
       },
       {
         "id": "sys-day1-education",
         "word": "education",
-        "meaning": "教育，培养",
+        "meaning": "n. 教育，培养，教养，教育学",
         "phonetic": "/ˌedʒuˈkeɪʃn/"
       },
       {
         "id": "sys-day1-medical",
         "word": "medical",
-        "meaning": "医学的，医疗的",
+        "meaning": "adj. 医学的，医疗的，内科的，医药的",
         "phonetic": "/ˈmedɪkl/"
       },
       {
         "id": "sys-day1-operation",
         "word": "operation",
-        "meaning": "操作，手术",
+        "meaning": "n. 操作，运转，手术，行动，运算",
         "phonetic": "/ˌɒpəˈreɪʃn/"
       },
       {
         "id": "sys-day1-medicine",
         "word": "medicine",
-        "meaning": "药，医学",
+        "meaning": "n. 药，药物，医学，内科学",
         "phonetic": "/ˈmedɪsn/"
       },
       {
         "id": "sys-day1-doctor",
         "word": "doctor",
-        "meaning": "医生，博士",
+        "meaning": "n. 医生，大夫，博士；v. 篡改，伪造",
         "phonetic": "/ˈdɒktər/"
       },
       {
         "id": "sys-day1-nurse",
         "word": "nurse",
-        "meaning": "护士；护理",
+        "meaning": "n. 护士，保姆，看护；v. 护理，照顾，哺乳，培育",
         "phonetic": "/nɜːrs/"
       },
       {
         "id": "sys-day1-dentist",
         "word": "dentist",
-        "meaning": "牙医",
+        "meaning": "n. 牙医，牙科医生",
         "phonetic": "/ˈdentɪst/"
       },
       {
         "id": "sys-day1-patient",
         "word": "patient",
-        "meaning": "病人；有耐心的",
+        "meaning": "n. 病人，患者；adj. 有耐心的，能忍耐的，坚忍的",
         "phonetic": "/ˈpeɪʃnt/"
       },
       {
         "id": "sys-day1-countryside",
         "word": "countryside",
-        "meaning": "乡村，乡下",
+        "meaning": "n. 乡村，乡下，农村，郊野",
         "phonetic": "/ˈkʌntrisaɪd/"
       },
       {
         "id": "sys-day1-local",
         "word": "local",
-        "meaning": "本地的，地方的",
+        "meaning": "adj. 本地的，地方的，局部的，当地的；n. 本地人，当地居民",
         "phonetic": "/ˈləʊkl/"
       },
       {
         "id": "sys-day1-village",
         "word": "village",
-        "meaning": "村庄，乡村",
+        "meaning": "n. 村庄，乡村，村落，村民",
         "phonetic": "/ˈvɪlɪdʒ/"
       },
       {
         "id": "sys-day1-farm",
         "word": "farm",
-        "meaning": "农场，饲养场",
+        "meaning": "n. 农场，饲养场，农庄；v. 耕种，养殖，经营农场",
         "phonetic": "/fɑːrm/"
       },
       {
         "id": "sys-day1-farmer",
         "word": "farmer",
-        "meaning": "农民，农夫",
+        "meaning": "n. 农民，农夫，农场主，养殖者",
         "phonetic": "/ˈfɑːrmər/"
       },
       {
         "id": "sys-day1-field",
         "word": "field",
-        "meaning": "田地，领域",
+        "meaning": "n. 田地，田野，领域，战场，运动场",
         "phonetic": "/fiːld/"
       },
       {
         "id": "sys-day1-business",
         "word": "business",
-        "meaning": "商业，生意，事务",
+        "meaning": "n. 商业，生意，事务，企业，公司，职责",
         "phonetic": "/ˈbɪznəs/"
       },
       {
         "id": "sys-day1-boss",
         "word": "boss",
-        "meaning": "老板，上司",
+        "meaning": "n. 老板，上司，领班，工头；v. 指挥，管理，发号施令",
         "phonetic": "/bɒs/"
       },
       {
         "id": "sys-day1-industry",
         "word": "industry",
-        "meaning": "工业，产业，行业",
+        "meaning": "n. 工业，产业，行业，勤奋，勤劳",
         "phonetic": "/ˈɪndəstri/"
       },
       {
         "id": "sys-day1-company",
         "word": "company",
-        "meaning": "公司，陪伴",
+        "meaning": "n. 公司，商号，同伴，陪伴，连队",
         "phonetic": "/ˈkʌmpəni/"
       },
       {
         "id": "sys-day1-shop",
         "word": "shop",
-        "meaning": "商店；购物",
+        "meaning": "n. 商店，店铺，车间；v. 购物，逛商店，选购",
         "phonetic": "/ʃɒp/"
       },
       {
         "id": "sys-day1-market",
         "word": "market",
-        "meaning": "市场，集市",
+        "meaning": "n. 市场，集市，行情，销路；v. 推销，销售，营销",
         "phonetic": "/ˈmɑːrkɪt/"
       },
       {
         "id": "sys-day1-supermarket",
         "word": "supermarket",
-        "meaning": "超市",
+        "meaning": "n. 超市，超级市场，自选商场",
         "phonetic": "/ˈsuːpərmɑːrkɪt/"
       },
       {
         "id": "sys-day1-factory",
         "word": "factory",
-        "meaning": "工厂",
+        "meaning": "n. 工厂，制造厂，生产车间",
         "phonetic": "/ˈfæktri/"
       },
       {
         "id": "sys-day1-set",
         "word": "set",
-        "meaning": "放置，设定；一套",
+        "meaning": "v. 放置，设定，设置，摆放；n. 一套，一组，一副",
         "phonetic": "/set/"
       },
       {
         "id": "sys-day1-customer",
         "word": "customer",
-        "meaning": "顾客，客户",
+        "meaning": "n. 顾客，客户，消费者，主顾",
         "phonetic": "/ˈkʌstəmər/"
       },
       {
         "id": "sys-day1-manage",
         "word": "manage",
-        "meaning": "管理，设法完成",
+        "meaning": "v. 管理，经营，设法完成，应付，操控",
         "phonetic": "/ˈmænɪdʒ/"
       },
       {
         "id": "sys-day1-produce",
         "word": "produce",
-        "meaning": "生产，制造，创作",
+        "meaning": "v. 生产，制造，创作，引起，导致；n. 农产品，产品",
         "phonetic": "/prəˈdjuːs/"
       },
       {
         "id": "sys-day1-production",
         "word": "production",
-        "meaning": "生产，产量",
+        "meaning": "n. 生产，产量，制作，作品，产物",
         "phonetic": "/prəˈdʌkʃn/"
       },
       {
         "id": "sys-day1-instruction",
         "word": "instruction",
-        "meaning": "说明，指令，指示",
+        "meaning": "n. 说明，指令，指示，教导，用法说明",
         "phonetic": "/ɪnˈstrʌkʃn/"
       },
       {
         "id": "sys-day1-meeting",
         "word": "meeting",
-        "meaning": "会议，会面",
+        "meaning": "n. 会议，会面，集会，运动会，聚会",
         "phonetic": "/ˈmiːtɪŋ/"
       },
       {
         "id": "sys-day1-work",
         "word": "work",
-        "meaning": "工作，运作，起作用",
+        "meaning": "n. 工作，职业，作品，著作；v. 工作，运作，起作用，有效",
         "phonetic": "/wɜːrk/"
       },
       {
         "id": "sys-day1-worker",
         "word": "worker",
-        "meaning": "工人，雇员",
+        "meaning": "n. 工人，雇员，工作者，劳动者，员工",
         "phonetic": "/ˈwɜːrkər/"
       },
       {
         "id": "sys-day1-manager",
         "word": "manager",
-        "meaning": "经理，管理人",
+        "meaning": "n. 经理，管理人，经营者，主任",
         "phonetic": "/ˈmænɪdʒər/"
       },
       {
         "id": "sys-day1-robot",
         "word": "robot",
-        "meaning": "机器人",
+        "meaning": "n. 机器人，自动机，机械般工作的人",
         "phonetic": "/ˈrəʊbɒt/"
       },
       {
         "id": "sys-day1-army",
         "word": "army",
-        "meaning": "陆军，军队，部队",
+        "meaning": "n. 陆军，军队，大群，大批，团体",
         "phonetic": "/ˈɑːrmi/"
       },
       {
         "id": "sys-day1-enemy",
         "word": "enemy",
-        "meaning": "敌人，敌国",
+        "meaning": "n. 敌人，敌国，敌军，仇敌，危害物",
         "phonetic": "/ˈenəmi/"
       },
       {
         "id": "sys-day1-gun",
         "word": "gun",
-        "meaning": "枪，炮",
+        "meaning": "n. 枪，炮，手枪，喷射器",
         "phonetic": "/ɡʌn/"
       },
       {
         "id": "sys-day1-police",
         "word": "police",
-        "meaning": "警察，警方",
+        "meaning": "n. 警察，警方，警察部门，公安",
         "phonetic": "/pəˈliːs/"
       },
       {
         "id": "sys-day1-policeman",
         "word": "policeman",
-        "meaning": "男警察",
+        "meaning": "n. 男警察，警员，警官",
         "phonetic": "/pəˈliːsmən/"
       },
       {
         "id": "sys-day1-policewoman",
         "word": "policewoman",
-        "meaning": "女警察",
+        "meaning": "n. 女警察，女警员，女警官",
         "phonetic": "/pəˈliːswʊmən/"
       },
       {
         "id": "sys-day1-guard",
         "word": "guard",
-        "meaning": "卫兵，警卫员",
+        "meaning": "n. 卫兵，警卫员，看守，守卫；v. 保卫，守卫，看守，防范",
         "phonetic": "/ɡɑːrd/"
       },
       {
         "id": "sys-day1-postman",
         "word": "postman",
-        "meaning": "邮递员",
+        "meaning": "n. 邮递员，邮差，投递员",
         "phonetic": "/ˈpəʊstmən/"
       },
       {
         "id": "sys-day1-law",
         "word": "law",
-        "meaning": "法律，法令",
+        "meaning": "n. 法律，法令，法规，规律，定律，法学",
         "phonetic": "/lɔː/"
       },
       {
         "id": "sys-day1-right",
         "word": "right",
-        "meaning": "正确的；右边",
+        "meaning": "adj. 正确的，对的，右边的；n. 权利，右边；adv. 正好，恰好",
         "phonetic": "/raɪt/"
       },
       {
         "id": "sys-day1-fair",
         "word": "fair",
-        "meaning": "公平的，合理的",
+        "meaning": "adj. 公平的，公正的，合理的，美丽的；n. 集市，展览会，博览会",
         "phonetic": "/feər/"
       },
       {
         "id": "sys-day1-kill",
         "word": "kill",
-        "meaning": "杀死",
+        "meaning": "v. 杀死，杀害，消灭，扼杀，消磨（时间）",
         "phonetic": "/kɪl/"
       },
       {
         "id": "sys-day1-punish",
         "word": "punish",
-        "meaning": "惩罚，处罚",
+        "meaning": "v. 惩罚，处罚，制裁，粗暴对待",
         "phonetic": "/ˈpʌnɪʃ/"
       },
       {
         "id": "sys-day1-warn",
         "word": "warn",
-        "meaning": "警告，告诫，提醒",
+        "meaning": "v. 警告，告诫，提醒，预先通知，发出警告",
         "phonetic": "/wɔːrn/"
       },
       {
         "id": "sys-day1-break",
         "word": "break",
-        "meaning": "打破，折断；休息",
+        "meaning": "v. 打破，折断，弄坏，违反；n. 休息，间歇，破裂，暂停",
         "phonetic": "/breɪk/"
       },
       {
         "id": "sys-day1-fight",
         "word": "fight",
-        "meaning": "打架，争斗，奋斗",
+        "meaning": "v./n. 打架，争斗，奋斗，战斗，斗争，搏斗",
         "phonetic": "/faɪt/"
       },
       {
         "id": "sys-day1-prison",
         "word": "prison",
-        "meaning": "监狱，监禁",
+        "meaning": "n. 监狱，监禁，牢房，看守所",
         "phonetic": "/ˈprɪzn/"
       },
       {
         "id": "sys-day1-prisoner",
         "word": "prisoner",
-        "meaning": "囚犯，俘虏",
+        "meaning": "n. 囚犯，俘虏，犯人，被拘禁者",
         "phonetic": "/ˈprɪznər/"
       },
       {
         "id": "sys-day1-actor",
         "word": "actor",
-        "meaning": "男演员",
+        "meaning": "n. 男演员，行动者，参与者",
         "phonetic": "/ˈæktər/"
       },
       {
         "id": "sys-day1-actress",
         "word": "actress",
-        "meaning": "女演员",
+        "meaning": "n. 女演员",
         "phonetic": "/ˈæktrəs/"
       },
       {
         "id": "sys-day1-player",
         "word": "player",
-        "meaning": "选手，播放器",
+        "meaning": "n. 选手，运动员，播放器，游戏者，演员",
         "phonetic": "/ˈpleɪər/"
       },
       {
         "id": "sys-day1-director",
         "word": "director",
-        "meaning": "导演，经理，董事",
+        "meaning": "n. 导演，经理，董事，负责人，指挥",
         "phonetic": "/dəˈrektər/"
       }
     ],
