@@ -122,6 +122,7 @@ import { useSettingsStore } from '../stores/settings.js'
 
 import { useTimer, formatTime } from '../composables/useTimer.js'
 import { speak } from '../utils/speech.js'
+import { playCorrectSound, playWrongSound } from '../utils/sounds.js'
 
 const props = defineProps({ unit: { type: [String, Number], required: true } })
 const router = useRouter()
@@ -356,11 +357,13 @@ function selectOption(idx) {
   isLastCorrect.value = correct
 
   if (correct) {
+    playCorrectSound()
     score.value += 10
     correctCount.value++
     combo.value++
     if (combo.value >= 3) score.value += 5
   } else {
+    playWrongSound()
     wrongCount.value++
     combo.value = 0
     // 答错：记入错题本
