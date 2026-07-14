@@ -345,13 +345,12 @@ function selectOption(idx) {
 
 function retryQuestion() {
   showErrorCard.value = false
-  answered.value = false
-  selectedIndex.value = -1
-  // 把当前错题复制一份加到队列末尾，让用户再次回答
+  // 把当前错题复制一份加到队列末尾，让用户之后再答一次
   questions.value.push({ ...currentQuestion.value })
   questionStates.value.push('unanswered')
-  // 继续下一题（错题会出现在队列末尾再次遇到）
-  nextQuestion()
+  // 原地重试当前题
+  answered.value = false
+  selectedIndex.value = -1
 }
 
 function nextQuestion() {
