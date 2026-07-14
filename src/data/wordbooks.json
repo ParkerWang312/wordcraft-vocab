@@ -13,91 +13,91 @@
       {
         "id": "sys-day2-colour",
         "word": "colour",
-        "meaning": "n./v. 颜色，彩色；涂色，着色",
+        "meaning": "n. 颜色，彩色；v. 涂色，着色",
         "phonetic": "/ˈkʌlər/"
       },
       {
         "id": "sys-day2-color",
         "word": "color",
-        "meaning": "n./v. 颜色，颜料，色彩；染色，上色",
+        "meaning": "n. 颜色，颜料，色彩；v. 染色，上色",
         "phonetic": "/ˈkʌlər/"
       },
       {
         "id": "sys-day2-green",
         "word": "green",
-        "meaning": "adj./n. 绿色的，环保的；绿色，草地",
+        "meaning": "adj. 绿色的，环保的；n. 绿色，草地",
         "phonetic": "/ɡriːn/"
       },
       {
         "id": "sys-day2-red",
         "word": "red",
-        "meaning": "adj./n. 红色的，充血的；红色，赤字",
+        "meaning": "adj. 红色的，充血的；n. 红色，赤字",
         "phonetic": "/red/"
       },
       {
         "id": "sys-day2-blue",
         "word": "blue",
-        "meaning": "adj./n. 蓝色的，忧郁的；蓝色，蓝天",
+        "meaning": "adj. 蓝色的，忧郁的；n. 蓝色，蓝天",
         "phonetic": "/bluː/"
       },
       {
         "id": "sys-day2-black",
         "word": "black",
-        "meaning": "adj./n. 黑色的，黑暗的；黑色，黑人",
+        "meaning": "adj. 黑色的，黑暗的；n. 黑色，黑人",
         "phonetic": "/blæk/"
       },
       {
         "id": "sys-day2-grey",
         "word": "grey",
-        "meaning": "adj./n. 灰色的，灰暗的；灰色",
+        "meaning": "adj. 灰色的，灰暗的；n. 灰色",
         "phonetic": "/ɡreɪ/"
       },
       {
         "id": "sys-day2-gray",
         "word": "gray",
-        "meaning": "adj./n. 灰色的，阴沉的，暗淡的；灰色",
+        "meaning": "adj. 灰色的，阴沉的，暗淡的；n. 灰色",
         "phonetic": "/ɡreɪ/"
       },
       {
         "id": "sys-day2-yellow",
         "word": "yellow",
-        "meaning": "adj./n. 黄色的，胆小的；黄色",
+        "meaning": "adj. 黄色的，胆小的；n. 黄色",
         "phonetic": "/ˈjeləʊ/"
       },
       {
         "id": "sys-day2-purple",
         "word": "purple",
-        "meaning": "adj./n. 紫色的，帝王的；紫色",
+        "meaning": "adj. 紫色的，帝王的；n. 紫色",
         "phonetic": "/ˈpɜːrpl/"
       },
       {
         "id": "sys-day2-white",
         "word": "white",
-        "meaning": "adj./n. 白色的，纯洁的；白色，蛋白",
+        "meaning": "adj. 白色的，纯洁的；n. 白色，蛋白",
         "phonetic": "/waɪt/"
       },
       {
         "id": "sys-day2-brown",
         "word": "brown",
-        "meaning": "adj./n. 褐色的，棕色的，皮肤黝黑的；棕色",
+        "meaning": "adj. 褐色的，棕色的，皮肤黝黑的；n. 棕色",
         "phonetic": "/braʊn/"
       },
       {
         "id": "sys-day2-pink",
         "word": "pink",
-        "meaning": "adj./n. 粉红色的，桃色的；粉红色",
+        "meaning": "adj. 粉红色的，桃色的；n. 粉红色",
         "phonetic": "/pɪŋk/"
       },
       {
         "id": "sys-day2-light",
         "word": "light",
-        "meaning": "n./adj./v. 光，灯；轻的，明亮的，浅的；点燃",
+        "meaning": "n. 光，灯；adj. 轻的，明亮的，浅的；v. 点燃",
         "phonetic": "/laɪt/"
       },
       {
         "id": "sys-day2-dark",
         "word": "dark",
-        "meaning": "adj./n. 黑暗的，深色的，阴暗的；黑暗，黄昏",
+        "meaning": "adj. 黑暗的，深色的，阴暗的；n. 黑暗，黄昏",
         "phonetic": "/dɑːrk/"
       },
       {
@@ -109,19 +109,19 @@
       {
         "id": "sys-day2-silver",
         "word": "silver",
-        "meaning": "n./adj. 银，银币，银器；银色的，银制的",
+        "meaning": "n. 银，银币，银器；adj. 银色的，银制的",
         "phonetic": "/ˈsɪlvər/"
       },
       {
         "id": "sys-day2-pale",
         "word": "pale",
-        "meaning": "adj./v. 苍白的，浅色的，暗淡的；变得苍白",
+        "meaning": "adj. 苍白的，浅色的，暗淡的；v. 变得苍白",
         "phonetic": "/peɪl/"
       },
       {
         "id": "sys-day2-run",
         "word": "run",
-        "meaning": "v./n. 跑步，奔跑，运转，经营；跑步，连续",
+        "meaning": "v. 跑步，奔跑，运转，经营；n. 跑步，连续",
         "phonetic": "/rʌn/"
       },
       {
@@ -181,7 +181,7 @@
       {
         "id": "sys-day2-date",
         "word": "date",
-        "meaning": "n./v. 日期，约会，约会对象；注明日期，约会",
+        "meaning": "n. 日期，约会，约会对象；v. 注明日期，约会",
         "phonetic": "/deɪt/"
       },
       {
@@ -748,7 +748,7 @@
       {
         "id": "sys-day1-fight",
         "word": "fight",
-        "meaning": "v./n. 打架，争斗，奋斗，战斗，斗争，搏斗",
+        "meaning": "v. /n. 打架，争斗，奋斗，战斗，斗争，搏斗",
         "phonetic": "/faɪt/"
       },
       {
@@ -817,7 +817,7 @@
       {
         "id": "sys-day3-relative",
         "word": "relative",
-        "meaning": "n./adj. 亲戚，亲属；相对的，相关的",
+        "meaning": "n. 亲戚，亲属；adj. 相对的，相关的",
         "phonetic": "/ˈrelətɪv/"
       },
       {
@@ -829,7 +829,7 @@
       {
         "id": "sys-day3-couple",
         "word": "couple",
-        "meaning": "n./v. 夫妇，情侣，一对；结合，连接",
+        "meaning": "n. 夫妇，情侣，一对；v. 结合，连接",
         "phonetic": "/ˈkʌpl/"
       },
       {
@@ -967,7 +967,7 @@
       {
         "id": "sys-day3-raise",
         "word": "raise",
-        "meaning": "v./n. 举起，提高，抚养，筹集；加薪",
+        "meaning": "v. 举起，提高，抚养，筹集；n. 加薪",
         "phonetic": "/reɪz/"
       },
       {
@@ -991,7 +991,7 @@
       {
         "id": "sys-day3-human",
         "word": "human",
-        "meaning": "n./adj. 人，人类；人的，有人性的",
+        "meaning": "n. 人，人类；adj. 人的，有人性的",
         "phonetic": "/ˈhjuːmən/"
       },
       {
@@ -1027,7 +1027,7 @@
       {
         "id": "sys-day3-pioneer",
         "word": "pioneer",
-        "meaning": "n./v. 先锋，先驱，开拓者；开拓，倡导",
+        "meaning": "n. 先锋，先驱，开拓者；v. 开拓，倡导",
         "phonetic": "/ˌpaɪəˈnɪər/"
       },
       {
@@ -1039,13 +1039,13 @@
       {
         "id": "sys-day3-neighbour",
         "word": "neighbour",
-        "meaning": "n./v. 邻居，邻国；邻近，毗邻",
+        "meaning": "n. 邻居，邻国；v. 邻近，毗邻",
         "phonetic": "/ˈneɪbər/"
       },
       {
         "id": "sys-day3-neighbor",
         "word": "neighbor",
-        "meaning": "n./v. 邻居，邻国；邻近，毗邻",
+        "meaning": "n. 邻居，邻国；v. 邻近，毗邻",
         "phonetic": "/ˈneɪbər/"
       },
       {
@@ -1093,19 +1093,19 @@
       {
         "id": "sys-day3-kid",
         "word": "kid",
-        "meaning": "n./v. 小孩，儿童，年轻人；开玩笑，哄骗",
+        "meaning": "n. 小孩，儿童，年轻人；v. 开玩笑，哄骗",
         "phonetic": "/kɪd/"
       },
       {
         "id": "sys-day3-baby",
         "word": "baby",
-        "meaning": "n./adj. 宝宝，婴儿，幼崽；婴儿的，小型的",
+        "meaning": "n. 宝宝，婴儿，幼崽；adj. 婴儿的，小型的",
         "phonetic": "/ˈbeɪbi/"
       },
       {
         "id": "sys-day3-elder",
         "word": "elder",
-        "meaning": "n./adj. 长辈，长者；年长的，资格老的",
+        "meaning": "n. 长辈，长者；adj. 年长的，资格老的",
         "phonetic": "/ˈeldər/"
       },
       {
@@ -1123,7 +1123,7 @@
       {
         "id": "sys-day3-guest",
         "word": "guest",
-        "meaning": "n./v. 客人，宾客，旅客；做客，客串",
+        "meaning": "n. 客人，宾客，旅客；v. 做客，客串",
         "phonetic": "/ɡest/"
       },
       {
@@ -1135,7 +1135,7 @@
       {
         "id": "sys-day3-single",
         "word": "single",
-        "meaning": "adj./n./v. 单个的，单一的，单身的；单曲；挑选",
+        "meaning": "adj. 单个的，单一的，单身的；n. 单曲；v. 挑选",
         "phonetic": "/ˈsɪŋɡl/"
       }
     ],
@@ -1156,19 +1156,19 @@
       {
         "id": "sys-day4-house",
         "word": "house",
-        "meaning": "n./v. 房屋，住宅，房子；提供住所，容纳",
+        "meaning": "n. 房屋，住宅，房子；v. 提供住所，容纳",
         "phonetic": "/haʊs/"
       },
       {
         "id": "sys-day4-flat",
         "word": "flat",
-        "meaning": "n./adj./adv. 公寓，套房；平坦的，扁平的；平直地",
+        "meaning": "n. 公寓，套房；adj. 平坦的，扁平的；adv. 平直地",
         "phonetic": "/flæt/"
       },
       {
         "id": "sys-day4-address",
         "word": "address",
-        "meaning": "n./v. 地址，演说，称呼；向…演说，处理，称呼",
+        "meaning": "n. 地址，演说，称呼；v. 向…演说，处理，称呼",
         "phonetic": "/əˈdres/"
       },
       {
@@ -1204,19 +1204,19 @@
       {
         "id": "sys-day4-floor",
         "word": "floor",
-        "meaning": "n./v. 地板，地面，楼层；击倒，使困惑",
+        "meaning": "n. 地板，地面，楼层；v. 击倒，使困惑",
         "phonetic": "/flɔːr/"
       },
       {
         "id": "sys-day4-garden",
         "word": "garden",
-        "meaning": "n./v. 花园，果园，菜园；从事园艺",
+        "meaning": "n. 花园，果园，菜园；v. 从事园艺",
         "phonetic": "/ˈɡɑːrdn/"
       },
       {
         "id": "sys-day4-upstairs",
         "word": "upstairs",
-        "meaning": "adv./adj./n. 在楼上，向楼上；楼上的；楼上",
+        "meaning": "adv. 在楼上，向楼上；adj. 楼上的；n. 楼上",
         "phonetic": "/ˌʌpˈsteəz/"
       },
       {
@@ -1228,13 +1228,13 @@
       {
         "id": "sys-day4-downstairs",
         "word": "downstairs",
-        "meaning": "adv./adj./n. 在楼下，向楼下；楼下的；楼下",
+        "meaning": "adv. 在楼下，向楼下；adj. 楼下的；n. 楼下",
         "phonetic": "/ˌdaʊnˈsteəz/"
       },
       {
         "id": "sys-day4-wall",
         "word": "wall",
-        "meaning": "n./v. 墙，墙壁，围墙；用墙围住，堵塞",
+        "meaning": "n. 墙，墙壁，围墙；v. 用墙围住，堵塞",
         "phonetic": "/wɔːl/"
       },
       {
@@ -1264,7 +1264,7 @@
       {
         "id": "sys-day4-study",
         "word": "study",
-        "meaning": "v./n. 学习，研究，攻读；学习，书房，研究",
+        "meaning": "v. 学习，研究，攻读；n. 学习，书房，研究",
         "phonetic": "/ˈstʌdi/"
       },
       {
@@ -1300,19 +1300,19 @@
       {
         "id": "sys-day4-block",
         "word": "block",
-        "meaning": "n./v. 街区，块，障碍；阻挡，阻止，堵塞",
+        "meaning": "n. 街区，块，障碍；v. 阻挡，阻止，堵塞",
         "phonetic": "/blɒk/"
       },
       {
         "id": "sys-day4-corner",
         "word": "corner",
-        "meaning": "n./v. 角落，拐角，困境；使走投无路，转弯",
+        "meaning": "n. 角落，拐角，困境；v. 使走投无路，转弯",
         "phonetic": "/ˈkɔːrnər/"
       },
       {
         "id": "sys-day4-bridge",
         "word": "bridge",
-        "meaning": "n./v. 桥，桥梁，纽带；架桥，弥合",
+        "meaning": "n. 桥，桥梁，纽带；v. 架桥，弥合",
         "phonetic": "/brɪdʒ/"
       },
       {
@@ -1378,7 +1378,7 @@
       {
         "id": "sys-day4-park",
         "word": "park",
-        "meaning": "n./v. 公园，园区；停放（车辆）",
+        "meaning": "n. 公园，园区；v. 停放（车辆）",
         "phonetic": "/pɑːrk/"
       },
       {
@@ -1408,13 +1408,13 @@
       {
         "id": "sys-day4-row",
         "word": "row",
-        "meaning": "v./n. 划船，划行；排，行，列，争吵",
+        "meaning": "v. 划船，划行；n. 排，行，列，争吵",
         "phonetic": "/rəʊ/"
       },
       {
         "id": "sys-day4-club",
         "word": "club",
-        "meaning": "n./v. 俱乐部，社团，球棒；用棒击打",
+        "meaning": "n. 俱乐部，社团，球棒；v. 用棒击打",
         "phonetic": "/klʌb/"
       },
       {
@@ -1432,19 +1432,19 @@
       {
         "id": "sys-day4-square",
         "word": "square",
-        "meaning": "n./adj./v. 广场，正方形，平方；正方形的；使成方形",
+        "meaning": "n. 广场，正方形，平方；adj. 正方形的；v. 使成方形",
         "phonetic": "/skweər/"
       },
       {
         "id": "sys-day4-store",
         "word": "store",
-        "meaning": "n./v. 商店，店铺，储备；储存，存放",
+        "meaning": "n. 商店，店铺，储备；v. 储存，存放",
         "phonetic": "/stɔːr/"
       },
       {
         "id": "sys-day4-tower",
         "word": "tower",
-        "meaning": "n./v. 塔，塔楼，高耸；高耸，超越",
+        "meaning": "n. 塔，塔楼，高耸；v. 高耸，超越",
         "phonetic": "/ˈtaʊər/"
       },
       {
@@ -1456,7 +1456,7 @@
       {
         "id": "sys-day4-live",
         "word": "live",
-        "meaning": "v./adj. 居住，生活，活着，生存；活的，直播的",
+        "meaning": "v. 居住，生活，活着，生存；adj. 活的，直播的",
         "phonetic": "/lɪv/"
       },
       {
@@ -1486,43 +1486,43 @@
       {
         "id": "sys-day4-order",
         "word": "order",
-        "meaning": "n./v. 顺序，秩序，订单，命令；订购，命令，整理",
+        "meaning": "n. 顺序，秩序，订单，命令；v. 订购，命令，整理",
         "phonetic": "/ˈɔːrdər/"
       },
       {
         "id": "sys-day4-wake",
         "word": "wake",
-        "meaning": "v./n. 醒来，唤醒，觉醒；守夜，尾迹",
+        "meaning": "v. 醒来，唤醒，觉醒；n. 守夜，尾迹",
         "phonetic": "/weɪk/"
       },
       {
         "id": "sys-day4-awake",
         "word": "awake",
-        "meaning": "adj./v. 醒着的，清醒的；醒来，唤醒，觉悟",
+        "meaning": "adj. 醒着的，清醒的；v. 醒来，唤醒，觉悟",
         "phonetic": "/əˈweɪk/"
       },
       {
         "id": "sys-day4-sleep",
         "word": "sleep",
-        "meaning": "v./n. 睡觉，入睡；睡眠，睡意",
+        "meaning": "v. 睡觉，入睡；n. 睡眠，睡意",
         "phonetic": "/sliːp/"
       },
       {
         "id": "sys-day4-wear",
         "word": "wear",
-        "meaning": "v./n. 穿，戴，磨损，面带；衣着，磨损",
+        "meaning": "v. 穿，戴，磨损，面带；n. 衣着，磨损",
         "phonetic": "/weər/"
       },
       {
         "id": "sys-day4-repair",
         "word": "repair",
-        "meaning": "v./n. 修理，修补，修复，纠正；修理，修补",
+        "meaning": "v. 修理，修补，修复，纠正；n. 修理，修补",
         "phonetic": "/rɪˈpeər/"
       },
       {
         "id": "sys-day4-fix",
         "word": "fix",
-        "meaning": "v./n. 修理，固定，安装，解决；困境，定位",
+        "meaning": "v. 修理，固定，安装，解决；n. 困境，定位",
         "phonetic": "/fɪks/"
       },
       {
@@ -1534,7 +1534,7 @@
       {
         "id": "sys-day4-burn",
         "word": "burn",
-        "meaning": "v./n. 烧，燃烧，烧毁，晒伤；烧伤，灼伤",
+        "meaning": "v. 烧，燃烧，烧毁，晒伤；n. 烧伤，灼伤",
         "phonetic": "/bɜːrn/"
       },
       {
@@ -1552,19 +1552,19 @@
       {
         "id": "sys-day4-lock",
         "word": "lock",
-        "meaning": "v./n. 锁上，锁住，卡住；锁，船闸",
+        "meaning": "v. 锁上，锁住，卡住；n. 锁，船闸",
         "phonetic": "/lɒk/"
       },
       {
         "id": "sys-day4-key",
         "word": "key",
-        "meaning": "n./adj./v. 钥匙，键，关键，答案；关键的；键入",
+        "meaning": "n. 钥匙，键，关键，答案；adj. 关键的；v. 键入",
         "phonetic": "/kiː/"
       },
       {
         "id": "sys-day4-line",
         "word": "line",
-        "meaning": "n./v. 线，线条，排队，行，台词；划线，排队",
+        "meaning": "n. 线，线条，排队，行，台词；v. 划线，排队",
         "phonetic": "/laɪn/"
       },
       {
@@ -1594,7 +1594,7 @@
       {
         "id": "sys-day4-fire",
         "word": "fire",
-        "meaning": "n./v. 火，火灾，炉火，热情；开火，解雇，点燃",
+        "meaning": "n. 火，火灾，炉火，热情；v. 开火，解雇，点燃",
         "phonetic": "/ˈfaɪər/"
       },
       {
@@ -1606,13 +1606,13 @@
       {
         "id": "sys-day4-soap",
         "word": "soap",
-        "meaning": "n./v. 肥皂，香皂；用肥皂洗，抹肥皂",
+        "meaning": "n. 肥皂，香皂；v. 用肥皂洗，抹肥皂",
         "phonetic": "/səʊp/"
       },
       {
         "id": "sys-day4-brush",
         "word": "brush",
-        "meaning": "n./v. 刷子，画笔，灌木丛；刷，擦，掠过",
+        "meaning": "n. 刷子，画笔，灌木丛；v. 刷，擦，掠过",
         "phonetic": "/brʌʃ/"
       },
       {
@@ -1624,19 +1624,19 @@
       {
         "id": "sys-day4-watch",
         "word": "watch",
-        "meaning": "v./n. 观看，注视，看守，留意；手表，监视",
+        "meaning": "v. 观看，注视，看守，留意；n. 手表，监视",
         "phonetic": "/wɒtʃ/"
       },
       {
         "id": "sys-day4-clock",
         "word": "clock",
-        "meaning": "n./v. 钟，时钟；计时，记录时间",
+        "meaning": "n. 钟，时钟；v. 计时，记录时间",
         "phonetic": "/klɒk/"
       },
       {
         "id": "sys-day4-tool",
         "word": "tool",
-        "meaning": "n./v. 工具，器具，手段；用工具加工",
+        "meaning": "n. 工具，器具，手段；v. 用工具加工",
         "phonetic": "/tuːl/"
       },
       {
@@ -1648,7 +1648,7 @@
       {
         "id": "sys-day4-stamp",
         "word": "stamp",
-        "meaning": "n./v. 邮票，印章，印记；盖章，踩脚，贴邮票",
+        "meaning": "n. 邮票，印章，印记；v. 盖章，踩脚，贴邮票",
         "phonetic": "/stæmp/"
       },
       {
@@ -1672,13 +1672,13 @@
       {
         "id": "sys-day4-towel",
         "word": "towel",
-        "meaning": "n./v. 毛巾，手巾，纸巾；用毛巾擦",
+        "meaning": "n. 毛巾，手巾，纸巾；v. 用毛巾擦",
         "phonetic": "/ˈtaʊəl/"
       },
       {
         "id": "sys-day4-toy",
         "word": "toy",
-        "meaning": "n./adj./v. 玩具，玩物；玩具的；玩弄，戏耍",
+        "meaning": "n. 玩具，玩物；adj. 玩具的；v. 玩弄，戏耍",
         "phonetic": "/tɔɪ/"
       },
       {
@@ -1696,49 +1696,49 @@
       {
         "id": "sys-day4-match",
         "word": "match",
-        "meaning": "n./v. 比赛，匹配，火柴；匹配，相配，匹敌",
+        "meaning": "n. 比赛，匹配，火柴；v. 匹配，相配，匹敌",
         "phonetic": "/mætʃ/"
       },
       {
         "id": "sys-day4-swing",
         "word": "swing",
-        "meaning": "v./n. 摇摆，摆动，荡秋千；秋千，摇摆，节奏",
+        "meaning": "v. 摇摆，摆动，荡秋千；n. 秋千，摇摆，节奏",
         "phonetic": "/swɪŋ/"
       },
       {
         "id": "sys-day4-tent",
         "word": "tent",
-        "meaning": "n./v. 帐篷，帐棚；住帐篷，扎营",
+        "meaning": "n. 帐篷，帐棚；v. 住帐篷，扎营",
         "phonetic": "/tent/"
       },
       {
         "id": "sys-day4-rope",
         "word": "rope",
-        "meaning": "n./v. 绳子，绳索；用绳捆，用绳系",
+        "meaning": "n. 绳子，绳索；v. 用绳捆，用绳系",
         "phonetic": "/rəʊp/"
       },
       {
         "id": "sys-day4-photo",
         "word": "photo",
-        "meaning": "n./v. 照片，相片；拍照，照相",
+        "meaning": "n. 照片，相片；v. 拍照，照相",
         "phonetic": "/ˈfəʊtəʊ/"
       },
       {
         "id": "sys-day4-safe",
         "word": "safe",
-        "meaning": "adj./n. 安全的，平安的，可靠的；保险箱",
+        "meaning": "adj. 安全的，平安的，可靠的；n. 保险箱",
         "phonetic": "/seɪf/"
       },
       {
         "id": "sys-day4-litter",
         "word": "litter",
-        "meaning": "n./v. 垃圾，杂物，一窝幼崽；乱扔垃圾，使杂乱",
+        "meaning": "n. 垃圾，杂物，一窝幼崽；v. 乱扔垃圾，使杂乱",
         "phonetic": "/ˈlɪtər/"
       },
       {
         "id": "sys-day4-circle",
         "word": "circle",
-        "meaning": "n./v. 圆圈，圆形，圈子，周期；环绕，盘旋",
+        "meaning": "n. 圆圈，圆形，圈子，周期；v. 环绕，盘旋",
         "phonetic": "/ˈsɜːrkl/"
       },
       {
@@ -1750,7 +1750,7 @@
       {
         "id": "sys-day4-chair",
         "word": "chair",
-        "meaning": "n./v. 椅子，主席；担任主席，主持",
+        "meaning": "n. 椅子，主席；v. 担任主席，主持",
         "phonetic": "/tʃeər/"
       },
       {
@@ -1762,7 +1762,7 @@
       {
         "id": "sys-day4-table",
         "word": "table",
-        "meaning": "n./v. 桌子，表格，餐桌；提出，搁置",
+        "meaning": "n. 桌子，表格，餐桌；v. 提出，搁置",
         "phonetic": "/ˈteɪbl/"
       },
       {
@@ -1786,13 +1786,13 @@
       {
         "id": "sys-day4-radio",
         "word": "radio",
-        "meaning": "n./v. 收音机，无线电，广播；用无线电发送",
+        "meaning": "n. 收音机，无线电，广播；v. 用无线电发送",
         "phonetic": "/ˈreɪdiəʊ/"
       },
       {
         "id": "sys-day4-telephone",
         "word": "telephone",
-        "meaning": "n./v. 电话，电话机；打电话，通电话",
+        "meaning": "n. 电话，电话机；v. 打电话，通电话",
         "phonetic": "/ˈtelɪfəʊn/"
       },
       {
@@ -1810,19 +1810,19 @@
       {
         "id": "sys-day4-video",
         "word": "video",
-        "meaning": "n./adj./v. 视频，录像，录像带；视频的；录制视频",
+        "meaning": "n. 视频，录像，录像带；adj. 视频的；v. 录制视频",
         "phonetic": "/ˈvɪdiəʊ/"
       },
       {
         "id": "sys-day4-fan",
         "word": "fan",
-        "meaning": "n./v. 风扇，扇子，迷，狂热爱好者；扇风，煽动",
+        "meaning": "n. 风扇，扇子，迷，狂热爱好者；v. 扇风，煽动",
         "phonetic": "/fæn/"
       },
       {
         "id": "sys-day4-mirror",
         "word": "mirror",
-        "meaning": "n./v. 镜子，反射镜，写照；反射，反映",
+        "meaning": "n. 镜子，反射镜，写照；v. 反射，反映",
         "phonetic": "/ˈmɪrər/"
       },
       {
@@ -1846,13 +1846,13 @@
       {
         "id": "sys-day4-do",
         "word": "do",
-        "meaning": "v./aux. 做，干，行动，完成；助动（构成疑问或否定）",
+        "meaning": "v. 做，干，行动，完成；aux. 助动（构成疑问或否定）",
         "phonetic": "/duː/"
       },
       {
         "id": "sys-day4-use",
         "word": "use",
-        "meaning": "v./n. 使用，利用，消耗，对待；使用，用途，用法",
+        "meaning": "v. 使用，利用，消耗，对待；n. 使用，用途，用法",
         "phonetic": "/juːz/"
       }
     ],
