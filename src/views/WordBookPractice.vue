@@ -74,7 +74,7 @@
           <span class="speak-btn" @click="playCurrentWord">🔊</span>
         </div>
         <div class="error-phonetic" v-if="currentQuestion.phonetic">{{ currentQuestion.phonetic }}</div>
-        <div class="error-meaning">❌ 正确答案：{{ getCorrectMeaning() }}</div>
+        <div class="error-meaning">❌ {{ getCorrectMeaning() }}</div>
         <van-button class="continue-btn" round type="primary" @click="retryQuestion">
           继续练习
         </van-button>
