@@ -95,8 +95,10 @@
         <span class="emoji">{{ passed ? '🎉' : '😅' }}</span>
         <h3 v-if="isForcePractice">Day {{ unitNum }} 学习完成！</h3>
         <h3 v-else>{{ passed ? '恭喜通过！' : '还需努力' }}</h3>
-        <p class="result-detail">正确率: {{ accuracy }}%</p>
+        <p class="result-detail">正确率: {{ accuracy }}% ({{ correctCount }}/{{ originalCount }})</p>
         <p class="result-detail">得分: {{ score }}</p>
+        <p class="result-detail" v-if="wrongCount > 0">错题已全部重做正确 ✅</p>
+        <p class="result-detail" v-if="questions.length > originalCount">共重做 {{ questions.length - originalCount }} 次</p>
         <p class="result-detail">最大连击: {{ maxCombo }}</p>
         <p class="result-detail" v-if="stats">📊 英选中 {{ stats.e2c }} 题 · 中选英 {{ stats.c2e }} 题 · 听音 {{ stats.audio }} 题</p>
         <p class="result-hint" v-if="!passed">正确率不足80%，建议重新学习本日单词</p>
@@ -141,6 +143,7 @@ const practicePercent = computed(() => {
 })
 
 const letters = ['A', 'B', 'C', 'D']
+const originalCount = ref(0)
 const currentIndex = ref(0)
 const score = ref(0)
 const correctCount = ref(0)
@@ -316,6 +319,7 @@ onMounted(() => {
   } else {
     questions.value = generateQuestions()
   }
+  originalCount.value = questions.value.length
   // 清除上一页残留的语音
   if ('speechSynthesis' in window) speechSynthesis.cancel()
   // 生成题目后触发首题发音
@@ -343,8 +347,8 @@ function playQuestionAudio() {
 const currentQuestion = computed(() => questions.value[currentIndex.value])
 
 const accuracy = computed(() => {
-  if (questions.value.length === 0) return 0
-  return Math.round((correctCount.value / questions.value.length) * 100)
+  if (originalCount.value === 0) return 0
+  return Math.round((correctCount.value / originalCount.value) * 100)
 })
 
 const passed = computed(() => accuracy.value >= 80)
@@ -359,14 +363,18 @@ function selectOption(idx) {
   if (correct) {
     playCorrectSound()
     score.value += 10
-    correctCount.value++
     combo.value++
     if (combo.value >= 3) score.value += 5
+    if (currentIndex.value < originalCount.value) {
+      correctCount.value++
+    }
   } else {
     playWrongSound()
-    wrongCount.value++
     combo.value = 0
-    // 答错：记入错题本
+    if (currentIndex.value < originalCount.value) {
+      wrongCount.value++
+    }
+    // 答错：加入错题本 + 追加到练习队尾
     const q = currentQuestion.value
     if (q && q.audioWord) {
       const wrongWord = store.allWords.find(w => w.word === q.audioWord && w.day === unitNum.value)
@@ -374,6 +382,7 @@ function selectOption(idx) {
         store.addWrongWord(generateWordId(wrongWord))
       }
     }
+    questions.value.push({ ...q })
   }
 
   maxCombo.value = Math.max(maxCombo.value, combo.value)
