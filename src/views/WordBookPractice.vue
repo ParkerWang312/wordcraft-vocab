@@ -87,8 +87,9 @@
         <span class="emoji">{{ accuracy >= 80 ? '🎉' : '💪' }}</span>
         <h3>{{ accuracy >= 80 ? '太棒了！' : '继续加油' }}</h3>
         <p class="result-detail">正确率：{{ accuracy }}%</p>
-        <p class="result-detail">正确 {{ correctCount }} / {{ questions.length }} 题</p>
-        <p class="result-detail">首次答错 {{ totalWrongCount }} 题</p>
+        <p class="result-detail">首次答对 {{ correctCount }} / {{ originalCount }} 题</p>
+        <p class="result-detail" v-if="totalWrongCount > 0">错题已全部重做正确 ✅</p>
+        <p class="result-detail" v-if="questions.length > originalCount">共重做 {{ questions.length - originalCount }} 次</p>
         <p class="result-detail">最大连击: {{ maxCombo }}</p>
         <p class="result-detail" v-if="currentRound >= 0">已学到第 {{ currentRound + 1 }} 轮</p>
       </div>
@@ -117,6 +118,7 @@ const letters = ['A', 'B', 'C', 'D']
 
 // 状态
 const questions = ref([])
+const originalCount = ref(0)
 const currentIndex = ref(0)
 const score = ref(0)
 const correctCount = ref(0)
@@ -202,8 +204,8 @@ const progressPct = computed(() => {
 })
 
 const accuracy = computed(() => {
-  if (questions.value.length === 0) return 0
-  return Math.round((correctCount.value / questions.value.length) * 100)
+  if (originalCount.value === 0) return 0
+  return Math.round((correctCount.value / originalCount.value) * 100)
 })
 
 function generateQuestions() {
@@ -271,6 +273,7 @@ function startPractice() {
     return
   }
   questions.value = q
+  originalCount.value = q.length
   currentIndex.value = 0
   score.value = 0
   correctCount.value = 0
@@ -313,8 +316,8 @@ function selectOption(idx) {
     // 连击
     combo.value++
     if (combo.value >= 3) score.value += 5
-    // 只有首次答对才计分，重试不再增加 correctCount
-    if (currentState === 'unanswered') {
+    // 只有首次答对才计分，且仅对原始题目计数（重做的不重复计）
+    if (currentState === 'unanswered' && currentIndex.value < originalCount.value) {
       correctCount.value++
       questionStates.value[currentIndex.value] = 'correct'
     }
@@ -325,8 +328,8 @@ function selectOption(idx) {
   } else {
     isLastCorrect.value = false
     combo.value = 0
-    // 只有首次答错才计 wrong
-    if (currentState === 'unanswered') {
+    // 只有首次答错才计 wrong，且仅对原始题目计数
+    if (currentState === 'unanswered' && currentIndex.value < originalCount.value) {
       totalWrongCount.value++
       questionStates.value[currentIndex.value] = 'wrong'
     }
@@ -344,6 +347,11 @@ function retryQuestion() {
   showErrorCard.value = false
   answered.value = false
   selectedIndex.value = -1
+  // 把当前错题复制一份加到队列末尾，让用户再次回答
+  questions.value.push({ ...currentQuestion.value })
+  questionStates.value.push('unanswered')
+  // 继续下一题（错题会出现在队列末尾再次遇到）
+  nextQuestion()
 }
 
 function nextQuestion() {
@@ -364,7 +372,7 @@ function finishPractice() {
 
   // 记录练习历史
   store.recordPractice(id.value, {
-    total: questions.value.length,
+    total: originalCount.value,
     correct: correctCount.value,
     wrong: totalWrongCount.value,
     retries: { ...wrongWordRetries.value },
