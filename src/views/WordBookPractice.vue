@@ -106,6 +106,7 @@ import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useWordbookStore } from '../stores/wordbook.js'
 import { speak } from '../utils/speech.js'
+import { playCorrectSound, playWrongSound } from '../utils/sounds.js'
 import { showDialog } from 'vant'
 
 const route = useRoute()
@@ -311,6 +312,7 @@ function selectOption(idx) {
   const currentState = questionStates.value[currentIndex.value] || 'unanswered'
 
   if (correct) {
+    playCorrectSound()
     isLastCorrect.value = true
     score.value += 10
     // 连击
@@ -326,6 +328,7 @@ function selectOption(idx) {
     // 自动下一题
     setTimeout(() => nextQuestion(), 800)
   } else {
+    playWrongSound()
     isLastCorrect.value = false
     combo.value = 0
     // 只有首次答错才计 wrong，且仅对原始题目计数
