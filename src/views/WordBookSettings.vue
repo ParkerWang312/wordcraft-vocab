@@ -33,6 +33,16 @@
         </div>
       </van-cell-group>
 
+      <!-- 默写设置 -->
+      <van-cell-group title="默写设置">
+        <van-cell title="开启默写模式" center>
+          <template #right-icon>
+            <van-switch v-model="dictationEnabled" size="24" @change="saveDictation" />
+          </template>
+        </van-cell>
+        <div class="cell-hint">开启后单词本详情页将显示「开始默写」按钮</div>
+      </van-cell-group>
+
       <!-- 数据管理 -->
       <van-cell-group title="数据管理">
         <van-cell
@@ -78,11 +88,13 @@ const book = computed(() => store.getBook(id.value))
 
 const editName = ref('')
 const wordsPerSession = ref(20)
+const dictationEnabled = ref(false)
 
 // 初始化设置值
 if (book.value) {
   editName.value = book.value.name || ''
   wordsPerSession.value = book.value.settings?.wordsPerSession || 20
+  dictationEnabled.value = book.value.settings?.dictationEnabled || false
 }
 
 function saveName() {
@@ -97,6 +109,10 @@ function saveName() {
 function saveWordsPerSession() {
   store.updateSettings(id.value, { wordsPerSession: wordsPerSession.value })
   showToast(`已设为 ${wordsPerSession.value} 词/次`)
+}
+
+function saveDictation() {
+  store.updateSettings(id.value, { dictationEnabled: dictationEnabled.value })
 }
 
 function exportBook() {

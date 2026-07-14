@@ -15,6 +15,7 @@ import WordBookList from './views/WordBookList.vue'
 import WordBookDetail from './views/WordBookDetail.vue'
 import WordBookPractice from './views/WordBookPractice.vue'
 import WordBookSettings from './views/WordBookSettings.vue'
+import WordBookDictation from './views/WordBookDictation.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -25,7 +26,8 @@ const routes = [
   { path: '/wordbooks', component: WordBookList },
   { path: '/wordbook/:id', component: WordBookDetail },
   { path: '/wordbook/:id/practice', component: WordBookPractice },
-  { path: '/wordbook/:id/settings', component: WordBookSettings }
+  { path: '/wordbook/:id/settings', component: WordBookSettings },
+  { path: '/wordbook/:id/dictation', component: WordBookDictation }
 ]
 
 const router = createRouter({

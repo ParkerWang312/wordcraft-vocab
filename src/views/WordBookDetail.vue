@@ -37,16 +37,26 @@
     </div>
 
     <!-- 操作按钮 -->
-    <div class="action-row">
+    <div class="action-row" :class="{ 'action-row-double': book?.settings?.dictationEnabled }">
       <van-button
         type="primary"
         round
         size="large"
-        block
+        :block="!book?.settings?.dictationEnabled"
         :disabled="words.length === 0"
         @click="goPractice"
       >
         开始练习
+      </van-button>
+      <van-button
+        v-if="book?.settings?.dictationEnabled"
+        type="warning"
+        round
+        size="large"
+        :disabled="!dictationAvailable"
+        @click="goDictation"
+      >
+        {{ dictationAvailable ? '开始默写' : '完成一轮练习后可默写' }}
       </van-button>
     </div>
 
@@ -275,6 +285,14 @@ function goPractice() {
   router.push(`/wordbook/${id.value}/practice`)
 }
 
+const dictationAvailable = computed(() => {
+  return book.value && (book.value.practiceRound || 0) > 0
+})
+
+function goDictation() {
+  router.push(`/wordbook/${id.value}/dictation`)
+}
+
 function goSettings() {
   router.push(`/wordbook/${id.value}/settings`)
 }
@@ -342,6 +360,15 @@ function showBatchDialog() {
 
 .action-row {
   padding: 12px 16px 0;
+}
+
+.action-row-double {
+  display: flex;
+  gap: 10px;
+}
+
+.action-row-double .van-button {
+  flex: 1;
 }
 
 .word-list {
