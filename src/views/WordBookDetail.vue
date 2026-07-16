@@ -56,7 +56,7 @@
         :disabled="!dictationAvailable"
         @click="goDictation"
       >
-        {{ dictationAvailable ? '开始默写' : '完成一轮练习后可默写' }}
+        {{ dictationAvailable ? '开始默写' : '练完再默写' }}
       </van-button>
     </div>
 
@@ -369,6 +369,7 @@ function showBatchDialog() {
 
 .action-row-double .van-button {
   flex: 1;
+  font-size: 15px;
 }
 
 .word-list {
