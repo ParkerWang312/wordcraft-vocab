@@ -1857,5 +1857,632 @@
       }
     ],
     "dataVersion": 2
+  },
+  {
+    "id": "system-day5",
+    "name": "暑假单词第四天",
+    "description": "动作、操作、状态等动词和形容词词汇",
+    "type": "system",
+    "dataVersion": 1,
+    "coverColor": "#14B8A6",
+    "isDeletable": false,
+    "coverLetter": "四",
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
+      {
+        "id": "sys-day5-blow",
+        "word": "blow",
+        "meaning": "v. 吹，吹动，吹气；吹响；打击，殴打；爆炸；n. 打击，重击",
+        "phonetic": "/bləʊ/"
+      },
+      {
+        "id": "sys-day5-nod",
+        "word": "nod",
+        "meaning": "v. 点头，打盹；n. 点头，瞌睡，打盹",
+        "phonetic": "/nɒd/"
+      },
+      {
+        "id": "sys-day5-shake",
+        "word": "shake",
+        "meaning": "v. 摇动，震动，颤抖；n. 摇动，震动，奶昔",
+        "phonetic": "/ʃeɪk/"
+      },
+      {
+        "id": "sys-day5-see",
+        "word": "see",
+        "meaning": "v. 看见，看到；了解，领会；注意；经历；拜访",
+        "phonetic": "/siː/"
+      },
+      {
+        "id": "sys-day5-look",
+        "word": "look",
+        "meaning": "v. 看，瞧；看起来，显得；n. 看，外表，相貌",
+        "phonetic": "/lʊk/"
+      },
+      {
+        "id": "sys-day5-watch",
+        "word": "watch",
+        "meaning": "v. 观看，注视；看守，监视；n. 手表，监视",
+        "phonetic": "/wɒtʃ/"
+      },
+      {
+        "id": "sys-day5-notice",
+        "word": "notice",
+        "meaning": "n. 通知，公告，注意；v. 注意到，察觉到",
+        "phonetic": "/ˈnəʊtɪs/"
+      },
+      {
+        "id": "sys-day5-guess",
+        "word": "guess",
+        "meaning": "v. 猜测，估计，认为；n. 猜测，猜想",
+        "phonetic": "/ɡes/"
+      },
+      {
+        "id": "sys-day5-suppose",
+        "word": "suppose",
+        "meaning": "v. 认为，设想，假定，假设；猜想，推测",
+        "phonetic": "/səˈpəʊz/"
+      },
+      {
+        "id": "sys-day5-listen",
+        "word": "listen",
+        "meaning": "v. 听，倾听；听从，听信；n. 听",
+        "phonetic": "/ˈlɪsn/"
+      },
+      {
+        "id": "sys-day5-hear",
+        "word": "hear",
+        "meaning": "v. 听见，听到；听说，审讯",
+        "phonetic": "/hɪər/"
+      },
+      {
+        "id": "sys-day5-lead",
+        "word": "lead",
+        "meaning": "v. 带领，领导，领先；导致，使得；n. 领先地位，榜样",
+        "phonetic": "/liːd/"
+      },
+      {
+        "id": "sys-day5-feel",
+        "word": "feel",
+        "meaning": "v. 感觉，觉得；摸起来；n. 感觉，触觉",
+        "phonetic": "/fiːl/"
+      },
+      {
+        "id": "sys-day5-sound",
+        "word": "sound",
+        "meaning": "v. 听起来，发声；n. 声音；adj. 健康的，完好的",
+        "phonetic": "/saʊnd/"
+      },
+      {
+        "id": "sys-day5-read",
+        "word": "read",
+        "meaning": "v. 读，朗读；阅读，理解；写着",
+        "phonetic": "/riːd/"
+      },
+      {
+        "id": "sys-day5-shout",
+        "word": "shout",
+        "meaning": "v. 呼喊，大声说，叫喊；n. 呼喊，呼叫声",
+        "phonetic": "/ʃaʊt/"
+      },
+      {
+        "id": "sys-day5-go",
+        "word": "go",
+        "meaning": "v. 去，走；变为；进行；运转；n. 尝试，轮到",
+        "phonetic": "/ɡəʊ/"
+      },
+      {
+        "id": "sys-day5-taste",
+        "word": "taste",
+        "meaning": "v. 尝，品尝；尝起来；n. 味道，品味，鉴赏力",
+        "phonetic": "/teɪst/"
+      },
+      {
+        "id": "sys-day5-smell",
+        "word": "smell",
+        "meaning": "v. 闻，嗅；闻起来；n. 气味，嗅觉",
+        "phonetic": "/smel/"
+      },
+      {
+        "id": "sys-day5-kiss",
+        "word": "kiss",
+        "meaning": "v. 吻，接吻；轻触；n. 吻，亲吻",
+        "phonetic": "/kɪs/"
+      },
+      {
+        "id": "sys-day5-pull",
+        "word": "pull",
+        "meaning": "v. 拉，拖，扯，拔；n. 拉力，吸引力",
+        "phonetic": "/pʊl/"
+      },
+      {
+        "id": "sys-day5-push",
+        "word": "push",
+        "meaning": "v. 推，推动，推进；逼迫；n. 推，推进，努力",
+        "phonetic": "/pʊʃ/"
+      },
+      {
+        "id": "sys-day5-rush",
+        "word": "rush",
+        "meaning": "v. 冲，奔；匆忙做；n. 匆忙，急速，热潮",
+        "phonetic": "/rʌʃ/"
+      },
+      {
+        "id": "sys-day5-touch",
+        "word": "touch",
+        "meaning": "v. 触摸，接触；感动；n. 触觉，接触，联系",
+        "phonetic": "/tʌtʃ/"
+      },
+      {
+        "id": "sys-day5-glue",
+        "word": "glue",
+        "meaning": "n. 胶水，胶；v. 用胶粘，粘牢",
+        "phonetic": "/ɡluː/"
+      },
+      {
+        "id": "sys-day5-point",
+        "word": "point",
+        "meaning": "v. 指向，指出，表明；n. 尖，点，要点，分数",
+        "phonetic": "/pɔɪnt/"
+      },
+      {
+        "id": "sys-day5-move",
+        "word": "move",
+        "meaning": "v. 移动，搬动；感动；搬迁；n. 行动，移动，步骤",
+        "phonetic": "/muːv/"
+      },
+      {
+        "id": "sys-day5-lift",
+        "word": "lift",
+        "meaning": "v. 举起，升起，提高；n. 电梯，搭车，上升",
+        "phonetic": "/lɪft/"
+      },
+      {
+        "id": "sys-day5-open",
+        "word": "open",
+        "meaning": "v. 打开，开门，开业；adj. 开着的，开放的，公开的",
+        "phonetic": "/ˈəʊpən/"
+      },
+      {
+        "id": "sys-day5-close",
+        "word": "close",
+        "meaning": "v. 关闭，合上；adj. 近的，亲密的；adv. 靠近地",
+        "phonetic": "/kləʊz/"
+      },
+      {
+        "id": "sys-day5-give",
+        "word": "give",
+        "meaning": "v. 给，给予；提供；捐赠；让步",
+        "phonetic": "/ɡɪv/"
+      },
+      {
+        "id": "sys-day5-leave",
+        "word": "leave",
+        "meaning": "v. 离开；留下；遗忘；n. 许可，休假",
+        "phonetic": "/liːv/"
+      },
+      {
+        "id": "sys-day5-knock",
+        "word": "knock",
+        "meaning": "v. 敲，击，打；碰撞；n. 敲击声，敲门",
+        "phonetic": "/nɒk/"
+      },
+      {
+        "id": "sys-day5-hit",
+        "word": "hit",
+        "meaning": "v. 打，击，命中；碰撞；n. 命中，成功，热门",
+        "phonetic": "/hɪt/"
+      },
+      {
+        "id": "sys-day5-catch",
+        "word": "catch",
+        "meaning": "v. 抓住，接住；赶上；感染；n. 捕捉，捕获物",
+        "phonetic": "/kætʃ/"
+      },
+      {
+        "id": "sys-day5-hold",
+        "word": "hold",
+        "meaning": "v. 握住，拿着；举办；保持；n. 掌握，控制",
+        "phonetic": "/həʊld/"
+      },
+      {
+        "id": "sys-day5-dig",
+        "word": "dig",
+        "meaning": "v. 挖，掘；喜欢，理解；n. 挖苦，发掘",
+        "phonetic": "/dɪɡ/"
+      },
+      {
+        "id": "sys-day5-write",
+        "word": "write",
+        "meaning": "v. 写，书写；写信；创作，编写",
+        "phonetic": "/raɪt/"
+      },
+      {
+        "id": "sys-day5-draw",
+        "word": "draw",
+        "meaning": "v. 画，描绘；拉，拖；吸引；n. 抽签，平局",
+        "phonetic": "/drɔː/"
+      },
+      {
+        "id": "sys-day5-paint",
+        "word": "paint",
+        "meaning": "v. 绘画，涂漆；n. 油漆，颜料，涂料",
+        "phonetic": "/peɪnt/"
+      },
+      {
+        "id": "sys-day5-print",
+        "word": "print",
+        "meaning": "v. 印刷，打印；n. 印刷品，字体，指纹",
+        "phonetic": "/prɪnt/"
+      },
+      {
+        "id": "sys-day5-pick",
+        "word": "pick",
+        "meaning": "v. 采摘，挑选，拾起；n. 选择，精华",
+        "phonetic": "/pɪk/"
+      },
+      {
+        "id": "sys-day5-steal",
+        "word": "steal",
+        "meaning": "v. 偷，窃取；悄悄地移动；n. 偷窃",
+        "phonetic": "/stiːl/"
+      },
+      {
+        "id": "sys-day5-put",
+        "word": "put",
+        "meaning": "v. 放，摆；表达，提出；使处于",
+        "phonetic": "/pʊt/"
+      },
+      {
+        "id": "sys-day5-jog",
+        "word": "jog",
+        "meaning": "v. 慢跑；轻碰，轻推；n. 慢跑，轻推",
+        "phonetic": "/dʒɒɡ/"
+      },
+      {
+        "id": "sys-day5-fill",
+        "word": "fill",
+        "meaning": "v. 装满，填满；占满；满足；n. 充分，足够",
+        "phonetic": "/fɪl/"
+      },
+      {
+        "id": "sys-day5-cut",
+        "word": "cut",
+        "meaning": "v. 切，割，剪；减少，削减；n. 切口，伤口，削减",
+        "phonetic": "/kʌt/"
+      },
+      {
+        "id": "sys-day5-throw",
+        "word": "throw",
+        "meaning": "v. 扔，抛，投掷；n. 投掷，抛",
+        "phonetic": "/θrəʊ/"
+      },
+      {
+        "id": "sys-day5-make",
+        "word": "make",
+        "meaning": "v. 做，制造；使成为；产生；n. 品牌，型号",
+        "phonetic": "/meɪk/"
+      },
+      {
+        "id": "sys-day5-hang",
+        "word": "hang",
+        "meaning": "v. 悬挂，吊；绞死；垂下",
+        "phonetic": "/hæŋ/"
+      },
+      {
+        "id": "sys-day5-hide",
+        "word": "hide",
+        "meaning": "v. 隐藏，躲藏；隐瞒；n. 兽皮",
+        "phonetic": "/haɪd/"
+      },
+      {
+        "id": "sys-day5-stand",
+        "word": "stand",
+        "meaning": "v. 站立；忍受；n. 立场，看台，货摊",
+        "phonetic": "/stænd/"
+      },
+      {
+        "id": "sys-day5-shut",
+        "word": "shut",
+        "meaning": "v. 关闭，关上；停业；adj. 关闭的",
+        "phonetic": "/ʃʌt/"
+      },
+      {
+        "id": "sys-day5-separate",
+        "word": "separate",
+        "meaning": "v. 分开，分离；adj. 分开的，单独的",
+        "phonetic": "/ˈsepəreɪt/"
+      },
+      {
+        "id": "sys-day5-mix",
+        "word": "mix",
+        "meaning": "v. 混合，搅拌；混淆；n. 混合物，混合",
+        "phonetic": "/mɪks/"
+      },
+      {
+        "id": "sys-day5-lay",
+        "word": "lay",
+        "meaning": "v. 放，搁；下蛋；铺设；adj. 外行的",
+        "phonetic": "/leɪ/"
+      },
+      {
+        "id": "sys-day5-divide",
+        "word": "divide",
+        "meaning": "v. 分开，划分；除以；n. 分歧，分水岭",
+        "phonetic": "/dɪˈvaɪd/"
+      },
+      {
+        "id": "sys-day5-direct",
+        "word": "direct",
+        "meaning": "adj. 直接的，直达的；v. 指导，导演；adv. 直接地",
+        "phonetic": "/dəˈrekt/"
+      },
+      {
+        "id": "sys-day5-control",
+        "word": "control",
+        "meaning": "v. 控制，管理；n. 控制，管理，对照",
+        "phonetic": "/kənˈtrəʊl/"
+      },
+      {
+        "id": "sys-day5-prepare",
+        "word": "prepare",
+        "meaning": "v. 准备，预备；调制，配制",
+        "phonetic": "/prɪˈpeər/"
+      },
+      {
+        "id": "sys-day5-prepared",
+        "word": "prepared",
+        "meaning": "adj. 准备好的，有准备的，预制的",
+        "phonetic": "/prɪˈpeəd/"
+      },
+      {
+        "id": "sys-day5-consider",
+        "word": "consider",
+        "meaning": "v. 考虑，细想；认为；体谅",
+        "phonetic": "/kənˈsɪdər/"
+      },
+      {
+        "id": "sys-day5-collect",
+        "word": "collect",
+        "meaning": "v. 收集，采集；领取；聚集；募捐",
+        "phonetic": "/kəˈlekt/"
+      },
+      {
+        "id": "sys-day5-compare",
+        "word": "compare",
+        "meaning": "v. 比较，对比；比作；n. 比较",
+        "phonetic": "/kəmˈpeər/"
+      },
+      {
+        "id": "sys-day5-complete",
+        "word": "complete",
+        "meaning": "v. 完成；adj. 完整的，完成的，彻底的",
+        "phonetic": "/kəmˈpliːt/"
+      },
+      {
+        "id": "sys-day5-know",
+        "word": "know",
+        "meaning": "v. 知道，认识；通晓；了解",
+        "phonetic": "/nəʊ/"
+      },
+      {
+        "id": "sys-day5-cancel",
+        "word": "cancel",
+        "meaning": "v. 取消，撤销；废除，注销",
+        "phonetic": "/ˈkænsl/"
+      },
+      {
+        "id": "sys-day5-build",
+        "word": "build",
+        "meaning": "v. 建造，建筑；建立，发展；n. 体格，体型",
+        "phonetic": "/bɪld/"
+      },
+      {
+        "id": "sys-day5-follow",
+        "word": "follow",
+        "meaning": "v. 跟随，追随；理解；遵循",
+        "phonetic": "/ˈfɒləʊ/"
+      },
+      {
+        "id": "sys-day5-rest",
+        "word": "rest",
+        "meaning": "v. 休息；放，靠；n. 休息，剩余部分",
+        "phonetic": "/rest/"
+      },
+      {
+        "id": "sys-day5-force",
+        "word": "force",
+        "meaning": "v. 强迫，迫使；n. 力量，武力，军队",
+        "phonetic": "/fɔːrs/"
+      },
+      {
+        "id": "sys-day5-get",
+        "word": "get",
+        "meaning": "v. 得到，获得；变得；到达；理解",
+        "phonetic": "/ɡet/"
+      },
+      {
+        "id": "sys-day5-hurry",
+        "word": "hurry",
+        "meaning": "v. 赶快，匆忙；n. 匆忙，急忙",
+        "phonetic": "/ˈhʌri/"
+      },
+      {
+        "id": "sys-day5-become",
+        "word": "become",
+        "meaning": "v. 变成，成为；适合",
+        "phonetic": "/bɪˈkʌm/"
+      },
+      {
+        "id": "sys-day5-happen",
+        "word": "happen",
+        "meaning": "v. 发生；碰巧，偶然遇到",
+        "phonetic": "/ˈhæpən/"
+      },
+      {
+        "id": "sys-day5-sit",
+        "word": "sit",
+        "meaning": "v. 坐，就座；位于；栖息",
+        "phonetic": "/sɪt/"
+      },
+      {
+        "id": "sys-day5-cover",
+        "word": "cover",
+        "meaning": "v. 覆盖，遮盖；包括；n. 封面，盖子",
+        "phonetic": "/ˈkʌvər/"
+      },
+      {
+        "id": "sys-day5-describe",
+        "word": "describe",
+        "meaning": "v. 描述，形容；描绘",
+        "phonetic": "/dɪˈskraɪb/"
+      },
+      {
+        "id": "sys-day5-enter",
+        "word": "enter",
+        "meaning": "v. 进入，加入；输入；报名参加",
+        "phonetic": "/ˈentər/"
+      },
+      {
+        "id": "sys-day5-stay",
+        "word": "stay",
+        "meaning": "v. 停留，留在；保持；n. 停留，逗留",
+        "phonetic": "/steɪ/"
+      },
+      {
+        "id": "sys-day5-prove",
+        "word": "prove",
+        "meaning": "v. 证明，证实；结果是，显示",
+        "phonetic": "/pruːv/"
+      },
+      {
+        "id": "sys-day5-admire",
+        "word": "admire",
+        "meaning": "v. 钦佩，崇拜；欣赏，赞赏",
+        "phonetic": "/ədˈmaɪər/"
+      },
+      {
+        "id": "sys-day5-freeze",
+        "word": "freeze",
+        "meaning": "v. 结冰，冻结；冻住；呆住；n. 冻结",
+        "phonetic": "/friːz/"
+      },
+      {
+        "id": "sys-day5-lie",
+        "word": "lie",
+        "meaning": "v. 躺，平卧；位于；说谎；n. 谎言，谎话",
+        "phonetic": "/laɪ/"
+      },
+      {
+        "id": "sys-day5-advantage",
+        "word": "advantage",
+        "meaning": "n. 优势，有利条件；利益；v. 有利于",
+        "phonetic": "/ədˈvɑːntɪdʒ/"
+      },
+      {
+        "id": "sys-day5-difficult",
+        "word": "difficult",
+        "meaning": "adj. 困难的，难做的；难对付的",
+        "phonetic": "/ˈdɪfɪkəlt/"
+      },
+      {
+        "id": "sys-day5-difficulty",
+        "word": "difficulty",
+        "meaning": "n. 困难，难题；困境，障碍",
+        "phonetic": "/ˈdɪfɪkəlti/"
+      },
+      {
+        "id": "sys-day5-important",
+        "word": "important",
+        "meaning": "adj. 重要的，重大的；有地位的",
+        "phonetic": "/ɪmˈpɔːrtnt/"
+      },
+      {
+        "id": "sys-day5-main",
+        "word": "main",
+        "meaning": "adj. 主要的，最重要的；n. 总管道，干线",
+        "phonetic": "/meɪn/"
+      },
+      {
+        "id": "sys-day5-avoid",
+        "word": "avoid",
+        "meaning": "v. 避免，防止；避开，躲避",
+        "phonetic": "/əˈvɔɪd/"
+      },
+      {
+        "id": "sys-day5-try",
+        "word": "try",
+        "meaning": "v. 尝试，试图；试验；n. 尝试，努力",
+        "phonetic": "/traɪ/"
+      },
+      {
+        "id": "sys-day5-achieve",
+        "word": "achieve",
+        "meaning": "v. 实现，达到；获得，取得",
+        "phonetic": "/əˈtʃiːv/"
+      },
+      {
+        "id": "sys-day5-example",
+        "word": "example",
+        "meaning": "n. 例子，实例；榜样，范例",
+        "phonetic": "/ɪɡˈzɑːmpl/"
+      },
+      {
+        "id": "sys-day5-fail",
+        "word": "fail",
+        "meaning": "v. 失败，不及格；衰退；n. 失败",
+        "phonetic": "/feɪl/"
+      },
+      {
+        "id": "sys-day5-succeed",
+        "word": "succeed",
+        "meaning": "v. 成功，达到目的；继承；接替",
+        "phonetic": "/səkˈsiːd/"
+      },
+      {
+        "id": "sys-day5-success",
+        "word": "success",
+        "meaning": "n. 成功，成就；成功的人或事",
+        "phonetic": "/səkˈses/"
+      },
+      {
+        "id": "sys-day5-successful",
+        "word": "successful",
+        "meaning": "adj. 成功的，有成就的",
+        "phonetic": "/səkˈsesfl/"
+      },
+      {
+        "id": "sys-day5-reach",
+        "word": "reach",
+        "meaning": "v. 到达，抵达；伸手够到；n. 范围，伸手可及的距离",
+        "phonetic": "/riːtʃ/"
+      },
+      {
+        "id": "sys-day5-realise",
+        "word": "realise",
+        "meaning": "v. 认识到，意识到；实现(=realize)",
+        "phonetic": "/ˈrɪəlaɪz/"
+      },
+      {
+        "id": "sys-day5-realize",
+        "word": "realize",
+        "meaning": "v. 认识到，意识到；实现(=realise)",
+        "phonetic": "/ˈriːəlaɪz/"
+      },
+      {
+        "id": "sys-day5-spare",
+        "word": "spare",
+        "meaning": "v. 抽出，腾出；adj. 备用的，空闲的",
+        "phonetic": "/speər/"
+      },
+      {
+        "id": "sys-day5-part",
+        "word": "part",
+        "meaning": "n. 部分，组成部分；角色；零件；v. 分离，分开",
+        "phonetic": "/pɑːrt/"
+      }
+    ]
   }
 ]
