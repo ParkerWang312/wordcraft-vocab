@@ -241,11 +241,12 @@ async function shareDailyReport() {
   gap: 4px;
 }
 .summary-icon {
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1;
+  opacity: 0.6;
 }
 .summary-num {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.1;
