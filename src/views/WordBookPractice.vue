@@ -381,13 +381,15 @@ function finishPractice() {
     duration: timerElapsed.value
   })
 
-  // 如果本轮所有单词都已学会，立即推进轮次并持久化
+  // 如果本轮所有单词都已学会，立即推进轮次并重置所有单词
   const unlearned = store.getWordsByBookId(id.value).filter(e => !e.learned)
   if (unlearned.length === 0) {
     const bookObj = book.value
     if (bookObj) {
       bookObj.practiceRound = (bookObj.practiceRound || 0) + 1
       bookObj.totalLearnedInRound = 0
+      // 重置所有单词的 learned 状态，开始新一轮
+      store.getWordsByBookId(id.value).forEach(e => { e.learned = false })
       store.persistAll()
     }
   }
