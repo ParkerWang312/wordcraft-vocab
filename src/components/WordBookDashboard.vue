@@ -14,21 +14,25 @@
       <!-- 顶部摘要条 -->
       <div class="summary-bar">
         <div class="summary-item">
-          <div class="summary-num">📝 {{ report.practiceCount }}</div>
+          <div class="summary-icon">📝</div>
+          <div class="summary-num">{{ report.practiceCount }}</div>
           <div class="summary-label">练习次数</div>
         </div>
         <div class="summary-divider"></div>
         <div class="summary-item">
-          <div class="summary-num">🔄 {{ report.currentRound + 1 }}</div>
+          <div class="summary-icon">🔄</div>
+          <div class="summary-num">{{ report.currentRound + 1 }}</div>
           <div class="summary-label">当前轮次</div>
         </div>
         <div class="summary-divider"></div>
         <div class="summary-item">
-          <div class="summary-num">🕐 {{ formatDuration(report.totalDuration) }}</div>
+          <div class="summary-icon">🕐</div>
+          <div class="summary-num">{{ formatDuration(report.totalDuration) }}</div>
           <div class="summary-label">练习时长</div>
         </div>
         <div class="summary-divider"></div>
         <div class="summary-item">
+          <div class="summary-icon">🎯</div>
           <div class="summary-num accent">{{ report.accuracy }}%</div>
           <div class="summary-label">正确率</div>
         </div>
@@ -144,13 +148,13 @@ const report = computed(() => {
 })
 
 function formatDuration(seconds) {
-  if (!seconds) return '0'
+  if (!seconds) return '0分'
   const m = Math.floor(seconds / 60)
   const s = seconds % 60
   if (m >= 60) {
     const h = Math.floor(m / 60)
     const rm = m % 60
-    return `${h}h${rm}m`
+    return `${h}时${rm}分`
   }
   if (m > 0) return `${m}分${s}秒`
   return `${s}秒`
@@ -231,6 +235,14 @@ async function shareDailyReport() {
 .summary-item {
   text-align: center;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.summary-icon {
+  font-size: 20px;
+  line-height: 1;
 }
 .summary-num {
   font-size: 16px;
