@@ -35,15 +35,15 @@ export function playCorrectSound() {
     const now = ctx.currentTime
 
     // C5 → E5 → G5 (523→659→784) 大三和弦上行
-    playTone(ctx, 523, now,        0.15, 'triangle', 0.45)
-    playTone(ctx, 659, now + 0.08, 0.15, 'triangle', 0.45)
-    playTone(ctx, 784, now + 0.16, 0.22, 'triangle', 0.5)
+    playTone(ctx, 523, now,        0.15, 'triangle', 0.7)
+    playTone(ctx, 659, now + 0.08, 0.15, 'triangle', 0.7)
+    playTone(ctx, 784, now + 0.16, 0.22, 'triangle', 0.75)
 
     // 叠加高音泛音增加清脆感
-    playTone(ctx, 1047, now + 0.14, 0.18, 'sine', 0.15)
+    playTone(ctx, 1047, now + 0.14, 0.18, 'sine', 0.25)
 
     // 顶部叮叮声
-    playTone(ctx, 1319, now + 0.20, 0.12, 'sine', 0.1)
+    playTone(ctx, 1319, now + 0.20, 0.12, 'sine', 0.18)
   } catch { /* ignore */ }
 }
 
@@ -54,8 +54,8 @@ export function playWrongSound() {
     const now = ctx.currentTime
 
     // 低频闷响 150Hz 方形波 + 200Hz 不和谐
-    playTone(ctx, 150, now, 0.35, 'sawtooth', 0.3)
-    playTone(ctx, 220, now, 0.35, 'square', 0.15)
+    playTone(ctx, 150, now, 0.35, 'sawtooth', 0.45)
+    playTone(ctx, 220, now, 0.35, 'square', 0.25)
 
     // 噪声垫底
     const bufferSize = ctx.sampleRate * 0.15
@@ -67,7 +67,7 @@ export function playWrongSound() {
     const noise = ctx.createBufferSource()
     noise.buffer = noiseBuffer
     const noiseGain = ctx.createGain()
-    noiseGain.gain.setValueAtTime(0.06, now)
+    noiseGain.gain.setValueAtTime(0.1, now)
     noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.25)
     noise.connect(noiseGain)
     noiseGain.connect(ctx.destination)
