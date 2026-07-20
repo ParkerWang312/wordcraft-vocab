@@ -2687,7 +2687,7 @@
       {
         "id": "sys-day6-trust",
         "word": "trust",
-        "meaning": "v. 信任，信赖；n. 委托",
+        "meaning": "v. 信任，信赖；n. 信任，信托，托拉斯",
         "phonetic": "/trʌst/"
       },
       {
@@ -2699,7 +2699,7 @@
       {
         "id": "sys-day6-support",
         "word": "support",
-        "meaning": "v. 支持，支撑；n. 帮助，资助",
+        "meaning": "v. 支持，支撑，供养；n. 支持，支撑，援助",
         "phonetic": "/səˈpɔːrt/"
       },
       {
@@ -2711,7 +2711,7 @@
       {
         "id": "sys-day6-doubt",
         "word": "doubt",
-        "meaning": "v. 怀疑，疑虑；n. 不确定",
+        "meaning": "v. 怀疑，不确定；n. 怀疑，疑虑，疑问",
         "phonetic": "/daʊt/"
       },
       {
@@ -2807,13 +2807,13 @@
       {
         "id": "sys-day6-lives",
         "word": "lives",
-        "meaning": "n. 生命们（life的复数）",
+        "meaning": "n. life的复数；生命，生活",
         "phonetic": "/laɪvz/"
       },
       {
         "id": "sys-day6-save",
         "word": "save",
-        "meaning": "v. 救，拯救；节省，保存",
+        "meaning": "v. 救，拯救；节省，保存，储蓄",
         "phonetic": "/seɪv/"
       },
       {
@@ -2993,7 +2993,7 @@
       {
         "id": "sys-day6-raise",
         "word": "raise",
-        "meaning": "v. 举起，提高；抚养；筹集",
+        "meaning": "v. 举起，提高；抚养，养育；筹集，募集",
         "phonetic": "/reɪz/"
       },
       {
@@ -3059,7 +3059,7 @@
       {
         "id": "sys-day6-wait",
         "word": "wait",
-        "meaning": "v. 等待，等候；n. 期待",
+        "meaning": "v. 等待，等候；n. 等待，等候",
         "phonetic": "/weɪt/"
       },
       {
@@ -3071,7 +3071,7 @@
       {
         "id": "sys-day6-stop",
         "word": "stop",
-        "meaning": "v. 停止，停下；n. 阻止，车站",
+        "meaning": "v. 停止，停下；n. 车站，停止，句号",
         "phonetic": "/stɒp/"
       },
       {
