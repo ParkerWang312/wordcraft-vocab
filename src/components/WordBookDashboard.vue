@@ -144,13 +144,13 @@ const report = computed(() => {
 })
 
 function formatDuration(seconds) {
-  if (!seconds) return '0分'
+  if (!seconds) return '0'
   const m = Math.floor(seconds / 60)
   const s = seconds % 60
   if (m >= 60) {
     const h = Math.floor(m / 60)
     const rm = m % 60
-    return `${h}时${rm}分`
+    return `${h}h${rm}m`
   }
   if (m > 0) return `${m}分${s}秒`
   return `${s}秒`
@@ -237,6 +237,7 @@ async function shareDailyReport() {
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.1;
+  white-space: nowrap;
 }
 .summary-num.accent {
   color: var(--accent);
