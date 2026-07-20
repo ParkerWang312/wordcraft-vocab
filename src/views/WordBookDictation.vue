@@ -51,10 +51,15 @@
             v-model="userInput"
             class="spell-input"
             type="text"
+            inputmode="latin"
+            lang="en"
+            x-webkit-speech=""
             autocomplete="off"
             autocapitalize="off"
+            autocorrect="off"
             spellcheck="false"
             placeholder="输入英文单词..."
+            @input="onInput"
             @keyup.enter="submitAnswer"
           />
           <button class="submit-btn" @click="submitAnswer" :disabled="!userInput.trim()">
@@ -187,6 +192,16 @@ function shuffle(arr) {
 function playCurrentWord() {
   if (currentQuestion.value) {
     speak(currentQuestion.value.word)
+  }
+}
+
+// 过滤非英文字符，只允许 a-z A-Z
+function onInput(e) {
+  const raw = e.target.value
+  const filtered = raw.replace(/[^a-zA-Z]/g, '')
+  if (filtered !== raw) {
+    userInput.value = filtered
+    e.target.value = filtered
   }
 }
 
