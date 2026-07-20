@@ -1,8 +1,8 @@
 [
   {
     "id": "system-day2",
-    "name": "日期与颜色",
-    "description": "星期、月份和颜色相关词汇",
+    "name": "日期·颜色·数字★",
+    "description": "星期、月份、颜色和数字词汇（重点背诵）",
     "type": "system",
     "coverColor": "#EC4899",
     "isDeletable": false,
@@ -261,9 +261,189 @@
         "word": "December",
         "meaning": "n. 十二月",
         "phonetic": "/dɪˈsembər/"
+      },
+      {
+        "id": "sys-day2-zero",
+        "word": "zero",
+        "meaning": "num. 零；n. 零，零点，零度",
+        "phonetic": "/ˈzɪərəʊ/"
+      },
+      {
+        "id": "sys-day2-one",
+        "word": "one",
+        "meaning": "num. 一，一个；n. 一；pron. 一个人，任何人",
+        "phonetic": "/wʌn/"
+      },
+      {
+        "id": "sys-day2-two",
+        "word": "two",
+        "meaning": "num. 二，两个；n. 二，两个",
+        "phonetic": "/tuː/"
+      },
+      {
+        "id": "sys-day2-three",
+        "word": "three",
+        "meaning": "num. 三，三个；n. 三，三个",
+        "phonetic": "/θriː/"
+      },
+      {
+        "id": "sys-day2-four",
+        "word": "four",
+        "meaning": "num. 四，四个；n. 四，四个",
+        "phonetic": "/fɔː(r)/"
+      },
+      {
+        "id": "sys-day2-five",
+        "word": "five",
+        "meaning": "num. 五，五个；n. 五，五个",
+        "phonetic": "/faɪv/"
+      },
+      {
+        "id": "sys-day2-six",
+        "word": "six",
+        "meaning": "num. 六，六个；n. 六，六个",
+        "phonetic": "/sɪks/"
+      },
+      {
+        "id": "sys-day2-seven",
+        "word": "seven",
+        "meaning": "num. 七，七个；n. 七，七个",
+        "phonetic": "/ˈsevn/"
+      },
+      {
+        "id": "sys-day2-eight",
+        "word": "eight",
+        "meaning": "num. 八，八个；n. 八，八个",
+        "phonetic": "/eɪt/"
+      },
+      {
+        "id": "sys-day2-nine",
+        "word": "nine",
+        "meaning": "num. 九，九个；n. 九，九个",
+        "phonetic": "/naɪn/"
+      },
+      {
+        "id": "sys-day2-ten",
+        "word": "ten",
+        "meaning": "num. 十，十个；n. 十，十个",
+        "phonetic": "/ten/"
+      },
+      {
+        "id": "sys-day2-eleven",
+        "word": "eleven",
+        "meaning": "num. 十一，十一个；n. 十一",
+        "phonetic": "/ɪˈlevn/"
+      },
+      {
+        "id": "sys-day2-twelve",
+        "word": "twelve",
+        "meaning": "num. 十二，十二个；n. 十二",
+        "phonetic": "/twelv/"
+      },
+      {
+        "id": "sys-day2-thirteen",
+        "word": "thirteen",
+        "meaning": "num. 十三，十三个；n. 十三",
+        "phonetic": "/ˌθɜːˈtiːn/"
+      },
+      {
+        "id": "sys-day2-fourteen",
+        "word": "fourteen",
+        "meaning": "num. 十四，十四个；n. 十四",
+        "phonetic": "/ˌfɔːˈtiːn/"
+      },
+      {
+        "id": "sys-day2-fifteen",
+        "word": "fifteen",
+        "meaning": "num. 十五，十五个；n. 十五",
+        "phonetic": "/ˌfɪfˈtiːn/"
+      },
+      {
+        "id": "sys-day2-sixteen",
+        "word": "sixteen",
+        "meaning": "num. 十六，十六个；n. 十六",
+        "phonetic": "/ˌsɪksˈtiːn/"
+      },
+      {
+        "id": "sys-day2-seventeen",
+        "word": "seventeen",
+        "meaning": "num. 十七，十七个；n. 十七",
+        "phonetic": "/ˌsevnˈtiːn/"
+      },
+      {
+        "id": "sys-day2-eighteen",
+        "word": "eighteen",
+        "meaning": "num. 十八，十八个；n. 十八",
+        "phonetic": "/ˌeɪˈtiːn/"
+      },
+      {
+        "id": "sys-day2-nineteen",
+        "word": "nineteen",
+        "meaning": "num. 十九，十九个；n. 十九",
+        "phonetic": "/ˌnaɪnˈtiːn/"
+      },
+      {
+        "id": "sys-day2-twenty",
+        "word": "twenty",
+        "meaning": "num. 二十，二十个；n. 二十",
+        "phonetic": "/ˈtwenti/"
+      },
+      {
+        "id": "sys-day2-thirty",
+        "word": "thirty",
+        "meaning": "num. 三十，三十个；n. 三十",
+        "phonetic": "/ˈθɜːti/"
+      },
+      {
+        "id": "sys-day2-forty",
+        "word": "forty",
+        "meaning": "num. 四十，四十个；n. 四十",
+        "phonetic": "/ˈfɔːti/"
+      },
+      {
+        "id": "sys-day2-fifty",
+        "word": "fifty",
+        "meaning": "num. 五十，五十个；n. 五十",
+        "phonetic": "/ˈfɪfti/"
+      },
+      {
+        "id": "sys-day2-sixty",
+        "word": "sixty",
+        "meaning": "num. 六十，六十个；n. 六十",
+        "phonetic": "/ˈsɪksti/"
+      },
+      {
+        "id": "sys-day2-seventy",
+        "word": "seventy",
+        "meaning": "num. 七十，七十个；n. 七十",
+        "phonetic": "/ˈsevnti/"
+      },
+      {
+        "id": "sys-day2-eighty",
+        "word": "eighty",
+        "meaning": "num. 八十，八十个；n. 八十",
+        "phonetic": "/ˈeɪti/"
+      },
+      {
+        "id": "sys-day2-ninety",
+        "word": "ninety",
+        "meaning": "num. 九十，九十个；n. 九十",
+        "phonetic": "/ˈnaɪnti/"
+      },
+      {
+        "id": "sys-day2-hundred",
+        "word": "hundred",
+        "meaning": "num. 百，一百；n. 一百，许多",
+        "phonetic": "/ˈhʌndrəd/"
+      },
+      {
+        "id": "sys-day2-thousand",
+        "word": "thousand",
+        "meaning": "num. 千，一千；n. 一千，许多",
+        "phonetic": "/ˈθaʊznd/"
       }
     ],
-    "dataVersion": 2
+    "dataVersion": 3
   },
   {
     "id": "system-day1",
