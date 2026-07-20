@@ -256,7 +256,7 @@ export const useWordbookStore = defineStore('wordbook', () => {
         .filter(e => e.wordbookId === wordbookId)
         .forEach(e => { e.learned = false })
       book.totalLearnedInRound = 0
-      book.practiceRound = (book.practiceRound || 0) + 1
+      // practiceRound 已在 finishPractice/finishDictation 中递增
       persistAll()
       return true // 表示开始了新一轮
     }
