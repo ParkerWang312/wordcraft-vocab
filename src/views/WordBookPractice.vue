@@ -380,6 +380,17 @@ function finishPractice() {
     retries: { ...wrongWordRetries.value },
     duration: timerElapsed.value
   })
+
+  // 如果本轮所有单词都已学会，立即推进轮次并持久化
+  const unlearned = store.getWordsByBookId(id.value).filter(e => !e.learned)
+  if (unlearned.length === 0) {
+    const bookObj = book.value
+    if (bookObj) {
+      bookObj.practiceRound = (bookObj.practiceRound || 0) + 1
+      bookObj.totalLearnedInRound = 0
+      store.persistAll()
+    }
+  }
 }
 
 function confirmLeave() {
