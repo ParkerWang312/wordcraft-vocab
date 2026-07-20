@@ -2664,5 +2664,446 @@
         "phonetic": "/pɑːrt/"
       }
     ]
+  },
+  {
+    "id": "system-day6",
+    "name": "暑假单词第五天",
+    "description": "情态、态度、安全、变化、频度等主题词汇",
+    "type": "system",
+    "dataVersion": 1,
+    "coverColor": "#F59E0B",
+    "isDeletable": false,
+    "coverLetter": "五",
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
+      {
+        "id": "sys-day6-believe",
+        "word": "believe",
+        "meaning": "v. 相信，信任；认为，猜想",
+        "phonetic": "/bɪˈliːv/"
+      },
+      {
+        "id": "sys-day6-trust",
+        "word": "trust",
+        "meaning": "v./n. 信任，信赖；委托",
+        "phonetic": "/trʌst/"
+      },
+      {
+        "id": "sys-day6-wonder",
+        "word": "wonder",
+        "meaning": "v. 想知道，纳闷；n. 奇迹，惊奇",
+        "phonetic": "/ˈwʌndər/"
+      },
+      {
+        "id": "sys-day6-support",
+        "word": "support",
+        "meaning": "v./n. 支持，支撑；帮助，资助",
+        "phonetic": "/səˈpɔːrt/"
+      },
+      {
+        "id": "sys-day6-sure",
+        "word": "sure",
+        "meaning": "adj. 确信的，肯定的；adv. 当然",
+        "phonetic": "/ʃʊər/"
+      },
+      {
+        "id": "sys-day6-doubt",
+        "word": "doubt",
+        "meaning": "v./n. 怀疑，疑虑；不确定",
+        "phonetic": "/daʊt/"
+      },
+      {
+        "id": "sys-day6-maybe",
+        "word": "maybe",
+        "meaning": "adv. 也许，可能，大概",
+        "phonetic": "/ˈmeɪbi/"
+      },
+      {
+        "id": "sys-day6-may",
+        "word": "may",
+        "meaning": "aux. 可能，可以；祝愿",
+        "phonetic": "/meɪ/"
+      },
+      {
+        "id": "sys-day6-might",
+        "word": "might",
+        "meaning": "aux. 可能，也许；可以",
+        "phonetic": "/maɪt/"
+      },
+      {
+        "id": "sys-day6-must",
+        "word": "must",
+        "meaning": "aux. 必须，一定；n. 必须做的事",
+        "phonetic": "/mʌst/"
+      },
+      {
+        "id": "sys-day6-possible",
+        "word": "possible",
+        "meaning": "adj. 可能的，可能存在的",
+        "phonetic": "/ˈpɒsəbl/"
+      },
+      {
+        "id": "sys-day6-impossible",
+        "word": "impossible",
+        "meaning": "adj. 不可能的，办不到的",
+        "phonetic": "/ɪmˈpɒsəbl/"
+      },
+      {
+        "id": "sys-day6-perhaps",
+        "word": "perhaps",
+        "meaning": "adv. 也许，可能，大概",
+        "phonetic": "/pərˈhæps/"
+      },
+      {
+        "id": "sys-day6-probably",
+        "word": "probably",
+        "meaning": "adv. 大概，很可能，也许",
+        "phonetic": "/ˈprɒbəbli/"
+      },
+      {
+        "id": "sys-day6-certain",
+        "word": "certain",
+        "meaning": "adj. 确定的，肯定的；某个",
+        "phonetic": "/ˈsɜːrtn/"
+      },
+      {
+        "id": "sys-day6-certainly",
+        "word": "certainly",
+        "meaning": "adv. 当然，一定，无疑",
+        "phonetic": "/ˈsɜːrtnli/"
+      },
+      {
+        "id": "sys-day6-chance",
+        "word": "chance",
+        "meaning": "n. 机会，可能性；v. 碰巧",
+        "phonetic": "/tʃɑːns/"
+      },
+      {
+        "id": "sys-day6-can",
+        "word": "can",
+        "meaning": "aux. 能，可以；n. 罐头, 金属罐",
+        "phonetic": "/kæn/"
+      },
+      {
+        "id": "sys-day6-could",
+        "word": "could",
+        "meaning": "aux. 能，可以；可能",
+        "phonetic": "/kʊd/"
+      },
+      {
+        "id": "sys-day6-able",
+        "word": "able",
+        "meaning": "adj. 能够的，有能力的",
+        "phonetic": "/ˈeɪbl/"
+      },
+      {
+        "id": "sys-day6-life",
+        "word": "life",
+        "meaning": "n. 生命，生活，人生，一生",
+        "phonetic": "/laɪf/"
+      },
+      {
+        "id": "sys-day6-lives",
+        "word": "lives",
+        "meaning": "n. 生命们（life的复数）",
+        "phonetic": "/laɪvz/"
+      },
+      {
+        "id": "sys-day6-save",
+        "word": "save",
+        "meaning": "v. 救，拯救；节省，保存",
+        "phonetic": "/seɪv/"
+      },
+      {
+        "id": "sys-day6-safe",
+        "word": "safe",
+        "meaning": "adj. 安全的，平安的；n. 保险箱",
+        "phonetic": "/seɪf/"
+      },
+      {
+        "id": "sys-day6-safety",
+        "word": "safety",
+        "meaning": "n. 安全，平安，安全性",
+        "phonetic": "/ˈseɪfti/"
+      },
+      {
+        "id": "sys-day6-risk",
+        "word": "risk",
+        "meaning": "n./v. 风险，危险；冒险",
+        "phonetic": "/rɪsk/"
+      },
+      {
+        "id": "sys-day6-danger",
+        "word": "danger",
+        "meaning": "n. 危险，风险，威胁",
+        "phonetic": "/ˈdeɪndʒər/"
+      },
+      {
+        "id": "sys-day6-dangerous",
+        "word": "dangerous",
+        "meaning": "adj. 危险的，不安全的",
+        "phonetic": "/ˈdeɪndʒərəs/"
+      },
+      {
+        "id": "sys-day6-protect",
+        "word": "protect",
+        "meaning": "v. 保护，防护，保卫",
+        "phonetic": "/prəˈtekt/"
+      },
+      {
+        "id": "sys-day6-prevent",
+        "word": "prevent",
+        "meaning": "v. 阻止，防止，预防",
+        "phonetic": "/prɪˈvent/"
+      },
+      {
+        "id": "sys-day6-avoid",
+        "word": "avoid",
+        "meaning": "v. 避免，避开，躲避",
+        "phonetic": "/əˈvɔɪd/"
+      },
+      {
+        "id": "sys-day6-alive",
+        "word": "alive",
+        "meaning": "adj. 活着的，有生气的",
+        "phonetic": "/əˈlaɪv/"
+      },
+      {
+        "id": "sys-day6-agree",
+        "word": "agree",
+        "meaning": "v. 同意，赞同；达成一致",
+        "phonetic": "/əˈɡriː/"
+      },
+      {
+        "id": "sys-day6-agreement",
+        "word": "agreement",
+        "meaning": "n. 同意，协议，协定",
+        "phonetic": "/əˈɡriːmənt/"
+      },
+      {
+        "id": "sys-day6-accept",
+        "word": "accept",
+        "meaning": "v. 接受，认可；同意",
+        "phonetic": "/əkˈsept/"
+      },
+      {
+        "id": "sys-day6-allow",
+        "word": "allow",
+        "meaning": "v. 允许，准许；给予",
+        "phonetic": "/əˈlaʊ/"
+      },
+      {
+        "id": "sys-day6-OK",
+        "word": "OK",
+        "meaning": "adj./adv./v./n. 好的，行；同意，批准",
+        "phonetic": "/əʊˈkeɪ/"
+      },
+      {
+        "id": "sys-day6-refuse",
+        "word": "refuse",
+        "meaning": "v. 拒绝，回绝；n. 垃圾",
+        "phonetic": "/rɪˈfjuːz/"
+      },
+      {
+        "id": "sys-day6-receive",
+        "word": "receive",
+        "meaning": "v. 收到，接到；接待",
+        "phonetic": "/rɪˈsiːv/"
+      },
+      {
+        "id": "sys-day6-against",
+        "word": "against",
+        "meaning": "prep. 反对，对抗；靠着，倚着",
+        "phonetic": "/əˈɡenst/"
+      },
+      {
+        "id": "sys-day6-except",
+        "word": "except",
+        "meaning": "prep./conj. 除…之外；只是",
+        "phonetic": "/ɪkˈsept/"
+      },
+      {
+        "id": "sys-day6-include",
+        "word": "include",
+        "meaning": "v. 包括，包含，计入",
+        "phonetic": "/ɪnˈkluːd/"
+      },
+      {
+        "id": "sys-day6-but",
+        "word": "but",
+        "meaning": "conj./prep./adv. 但是，然而；除…以外；仅仅",
+        "phonetic": "/bʌt/"
+      },
+      {
+        "id": "sys-day6-with",
+        "word": "with",
+        "meaning": "prep. 和…一起；带有；用",
+        "phonetic": "/wɪð/"
+      },
+      {
+        "id": "sys-day6-without",
+        "word": "without",
+        "meaning": "prep. 没有，无；不",
+        "phonetic": "/wɪˈðaʊt/"
+      },
+      {
+        "id": "sys-day6-general",
+        "word": "general",
+        "meaning": "adj. 一般的，总的；n. 将军",
+        "phonetic": "/ˈdʒenrəl/"
+      },
+      {
+        "id": "sys-day6-usual",
+        "word": "usual",
+        "meaning": "adj. 平常的，通常的，惯常的",
+        "phonetic": "/ˈjuːʒuəl/"
+      },
+      {
+        "id": "sys-day6-special",
+        "word": "special",
+        "meaning": "adj. 特别的，特殊的；专门的",
+        "phonetic": "/ˈspeʃl/"
+      },
+      {
+        "id": "sys-day6-common",
+        "word": "common",
+        "meaning": "adj. 普通的，共同的；n. 公共用地",
+        "phonetic": "/ˈkɒmən/"
+      },
+      {
+        "id": "sys-day6-add",
+        "word": "add",
+        "meaning": "v. 添加，增加；补充说",
+        "phonetic": "/æd/"
+      },
+      {
+        "id": "sys-day6-improve",
+        "word": "improve",
+        "meaning": "v. 改善，提高，改进",
+        "phonetic": "/ɪmˈpruːv/"
+      },
+      {
+        "id": "sys-day6-progress",
+        "word": "progress",
+        "meaning": "n./v. 进步，进展；前进",
+        "phonetic": "/ˈprəʊɡres/"
+      },
+      {
+        "id": "sys-day6-raise",
+        "word": "raise",
+        "meaning": "v. 举起，提高；抚养；筹集",
+        "phonetic": "/reɪz/"
+      },
+      {
+        "id": "sys-day6-rise",
+        "word": "rise",
+        "meaning": "v./n. 上升，升起；增加；起立",
+        "phonetic": "/raɪz/"
+      },
+      {
+        "id": "sys-day6-rose",
+        "word": "rose",
+        "meaning": "n. 玫瑰，蔷薇；v. rise的过去式",
+        "phonetic": "/rəʊz/"
+      },
+      {
+        "id": "sys-day6-risen",
+        "word": "risen",
+        "meaning": "v. rise的过去分词；adj. 已升起的",
+        "phonetic": "/ˈrɪzn/"
+      },
+      {
+        "id": "sys-day6-develop",
+        "word": "develop",
+        "meaning": "v. 发展，开发；培养；显影",
+        "phonetic": "/dɪˈveləp/"
+      },
+      {
+        "id": "sys-day6-development",
+        "word": "development",
+        "meaning": "n. 发展，开发；成长",
+        "phonetic": "/dɪˈveləpmənt/"
+      },
+      {
+        "id": "sys-day6-grow",
+        "word": "grow",
+        "meaning": "v. 成长，生长；增加；变得",
+        "phonetic": "/ɡrəʊ/"
+      },
+      {
+        "id": "sys-day6-fall",
+        "word": "fall",
+        "meaning": "v./n. 落下，跌倒；秋天；下降",
+        "phonetic": "/fɔːl/"
+      },
+      {
+        "id": "sys-day6-fell",
+        "word": "fell",
+        "meaning": "v. fall的过去式；砍伐，击倒",
+        "phonetic": "/fel/"
+      },
+      {
+        "id": "sys-day6-drop",
+        "word": "drop",
+        "meaning": "v./n. 落下，滴下；下降；水滴",
+        "phonetic": "/drɒp/"
+      },
+      {
+        "id": "sys-day6-weak",
+        "word": "weak",
+        "meaning": "adj. 弱的，虚弱的；薄弱的",
+        "phonetic": "/wiːk/"
+      },
+      {
+        "id": "sys-day6-wait",
+        "word": "wait",
+        "meaning": "v./n. 等待，等候；期待",
+        "phonetic": "/weɪt/"
+      },
+      {
+        "id": "sys-day6-continue",
+        "word": "continue",
+        "meaning": "v. 继续，持续；延续",
+        "phonetic": "/kənˈtɪnjuː/"
+      },
+      {
+        "id": "sys-day6-stop",
+        "word": "stop",
+        "meaning": "v./n. 停止，停下；阻止；车站",
+        "phonetic": "/stɒp/"
+      },
+      {
+        "id": "sys-day6-never",
+        "word": "never",
+        "meaning": "adv. 从不，决不，永不",
+        "phonetic": "/ˈnevər/"
+      },
+      {
+        "id": "sys-day6-hardly",
+        "word": "hardly",
+        "meaning": "adv. 几乎不，简直不",
+        "phonetic": "/ˈhɑːrdli/"
+      },
+      {
+        "id": "sys-day6-sometimes",
+        "word": "sometimes",
+        "meaning": "adv. 有时，间或",
+        "phonetic": "/ˈsʌmtaɪmz/"
+      },
+      {
+        "id": "sys-day6-often",
+        "word": "often",
+        "meaning": "adv. 经常，常常",
+        "phonetic": "/ˈɒfn/"
+      },
+      {
+        "id": "sys-day6-usually",
+        "word": "usually",
+        "meaning": "adv. 通常，一般，平常",
+        "phonetic": "/ˈjuːʒuəli/"
+      }
+    ]
   }
 ]
