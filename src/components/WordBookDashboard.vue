@@ -246,7 +246,7 @@ async function shareDailyReport() {
   opacity: 0.6;
 }
 .summary-num {
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.1;
