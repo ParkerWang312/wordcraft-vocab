@@ -46,6 +46,12 @@
       <!-- 数据管理 -->
       <van-cell-group title="数据管理">
         <van-cell
+          title="📄 导出 PDF 单词表"
+          is-link
+          @click="exportPDF"
+        />
+        <div class="cell-hint">导出为可打印 PDF，支持微信分享</div>
+        <van-cell
           title="📥 导出单词本"
           is-link
           @click="exportBook"
@@ -77,7 +83,8 @@
 import { ref, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useWordbookStore } from '../stores/wordbook.js'
-import { showToast, showConfirmDialog } from 'vant'
+import { showToast, showConfirmDialog, showLoadingToast, closeToast } from 'vant'
+import { exportWordbookPDF, sharePDF } from '../utils/exportPDF.js'
 
 const route = useRoute()
 const router = useRouter()
@@ -113,6 +120,38 @@ function saveWordsPerSession() {
 
 function saveDictation() {
   store.updateSettings(id.value, { dictationEnabled: dictationEnabled.value })
+}
+
+async function exportPDF() {
+  const loading = showLoadingToast({
+    message: '正在加载字体…',
+    forbidClick: true,
+    duration: 0
+  })
+
+  try {
+    const words = store.getWordsByBookId(id.value)
+    if (words.length === 0) {
+      closeToast()
+      showToast('单词本为空')
+      return
+    }
+
+    const blob = await exportWordbookPDF(book.value?.name || '单词本', words, (info) => {
+      if (info.stage === 'font') {
+        loading.message = `正在加载字体… ${info.progress}%`
+      } else if (info.stage === 'generate') {
+        loading.message = `正在生成 PDF… ${info.progress}%`
+      }
+    })
+
+    closeToast()
+    await sharePDF(blob, `${book.value?.name || '单词本'}.pdf`)
+  } catch (e) {
+    closeToast()
+    console.error('PDF 导出失败:', e)
+    showToast('导出失败：' + (e.message || '未知错误'))
+  }
 }
 
 function exportBook() {
