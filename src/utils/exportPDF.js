@@ -106,73 +106,130 @@ export async function exportWordbookPDF(bookName, words, onProgress) {
   doc.addFont(fontName, fontName, 'normal')
   doc.setFont(fontName, 'normal')
 
-  // 布局参数
-  const margin = 10
-  const colGap = 6
-  const colW = (pageW - margin * 2 - colGap) / 2
-  const rowsPerPage = 40
-  const wordsPerPage = rowsPerPage * 2
+  // 布局参数（按参考 PDF 精确还原 A4 双栏）
+  const marginX = 12
+  const marginTop = 18
+  const colGap = 5
+  const colW = (pageW - marginX * 2 - colGap) / 2
+  const rowsPerCol = 21
+  const wordsPerPage = rowsPerCol * 2
+
+  // 颜色（按参考 PDF 视觉）
+  const colorTitle = [40, 40, 40]
+  const colorSubtitle = [80, 80, 80]
+  const colorTableHead = [60, 60, 60]
+  const colorRowAlt = [245, 245, 245]
+  const colorRowNormal = [255, 255, 255]
+  const colorContent = [50, 50, 50]
+  const colorFooter = [150, 150, 150]
+  const colorTableHeadBg = [220, 220, 220]
+  const colorBorder = [180, 180, 180]
+
+  // 标题区域高度
+  const titleY = marginTop
+  const subtitleY = titleY + 9
+  const tableHeadY = subtitleY + 5
+  const rowStartY = tableHeadY + 8
+  const rowH = (pageH - rowStartY - 12) / rowsPerCol  // 单词行高，自动适应
+
+  // 列内分栏：No. / Word / Meaning
+  const colNo = 8     // 序号列宽 (mm)
+  const colWord = 18  // 单词列宽
+  const colMean = colW - colNo - colWord
+
   const totalPages = Math.ceil(words.length / wordsPerPage)
-  const headerH = 22
-  const rowH = 6.5
-  const footerH = 8
+
+  function drawHeader(yHeader) {
+    // 标题
+    doc.setFontSize(18)
+    doc.setTextColor(...colorTitle)
+    doc.text('Classic Vocabulary List', pageW / 2, yHeader, { align: 'center' })
+
+    // 副标题
+    doc.setFontSize(10.5)
+    doc.setTextColor(...colorSubtitle)
+    doc.text(`Title: ${bookName}    Date:   /   /`, marginX, yHeader + 7)
+  }
+
+  function drawTableHead(yHead) {
+    const yRect = yHead - 1
+    // 表头背景（每列单独画）
+    doc.setFillColor(...colorTableHeadBg)
+    doc.rect(marginX, yRect, colW, 6, 'F')
+    doc.rect(marginX + colW + colGap, yRect, colW, 6, 'F')
+
+    // 表头下方分隔线
+    doc.setDrawColor(...colorBorder)
+    doc.setLineWidth(0.2)
+    doc.line(marginX, yRect + 6, marginX + colW, yRect + 6)
+    doc.line(marginX + colW + colGap, yRect + 6, marginX + colW * 2 + colGap, yRect + 6)
+
+    // 表头文字
+    doc.setFontSize(9.5)
+    doc.setTextColor(...colorTableHead)
+    drawHead(marginX, yHead)
+    drawHead(marginX + colW + colGap, yHead)
+  }
+
+  function drawHead(xBase, y) {
+    doc.text('No.', xBase + 1, y, { align: 'left' })
+    doc.text('Word', xBase + colNo + 1, y, { align: 'left' })
+    doc.text('Meaning', xBase + colNo + colWord + 1, y, { align: 'left' })
+  }
+
+  function drawRow(col, row, w, noText) {
+    const x = col === 0 ? marginX : marginX + colW + colGap
+    const y = rowStartY + row * rowH
+
+    // 交替行底色
+    if (row % 2 === 0) {
+      doc.setFillColor(...colorRowAlt)
+      doc.rect(x, y, colW, rowH, 'F')
+    }
+
+    // 底部细线
+    doc.setDrawColor(220, 220, 220)
+    doc.setLineWidth(0.1)
+    doc.line(x, y + rowH, x + colW, y + rowH)
+
+    // 列分隔线（仅每列内）
+    doc.setDrawColor(220, 220, 220)
+    doc.line(x + colNo, y, x + colNo, y + rowH)
+    doc.line(x + colNo + colWord, y, x + colNo + colWord, y + rowH)
+
+    // 文字
+    doc.setFontSize(9.5)
+    doc.setTextColor(...colorContent)
+    doc.text(noText, x + colNo - 1, y + rowH * 0.7, { align: 'right' })
+    doc.text(truncate(w.word, 14), x + colNo + 1, y + rowH * 0.7)
+    doc.text(truncate(w.meaning, 38), x + colNo + colWord + 1, y + rowH * 0.7)
+  }
+
+  function drawFooter(pageIdx) {
+    doc.setFontSize(10)
+    doc.setTextColor(...colorFooter)
+    doc.text(`- ${pageIdx + 1} -`, pageW / 2, pageH - 6, { align: 'center' })
+  }
 
   function drawPage(pageIdx) {
     if (pageIdx > 0) doc.addPage()
 
-    // 标题
-    doc.setFontSize(20)
-    doc.setTextColor(40, 40, 40)
-    doc.text('Classic Vocabulary List', pageW / 2, 18, { align: 'center' })
-
-    // 副标题
-    doc.setFontSize(11)
-    doc.setTextColor(100, 100, 100)
-    doc.text(`Title: ${bookName}    Date:   /   /`, margin, 26)
-
-    // 表头背景
-    const y0 = 32
-    doc.setFillColor(230, 230, 230)
-    doc.rect(margin, y0, colW, 6, 'F')
-    doc.rect(margin + colW + colGap, y0, colW, 6, 'F')
-
-    // 表头文字
-    doc.setFontSize(9)
-    doc.setTextColor(60, 60, 60)
-    doc.text('No.   Word         Meaning', margin + 1, y0 + 4.2)
-    doc.text('No.   Word         Meaning', margin + colW + colGap + 1, y0 + 4.2)
+    drawHeader(titleY)
+    drawTableHead(tableHeadY)
 
     // 单词行
     const start = pageIdx * wordsPerPage
     const end = Math.min(start + wordsPerPage, words.length)
-
+    let localIdx = 0
     for (let i = start; i < end; i++) {
-      const localIdx = i - start
       const row = Math.floor(localIdx / 2)
       const col = localIdx % 2
-      const x = col === 0 ? margin : margin + colW + colGap
-      const y = y0 + 7 + row * rowH
-
-      const w = words[i]
-      const no = String(i + 1).padStart(3, ' ')
-      const word = truncate(w.word, 10).padEnd(11, ' ')
-      const meaning = truncate(w.meaning, 28)
-
-      // 交替行背景
-      if (row % 2 === 0) {
-        doc.setFillColor(248, 248, 248)
-        doc.rect(x, y - 3.5, colW, rowH, 'F')
-      }
-
-      doc.setFontSize(8.5)
-      doc.setTextColor(40, 40, 40)
-      doc.text(`${no}  ${word} ${meaning}`, x + 1, y + 0.5)
+      if (row >= rowsPerCol) break
+      drawRow(col, row, words[i], String(i + 1))
+      localIdx++
     }
 
-    // 页码
-    doc.setFontSize(9)
-    doc.setTextColor(150, 150, 150)
-    doc.text(`- ${pageIdx + 1} -`, pageW / 2, pageH - 5, { align: 'center' })
+    drawFooter(pageIdx)
   }
 
   // 逐页绘制
