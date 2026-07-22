@@ -5,23 +5,23 @@
  */
 import { jsPDF } from 'jspdf'
 
-// CDN 字体 URL（Google Fonts 官方仓库，约 16MB）
-const FONT_URL =
+// CDN 字体 URL（按优先级排列，支持 CORS 的源，约 16MB）
+const FONT_URLS = [
+  'https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf',
   'https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf'
+]
 
 let fontCache = null
 
 /**
- * 加载 NotoSansSC 字体（仅首次导出时下载，后续从缓存取）
- * @param {Function} onProgress - 进度回调 (0-100)
+ * 尝试从多个 CDN 加载字体
  */
-async function loadFont(onProgress) {
-  if (fontCache) return fontCache
-
+async function tryFetch(url, onProgress) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
-    xhr.open('GET', FONT_URL, true)
+    xhr.open('GET', url, true)
     xhr.responseType = 'arraybuffer'
+    xhr.timeout = 120000
 
     xhr.onprogress = (e) => {
       if (e.lengthComputable && onProgress) {
@@ -30,17 +30,34 @@ async function loadFont(onProgress) {
     }
 
     xhr.onload = () => {
-      if (xhr.status === 200) {
-        fontCache = xhr.response
-        resolve(fontCache)
-      } else {
-        reject(new Error(`字体加载失败: HTTP ${xhr.status}`))
-      }
+      if (xhr.status === 200) resolve(xhr.response)
+      else reject(new Error(`HTTP ${xhr.status}`))
     }
 
-    xhr.onerror = () => reject(new Error('字体加载失败：网络错误'))
+    xhr.onerror = () => reject(new Error('网络错误'))
+    xhr.ontimeout = () => reject(new Error('加载超时'))
     xhr.send()
   })
+}
+
+/**
+ * 加载 NotoSansSC 字体（仅首次导出时下载，后续从缓存取）
+ * @param {Function} onProgress - 进度回调 (0-100)
+ */
+async function loadFont(onProgress) {
+  if (fontCache) return fontCache
+
+  for (const url of FONT_URLS) {
+    try {
+      const data = await tryFetch(url, onProgress)
+      fontCache = data
+      return fontCache
+    } catch (e) {
+      console.warn(`字体 CDN 加载失败 (${url}): ${e.message}`)
+    }
+  }
+
+  throw new Error('所有字体 CDN 加载失败，请检查网络连接')
 }
 
 /**
