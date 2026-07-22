@@ -5,10 +5,10 @@
  */
 import { jsPDF } from 'jspdf'
 
-// CDN 字体 URL（按优先级排列，支持 CORS 的源，约 16MB）
+// 字体来源（本地优先，CDN 兜底）
 const FONT_URLS = [
-  'https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf',
-  'https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf'
+  '/fonts/NotoSansSC-Variable.ttf',
+  'https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf'
 ]
 
 let fontCache = null
