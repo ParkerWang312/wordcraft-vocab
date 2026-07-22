@@ -1,7 +1,6 @@
 /**
  * 单词本 PDF 导出工具
- * 格式参考 Classic Vocabulary List 双栏排版
- * NotoSansSC 字体在导出时按需从 CDN 加载
+ * 格式严格参考 Classic Vocabulary List 双栏排版
  */
 import { jsPDF } from 'jspdf'
 
@@ -42,7 +41,6 @@ async function tryFetch(url, onProgress) {
 
 /**
  * 加载 NotoSansSC 字体（仅首次导出时下载，后续从缓存取）
- * @param {Function} onProgress - 进度回调 (0-100)
  */
 async function loadFont(onProgress) {
   if (fontCache) return fontCache
@@ -82,10 +80,6 @@ function arrayBufferToBase64(buffer) {
 
 /**
  * 导出单词本为 PDF
- * @param {string} bookName - 单词本名称
- * @param {Array} words - [{ word, meaning, phonetic? }]
- * @param {Function} onProgress - 进度回调
- * @returns {Blob} PDF Blob
  */
 export async function exportWordbookPDF(bookName, words, onProgress) {
   onProgress?.({ stage: 'font', progress: 0 })
@@ -106,69 +100,88 @@ export async function exportWordbookPDF(bookName, words, onProgress) {
   doc.addFont(fontName, fontName, 'normal')
   doc.setFont(fontName, 'normal')
 
-  // 布局参数（按参考 PDF 精确还原 A4 双栏）
+  // ============= 布局（按参考 PDF） =============
   const marginX = 12
-  const marginTop = 18
-  const colGap = 5
+  const colGap = 6
   const colW = (pageW - marginX * 2 - colGap) / 2
   const rowsPerCol = 21
   const wordsPerPage = rowsPerCol * 2
 
-  // 颜色（按参考 PDF 视觉）
+  // 颜色
   const colorTitle = [40, 40, 40]
   const colorSubtitle = [80, 80, 80]
-  const colorTableHead = [60, 60, 60]
-  const colorRowAlt = [245, 245, 245]
-  const colorRowNormal = [255, 255, 255]
+  const colorTableHead = [50, 50, 50]
   const colorContent = [50, 50, 50]
   const colorFooter = [150, 150, 150]
   const colorTableHeadBg = [220, 220, 220]
-  const colorBorder = [180, 180, 180]
+  const colorBorder = [170, 170, 170]
 
-  // 标题区域高度
-  const titleY = marginTop
-  const subtitleY = titleY + 9
-  const tableHeadY = subtitleY + 5
-  const rowStartY = tableHeadY + 8
-  const rowH = (pageH - rowStartY - 12) / rowsPerCol  // 单词行高，自动适应
+  // 高度
+  const titleY = 18
+  const subtitleY = titleY + 12
+  const tableHeadY = subtitleY + 7
+  const tableHeadH = 7
+  const rowStartY = tableHeadY + tableHeadH + 1
+  const footerY = pageH - 7
+  const rowH = (footerY - rowStartY) / rowsPerCol  // ≈12mm
 
-  // 列内分栏：No. / Word / Meaning
-  const colNo = 8     // 序号列宽 (mm)
-  const colWord = 18  // 单词列宽
-  const colMean = colW - colNo - colWord
+  // 列内分栏：No. 9 / Word 20 / Meaning 其余
+  const colNo = 9
+  const colWord = 20
 
   const totalPages = Math.ceil(words.length / wordsPerPage)
 
-  function drawHeader(yHeader) {
-    // 标题
-    doc.setFontSize(18)
-    doc.setTextColor(...colorTitle)
-    doc.text('Classic Vocabulary List', pageW / 2, yHeader, { align: 'center' })
-
-    // 副标题
-    doc.setFontSize(10.5)
-    doc.setTextColor(...colorSubtitle)
-    doc.text(`Title: ${bookName}    Date:   /   /`, marginX, yHeader + 7)
+  // 虚线（jsPDF 没有 dashed line 工具）
+  function dashedLine(x1, y1, x2, y2, dashLen = 0.8, gap = 0.5) {
+    const dx = x2 - x1, dy = y2 - y1
+    const dist = Math.sqrt(dx * dx + dy * dy)
+    if (dist === 0) return
+    const steps = Math.ceil(dist / (dashLen + gap))
+    const ux = dx / dist, uy = dy / dist
+    for (let i = 0; i < steps; i++) {
+      const sx = x1 + ux * i * (dashLen + gap)
+      const sy = y1 + uy * i * (dashLen + gap)
+      const ex = sx + ux * Math.min(dashLen, dist - i * (dashLen + gap))
+      const ey = sy + uy * Math.min(dashLen, dist - i * (dashLen + gap))
+      if (ex >= x2 - 0.01) break
+      doc.line(sx, sy, ex, ey)
+    }
   }
 
-  function drawTableHead(yHead) {
-    const yRect = yHead - 1
-    // 表头背景（每列单独画）
-    doc.setFillColor(...colorTableHeadBg)
-    doc.rect(marginX, yRect, colW, 6, 'F')
-    doc.rect(marginX + colW + colGap, yRect, colW, 6, 'F')
+  function drawHeader() {
+    // 标题 - Helvetica Bold 22pt 居中
+    doc.setFont('helvetica', 'bold')
+    doc.setFontSize(22)
+    doc.setTextColor(...colorTitle)
+    doc.text('Classic Vocabulary List', pageW / 2, titleY + 4, { align: 'center' })
 
-    // 表头下方分隔线
+    // 副标题 - Title 在左，Date 在右
+    doc.setFont('helvetica', 'normal')
+    doc.setFontSize(12)
+    doc.setTextColor(...colorSubtitle)
+    doc.text(`Title: ${bookName}`, marginX, subtitleY + 2)
+    doc.text('Date:    /   /', pageW - marginX, subtitleY + 2, { align: 'right' })
+  }
+
+  function drawTableHead() {
+    const yRect = tableHeadY
+    // 灰色背景
+    doc.setFillColor(...colorTableHeadBg)
+    doc.rect(marginX, yRect, colW, tableHeadH, 'F')
+    doc.rect(marginX + colW + colGap, yRect, colW, tableHeadH, 'F')
+
+    // 表头下边框
     doc.setDrawColor(...colorBorder)
     doc.setLineWidth(0.2)
-    doc.line(marginX, yRect + 6, marginX + colW, yRect + 6)
-    doc.line(marginX + colW + colGap, yRect + 6, marginX + colW * 2 + colGap, yRect + 6)
+    doc.line(marginX, yRect + tableHeadH, marginX + colW, yRect + tableHeadH)
+    doc.line(marginX + colW + colGap, yRect + tableHeadH, marginX + colW * 2 + colGap, yRect + tableHeadH)
 
     // 表头文字
-    doc.setFontSize(9.5)
+    doc.setFont('helvetica', 'bold')
+    doc.setFontSize(10.5)
     doc.setTextColor(...colorTableHead)
-    drawHead(marginX, yHead)
-    drawHead(marginX + colW + colGap, yHead)
+    drawHead(marginX, yRect + 4.8)
+    drawHead(marginX + colW + colGap, yRect + 4.8)
   }
 
   function drawHead(xBase, y) {
@@ -181,41 +194,41 @@ export async function exportWordbookPDF(bookName, words, onProgress) {
     const x = col === 0 ? marginX : marginX + colW + colGap
     const y = rowStartY + row * rowH
 
-    // 交替行底色
-    if (row % 2 === 0) {
-      doc.setFillColor(...colorRowAlt)
-      doc.rect(x, y, colW, rowH, 'F')
-    }
+    // 列内虚线分隔（No./Word/Meaning）
+    doc.setDrawColor(...colorBorder)
+    doc.setLineWidth(0.15)
+    dashedLine(x + colNo, y, x + colNo, y + rowH)
+    dashedLine(x + colNo + colWord, y, x + colNo + colWord, y + rowH)
 
-    // 底部细线
-    doc.setDrawColor(220, 220, 220)
-    doc.setLineWidth(0.1)
-    doc.line(x, y + rowH, x + colW, y + rowH)
-
-    // 列分隔线（仅每列内）
-    doc.setDrawColor(220, 220, 220)
-    doc.line(x + colNo, y, x + colNo, y + rowH)
-    doc.line(x + colNo + colWord, y, x + colNo + colWord, y + rowH)
-
-    // 文字
-    doc.setFontSize(9.5)
+    // No. 序号 - 居中
+    doc.setFont('helvetica', 'normal')
+    doc.setFontSize(10)
     doc.setTextColor(...colorContent)
-    doc.text(noText, x + colNo - 1, y + rowH * 0.7, { align: 'right' })
+    doc.text(noText, x + colNo / 2, y + rowH * 0.7, { align: 'center' })
+
+    // Word - 粗体英文
+    doc.setFont('helvetica', 'bold')
+    doc.setFontSize(11)
     doc.text(truncate(w.word, 14), x + colNo + 1, y + rowH * 0.7)
-    doc.text(truncate(w.meaning, 38), x + colNo + colWord + 1, y + rowH * 0.7)
+
+    // Meaning - 中文（NotoSansSC）
+    doc.setFont(fontName, 'normal')
+    doc.setFontSize(9.5)
+    doc.text(truncate(w.meaning, 42), x + colNo + colWord + 1, y + rowH * 0.7)
   }
 
   function drawFooter(pageIdx) {
-    doc.setFontSize(10)
+    doc.setFont('helvetica', 'normal')
+    doc.setFontSize(11)
     doc.setTextColor(...colorFooter)
-    doc.text(`- ${pageIdx + 1} -`, pageW / 2, pageH - 6, { align: 'center' })
+    doc.text(`- ${pageIdx + 1} -`, pageW / 2, footerY + 1, { align: 'center' })
   }
 
   function drawPage(pageIdx) {
     if (pageIdx > 0) doc.addPage()
 
-    drawHeader(titleY)
-    drawTableHead(tableHeadY)
+    drawHeader()
+    drawTableHead()
 
     // 单词行
     const start = pageIdx * wordsPerPage
@@ -253,7 +266,6 @@ export async function sharePDF(blob, filename) {
       files: [file]
     })
   } else {
-    // 降级：直接下载
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
