@@ -54,7 +54,7 @@ export const useWordbookStore = defineStore('wordbook', () => {
             ...w,
             wordbookId: sys.id,
             learned: false,
-            createdAt: Date.now()
+            dictated: false,            createdAt: Date.now()
           })
         })
         needsSave = true
@@ -239,6 +239,27 @@ export const useWordbookStore = defineStore('wordbook', () => {
     persistAll()
   }
 
+  // ===== 默写专用方法 =====
+  function markDictated(entryId) {
+    const entry = entries.value.find(e => e.id === entryId)
+    if (!entry) return
+    entry.dictated = true
+    persistAll()
+  }
+
+  function getUndictatedWords(wordbookId) {
+    return entries.value.filter(e =>
+      e.wordbookId === wordbookId && !e.dictated
+    )
+  }
+
+  function resetAllDictated(wordbookId) {
+    entries.value
+      .filter(e => e.wordbookId === wordbookId)
+      .forEach(e => { e.dictated = false })
+    persistAll()
+  }
+
   function getUnlearnedWords(wordbookId) {
     return entries.value.filter(e =>
       e.wordbookId === wordbookId && !e.learned
@@ -389,6 +410,9 @@ export const useWordbookStore = defineStore('wordbook', () => {
     getUnlearnedWords,
     checkAndResetRound,
     resetAllLearned,
+    markDictated,
+    getUndictatedWords,
+    resetAllDictated,
     recordPractice,
     getTodayHistory,
     generateReportData,

@@ -150,9 +150,6 @@ const wrongWordRetries = ref({})
 const timerElapsed = ref(0)
 let timerInterval = null
 
-// 轮次
-const currentRound = ref(0)
-
 // 连击动画
 watch(combo, (val) => {
   if (val > 1) {
@@ -228,26 +225,16 @@ function generateQuestions() {
 
   if (allWords.length === 0) return []
 
-  let unlearned = allWords.filter(e => !e.learned)
+  // 默写独立追踪：取未默写的单词
+  let undictated = store.getUndictatedWords(id.value)
 
-  if (unlearned.length === 0) {
-    store.checkAndResetRound(id.value, wordPerSession)
-    currentRound.value = bookObj.practiceRound || 0
-    unlearned = allWords.filter(e => !e.learned)
-  } else {
-    currentRound.value = bookObj.practiceRound || 0
+  if (undictated.length === 0) {
+    // 全部默写过，重置从头开始
+    store.resetAllDictated(id.value)
+    undictated = allWords
   }
 
-  let pool
-  if (unlearned.length >= wordPerSession) {
-    pool = shuffle(unlearned).slice(0, wordPerSession)
-  } else {
-    const learned = allWords.filter(e => e.learned)
-    pool = [
-      ...unlearned,
-      ...shuffle(learned).slice(0, wordPerSession - unlearned.length)
-    ]
-  }
+  const pool = shuffle(undictated).slice(0, wordPerSession)
 
   return pool.map(entry => ({
     entryId: entry.id,
@@ -307,7 +294,7 @@ function submitAnswer() {
     if (currentIndex.value < originalCount.value) {
       correctCount.value++
     }
-    store.markLearned(currentQuestion.value.entryId)
+    store.markDictated(currentQuestion.value.entryId)
     userInput.value = ''
     showHint.value = false
     setTimeout(() => nextQuestion(), 600)
@@ -359,18 +346,6 @@ function finishDictation() {
     retries: { ...wrongWordRetries.value },
     duration: timerElapsed.value
   })
-
-  // 如果本轮所有单词都已学会，立即推进轮次并重置所有单词
-  const unlearned = store.getWordsByBookId(id.value).filter(e => !e.learned)
-  if (unlearned.length === 0) {
-    const bookObj = book.value
-    if (bookObj) {
-      bookObj.practiceRound = (bookObj.practiceRound || 0) + 1
-      bookObj.totalLearnedInRound = 0
-      store.getWordsByBookId(id.value).forEach(e => { e.learned = false })
-      store.persistAll()
-    }
-  }
 }
 
 function confirmLeave() {
