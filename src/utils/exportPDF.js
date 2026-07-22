@@ -69,6 +69,18 @@ function truncate(text, maxLen) {
 }
 
 /**
+ * ArrayBuffer 转 base64 字符串
+ */
+function arrayBufferToBase64(buffer) {
+  let binary = ''
+  const bytes = new Uint8Array(buffer)
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i])
+  }
+  return btoa(binary)
+}
+
+/**
  * 导出单词本为 PDF
  * @param {string} bookName - 单词本名称
  * @param {Array} words - [{ word, meaning, phonetic? }]
@@ -87,10 +99,12 @@ export async function exportWordbookPDF(bookName, words, onProgress) {
   const pageW = doc.internal.pageSize.getWidth()
   const pageH = doc.internal.pageSize.getHeight()
 
-  // 注册中文字体
-  doc.addFileToVFS('NotoSansSC.ttf', fontData)
-  doc.addFont('NotoSansSC.ttf', 'NotoSansSC', 'normal')
-  doc.setFont('NotoSansSC', 'normal')
+  // 注册中文字体（jsPDF 需要 base64 字符串格式）
+  const base64 = arrayBufferToBase64(fontData)
+  const fontName = 'NotoSansSC'
+  doc.addFileToVFS(fontName, base64)
+  doc.addFont(fontName, fontName, 'normal')
+  doc.setFont(fontName, 'normal')
 
   // 布局参数
   const margin = 10
