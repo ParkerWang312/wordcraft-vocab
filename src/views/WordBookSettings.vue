@@ -52,6 +52,12 @@
         />
         <div class="cell-hint">导出为可打印 PDF，支持微信分享</div>
         <van-cell
+          title="📝 导出 TXT 单词表"
+          is-link
+          @click="exportTXT"
+        />
+        <div class="cell-hint">纯单词列表，逗号分隔，支持微信分享</div>
+        <van-cell
           title="📥 导出单词本"
           is-link
           @click="exportBook"
@@ -120,6 +126,24 @@ function saveWordsPerSession() {
 
 function saveDictation() {
   store.updateSettings(id.value, { dictationEnabled: dictationEnabled.value })
+}
+
+async function exportTXT() {
+  const words = store.getWordsByBookId(id.value)
+  if (words.length === 0) { showToast('单词本为空'); return }
+  const txt = words.map(w => w.word).join(', ')
+  const blob = new Blob([txt], { type: 'text/plain' })
+  const filename = `${book.value?.name || '单词本'}.txt`
+  const file = new File([blob], filename, { type: 'text/plain' })
+
+  if (navigator.share && navigator.canShare({ files: [file] })) {
+    await navigator.share({ title: filename, files: [file] })
+  } else {
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url; a.download = filename; a.click()
+    URL.revokeObjectURL(url)
+  }
 }
 
 async function exportPDF() {
