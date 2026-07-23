@@ -3105,5 +3105,206 @@
         "phonetic": "/ˈjuːʒuəli/"
       }
     ]
+  },
+  {
+    "id": "system-day7",
+    "name": "暑假单词第六天",
+    "description": "学校、科目、文化艺术类词汇",
+    "type": "system",
+    "dataVersion": 1,
+    "coverColor": "#8B5CF6",
+    "isDeletable": false,
+    "coverLetter": "六",
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
+      {
+        "id": "sys-day7-poem",
+        "word": "poem",
+        "meaning": "n. 诗，诗歌，韵文",
+        "phonetic": "/ˈpəʊəm/"
+      },
+      {
+        "id": "sys-day7-story",
+        "word": "story",
+        "meaning": "n. 故事，小说，新闻报道",
+        "phonetic": "/ˈstɔːri/"
+      },
+      {
+        "id": "sys-day7-artist",
+        "word": "artist",
+        "meaning": "n. 艺术家，画家，美术家",
+        "phonetic": "/ˈɑːrtɪst/"
+      },
+      {
+        "id": "sys-day7-writer",
+        "word": "writer",
+        "meaning": "n. 作家，作者，撰稿人",
+        "phonetic": "/ˈraɪtər/"
+      },
+      {
+        "id": "sys-day7-news",
+        "word": "news",
+        "meaning": "n. 新闻，消息，新闻报道",
+        "phonetic": "/njuːz/"
+      },
+      {
+        "id": "sys-day7-newspaper",
+        "word": "newspaper",
+        "meaning": "n. 报纸，报社",
+        "phonetic": "/ˈnjuːzpeɪpər/"
+      },
+      {
+        "id": "sys-day7-magazine",
+        "word": "magazine",
+        "meaning": "n. 杂志，期刊，弹药库",
+        "phonetic": "/ˌmæɡəˈziːn/"
+      },
+      {
+        "id": "sys-day7-passage",
+        "word": "passage",
+        "meaning": "n. 段落，通道，走廊",
+        "phonetic": "/ˈpæsɪdʒ/"
+      },
+      {
+        "id": "sys-day7-form",
+        "word": "form",
+        "meaning": "n. 形式，形状，表格；v. 形成，构成",
+        "phonetic": "/fɔːrm/"
+      },
+      {
+        "id": "sys-day7-joke",
+        "word": "joke",
+        "meaning": "n. 笑话，玩笑；v. 开玩笑",
+        "phonetic": "/dʒəʊk/"
+      },
+      {
+        "id": "sys-day7-daily",
+        "word": "daily",
+        "meaning": "adj. 每日的，日常的；adv. 每天；n. 日报",
+        "phonetic": "/ˈdeɪli/"
+      },
+      {
+        "id": "sys-day7-copy",
+        "word": "copy",
+        "meaning": "v. 复制，抄写，模仿；n. 副本，复印件",
+        "phonetic": "/ˈkɒpi/"
+      },
+      {
+        "id": "sys-day7-cartoon",
+        "word": "cartoon",
+        "meaning": "n. 漫画，动画片，卡通",
+        "phonetic": "/kɑːrˈtuːn/"
+      },
+      {
+        "id": "sys-day7-symbol",
+        "word": "symbol",
+        "meaning": "n. 象征，符号，标志",
+        "phonetic": "/ˈsɪmbl/"
+      },
+      {
+        "id": "sys-day7-subject",
+        "word": "subject",
+        "meaning": "n. 主题，科目，主语；adj. 受…支配的",
+        "phonetic": "/ˈsʌbdʒɪkt/"
+      },
+      {
+        "id": "sys-day7-English",
+        "word": "English",
+        "meaning": "n. 英语，英文；adj. 英语的，英国的",
+        "phonetic": "/ˈɪŋɡlɪʃ/"
+      },
+      {
+        "id": "sys-day7-Chinese",
+        "word": "Chinese",
+        "meaning": "n. 中文，汉语，中国人；adj. 中国的",
+        "phonetic": "/ˌtʃaɪˈniːz/"
+      },
+      {
+        "id": "sys-day7-maths",
+        "word": "maths",
+        "meaning": "n. 数学（英式英语）",
+        "phonetic": "/mæθs/"
+      },
+      {
+        "id": "sys-day7-math",
+        "word": "math",
+        "meaning": "n. 数学（美式英语）",
+        "phonetic": "/mæθ/"
+      },
+      {
+        "id": "sys-day7-science",
+        "word": "science",
+        "meaning": "n. 科学，自然科学，理科",
+        "phonetic": "/ˈsaɪəns/"
+      },
+      {
+        "id": "sys-day7-art",
+        "word": "art",
+        "meaning": "n. 艺术，美术，文科",
+        "phonetic": "/ɑːrt/"
+      },
+      {
+        "id": "sys-day7-music",
+        "word": "music",
+        "meaning": "n. 音乐，乐曲，乐谱",
+        "phonetic": "/ˈmjuːzɪk/"
+      },
+      {
+        "id": "sys-day7-PE",
+        "word": "PE",
+        "meaning": "n. 体育，体育课（physical education缩写）",
+        "phonetic": "/ˌpiː ˈiː/"
+      },
+      {
+        "id": "sys-day7-history",
+        "word": "history",
+        "meaning": "n. 历史，历史学，经历",
+        "phonetic": "/ˈhɪstri/"
+      },
+      {
+        "id": "sys-day7-geography",
+        "word": "geography",
+        "meaning": "n. 地理，地理学，地形",
+        "phonetic": "/dʒiˈɒɡrəfi/"
+      },
+      {
+        "id": "sys-day7-physics",
+        "word": "physics",
+        "meaning": "n. 物理学，物理",
+        "phonetic": "/ˈfɪzɪks/"
+      },
+      {
+        "id": "sys-day7-chemistry",
+        "word": "chemistry",
+        "meaning": "n. 化学，化学性质",
+        "phonetic": "/ˈkemɪstri/"
+      },
+      {
+        "id": "sys-day7-primary",
+        "word": "primary",
+        "meaning": "adj. 主要的，初级的，小学的；n. 初选",
+        "phonetic": "/ˈpraɪməri/"
+      },
+      {
+        "id": "sys-day7-middle",
+        "word": "middle",
+        "meaning": "adj. 中间的，中等的；n. 中间，腰部",
+        "phonetic": "/ˈmɪdl/"
+      },
+      {
+        "id": "sys-day7-like",
+        "word": "like",
+        "meaning": "v. 喜欢，喜爱；prep. 像，如同",
+        "phonetic": "/laɪk/"
+      },
+      {
+        "id": "sys-day7-enjoy",
+        "word": "enjoy",
+        "meaning": "v. 享受，喜爱，欣赏",
+        "phonetic": "/ɪnˈdʒɔɪ/"
+      }
+    ]
   }
 ]
