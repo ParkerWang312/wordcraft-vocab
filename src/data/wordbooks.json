@@ -3306,5 +3306,296 @@
         "phonetic": "/ˈjuːʒuəli/"
       }
     ]
+  },
+  {
+    "id": "system-day8",
+    "name": "暑假单词第六天",
+    "description": "频率、品质、状态等常用词汇",
+    "type": "system",
+    "dataVersion": 1,
+    "coverColor": "#06B6D4",
+    "isDeletable": false,
+    "coverLetter": "六",
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
+      {
+        "id": "sys-day8-always",
+        "word": "always",
+        "meaning": "adv. 总是，一直，永远",
+        "phonetic": "/ˈɔːlweɪz/"
+      },
+      {
+        "id": "sys-day8-once",
+        "word": "once",
+        "meaning": "adv. 一次，曾经；conj. 一旦",
+        "phonetic": "/wʌns/"
+      },
+      {
+        "id": "sys-day8-every",
+        "word": "every",
+        "meaning": "adj. 每个的，一切的，每隔…的",
+        "phonetic": "/ˈevri/"
+      },
+      {
+        "id": "sys-day8-regular",
+        "word": "regular",
+        "meaning": "adj. 规律的，定期的，常规的",
+        "phonetic": "/ˈreɡjʊlər/"
+      },
+      {
+        "id": "sys-day8-again",
+        "word": "again",
+        "meaning": "adv. 再次，又一次，重新",
+        "phonetic": "/əˈɡen/"
+      },
+      {
+        "id": "sys-day8-memory",
+        "word": "memory",
+        "meaning": "n. 记忆，回忆，内存",
+        "phonetic": "/ˈmeməri/"
+      },
+      {
+        "id": "sys-day8-remember",
+        "word": "remember",
+        "meaning": "v. 记住，记得，回忆起",
+        "phonetic": "/rɪˈmembər/"
+      },
+      {
+        "id": "sys-day8-forget",
+        "word": "forget",
+        "meaning": "v. 忘记，遗忘",
+        "phonetic": "/fərˈɡet/"
+      },
+      {
+        "id": "sys-day8-missing",
+        "word": "missing",
+        "meaning": "adj. 失踪的，缺少的",
+        "phonetic": "/ˈmɪsɪŋ/"
+      },
+      {
+        "id": "sys-day8-think",
+        "word": "think",
+        "meaning": "v. 想，认为，思考",
+        "phonetic": "/θɪŋk/"
+      },
+      {
+        "id": "sys-day8-experience",
+        "word": "experience",
+        "meaning": "n. 经验，经历；v. 体验",
+        "phonetic": "/ɪkˈspɪəriəns/"
+      },
+      {
+        "id": "sys-day8-great",
+        "word": "great",
+        "meaning": "adj. 伟大的，极好的，巨大的",
+        "phonetic": "/ɡreɪt/"
+      },
+      {
+        "id": "sys-day8-perfect",
+        "word": "perfect",
+        "meaning": "adj. 完美的，理想的；v. 完善",
+        "phonetic": "/ˈpɜːrfɪkt/"
+      },
+      {
+        "id": "sys-day8-interesting",
+        "word": "interesting",
+        "meaning": "adj. 有趣的，引起兴趣的",
+        "phonetic": "/ˈɪntrəstɪŋ/"
+      },
+      {
+        "id": "sys-day8-easy",
+        "word": "easy",
+        "meaning": "adj. 容易的，简单的，舒适的",
+        "phonetic": "/ˈiːzi/"
+      },
+      {
+        "id": "sys-day8-wonderful",
+        "word": "wonderful",
+        "meaning": "adj. 精彩的，绝妙的，惊人的",
+        "phonetic": "/ˈwʌndərfl/"
+      },
+      {
+        "id": "sys-day8-exciting",
+        "word": "exciting",
+        "meaning": "adj. 令人兴奋的，激动人心的",
+        "phonetic": "/ɪkˈsaɪtɪŋ/"
+      },
+      {
+        "id": "sys-day8-pleasant",
+        "word": "pleasant",
+        "meaning": "adj. 愉快的，舒适的，宜人的",
+        "phonetic": "/ˈpleznt/"
+      },
+      {
+        "id": "sys-day8-kind",
+        "word": "kind",
+        "meaning": "adj. 善良的，友好的；n. 种类",
+        "phonetic": "/kaɪnd/"
+      },
+      {
+        "id": "sys-day8-fun",
+        "word": "fun",
+        "meaning": "n. 乐趣，娱乐；adj. 有趣的",
+        "phonetic": "/fʌn/"
+      },
+      {
+        "id": "sys-day8-funny",
+        "word": "funny",
+        "meaning": "adj. 有趣的，滑稽的，好笑的",
+        "phonetic": "/ˈfʌni/"
+      },
+      {
+        "id": "sys-day8-warm",
+        "word": "warm",
+        "meaning": "adj. 温暖的，热情的；v. 使温暖",
+        "phonetic": "/wɔːrm/"
+      },
+      {
+        "id": "sys-day8-magic",
+        "word": "magic",
+        "meaning": "n. 魔法，魔术；adj. 有魔力的",
+        "phonetic": "/ˈmædʒɪk/"
+      },
+      {
+        "id": "sys-day8-fantastic",
+        "word": "fantastic",
+        "meaning": "adj. 极好的，奇异的，不可思议的",
+        "phonetic": "/fænˈtæstɪk/"
+      },
+      {
+        "id": "sys-day8-welcome",
+        "word": "welcome",
+        "meaning": "v. 欢迎；adj. 受欢迎的；n. 欢迎",
+        "phonetic": "/ˈwelkəm/"
+      },
+      {
+        "id": "sys-day8-famous",
+        "word": "famous",
+        "meaning": "adj. 著名的，出名的",
+        "phonetic": "/ˈfeɪməs/"
+      },
+      {
+        "id": "sys-day8-comfortable",
+        "word": "comfortable",
+        "meaning": "adj. 舒服的，舒适的，自在的",
+        "phonetic": "/ˈkʌmftəbl/"
+      },
+      {
+        "id": "sys-day8-terrible",
+        "word": "terrible",
+        "meaning": "adj. 可怕的，糟糕的，极坏的",
+        "phonetic": "/ˈterəbl/"
+      },
+      {
+        "id": "sys-day8-awful",
+        "word": "awful",
+        "meaning": "adj. 糟糕的，可怕的，极坏的",
+        "phonetic": "/ˈɔːfl/"
+      },
+      {
+        "id": "sys-day8-boring",
+        "word": "boring",
+        "meaning": "adj. 无聊的，令人厌烦的",
+        "phonetic": "/ˈbɔːrɪŋ/"
+      },
+      {
+        "id": "sys-day8-free",
+        "word": "free",
+        "meaning": "adj. 自由的，免费的；v. 释放",
+        "phonetic": "/friː/"
+      },
+      {
+        "id": "sys-day8-busy",
+        "word": "busy",
+        "meaning": "adj. 忙碌的，繁忙的",
+        "phonetic": "/ˈbɪzi/"
+      },
+      {
+        "id": "sys-day8-silent",
+        "word": "silent",
+        "meaning": "adj. 沉默的，安静的，无声的",
+        "phonetic": "/ˈsaɪlənt/"
+      },
+      {
+        "id": "sys-day8-silence",
+        "word": "silence",
+        "meaning": "n. 沉默，寂静，无声",
+        "phonetic": "/ˈsaɪləns/"
+      },
+      {
+        "id": "sys-day8-ancient",
+        "word": "ancient",
+        "meaning": "adj. 古老的，古代的",
+        "phonetic": "/ˈeɪnʃənt/"
+      },
+      {
+        "id": "sys-day8-right",
+        "word": "right",
+        "meaning": "adj. 正确的，右边的；n. 权利；adv. 正好",
+        "phonetic": "/raɪt/"
+      },
+      {
+        "id": "sys-day8-exactly",
+        "word": "exactly",
+        "meaning": "adv. 确切地，精确地，正是",
+        "phonetic": "/ɪɡˈzæktli/"
+      },
+      {
+        "id": "sys-day8-wrong",
+        "word": "wrong",
+        "meaning": "adj. 错误的，不对的；n. 错误",
+        "phonetic": "/rɒŋ/"
+      },
+      {
+        "id": "sys-day8-have",
+        "word": "have",
+        "meaning": "v. 有，拥有；aux. 已经（完成时）",
+        "phonetic": "/hæv/"
+      },
+      {
+        "id": "sys-day8-own",
+        "word": "own",
+        "meaning": "adj. 自己的；v. 拥有",
+        "phonetic": "/əʊn/"
+      },
+      {
+        "id": "sys-day8-owner",
+        "word": "owner",
+        "meaning": "n. 所有者，主人，物主",
+        "phonetic": "/ˈəʊnər/"
+      },
+      {
+        "id": "sys-day8-appear",
+        "word": "appear",
+        "meaning": "v. 出现，显现，似乎",
+        "phonetic": "/əˈpɪər/"
+      },
+      {
+        "id": "sys-day8-remain",
+        "word": "remain",
+        "meaning": "v. 保持，仍然是，留在",
+        "phonetic": "/rɪˈmeɪn/"
+      },
+      {
+        "id": "sys-day8-necessary",
+        "word": "necessary",
+        "meaning": "adj. 必要的，必需的，必然的",
+        "phonetic": "/ˈnesəsəri/"
+      },
+      {
+        "id": "sys-day8-need",
+        "word": "need",
+        "meaning": "v. 需要，必须；n. 需要，需求",
+        "phonetic": "/niːd/"
+      },
+      {
+        "id": "sys-day8-require",
+        "word": "require",
+        "meaning": "v. 需要，要求，命令",
+        "phonetic": "/rɪˈkwaɪər/"
+      }
+    ]
   }
 ]
