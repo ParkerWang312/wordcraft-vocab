@@ -3597,5 +3597,596 @@
         "phonetic": "/rɪˈkwaɪər/"
       }
     ]
+  },
+  {
+    "id": "system-day9",
+    "name": "暑假单词第七天",
+    "description": "校园生活、文具物品、兴趣爱好类词汇",
+    "type": "system",
+    "dataVersion": 1,
+    "coverColor": "#84CC16",
+    "isDeletable": false,
+    "coverLetter": "七",
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
+      {
+        "id": "sys-day9-instead",
+        "word": "instead",
+        "meaning": "adv. 代替，反而",
+        "phonetic": "/ɪnˈsted/"
+      },
+      {
+        "id": "sys-day9-change",
+        "word": "change",
+        "meaning": "v. 改变，更换；n. 变化，零钱",
+        "phonetic": "/tʃeɪndʒ/"
+      },
+      {
+        "id": "sys-day9-sweep",
+        "word": "sweep",
+        "meaning": "v. 打扫，清扫；席卷",
+        "phonetic": "/swiːp/"
+      },
+      {
+        "id": "sys-day9-housework",
+        "word": "housework",
+        "meaning": "n. 家务，家务劳动",
+        "phonetic": "/ˈhaʊswɜːrk/"
+      },
+      {
+        "id": "sys-day9-clean",
+        "word": "clean",
+        "meaning": "v. 打扫，清洁；adj. 干净的",
+        "phonetic": "/kliːn/"
+      },
+      {
+        "id": "sys-day9-wash",
+        "word": "wash",
+        "meaning": "v. 洗，洗涤；n. 洗涤",
+        "phonetic": "/wɒʃ/"
+      },
+      {
+        "id": "sys-day9-water",
+        "word": "water",
+        "meaning": "n. 水；v. 浇水，灌溉",
+        "phonetic": "/ˈwɔːtər/"
+      },
+      {
+        "id": "sys-day9-light",
+        "word": "light",
+        "meaning": "n. 光，灯；adj. 轻的，明亮的；v. 点燃",
+        "phonetic": "/laɪt/"
+      },
+      {
+        "id": "sys-day9-tidy",
+        "word": "tidy",
+        "meaning": "adj. 整洁的；v. 整理，收拾",
+        "phonetic": "/ˈtaɪdi/"
+      },
+      {
+        "id": "sys-day9-school",
+        "word": "school",
+        "meaning": "n. 学校，上学",
+        "phonetic": "/skuːl/"
+      },
+      {
+        "id": "sys-day9-college",
+        "word": "college",
+        "meaning": "n. 学院，大学",
+        "phonetic": "/ˈkɒlɪdʒ/"
+      },
+      {
+        "id": "sys-day9-university",
+        "word": "university",
+        "meaning": "n. 大学，综合性大学",
+        "phonetic": "/ˌjuːnɪˈvɜːrsəti/"
+      },
+      {
+        "id": "sys-day9-classroom",
+        "word": "classroom",
+        "meaning": "n. 教室，课堂",
+        "phonetic": "/ˈklɑːsruːm/"
+      },
+      {
+        "id": "sys-day9-grade",
+        "word": "grade",
+        "meaning": "n. 年级，成绩，等级；v. 评分",
+        "phonetic": "/ɡreɪd/"
+      },
+      {
+        "id": "sys-day9-class",
+        "word": "class",
+        "meaning": "n. 班级，课，阶级",
+        "phonetic": "/klɑːs/"
+      },
+      {
+        "id": "sys-day9-blackboard",
+        "word": "blackboard",
+        "meaning": "n. 黑板",
+        "phonetic": "/ˈblækbɔːrd/"
+      },
+      {
+        "id": "sys-day9-lab",
+        "word": "lab",
+        "meaning": "n. 实验室（laboratory缩写）",
+        "phonetic": "/læb/"
+      },
+      {
+        "id": "sys-day9-office",
+        "word": "office",
+        "meaning": "n. 办公室，办事处，官职",
+        "phonetic": "/ˈɒfɪs/"
+      },
+      {
+        "id": "sys-day9-playground",
+        "word": "playground",
+        "meaning": "n. 操场，游乐场",
+        "phonetic": "/ˈpleɪɡraʊnd/"
+      },
+      {
+        "id": "sys-day9-seat",
+        "word": "seat",
+        "meaning": "n. 座位，席位；v. 使就座",
+        "phonetic": "/siːt/"
+      },
+      {
+        "id": "sys-day9-bell",
+        "word": "bell",
+        "meaning": "n. 铃，钟，铃声",
+        "phonetic": "/bel/"
+      },
+      {
+        "id": "sys-day9-chalk",
+        "word": "chalk",
+        "meaning": "n. 粉笔；v. 用粉笔写",
+        "phonetic": "/tʃɔːk/"
+      },
+      {
+        "id": "sys-day9-flag",
+        "word": "flag",
+        "meaning": "n. 旗，旗帜；v. 标记",
+        "phonetic": "/flæɡ/"
+      },
+      {
+        "id": "sys-day9-teacher",
+        "word": "teacher",
+        "meaning": "n. 教师，老师",
+        "phonetic": "/ˈtiːtʃər/"
+      },
+      {
+        "id": "sys-day9-student",
+        "word": "student",
+        "meaning": "n. 学生，学者",
+        "phonetic": "/ˈstjuːdnt/"
+      },
+      {
+        "id": "sys-day9-classmate",
+        "word": "classmate",
+        "meaning": "n. 同班同学",
+        "phonetic": "/ˈklɑːsmeɪt/"
+      },
+      {
+        "id": "sys-day9-pupil",
+        "word": "pupil",
+        "meaning": "n. 小学生，学生，瞳孔",
+        "phonetic": "/ˈpjuːpl/"
+      },
+      {
+        "id": "sys-day9-rule",
+        "word": "rule",
+        "meaning": "n. 规则，规定；v. 统治，管理",
+        "phonetic": "/ruːl/"
+      },
+      {
+        "id": "sys-day9-bag",
+        "word": "bag",
+        "meaning": "n. 包，袋子，手提包",
+        "phonetic": "/bæɡ/"
+      },
+      {
+        "id": "sys-day9-schoolbag",
+        "word": "schoolbag",
+        "meaning": "n. 书包",
+        "phonetic": "/ˈskuːlbæɡ/"
+      },
+      {
+        "id": "sys-day9-pen",
+        "word": "pen",
+        "meaning": "n. 钢笔，笔",
+        "phonetic": "/pen/"
+      },
+      {
+        "id": "sys-day9-pencil",
+        "word": "pencil",
+        "meaning": "n. 铅笔",
+        "phonetic": "/ˈpensl/"
+      },
+      {
+        "id": "sys-day9-crayon",
+        "word": "crayon",
+        "meaning": "n. 蜡笔，彩色铅笔",
+        "phonetic": "/ˈkreɪən/"
+      },
+      {
+        "id": "sys-day9-eraser",
+        "word": "eraser",
+        "meaning": "n. 橡皮擦，黑板擦",
+        "phonetic": "/ɪˈreɪzər/"
+      },
+      {
+        "id": "sys-day9-rubber",
+        "word": "rubber",
+        "meaning": "n. 橡皮，橡胶；adj. 橡胶的",
+        "phonetic": "/ˈrʌbər/"
+      },
+      {
+        "id": "sys-day9-book",
+        "word": "book",
+        "meaning": "n. 书，书籍；v. 预订",
+        "phonetic": "/bʊk/"
+      },
+      {
+        "id": "sys-day9-page",
+        "word": "page",
+        "meaning": "n. 页，页面；v. 呼叫",
+        "phonetic": "/peɪdʒ/"
+      },
+      {
+        "id": "sys-day9-ruler",
+        "word": "ruler",
+        "meaning": "n. 尺子，直尺；统治者",
+        "phonetic": "/ˈruːlər/"
+      },
+      {
+        "id": "sys-day9-map",
+        "word": "map",
+        "meaning": "n. 地图；v. 绘制地图",
+        "phonetic": "/mæp/"
+      },
+      {
+        "id": "sys-day9-note",
+        "word": "note",
+        "meaning": "n. 笔记，便条，音符；v. 注意",
+        "phonetic": "/nəʊt/"
+      },
+      {
+        "id": "sys-day9-notebook",
+        "word": "notebook",
+        "meaning": "n. 笔记本，笔记本电脑",
+        "phonetic": "/ˈnəʊtbʊk/"
+      },
+      {
+        "id": "sys-day9-dictionary",
+        "word": "dictionary",
+        "meaning": "n. 字典，词典",
+        "phonetic": "/ˈdɪkʃənri/"
+      },
+      {
+        "id": "sys-day9-paper",
+        "word": "paper",
+        "meaning": "n. 纸，试卷，论文；adj. 纸的",
+        "phonetic": "/ˈpeɪpər/"
+      },
+      {
+        "id": "sys-day9-picture",
+        "word": "picture",
+        "meaning": "n. 图画，照片；v. 想象",
+        "phonetic": "/ˈpɪktʃər/"
+      },
+      {
+        "id": "sys-day9-article",
+        "word": "article",
+        "meaning": "n. 文章，物品，冠词",
+        "phonetic": "/ˈɑːrtɪkl/"
+      },
+      {
+        "id": "sys-day9-art",
+        "word": "art",
+        "meaning": "n. 艺术，美术，文科",
+        "phonetic": "/ɑːrt/"
+      },
+      {
+        "id": "sys-day9-play",
+        "word": "play",
+        "meaning": "v. 玩，演奏，扮演；n. 游戏，戏剧",
+        "phonetic": "/pleɪ/"
+      },
+      {
+        "id": "sys-day9-story",
+        "word": "story",
+        "meaning": "n. 故事，小说，新闻报道",
+        "phonetic": "/ˈstɔːri/"
+      },
+      {
+        "id": "sys-day9-artist",
+        "word": "artist",
+        "meaning": "n. 艺术家，画家，美术家",
+        "phonetic": "/ˈɑːrtɪst/"
+      },
+      {
+        "id": "sys-day9-writer",
+        "word": "writer",
+        "meaning": "n. 作家，作者，撰稿人",
+        "phonetic": "/ˈraɪtər/"
+      },
+      {
+        "id": "sys-day9-news",
+        "word": "news",
+        "meaning": "n. 新闻，消息，新闻报道",
+        "phonetic": "/njuːz/"
+      },
+      {
+        "id": "sys-day9-newspaper",
+        "word": "newspaper",
+        "meaning": "n. 报纸，报社",
+        "phonetic": "/ˈnjuːzpeɪpər/"
+      },
+      {
+        "id": "sys-day9-magazine",
+        "word": "magazine",
+        "meaning": "n. 杂志，期刊",
+        "phonetic": "/ˌmæɡəˈziːn/"
+      },
+      {
+        "id": "sys-day9-passage",
+        "word": "passage",
+        "meaning": "n. 段落，通道，走廊",
+        "phonetic": "/ˈpæsɪdʒ/"
+      },
+      {
+        "id": "sys-day9-form",
+        "word": "form",
+        "meaning": "n. 形式，表格；v. 形成，构成",
+        "phonetic": "/fɔːrm/"
+      },
+      {
+        "id": "sys-day9-joke",
+        "word": "joke",
+        "meaning": "n. 笑话，玩笑；v. 开玩笑",
+        "phonetic": "/dʒəʊk/"
+      },
+      {
+        "id": "sys-day9-daily",
+        "word": "daily",
+        "meaning": "adj. 每日的；adv. 每天；n. 日报",
+        "phonetic": "/ˈdeɪli/"
+      },
+      {
+        "id": "sys-day9-copy",
+        "word": "copy",
+        "meaning": "v. 复制，抄写，模仿；n. 副本",
+        "phonetic": "/ˈkɒpi/"
+      },
+      {
+        "id": "sys-day9-cartoon",
+        "word": "cartoon",
+        "meaning": "n. 漫画，动画片，卡通",
+        "phonetic": "/kɑːrˈtuːn/"
+      },
+      {
+        "id": "sys-day9-symbol",
+        "word": "symbol",
+        "meaning": "n. 象征，符号，标志",
+        "phonetic": "/ˈsɪmbl/"
+      },
+      {
+        "id": "sys-day9-subject",
+        "word": "subject",
+        "meaning": "n. 主题，科目，主语；adj. 受支配的",
+        "phonetic": "/ˈsʌbdʒɪkt/"
+      },
+      {
+        "id": "sys-day9-English",
+        "word": "English",
+        "meaning": "n. 英语，英文；adj. 英语的",
+        "phonetic": "/ˈɪŋɡlɪʃ/"
+      },
+      {
+        "id": "sys-day9-Chinese",
+        "word": "Chinese",
+        "meaning": "n. 中文，汉语；adj. 中国的",
+        "phonetic": "/ˌtʃaɪˈniːz/"
+      },
+      {
+        "id": "sys-day9-maths",
+        "word": "maths",
+        "meaning": "n. 数学（英式）",
+        "phonetic": "/mæθs/"
+      },
+      {
+        "id": "sys-day9-math",
+        "word": "math",
+        "meaning": "n. 数学（美式）",
+        "phonetic": "/mæθ/"
+      },
+      {
+        "id": "sys-day9-science",
+        "word": "science",
+        "meaning": "n. 科学，自然科学，理科",
+        "phonetic": "/ˈsaɪəns/"
+      },
+      {
+        "id": "sys-day9-music",
+        "word": "music",
+        "meaning": "n. 音乐，乐曲，乐谱",
+        "phonetic": "/ˈmjuːzɪk/"
+      },
+      {
+        "id": "sys-day9-PE",
+        "word": "PE",
+        "meaning": "n. 体育，体育课",
+        "phonetic": "/ˌpiː ˈiː/"
+      },
+      {
+        "id": "sys-day9-history",
+        "word": "history",
+        "meaning": "n. 历史，历史学，经历",
+        "phonetic": "/ˈhɪstri/"
+      },
+      {
+        "id": "sys-day9-geography",
+        "word": "geography",
+        "meaning": "n. 地理，地理学，地形",
+        "phonetic": "/dʒiˈɒɡrəfi/"
+      },
+      {
+        "id": "sys-day9-physics",
+        "word": "physics",
+        "meaning": "n. 物理学，物理",
+        "phonetic": "/ˈfɪzɪks/"
+      },
+      {
+        "id": "sys-day9-chemistry",
+        "word": "chemistry",
+        "meaning": "n. 化学，化学性质",
+        "phonetic": "/ˈkemɪstri/"
+      },
+      {
+        "id": "sys-day9-primary",
+        "word": "primary",
+        "meaning": "adj. 主要的，初级的，小学的",
+        "phonetic": "/ˈpraɪməri/"
+      },
+      {
+        "id": "sys-day9-middle",
+        "word": "middle",
+        "meaning": "adj. 中间的，中等的；n. 中间",
+        "phonetic": "/ˈmɪdl/"
+      },
+      {
+        "id": "sys-day9-like",
+        "word": "like",
+        "meaning": "v. 喜欢；prep. 像，如同",
+        "phonetic": "/laɪk/"
+      },
+      {
+        "id": "sys-day9-enjoy",
+        "word": "enjoy",
+        "meaning": "v. 享受，喜爱，欣赏",
+        "phonetic": "/ɪnˈdʒɔɪ/"
+      },
+      {
+        "id": "sys-day9-love",
+        "word": "love",
+        "meaning": "v./n. 爱，热爱，爱情",
+        "phonetic": "/lʌv/"
+      },
+      {
+        "id": "sys-day9-satisfy",
+        "word": "satisfy",
+        "meaning": "v. 使满意，满足",
+        "phonetic": "/ˈsætɪsfaɪ/"
+      },
+      {
+        "id": "sys-day9-favourite",
+        "word": "favourite",
+        "meaning": "adj. 最喜欢的；n. 最爱（英式）",
+        "phonetic": "/ˈfeɪvərɪt/"
+      },
+      {
+        "id": "sys-day9-favorite",
+        "word": "favorite",
+        "meaning": "adj. 最喜欢的；n. 最爱（美式）",
+        "phonetic": "/ˈfeɪvərɪt/"
+      },
+      {
+        "id": "sys-day9-care",
+        "word": "care",
+        "meaning": "v. 关心，照顾；n. 关怀，照料",
+        "phonetic": "/keər/"
+      },
+      {
+        "id": "sys-day9-dear",
+        "word": "dear",
+        "meaning": "adj. 亲爱的，昂贵的",
+        "phonetic": "/dɪər/"
+      },
+      {
+        "id": "sys-day9-hate",
+        "word": "hate",
+        "meaning": "v. 讨厌，憎恨；n. 憎恨",
+        "phonetic": "/heɪt/"
+      },
+      {
+        "id": "sys-day9-hobby",
+        "word": "hobby",
+        "meaning": "n. 爱好，业余爱好",
+        "phonetic": "/ˈhɒbi/"
+      },
+      {
+        "id": "sys-day9-interest",
+        "word": "interest",
+        "meaning": "n. 兴趣，利息；v. 使感兴趣",
+        "phonetic": "/ˈɪntrəst/"
+      },
+      {
+        "id": "sys-day9-fan",
+        "word": "fan",
+        "meaning": "n. 迷，狂热爱好者；风扇",
+        "phonetic": "/fæn/"
+      },
+      {
+        "id": "sys-day9-good",
+        "word": "good",
+        "meaning": "adj. 好的，优秀的；n. 好处",
+        "phonetic": "/ɡʊd/"
+      },
+      {
+        "id": "sys-day9-well",
+        "word": "well",
+        "meaning": "adv. 好，很；adj. 健康的；n. 井",
+        "phonetic": "/wel/"
+      },
+      {
+        "id": "sys-day9-bad",
+        "word": "bad",
+        "meaning": "adj. 坏的，糟糕的，有害的",
+        "phonetic": "/bæd/"
+      },
+      {
+        "id": "sys-day9-activity",
+        "word": "activity",
+        "meaning": "n. 活动，活跃",
+        "phonetic": "/ækˈtɪvəti/"
+      },
+      {
+        "id": "sys-day9-package",
+        "word": "package",
+        "meaning": "n. 包裹，包装；v. 打包",
+        "phonetic": "/ˈpækɪdʒ/"
+      },
+      {
+        "id": "sys-day9-camp",
+        "word": "camp",
+        "meaning": "n. 营地，露营；v. 露营",
+        "phonetic": "/kæmp/"
+      },
+      {
+        "id": "sys-day9-walk",
+        "word": "walk",
+        "meaning": "v. 走，步行；n. 散步",
+        "phonetic": "/wɔːk/"
+      },
+      {
+        "id": "sys-day9-climb",
+        "word": "climb",
+        "meaning": "v. 爬，攀登；n. 攀登",
+        "phonetic": "/klaɪm/"
+      },
+      {
+        "id": "sys-day9-picnic",
+        "word": "picnic",
+        "meaning": "n. 野餐；v. 去野餐",
+        "phonetic": "/ˈpɪknɪk/"
+      },
+      {
+        "id": "sys-day9-kite",
+        "word": "kite",
+        "meaning": "n. 风筝",
+        "phonetic": "/kaɪt/"
+      }
+    ]
   }
 ]
