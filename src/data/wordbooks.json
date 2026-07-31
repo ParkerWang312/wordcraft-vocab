@@ -678,6 +678,159 @@
     ]
   },
   {
+    "id": "system-day10",
+    "name": "身体部位★",
+    "description": "人体全身各部位词汇（重点默写）",
+    "type": "system",
+    "dataVersion": 1,
+    "coverColor": "#EF4444",
+    "isDeletable": false,
+    "coverLetter": "身",
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
+      {
+        "id": "sys-day10-brain",
+        "word": "brain",
+        "meaning": "n. 大脑，头脑，智力",
+        "phonetic": "/breɪn/"
+      },
+      {
+        "id": "sys-day10-eye",
+        "word": "eye",
+        "meaning": "n. 眼睛；v. 注视",
+        "phonetic": "/aɪ/"
+      },
+      {
+        "id": "sys-day10-nose",
+        "word": "nose",
+        "meaning": "n. 鼻子；嗅觉",
+        "phonetic": "/nəʊz/"
+      },
+      {
+        "id": "sys-day10-mouth",
+        "word": "mouth",
+        "meaning": "n. 嘴，口，河口",
+        "phonetic": "/maʊθ/"
+      },
+      {
+        "id": "sys-day10-ear",
+        "word": "ear",
+        "meaning": "n. 耳朵；听力",
+        "phonetic": "/ɪər/"
+      },
+      {
+        "id": "sys-day10-face",
+        "word": "face",
+        "meaning": "n. 脸，面孔；v. 面对",
+        "phonetic": "/feɪs/"
+      },
+      {
+        "id": "sys-day10-hair",
+        "word": "hair",
+        "meaning": "n. 头发，毛发",
+        "phonetic": "/heər/"
+      },
+      {
+        "id": "sys-day10-tooth",
+        "word": "tooth",
+        "meaning": "n. 牙齿",
+        "phonetic": "/tuːθ/"
+      },
+      {
+        "id": "sys-day10-head",
+        "word": "head",
+        "meaning": "n. 头，头部，领导；v. 带领",
+        "phonetic": "/hed/"
+      },
+      {
+        "id": "sys-day10-shoulder",
+        "word": "shoulder",
+        "meaning": "n. 肩膀；v. 承担",
+        "phonetic": "/ˈʃəʊldər/"
+      },
+      {
+        "id": "sys-day10-body",
+        "word": "body",
+        "meaning": "n. 身体，躯体，主体",
+        "phonetic": "/ˈbɒdi/"
+      },
+      {
+        "id": "sys-day10-leg",
+        "word": "leg",
+        "meaning": "n. 腿，腿部",
+        "phonetic": "/leɡ/"
+      },
+      {
+        "id": "sys-day10-arm",
+        "word": "arm",
+        "meaning": "n. 手臂，胳膊；v. 武装",
+        "phonetic": "/ɑːrm/"
+      },
+      {
+        "id": "sys-day10-knee",
+        "word": "knee",
+        "meaning": "n. 膝盖，膝关节",
+        "phonetic": "/niː/"
+      },
+      {
+        "id": "sys-day10-hand",
+        "word": "hand",
+        "meaning": "n. 手；v. 递，交给",
+        "phonetic": "/hænd/"
+      },
+      {
+        "id": "sys-day10-foot",
+        "word": "foot",
+        "meaning": "n. 脚，足；英尺",
+        "phonetic": "/fʊt/"
+      },
+      {
+        "id": "sys-day10-finger",
+        "word": "finger",
+        "meaning": "n. 手指；v. 用手指触摸",
+        "phonetic": "/ˈfɪŋɡər/"
+      },
+      {
+        "id": "sys-day10-heart",
+        "word": "heart",
+        "meaning": "n. 心脏，内心，中心",
+        "phonetic": "/hɑːrt/"
+      },
+      {
+        "id": "sys-day10-neck",
+        "word": "neck",
+        "meaning": "n. 脖子，颈部",
+        "phonetic": "/nek/"
+      },
+      {
+        "id": "sys-day10-stomach",
+        "word": "stomach",
+        "meaning": "n. 胃，腹部；v. 忍受",
+        "phonetic": "/ˈstʌmək/"
+      },
+      {
+        "id": "sys-day10-back",
+        "word": "back",
+        "meaning": "n. 背部，后面；adv. 回来；v. 支持",
+        "phonetic": "/bæk/"
+      },
+      {
+        "id": "sys-day10-blood",
+        "word": "blood",
+        "meaning": "n. 血液，血��",
+        "phonetic": "/blʌd/"
+      },
+      {
+        "id": "sys-day10-tongue",
+        "word": "tongue",
+        "meaning": "n. 舌头，语言",
+        "phonetic": "/tʌŋ/"
+      }
+    ]
+  },
+  {
     "id": "system-day1",
     "name": "暑假单词第一天",
     "description": "职业、品格、地点等主题词汇",
@@ -4217,159 +4370,6 @@
         "word": "kite",
         "meaning": "n. 风筝",
         "phonetic": "/kaɪt/"
-      }
-    ]
-  },
-  {
-    "id": "system-day10",
-    "name": "身体部位★",
-    "description": "人体全身各部位词汇（重点默写）",
-    "type": "system",
-    "dataVersion": 1,
-    "coverColor": "#EF4444",
-    "isDeletable": false,
-    "coverLetter": "身",
-    "settings": {
-      "wordsPerSession": 20
-    },
-    "words": [
-      {
-        "id": "sys-day10-brain",
-        "word": "brain",
-        "meaning": "n. 大脑，头脑，智力",
-        "phonetic": "/breɪn/"
-      },
-      {
-        "id": "sys-day10-eye",
-        "word": "eye",
-        "meaning": "n. 眼睛；v. 注视",
-        "phonetic": "/aɪ/"
-      },
-      {
-        "id": "sys-day10-nose",
-        "word": "nose",
-        "meaning": "n. 鼻子；嗅觉",
-        "phonetic": "/nəʊz/"
-      },
-      {
-        "id": "sys-day10-mouth",
-        "word": "mouth",
-        "meaning": "n. 嘴，口，河口",
-        "phonetic": "/maʊθ/"
-      },
-      {
-        "id": "sys-day10-ear",
-        "word": "ear",
-        "meaning": "n. 耳朵；听力",
-        "phonetic": "/ɪər/"
-      },
-      {
-        "id": "sys-day10-face",
-        "word": "face",
-        "meaning": "n. 脸，面孔；v. 面对",
-        "phonetic": "/feɪs/"
-      },
-      {
-        "id": "sys-day10-hair",
-        "word": "hair",
-        "meaning": "n. 头发，毛发",
-        "phonetic": "/heər/"
-      },
-      {
-        "id": "sys-day10-tooth",
-        "word": "tooth",
-        "meaning": "n. 牙齿",
-        "phonetic": "/tuːθ/"
-      },
-      {
-        "id": "sys-day10-head",
-        "word": "head",
-        "meaning": "n. 头，头部，领导；v. 带领",
-        "phonetic": "/hed/"
-      },
-      {
-        "id": "sys-day10-shoulder",
-        "word": "shoulder",
-        "meaning": "n. 肩膀；v. 承担",
-        "phonetic": "/ˈʃəʊldər/"
-      },
-      {
-        "id": "sys-day10-body",
-        "word": "body",
-        "meaning": "n. 身体，躯体，主体",
-        "phonetic": "/ˈbɒdi/"
-      },
-      {
-        "id": "sys-day10-leg",
-        "word": "leg",
-        "meaning": "n. 腿，腿部",
-        "phonetic": "/leɡ/"
-      },
-      {
-        "id": "sys-day10-arm",
-        "word": "arm",
-        "meaning": "n. 手臂，胳膊；v. 武装",
-        "phonetic": "/ɑːrm/"
-      },
-      {
-        "id": "sys-day10-knee",
-        "word": "knee",
-        "meaning": "n. 膝盖，膝关节",
-        "phonetic": "/niː/"
-      },
-      {
-        "id": "sys-day10-hand",
-        "word": "hand",
-        "meaning": "n. 手；v. 递，交给",
-        "phonetic": "/hænd/"
-      },
-      {
-        "id": "sys-day10-foot",
-        "word": "foot",
-        "meaning": "n. 脚，足；英尺",
-        "phonetic": "/fʊt/"
-      },
-      {
-        "id": "sys-day10-finger",
-        "word": "finger",
-        "meaning": "n. 手指；v. 用手指触摸",
-        "phonetic": "/ˈfɪŋɡər/"
-      },
-      {
-        "id": "sys-day10-heart",
-        "word": "heart",
-        "meaning": "n. 心脏，内心，中心",
-        "phonetic": "/hɑːrt/"
-      },
-      {
-        "id": "sys-day10-neck",
-        "word": "neck",
-        "meaning": "n. 脖子，颈部",
-        "phonetic": "/nek/"
-      },
-      {
-        "id": "sys-day10-stomach",
-        "word": "stomach",
-        "meaning": "n. 胃，腹部；v. 忍受",
-        "phonetic": "/ˈstʌmək/"
-      },
-      {
-        "id": "sys-day10-back",
-        "word": "back",
-        "meaning": "n. 背部，后面；adv. 回来；v. 支持",
-        "phonetic": "/bæk/"
-      },
-      {
-        "id": "sys-day10-blood",
-        "word": "blood",
-        "meaning": "n. 血液，血��",
-        "phonetic": "/blʌd/"
-      },
-      {
-        "id": "sys-day10-tongue",
-        "word": "tongue",
-        "meaning": "n. 舌头，语言",
-        "phonetic": "/tʌŋ/"
       }
     ]
   }
