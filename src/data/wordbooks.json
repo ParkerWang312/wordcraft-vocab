@@ -1,11 +1,13 @@
 [
   {
-    "id": "system-day2",
-    "name": "日期·颜色·数字★",
-    "description": "星期、月份、颜色和数字词汇（重点背诵）",
+    "id": "system-day2-color",
+    "name": "颜色★",
+    "description": "颜色相关词汇（重点默写）",
     "type": "system",
+    "dataVersion": 1,
     "coverColor": "#EC4899",
     "isDeletable": false,
+    "coverLetter": "色",
     "settings": {
       "wordsPerSession": 20
     },
@@ -117,7 +119,22 @@
         "word": "pale",
         "meaning": "adj. 苍白的，浅色的，暗淡的；v. 变得苍白",
         "phonetic": "/peɪl/"
-      },
+      }
+    ]
+  },
+  {
+    "id": "system-day2-date",
+    "name": "日期★",
+    "description": "星期、月份、日期相关词汇（重点默写）",
+    "type": "system",
+    "dataVersion": 1,
+    "coverColor": "#F59E0B",
+    "isDeletable": false,
+    "coverLetter": "日",
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
       {
         "id": "sys-day2-run",
         "word": "run",
@@ -261,7 +278,22 @@
         "word": "December",
         "meaning": "n. 十二月",
         "phonetic": "/dɪˈsembər/"
-      },
+      }
+    ]
+  },
+  {
+    "id": "system-day2-number",
+    "name": "数字★",
+    "description": "数字 0~1000 及 hundred/thousand（重点默写）",
+    "type": "system",
+    "dataVersion": 1,
+    "coverColor": "#10B981",
+    "isDeletable": false,
+    "coverLetter": "数",
+    "settings": {
+      "wordsPerSession": 20
+    },
+    "words": [
       {
         "id": "sys-day2-zero",
         "word": "zero",
@@ -442,8 +474,7 @@
         "meaning": "num. 千，一千；n. 一千，许多",
         "phonetic": "/ˈθaʊznd/"
       }
-    ],
-    "dataVersion": 3
+    ]
   },
   {
     "id": "system-day7",
